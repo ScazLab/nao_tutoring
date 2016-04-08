@@ -140,10 +140,11 @@ class TutoringSession:
         elif msgType == 'DH':
             __special(msgType) # = 'DENIED HINT'
         elif msgType == 'RS':
-            # = 'ROBOT SPEECH'
+            pass # = 'ROBOT SPEECH'
         elif msgType == 'RA':
-            # = 'ROBOT ACTION'
+            pass # = 'ROBOT ACTION'
         else:
+            pass
         self.session[questionNum] = {}
 
 
