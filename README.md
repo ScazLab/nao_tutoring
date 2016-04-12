@@ -6,6 +6,8 @@ These instructions explain how to get the project's Python scripts and Android a
 
 The project's Python scripts are located in the `python_scripts/` directory. The main script is `nao_server.py`.
 
+After cloning the repository, within the folder python_scripts/, type mkdir data. This creates a data directory that nao_server.py will look for when running the code.
+
 ### Installing naoqi
 
 To run `nao_server.py`, the only module that you should need to install is `naoqi` (the Python NAOqi SDK).
