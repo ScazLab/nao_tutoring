@@ -1,4 +1,4 @@
-package com.priyanka;
+package tutoringproject.breaks;
 
 import android.app.Activity;
 import android.os.Bundle;

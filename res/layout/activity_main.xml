@@ -28,7 +28,7 @@
             android:layout_marginTop="60dp"
             android:textSize="40dp" />
 
-        <com.priyanka.AutoResizeTextView
+        <tutoringproject.breaks.AutoResizeTextView
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -39,7 +39,7 @@
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal" />
 
-        <com.priyanka.NoImeEditText
+        <tutoringproject.breaks.NoImeEditText
             android:layout_width="128dp"
             android:layout_height="wrap_content"
             android:inputType="none"
@@ -62,7 +62,7 @@
             android:layout_marginBottom="10dp"
             android:autoText="true" />
 
-        <com.priyanka.NoImeEditText
+        <tutoringproject.breaks.NoImeEditText
             android:layout_width="128dp"
             android:layout_height="wrap_content"
             android:inputType="none"

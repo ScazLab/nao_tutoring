@@ -1,5 +1,5 @@
 import time
-import pformat
+import pprint
 
 
 class Session:
@@ -18,7 +18,7 @@ class Session:
 
     def __repr__(self):
         return "Session(pid=%r, session_num=%r, questions=\\\n%s)" % \
-            (self.pid, self.session_num, pformat(list(self)))
+            (self.pid, self.session_num, pprint.pformat(list(self)))
 
 
 class Question:
@@ -130,4 +130,4 @@ class Question:
     def __repr__(self):
         return "Question(q_num=%r, attempts=%r, hints=%r, correct=%r, total_time=%r, complete=%r, \\\nhint_times=%s, attempt_times=%s)" % \
             (self.question_num, self.attempts, self.hints, self.correct, self.total_time, self.complete,
-             pformat(list(self.hint_times)), pformat(list(self.attempt_times)))
+             pprint.pformat(list(self.hint_times)), pprint.pformat(list(self.attempt_times)))

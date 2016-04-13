@@ -1,12 +1,11 @@
 /**
  * Created by aditi on 6/2/15.
  */
-package com.priyanka;
+package tutoringproject.breaks;
 
 import android.os.Handler;
 import android.util.Log;
 
-import android.util.Log;
 import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -20,7 +19,7 @@ public class TCPClient {
     private boolean mRun = false;
     private String ipAddressVar;
     private int ipPortVar;
-    private com.priyanka.MainActivity owner;
+    private MainActivity owner;
     private MathActivity sessionOwner;
 
     PrintWriter out;
@@ -31,7 +30,7 @@ public class TCPClient {
     /**
      *  Constructor of the class. OnMessagedReceived listens for the messages received from server
      */
-    public TCPClient(OnMessageReceived listener, com.priyanka.MainActivity owner) {
+    public TCPClient(OnMessageReceived listener, MainActivity owner) {
         mMessageListener = listener;
         ipAddressVar = null;
         this.owner = owner;

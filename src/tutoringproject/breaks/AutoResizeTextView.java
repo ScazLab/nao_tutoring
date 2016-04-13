@@ -1,4 +1,4 @@
-package com.priyanka;
+package tutoringproject.breaks;
 
 /**
  * Created by alexmutu on 6/5/2015.
