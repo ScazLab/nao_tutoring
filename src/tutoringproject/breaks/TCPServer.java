@@ -1,9 +1,7 @@
-package com.priyanka;
+package tutoringproject.breaks;
 
 import java.io.*;
 import java.net.*;
-
-import com.priyanka.MainActivity;
 
 public class TCPServer {
 

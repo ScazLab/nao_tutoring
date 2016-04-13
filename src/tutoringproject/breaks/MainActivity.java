@@ -1,4 +1,4 @@
-package com.priyanka;
+package tutoringproject.breaks;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -90,7 +90,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     public void startMathSession(View view) {
-        Intent intent = new Intent(this, com.priyanka.MathActivity.class);
+        Intent intent = new Intent(this, MathActivity.class);
         intent.putExtra("sessionNum", ""+sessionNum);
         intent.putExtra("expGroup", ""+expGroup);
         String pid = participantID.getText().toString();
@@ -98,7 +98,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         String startQuestion = startQuestionNum.getText().toString();
         intent.putExtra("startQuestionNum", startQuestion);
         //send message to computer to convey session starting
-        if (com.priyanka.TCPClient.singleton != null) {
+        if (TCPClient.singleton != null) {
             String startMessage = "START;" + "-1;-1;" + pid + "," + sessionNum + "," + expGroup;
             mTcpClient.sendMessage(startMessage);
         }
