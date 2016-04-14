@@ -88,6 +88,11 @@ public class MathActivity extends Activity {
     private int numberHints = 0;
     private boolean autoHint = false;
 
+    // New attributes for break study. Setting <takeBreak> to true will cause a break to be
+    // triggered the next time NextQuestion() is called, assuming that all 4 breaks have not yet
+    // been given.
+    private boolean takeBreak = false;
+    private int numberBreaksGiven = 0;
 
     public String AssetJSONFile (String filename) throws IOException {
         AssetManager manager = this.getAssets();
@@ -470,8 +475,27 @@ public class MathActivity extends Activity {
         autoHint = false;
     }
 
-
     public void NextQuestion() {
+        if (takeBreak) {
+            if (numberBreaksGiven == 0) {
+                numberBreaksGiven++;
+                startTicTacToe();
+            } else if (numberBreaksGiven == 1) {
+                numberBreaksGiven++;
+                // Start break activity 2.
+            } else if (numberBreaksGiven == 2) {
+                numberBreaksGiven++;
+                // Start break activity 3.
+            } else if (numberBreaksGiven == 3) {
+                numberBreaksGiven++;
+                // Start break activity 4.
+            } else {
+                // Don't start any activity here. But still let nao_server.py know that a break was
+                // triggered for logging purposes.
+            }
+            takeBreak = false;
+        }
+
         currentQuestionIndex++;
         numConsecHintsRequested = 0; //reset at new question
         numIncorrectWithoutHint = 0; //reset at new question
@@ -547,5 +571,10 @@ public class MathActivity extends Activity {
             TCPClient.singleton.sendMessage("Q;" + currentQuestionIndex + ";" + questionType + ";" + questionIntro + ";" + question.format);
         }
         AnswerText1.requestFocus();
+    }
+
+    public void startTicTacToe() {
+        Intent intent = new Intent(this, TicTacToeActivity.class);
+        startActivity(intent);
     }
 }
