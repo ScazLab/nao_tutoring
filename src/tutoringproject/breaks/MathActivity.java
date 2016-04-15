@@ -108,7 +108,7 @@ public class MathActivity extends Activity {
     private TimerTask timerTask;
     private final Handler handler = new Handler();
 
-    public void startTimer(long delay, long period) {
+    private void startTimer(long delay, long period) {
         //set new Timer
         timer = new Timer();
 
@@ -119,7 +119,7 @@ public class MathActivity extends Activity {
         timer.schedule(timerTask, delay, period);
     }
 
-    public void initializeTimerTask() {
+    private void initializeTimerTask() {
         timerTask = new TimerTask() {
             public void run() {
                 //use a handler to run a toast that shows the current timestamp
@@ -143,7 +143,7 @@ public class MathActivity extends Activity {
         };
     }
 
-    public void stoptimertask() {
+    private void stopTimerTask() {
         //stop the timer, if it's not already null
         if (timer != null) {
             timer.cancel();
@@ -631,7 +631,7 @@ public class MathActivity extends Activity {
         AnswerText1.requestFocus();
 
         // stops old timer and starts new timer task
-        stoptimertask();
+        stopTimerTask();
         startTimer(max_time_per_question, max_time_per_question*2);
     }
 
