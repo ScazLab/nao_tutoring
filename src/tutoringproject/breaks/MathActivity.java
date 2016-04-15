@@ -13,6 +13,14 @@ import android.widget.TextView;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Timer;
+import java.util.TimerTask;
+import android.os.Handler;
+import android.widget.Toast;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+
 
 public class MathActivity extends Activity {
 
@@ -93,6 +101,56 @@ public class MathActivity extends Activity {
     // been given.
     private boolean takeBreak = false;
     private int numberBreaksGiven = 0;
+
+    //temporary variable (should be read in through question format)
+    private final int max_time_per_question = 5000;
+    private Timer timer;
+    private TimerTask timerTask;
+    private final Handler handler = new Handler();
+
+    public void startTimer(long delay, long period) {
+        //set new Timer
+        timer = new Timer();
+
+        //init TimerTasks's job
+        initializeTimerTask();
+
+        //schedule the timer, after 5000ms, runs every max_timer_per_question
+        timer.schedule(timerTask, delay, period);
+    }
+
+    public void initializeTimerTask() {
+        timerTask = new TimerTask() {
+            public void run() {
+                //use a handler to run a toast that shows the current timestamp
+                handler.post(new Runnable() {
+                    public void run() {
+                        //get the current timeStamp
+                        Calendar calendar = Calendar.getInstance();
+                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd:MMMM:yyyy HH:mm:ss a");
+                        final String strDate = simpleDateFormat.format(calendar.getTime());
+
+                        //show the toast
+                        int duration = Toast.LENGTH_SHORT;
+                        Toast toast = Toast.makeText(getApplicationContext(), strDate, duration);
+                        toast.show();
+
+                        NextQuestion();
+                    }
+                });
+
+            }
+        };
+    }
+
+    public void stoptimertask() {
+        //stop the timer, if it's not already null
+        if (timer != null) {
+            timer.cancel();
+            timer = null;
+        }
+    }
+
 
     public String AssetJSONFile (String filename) throws IOException {
         AssetManager manager = this.getAssets();
@@ -571,6 +629,10 @@ public class MathActivity extends Activity {
             TCPClient.singleton.sendMessage("Q;" + currentQuestionIndex + ";" + questionType + ";" + questionIntro + ";" + question.format);
         }
         AnswerText1.requestFocus();
+
+        // stops old timer and starts new timer task
+        stoptimertask();
+        startTimer(max_time_per_question, max_time_per_question*2);
     }
 
     public void startTicTacToe() {
