@@ -154,12 +154,32 @@ public class MathActivity extends Activity {
     public void questionTimeout() {
         Question question = questions.get(currentQuestionIndex);
         String questionType = question.type;
+        String format = question.format;
+
+        if (format.equals(Questions.FORMAT_FRACTION)) {
+            String correct_numerator_string = Integer.toString(question.numerator);
+            String correct_denominator_string = Integer.toString(question.denominator);
+
+            //added correct answers into AnswerText1 and AnswerText2
+            AnswerText1.setText(correct_numerator_string);
+            AnswerText2.setText(correct_denominator_string);
+
+        } else if (format.equals(Questions.FORMAT_TEXT)) {
+            String correct_value_string = Integer.toString(question.value);
+            AnswerText1.setText(correct_value_string);
+        }
+
+        String attempt = "";
+        Boolean correct;
 
         String timeout_string = " " + TOO_MANY_INCORRECT_POSTFIX;
         String timeout_message = " " + TOO_MANY_INCORRECT_POSTFIX;
+
         //Send message
         if (TCPClient.singleton != null)
             TCPClient.singleton.sendMessage("LIA;" + currentQuestionIndex + ";" + questionType + ";" + timeout_message + ";" + attempt);
+
+
         RightWrongLabel.setText(timeout_string);
         SubmitButton.setText(NEXT_QUESTION_STRING);
         questionState = QState.DISPLAYCORRECT;
@@ -615,6 +635,7 @@ public class MathActivity extends Activity {
                 TCPClient.singleton.stopClient();
             }
             startActivity(intent);
+            stopTimerTask(); //kill the last timer
             return;
         }
 
