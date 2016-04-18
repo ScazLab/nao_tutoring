@@ -135,7 +135,7 @@ public class MathActivity extends Activity {
                         Toast toast = Toast.makeText(getApplicationContext(), strDate, duration);
                         toast.show();
 
-                        NextQuestion();
+                        questionTimeout();
                     }
                 });
 
@@ -149,6 +149,30 @@ public class MathActivity extends Activity {
             timer.cancel();
             timer = null;
         }
+    }
+
+    public void questionTimeout() {
+        Question question = questions.get(currentQuestionIndex);
+        String questionType = question.type;
+
+        String timeout_string = " " + TOO_MANY_INCORRECT_POSTFIX;
+        String timeout_message = " " + TOO_MANY_INCORRECT_POSTFIX;
+        //Send message
+        if (TCPClient.singleton != null)
+            TCPClient.singleton.sendMessage("LIA;" + currentQuestionIndex + ";" + questionType + ";" + timeout_message + ";" + attempt);
+        RightWrongLabel.setText(timeout_string);
+        SubmitButton.setText(NEXT_QUESTION_STRING);
+        questionState = QState.DISPLAYCORRECT;
+        AnswerText1.setEnabled(false);
+        AnswerText2.setEnabled(false);
+        mKeyboardView.setVisibility(View.INVISIBLE);
+        mKeyboardView.setEnabled(false);
+        HintButton1.setVisibility(View.INVISIBLE);
+        HintButton2.setVisibility(View.INVISIBLE);
+        HintButton3.setVisibility(View.INVISIBLE);
+        AskRobotLabel.setVisibility(View.INVISIBLE);
+        numberCorrect++;  //DANGER: is this a bug?
+//        NextQuestion();
     }
 
 
@@ -462,7 +486,7 @@ public class MathActivity extends Activity {
                     HintButton2.setVisibility(View.INVISIBLE);
                     HintButton3.setVisibility(View.INVISIBLE);
                     AskRobotLabel.setVisibility(View.INVISIBLE);
-                    numberCorrect++;
+                    numberCorrect++;  //DANGER: is this a bug?
                 }
 
 
@@ -632,7 +656,7 @@ public class MathActivity extends Activity {
 
         // stops old timer and starts new timer task
         stopTimerTask();
-        startTimer(max_time_per_question, max_time_per_question*2);
+        startTimer(max_time_per_question, max_time_per_question * 2);
     }
 
     public void startTicTacToe() {
