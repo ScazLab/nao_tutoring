@@ -7,5 +7,7 @@
     <string name="tic_tac_toe">Tic-Tac-Toe</string>
     <string name="click_on_a_square_to_get_started">Click on a square to get started!</string>
     <string name="return_to_tutoring_session">Return to tutoring session</string>
+    <string name="stretch_break">Stretch Break</string>
+    <string name="follow_nao_s_lead">Follow Nao\'s lead!</string>
 
 </resources>
