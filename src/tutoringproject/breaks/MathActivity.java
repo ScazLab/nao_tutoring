@@ -482,7 +482,7 @@ public class MathActivity extends Activity {
                 startTicTacToe();
             } else if (numberBreaksGiven == 1) {
                 numberBreaksGiven++;
-                // Start break activity 2.
+                startStretchBreak();
             } else if (numberBreaksGiven == 2) {
                 numberBreaksGiven++;
                 // Start break activity 3.
@@ -575,6 +575,11 @@ public class MathActivity extends Activity {
 
     public void startTicTacToe() {
         Intent intent = new Intent(this, TicTacToeActivity.class);
+        startActivity(intent);
+    }
+
+    public void startStretchBreak() {
+        Intent intent = new Intent(this, StretchBreakActivity.class);
         startActivity(intent);
     }
 }
