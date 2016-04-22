@@ -14,7 +14,7 @@ import android.widget.TextView;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class MathActivity extends Activity {
+public class MathActivity extends Activity implements TutoringActivity {
 
     private final String SUBMIT_STRING = "Submit";
     private final String CORRECT_STRING = "Correct!";
