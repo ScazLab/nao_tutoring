@@ -92,7 +92,8 @@ class TutoringSession:
         self.logFile.write(transaction+"\n")
         self.logFile.flush()
 
-        self.update_session(msgType, questionNum, otherInfo)
+        # IMPORTANT! Commenting this out temporarily
+        # self.update_session(msgType, questionNum, otherInfo)
 
     def store_session(self, data):
         '''
@@ -225,7 +226,8 @@ class TutoringSession:
                             id = self.goNao.session_intro(int(self.sessionNum))
 
                         #create appropriate session object
-                        self.current_session = Session(pid=self.pid, sessionNum=self.sessionNum)    
+                        # IMPORTANT! Commenting this out temporarily
+                        # self.current_session = Session(pid=self.pid, sessionNum=self.sessionNum)
 
                     elif msgType == 'Q': #question
                         self.numQuestions += 1
