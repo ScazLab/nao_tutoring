@@ -93,6 +93,7 @@ public class MathActivity extends Activity implements TutoringActivity {
     // been given.
     private boolean takeBreak = false;
     private int numberBreaksGiven = 0;
+    private boolean firstTimeCallingOnResume = true;
 
     public String AssetJSONFile (String filename) throws IOException {
         AssetManager manager = this.getAssets();
@@ -494,6 +495,7 @@ public class MathActivity extends Activity implements TutoringActivity {
                 // triggered for logging purposes.
             }
             takeBreak = false;
+            return;
         }
 
         currentQuestionIndex++;
@@ -581,5 +583,17 @@ public class MathActivity extends Activity implements TutoringActivity {
     public void startStretchBreak() {
         Intent intent = new Intent(this, StretchBreakActivity.class);
         startActivity(intent);
+    }
+
+    public void onResume() {
+        super.onResume();
+        if (!firstTimeCallingOnResume) {
+            if (TCPClient.singleton != null) {
+                TCPClient.singleton.setSessionOwner(this);
+            }
+            NextQuestion();
+        } else {
+            firstTimeCallingOnResume = false;
+        }
     }
 }
