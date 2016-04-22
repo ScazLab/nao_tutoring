@@ -4,30 +4,31 @@
     android:layout_width="match_parent">
 
     <TextView
-        android:id="@+id/titleLabel"
-        android:layout_gravity="top|center_horizontal"
+        android:id="@+id/title"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
         android:layout_width="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="60dp"
         android:text="@string/stretch_break"
         android:textSize="40sp" />
 
     <TextView
-        android:id="@+id/instructionLabel"
-        android:layout_gravity="center"
+        android:id="@+id/instructions"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:layout_gravity="center"
         android:text="@string/follow_nao_s_lead"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:gravity="center" />
 
     <Button
         android:id="@+id/returnButton"
         android:clickable="true"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_height="50dp"
-        android:layout_marginBottom="60dp"
-        android:layout_width="300dp"
         android:onClick="returnButtonPressed"
+        android:layout_height="50dp"
+        android:layout_width="300dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="60dp"
         android:text="@string/return_to_tutoring_session"
         android:textSize="20sp" />
 </FrameLayout>

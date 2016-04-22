@@ -14,7 +14,7 @@ import android.widget.TextView;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class MathActivity extends Activity {
+public class MathActivity extends Activity implements TutoringActivity {
 
     private final String SUBMIT_STRING = "Submit";
     private final String CORRECT_STRING = "Correct!";
@@ -93,6 +93,7 @@ public class MathActivity extends Activity {
     // been given.
     private boolean takeBreak = false;
     private int numberBreaksGiven = 0;
+    private boolean firstTimeCallingOnResume = true;
 
     public String AssetJSONFile (String filename) throws IOException {
         AssetManager manager = this.getAssets();
@@ -494,6 +495,7 @@ public class MathActivity extends Activity {
                 // triggered for logging purposes.
             }
             takeBreak = false;
+            return;
         }
 
         currentQuestionIndex++;
@@ -581,5 +583,17 @@ public class MathActivity extends Activity {
     public void startStretchBreak() {
         Intent intent = new Intent(this, StretchBreakActivity.class);
         startActivity(intent);
+    }
+
+    public void onResume() {
+        super.onResume();
+        if (!firstTimeCallingOnResume) {
+            if (TCPClient.singleton != null) {
+                TCPClient.singleton.setSessionOwner(this);
+            }
+            NextQuestion();
+        } else {
+            firstTimeCallingOnResume = false;
+        }
     }
 }
