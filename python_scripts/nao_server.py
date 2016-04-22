@@ -363,6 +363,9 @@ class TutoringSession:
                             self.goNao.congratulations()
                             #self.goNao.sit()   
                         #break
+                    elif msgType.startswith('TICTACTOE'):
+                        id = self.handle_tictactoe_msg(msgType, robot_speech)
+                        returnMessage = msgType
                     else:
                         print 'error: unknown message type'
 
@@ -385,6 +388,53 @@ class TutoringSession:
                 self.logFile.close()
                 conn.close()
                 sys.exit(0)
+
+
+    def handle_tictactoe_msg(self, msg_type, robot_speech):
+        speech_return = 0
+        msg_sub_type = msg_type[10:]
+
+        if msg_sub_type == 'START':
+            print 'Tic-tac-toe: Started'
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                speech_return = self.goNao.genSpeech(robot_speech)
+
+        elif msg_sub_type == 'WIN':
+            print 'Tic-tac-toe: Student won'
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                speech_return = self.goNao.genSpeech(robot_speech)
+
+        elif msg_sub_type == 'TIE':
+            print 'Tic-tac-toe: Student and robot tied'
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                speech_return = self.goNao.genSpeech(robot_speech)
+
+        elif msg_sub_type == 'LOSS':
+            print 'Tic-tac-toe: Student lost'
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                speech_return = self.goNao.genSpeech(robot_speech)
+
+        elif msg_sub_type == 'NAOTURN':
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                speech_return = self.goNao.genSpeech(robot_speech)
+
+        elif msg_sub_type == 'STUDENTTURN':
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                speech_return = self.goNao.genSpeech(robot_speech)
+
+        return speech_return
 
 
         """
