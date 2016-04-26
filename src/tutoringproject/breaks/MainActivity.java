@@ -63,6 +63,17 @@ public class MainActivity extends Activity implements View.OnClickListener {
         session2Button = (Button) findViewById(R.id.Session2Button);
         session3Button = (Button) findViewById(R.id.Session3Button);
         session4Button = (Button) findViewById(R.id.Session4Button);
+        
+        fixedBreakInterval = (EditText) findViewById(R.id.FixedBreakInterval);
+        fixedBreakInterval.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fixedBreakInterval.setText("");
+            }
+        });
+        fixedButton = (Button) findViewById(R.id.FixedButton);
+        rewardButton = (Button) findViewById(R.id.RewardButton);
+        frustrationButton = (Button) findViewById(R.id.FrustrationButton);
 
         session1Button.setOnClickListener(this);
         session2Button.setOnClickListener(this);
