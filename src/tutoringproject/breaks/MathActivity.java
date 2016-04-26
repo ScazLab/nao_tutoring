@@ -13,6 +13,14 @@ import android.widget.TextView;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Timer;
+import java.util.TimerTask;
+import android.os.Handler;
+import android.widget.Toast;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+
 
 public class MathActivity extends Activity implements TutoringActivity {
 
@@ -94,6 +102,100 @@ public class MathActivity extends Activity implements TutoringActivity {
     private boolean takeBreak = false;
     private int numberBreaksGiven = 0;
     private boolean firstTimeCallingOnResume = true;
+
+    //temporary variable (should be read in through question format)
+    private final int max_time_per_question = 50000;  //hard coded at 50 seconds, which should be ample time!
+    private Timer timer;
+    private TimerTask timerTask;
+    private final Handler handler = new Handler();
+
+    private void startTimer(long delay, long period) {
+        //set new Timer
+        timer = new Timer();
+
+        //init TimerTasks's job
+        initializeTimerTask();
+
+        //schedule the timer, after 5000ms, runs every max_timer_per_question
+        timer.schedule(timerTask, delay, period);
+    }
+
+    private void initializeTimerTask() {
+        timerTask = new TimerTask() {
+            public void run() {
+                //use a handler to run a toast that shows the current timestamp
+                handler.post(new Runnable() {
+                    public void run() {
+                        //get the current timeStamp
+                        Calendar calendar = Calendar.getInstance();
+                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd:MMMM:yyyy HH:mm:ss a");
+                        final String strDate = simpleDateFormat.format(calendar.getTime());
+
+                        //show the toast, for testing purposes only
+                        int duration = Toast.LENGTH_SHORT;
+                        Toast toast = Toast.makeText(getApplicationContext(), strDate, duration);
+//                        toast.show();
+
+                        questionTimeout();
+                    }
+                });
+
+            }
+        };
+    }
+
+    private void stopTimerTask() {
+        //stop the timer, if it's not already null
+        if (timer != null) {
+            timer.cancel();
+            timer = null;
+        }
+    }
+
+    public void questionTimeout() {
+        Question question = questions.get(currentQuestionIndex);
+        String questionType = question.type;
+        String format = question.format;
+
+        if (format.equals(Questions.FORMAT_FRACTION)) {
+            String correct_numerator_string = Integer.toString(question.numerator);
+            String correct_denominator_string = Integer.toString(question.denominator);
+
+            //added correct answers into AnswerText1 and AnswerText2
+            AnswerText1.setText(correct_numerator_string);
+            AnswerText2.setText(correct_denominator_string);
+
+        } else if (format.equals(Questions.FORMAT_TEXT)) {
+            String correct_value_string = Integer.toString(question.value);
+            AnswerText1.setText(correct_value_string);
+        }
+
+        String attempt = "";
+        Boolean correct;
+
+        String timeout_string = " " + TOO_MANY_INCORRECT_POSTFIX;
+        String timeout_message = " " + TOO_MANY_INCORRECT_POSTFIX;
+
+        //Send message
+        if (TCPClient.singleton != null)
+            TCPClient.singleton.sendMessage("LIA;" + currentQuestionIndex + ";" + questionType + ";" + timeout_message + ";" + attempt);
+
+
+        RightWrongLabel.setText(timeout_string);
+        SubmitButton.setText(NEXT_QUESTION_STRING);
+        questionState = QState.DISPLAYCORRECT;
+        AnswerText1.setEnabled(false);
+        AnswerText2.setEnabled(false);
+        mKeyboardView.setVisibility(View.INVISIBLE);
+        mKeyboardView.setEnabled(false);
+        HintButton1.setVisibility(View.INVISIBLE);
+        HintButton2.setVisibility(View.INVISIBLE);
+        HintButton3.setVisibility(View.INVISIBLE);
+        AskRobotLabel.setVisibility(View.INVISIBLE);
+        numberCorrect++;  //DANGER: is this a bug?
+//        NextQuestion();
+    }
+
 
     public String AssetJSONFile (String filename) throws IOException {
         AssetManager manager = this.getAssets();
@@ -405,7 +507,7 @@ public class MathActivity extends Activity implements TutoringActivity {
                     HintButton2.setVisibility(View.INVISIBLE);
                     HintButton3.setVisibility(View.INVISIBLE);
                     AskRobotLabel.setVisibility(View.INVISIBLE);
-                    numberCorrect++;
+                    numberCorrect++;  //DANGER: is this a bug?
                 }
 
 
@@ -535,6 +637,7 @@ public class MathActivity extends Activity implements TutoringActivity {
                 TCPClient.singleton.stopClient();
             }
             startActivity(intent);
+            stopTimerTask(); //kill the last timer
             return;
         }
 
@@ -573,6 +676,10 @@ public class MathActivity extends Activity implements TutoringActivity {
             TCPClient.singleton.sendMessage("Q;" + currentQuestionIndex + ";" + questionType + ";" + questionIntro + ";" + question.format);
         }
         AnswerText1.requestFocus();
+
+        // stops old timer and starts new timer task
+        stopTimerTask();
+        startTimer(max_time_per_question, max_time_per_question * 2);
     }
 
     public void startTicTacToe() {
