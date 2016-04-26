@@ -225,7 +225,7 @@ class TutoringSession:
                             id = self.goNao.session_intro(int(self.sessionNum))
 
                         #create appropriate session object
-                        self.current_session = Session(pid=self.pid, sessionNum=self.sessionNum)    
+                        self.current_session = Session(pid=self.pid, session_num=self.sessionNum)    
 
                     elif msgType == 'Q': #question
                         self.numQuestions += 1
