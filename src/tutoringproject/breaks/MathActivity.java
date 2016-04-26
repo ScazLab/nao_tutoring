@@ -109,6 +109,10 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private TimerTask timerTask;
     private final Handler handler = new Handler();
 
+    //break variables
+    private int fixedBreakInterval = 3;
+    private int num_consec_questions = 0;  //number of consecutive quesitons without break givne
+
     private void startTimer(long delay, long period) {
         //set new Timer
         timer = new Timer();
@@ -193,7 +197,6 @@ public class MathActivity extends Activity implements TCPClientOwner {
         HintButton3.setVisibility(View.INVISIBLE);
         AskRobotLabel.setVisibility(View.INVISIBLE);
         numberCorrect++;  //DANGER: is this a bug?
-//        NextQuestion();
     }
 
 
@@ -219,8 +222,8 @@ public class MathActivity extends Activity implements TCPClientOwner {
         if (extras != null){
             sessionNum = Integer.parseInt(extras.getString("sessionNum"));
             json_file = "Session"+sessionNum+".json";
-            expGroup = Integer.parseInt(extras.getString("expGroup"));
-            System.out.println("expGroup is: " + expGroup);
+//            expGroup = Integer.parseInt(extras.getString("expGroup"));
+//            System.out.println("expGroup is: " + expGroup);
             startQuestionNum = Integer.parseInt(extras.getString("startQuestionNum"));
             System.out.println("startQuestionNum is: " + startQuestionNum);
             currentQuestionIndex = startQuestionNum - 2;
@@ -579,6 +582,12 @@ public class MathActivity extends Activity implements TCPClientOwner {
     }
 
     public void NextQuestion() {
+        //preliminary fixed break interval calculation
+        if (num_consec_questions >= fixedBreakInterval) {
+            takeBreak = true;
+            num_consec_questions = 0;
+        }
+
         if (takeBreak) {
             stopTimerTask();
             if (numberBreaksGiven == 0) {
@@ -600,6 +609,8 @@ public class MathActivity extends Activity implements TCPClientOwner {
             takeBreak = false;
             return;
         }
+        //consecutive questions without break counter
+        num_consec_questions++;
 
         currentQuestionIndex++;
         numConsecHintsRequested = 0; //reset at new question
