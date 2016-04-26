@@ -103,7 +103,7 @@ public class MathActivity extends Activity {
     private int numberBreaksGiven = 0;
 
     //temporary variable (should be read in through question format)
-    private final int max_time_per_question = 5000;
+    private final int max_time_per_question = 50000;  //hard coded at 50 seconds, which should be ample time!
     private Timer timer;
     private TimerTask timerTask;
     private final Handler handler = new Handler();
@@ -130,10 +130,10 @@ public class MathActivity extends Activity {
                         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd:MMMM:yyyy HH:mm:ss a");
                         final String strDate = simpleDateFormat.format(calendar.getTime());
 
-                        //show the toast
+                        //show the toast, for testing purposes only
                         int duration = Toast.LENGTH_SHORT;
                         Toast toast = Toast.makeText(getApplicationContext(), strDate, duration);
-                        toast.show();
+//                        toast.show();
 
                         questionTimeout();
                     }
