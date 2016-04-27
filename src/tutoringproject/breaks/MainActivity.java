@@ -58,11 +58,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         });
 
         startQuestionNum = (EditText) findViewById(R.id.StartQuestionNum);
-
-        session1Button = (Button) findViewById(R.id.Session1Button);
-        session2Button = (Button) findViewById(R.id.Session2Button);
-        session3Button = (Button) findViewById(R.id.Session3Button);
-        session4Button = (Button) findViewById(R.id.Session4Button);
         
         fixedBreakInterval = (EditText) findViewById(R.id.FixedBreakInterval);
         fixedBreakInterval.setOnClickListener(new View.OnClickListener() {
@@ -75,23 +70,22 @@ public class MainActivity extends Activity implements View.OnClickListener {
         rewardButton = (Button) findViewById(R.id.RewardButton);
         frustrationButton = (Button) findViewById(R.id.FrustrationButton);
 
-        session1Button.setOnClickListener(this);
-        session2Button.setOnClickListener(this);
-        session3Button.setOnClickListener(this);
-        session4Button.setOnClickListener(this);
-
     }
 
     @Override
     public void onClick(View v) {
-        if (v == session1Button)
+        if (v == fixedButton) {
             sessionNum = 1;
-        else if (v == session2Button)
+            expGroup = 1;
+        }
+        else if (v == rewardButton) {
             sessionNum = 2;
-        else if (v == session3Button)
+            expGroup = 2;
+        }
+        else if (v == frustrationButton) {
             sessionNum = 3;
-        else if (v == session4Button)
-            sessionNum = 4;
+            expGroup = 3;
+        }
 
         startMathSession(v);
     }
@@ -108,6 +102,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
         intent.putExtra("participantID", pid);
         String startQuestion = startQuestionNum.getText().toString();
         intent.putExtra("startQuestionNum", startQuestion);
+
+        //fixed break information added
+        String fixedBreakIntervalString = fixedBreakInterval.getText().toString();
+        intent.putExtra("fixedBreakInterval", fixedBreakIntervalString);
+        intent.putExtra("expGroup", ""+expGroup);
+
         //send message to computer to convey session starting
         if (TCPClient.singleton != null) {
             String startMessage = "START;" + "-1;-1;" + pid + "," + sessionNum + "," + expGroup;

@@ -60,7 +60,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private TextView AskRobotLabel;
     private KeyboardView mKeyboardView;
     private int sessionNum = -1;
-    private int expGroup = 0;
+    private int expGroup = 0;  //1: fixed, 2: reward, 3: frustration
     private int startQuestionNum = 1;
 
     private Questions questions;
@@ -104,7 +104,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private boolean firstTimeCallingOnResume = true;
 
     //temporary variable (should be read in through question format)
-    private final int max_time_per_question = 50000;  //hard coded at 50 seconds, which should be ample time!
+    private final int max_time_per_question = 10000;  //hard coded at 10 seconds, which should be ample time!
     private Timer timer;
     private TimerTask timerTask;
     private final Handler handler = new Handler();
@@ -222,8 +222,8 @@ public class MathActivity extends Activity implements TCPClientOwner {
         if (extras != null){
             sessionNum = Integer.parseInt(extras.getString("sessionNum"));
             json_file = "Session"+sessionNum+".json";
-//            expGroup = Integer.parseInt(extras.getString("expGroup"));
-//            System.out.println("expGroup is: " + expGroup);
+            expGroup = Integer.parseInt(extras.getString("expGroup"));
+            System.out.println("expGroup is: " + expGroup);
             startQuestionNum = Integer.parseInt(extras.getString("startQuestionNum"));
             System.out.println("startQuestionNum is: " + startQuestionNum);
             currentQuestionIndex = startQuestionNum - 2;
@@ -373,6 +373,14 @@ public class MathActivity extends Activity implements TCPClientOwner {
         }
         else if (message.equals(Questions.FORMAT_FRACTION) || message.equals(Questions.FORMAT_TEXT)){
             enableQuestion(message);
+            enableButtons();
+        }
+        else if (expGroup == 2 && message.equals("REWARD_BREAK")) {
+
+            enableButtons();
+        }
+        else if (expGroup == 3 && message.equals("FRUSTRATION_BREAK")) {
+
             enableButtons();
         }
     }
