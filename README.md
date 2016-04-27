@@ -4,9 +4,11 @@ These instructions explain how to get the project's Python scripts and Android a
 
 ## Python Scripts
 
-The project's Python scripts are located in the `python_scripts/` directory. The main script is `nao_server.py`.
+The project's Python scripts are located in the `python_scripts/` directory.
+The main script is `nao_server.py`.
 
-After cloning the repository, within the folder python_scripts/, type 'mkdir data'. This creates a data directory that nao_server.py will look for when running the code.
+After cloning the repository, within the folder python_scripts/, type 'mkdir data'.
+This creates a data directory that nao_server.py will look for when running the code.
 
 ### Installing naoqi
 
@@ -15,22 +17,22 @@ This module can't be installed using `pip`.
 You'll need to download the module from the [Aldebaran website](https://www.aldebaran.com/en).
 Aldebaran provides installation instructions [here](http://doc.aldebaran.com/1-14/dev/python/install_guide.html).
 
-Below are a few notes that supplement the linked instructions.
+Below are a few notes that supplement the linked instructions:
 
 * To access the zip archives mentioned in Step 2, you'll need to log in to the [Aldebaran website](https://www.aldebaran.com/en).
-Ask someone in the lab for the login credentials.
+  Ask someone in the lab for the login credentials.
 
 * Once you've logged in, navigate to *Resources > Software > Python NAOqi SDK*.
-Download a zip archive for **version 1.14.5** of the SDK.
-This is the version used by the project.
+  Download a zip archive for **version 1.14.5** of the SDK.
+  This is the version used by the project.
 
 * Step 3 makes sure that Python can find the `naoqi` module.
-After you've downloaded and unzipped your zip archive, the following command should do the trick for both Linux and MacOS:
+  After you've downloaded and unzipped your zip archive, the following command should do the trick for both Linux and MacOS:
     ```
     export PYTHONPATH=${PYTHONPATH}:/path/to/sdk/
     ```
-where `/path/to/sdk/` is the path to your unzipped zip archive.
-You can add this line to your `.bash_profile` or `.bashrc` to avoid having to type it into every new terminal.
+  where `/path/to/sdk/` is the path to your unzipped zip archive.
+  You can add this line to your `.bash_profile` or `.bashrc` to avoid having to type it into every new terminal.
 
 ### Running nao_server.py
 
@@ -59,28 +61,64 @@ python nao_server.py ...
 
 ## Android App
 
-### Importing the Project into Android Studio
+The following instructions explain how to get the project's Android app compiling and running.
+
+### Installing Android Studio and the Android SDK
 
 To get the project's tablet app compiling on your machine, first install [Android Studio](http://developer.android.com/sdk/index.html).
-Once you've installed Android Studio, import the Nao tutoring project from Git.
-The Android Studio welcome menu should give you an option to check out a project from version control.
 
-### Updating the Project Configuration
+Once you've installed Android Studio, use it to install the Android 21 SDK:
 
-Navigate to *Tools > Android > SDK Manager*.
-Check **Android 5.0 (Lollipop)** (Android 21) and hit *Apply*.
-This should install the Android 21 SDK.
-As noted in `AndroidManifest.xml`, this is the version of Android used by the project's tablet app.
+1. If you're at the Android Studio welcome menu, navigate to *Configure > SDK Manager*.
+   If you're inside a project, navigate to *Tools > Android > SDK Manager*.
+2. Check **Android 5.0 (Lollipop)** (Android 21) and hit *Apply*.
 
-Once you've installed the Android 21 SDK, navigate to *File > Project Structure...*.
-Click on the *Project* tab in the left menu.
-Select **Android API 21 Platform** for the *Project SDK* and **5.0** for the *Project language level*.
-Hit *Apply* when you're done.
+Android 21 is the target SDK for the project as noted in `AndroidManifest.xml`.
+You can install other Android SDKs as well.
+For example, you may want to install Android 16, which is the minimum SDK that the project supports.
+This is also noted in `AndroidManifest.xml`.
+
+### Importing the Project
+
+If you're at the welcome menu, navigate to *Check out project from Version Control > Git*.
+If you're inside a project, navigate to *File > New > Project from Version Control > Git*.
+After you hit *Clone*, you may or may not be given the following option:
+*Would you like to create a Studio project for the sources you have checked out to...?*
+
+**If you are given this option...**
+
+1. Click *Yes*.
+2. Hit *Next* repeatedly until you see the screen that asks you to select a project SDK.
+3. If **Android 21** isn't included in the list of options,
+   1. Click the plus and then *Android SDK*.
+   2. Navigate to your SDK directory and hit *OK*.
+      On a Mac, your SDK directory is probably `/Users/{username}/Library/Android/sdk/`.
+4. You should now be able to select **Android 21**.
+5. Hit *Next* and then *Finish*.
+
+**If you aren't given this option...**
+
+1. Navigate to *File > Project Structure...*.
+2. Click the *Project* tab on the left.
+3. If **Android 21** isn't included in the list of options for *Project SDK*,
+   1. Click *New...* and then *Android SDK*.
+   2. Navigate to your SDK directory and hit *OK*.
+      On a Mac, your SDK directory is probably `/Users/{username}/Library/Android/sdk/`.
+4. You should now be able to select **Android 21**.
+5. For the *Project language level*, select any value greater than or equal to **6**.
+6. For the *Project compiler output*, `/path/to/repo/out/` is a good option.
+7. Now click the *Modules* tab on the left.
+8. Even if **nao_tutoring** is already listed as a module, click on it and hit the minus to remove it.
+   We're going to re-add it; this forces Android Studio to do some indexing.
+9. Click the plus and then *Import Module*.
+10. Navigate to the repo and hit *OK*.
+11. Hit *Next* repeatedly and eventually *Finish*.
+12. Click *Apply*.
 
 ### Compiling and Running the App
 
 You should now be able to compile and run the app!
-To do this, click the green run arrow or use the *Run* option in the menu bar.
+To do this, click the green run arrow.
 A pop-up menu will ask you to select a deployment target.
 You can run the app on an actual tablet or in an emulator. 
 To run the app on a tablet, plug the tablet into your laptop and make sure that your laptop recognizes it.
