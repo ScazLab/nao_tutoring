@@ -3,10 +3,12 @@ package tutoringproject.breaks;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.SparseIntArray;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -15,14 +17,16 @@ import java.util.Random;
 public class TicTacToeActivity extends Activity implements TutoringActivity {
     private SquareState[][] board = new SquareState[3][3];
     private Random gen = new Random();
-    private Strategy naoStrategy = Strategy.RANDOM;
 
     private Button[][] boardButtons = new Button[3][3];
     private TextView instructions;
     private Button returnButton;
 
     private enum SquareState { EMPTY, X, O }
-    private enum Strategy { RANDOM }
+
+    // The larger the depth, the better Nao will play. In short, Nao will think depth - 1 moves
+    // ahead. Please don't use a depth of 0! This will cause the game to malfunction.
+    public int MINIMAX_DEPTH = 2;
 
     public String START_MSG =
         "Awesome! You will be exes, and I will be ohs. You can go first. Click any square on the " +
@@ -147,23 +151,9 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
      */
     public void naoTurn() {
         // Pick an available square for Nao.
-        int row = 0;
-        int col = 0;
-        if (naoStrategy == Strategy.RANDOM) {
-            int[] options = new int[9];
-            int numOptions = 0;
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 3; j++) {
-                    if (board[i][j] == SquareState.EMPTY) {
-                        options[numOptions] = i * 3 + j;
-                        numOptions++;
-                    }
-                }
-            }
-            int choice = options[gen.nextInt(numOptions)];
-            row = choice / 3;
-            col = choice % 3;
-        }
+        int selection = minimaxMain(SquareState.O, MINIMAX_DEPTH)[0];
+        int row = selection / 3;
+        int col = selection % 3;
 
         // Place an O in the square.
         board[row][col] = SquareState.O;
@@ -189,6 +179,78 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
                 TCPClient.singleton.sendMessage("TICTACTOE-STUDENTTURN;-1;-1;" + studentTurnMsg);
             }
         }
+    }
+
+    public int[] minimaxMain(SquareState player, int depth) {
+        if (gameOver() || depth == 0) {
+            return new int[]{-1, minimaxScore()};
+        }
+
+        int[] scores = new int[9];
+        for (int i = 0; i < 9; i++) {
+            scores[i] = -1;
+        }
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (board[i][j] == SquareState.EMPTY) {
+                    board[i][j] = player;
+                    scores[i * 3 + j] = minimaxMain(opponent(player), depth - 1)[1];
+                    board[i][j] = SquareState.EMPTY;
+                }
+            }
+        }
+
+        if (player == SquareState.X) {
+            return maxScore(scores);
+        } else {
+            return minScore(scores);
+        }
+    }
+
+    public int minimaxScore() {
+        if (won(SquareState.X)) return  10;
+        if (won(SquareState.O)) return -10;
+        return 0;
+    }
+
+    public int[] maxScore(int[] scores) {
+        ArrayList<Integer> maxIndexes = new ArrayList<>();
+        int max = -11;
+        for (int i = 0; i < 9; i++) {
+            if (scores[i] != -1) {
+                if (scores[i] > max) {
+                    maxIndexes.clear();
+                    maxIndexes.add(i);
+                    max = scores[i];
+                } else if (scores[i] == max) {
+                    maxIndexes.add(i);
+                }
+            }
+        }
+        int maxIndex = maxIndexes.get(gen.nextInt(maxIndexes.size()));
+        return new int[]{maxIndex, max};
+    }
+
+    public int[] minScore(int[] scores) {
+        ArrayList<Integer> minIndexes = new ArrayList<>();
+        int min = 11;
+        for (int i = 0; i < 9; i++) {
+            if (scores[i] != -1) {
+                if (scores[i] < min) {
+                    minIndexes.clear();
+                    minIndexes.add(i);
+                    min = scores[i];
+                } else if (scores[i] == min) {
+                    minIndexes.add(i);
+                }
+            }
+        }
+        int minIndex = minIndexes.get(gen.nextInt(minIndexes.size()));
+        return new int[]{minIndex, min};
+    }
+
+    public boolean gameOver() {
+        return won(SquareState.X) || won(SquareState.O) || full();
     }
 
     /**
@@ -227,6 +289,12 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
             }
         }
         return true;
+    }
+
+    public SquareState opponent(SquareState player) {
+        if (player == SquareState.X) return SquareState.O;
+        if (player == SquareState.O) return SquareState.X;
+        return SquareState.EMPTY;
     }
 
     // Incoming message handler ====================================================================
