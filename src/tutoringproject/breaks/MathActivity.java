@@ -580,6 +580,7 @@ public class MathActivity extends Activity implements TutoringActivity {
 
     public void NextQuestion() {
         if (takeBreak) {
+            stopTimerTask();
             if (numberBreaksGiven == 0) {
                 numberBreaksGiven++;
                 startTicTacToe();
