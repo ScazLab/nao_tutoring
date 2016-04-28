@@ -13,16 +13,16 @@ import java.util.Random;
  * Created by arsalan on 4/13/16.
  */
 public class TicTacToeActivity extends Activity implements TutoringActivity {
-    private squareState[][] board = new squareState[3][3];
+    private SquareState[][] board = new SquareState[3][3];
     private Random gen = new Random();
-    private strategy naoStrategy = strategy.RANDOM;
+    private Strategy naoStrategy = Strategy.RANDOM;
 
     private Button[][] boardButtons = new Button[3][3];
     private TextView instructions;
     private Button returnButton;
 
-    private enum squareState { EMPTY, X, O }
-    private enum strategy { RANDOM }
+    private enum SquareState { EMPTY, X, O }
+    private enum Strategy { RANDOM }
 
     public String START_MSG =
         "Awesome! You will be exes, and I will be ohs. You can go first. Click any square on the " +
@@ -60,7 +60,7 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                board[i][j] = squareState.EMPTY;
+                board[i][j] = SquareState.EMPTY;
             }
         }
 
@@ -104,13 +104,13 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
         }
 
         // Check if the square is already occupied.
-        if (board[buttonRow][buttonCol] != squareState.EMPTY) {
+        if (board[buttonRow][buttonCol] != SquareState.EMPTY) {
             instructions.setText(SQUARE_OCCUPIED_TEXT);
 
         // If not,
         } else {
             // Place an X in the square.
-            board[buttonRow][buttonCol] = squareState.X;
+            board[buttonRow][buttonCol] = SquareState.X;
             button.setTextColor(Color.RED);
             button.setText("X");
 
@@ -119,7 +119,7 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
             // nao_server.py will send a message back to us containing the type of the message that
             // we sent. Our messageReceived() method will process the returned message and direct
             // the course of the activity accordingly.
-            if (won(squareState.X)) {
+            if (won(SquareState.X)) {
                 if (TCPClient.singleton != null) {
                     TCPClient.singleton.sendMessage("TICTACTOE-WIN;-1;-1;" + WIN_MSG);
                 }
@@ -149,12 +149,12 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
         // Pick an available square for Nao.
         int row = 0;
         int col = 0;
-        if (naoStrategy == strategy.RANDOM) {
+        if (naoStrategy == Strategy.RANDOM) {
             int[] options = new int[9];
             int numOptions = 0;
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
-                    if (board[i][j] == squareState.EMPTY) {
+                    if (board[i][j] == SquareState.EMPTY) {
                         options[numOptions] = i * 3 + j;
                         numOptions++;
                     }
@@ -166,7 +166,7 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
         }
 
         // Place an O in the square.
-        board[row][col] = squareState.O;
+        board[row][col] = SquareState.O;
         boardButtons[row][col].setTextColor(Color.GREEN);
         boardButtons[row][col].setText("O");
 
@@ -175,7 +175,7 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
         // nao_server.py will send a message back to us containing the type of the message that we
         // sent. Our messageReceived() method will process the returned message and direct the
         // course of the activity accordingly.
-        if (won(squareState.O)) {
+        if (won(SquareState.O)) {
             if (TCPClient.singleton != null) {
                 TCPClient.singleton.sendMessage("TICTACTOE-LOSS;-1;-1;" + LOSS_MSG);
             }
@@ -194,7 +194,7 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
     /**
      * This helper method returns true if the specified player (Xs or Os) has won.
      */
-    public boolean won(squareState player) {
+    public boolean won(SquareState player) {
         // Check rows.
         for (int i = 0; i < 3; i++) {
             if (board[i][0] == player && board[i][1] == player && board[i][2] == player) {
@@ -221,7 +221,7 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
     public boolean full() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if (board[i][j] == squareState.EMPTY) {
+                if (board[i][j] == SquareState.EMPTY) {
                     return false;
                 }
             }
