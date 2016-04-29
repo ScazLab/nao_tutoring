@@ -366,6 +366,9 @@ class TutoringSession:
                     elif msgType.startswith('TICTACTOE'):
                         id = self.handle_tictactoe_msg(msgType, robot_speech)
                         returnMessage = msgType
+                    elif msgType.startswith('STRETCHBREAK'):
+                        id = self.handle_stretch_break_msg(msgType, robot_speech)
+                        returnMessage = 'STRETCHBREAK-DONE'
                     else:
                         print 'error: unknown message type'
 
@@ -446,6 +449,19 @@ class TutoringSession:
             else:
                 speech_return = self.goNao.genSpeech(robot_speech)
 
+        return speech_return
+
+
+    def handle_stretch_break_msg(self, msg_type, robot_speech):
+        speech_return = 0
+        msg_sub_type = msg_type[13:]
+        if msg_sub_type == 'START':
+            print 'Stretch break: Started'
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                speech_return = self.goNao.genSpeech(robot_speech)
+                self.goNao.stretchBreak()
         return speech_return
 
 
