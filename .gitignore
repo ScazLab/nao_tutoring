@@ -3,3 +3,4 @@ gen/
 out/
 nao_tutoring.iml
 *.pyc
+python_scripts/data/

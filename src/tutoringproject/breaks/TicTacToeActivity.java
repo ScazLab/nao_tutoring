@@ -7,35 +7,43 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
  * Created by arsalan on 4/13/16.
  */
 public class TicTacToeActivity extends Activity implements TutoringActivity {
-    private squareState[][] board = new squareState[3][3];
+    private SquareState[][] board = new SquareState[3][3];
     private Random gen = new Random();
-    private strategy naoStrategy = strategy.RANDOM;
+    private long startTime = System.currentTimeMillis();
 
     private Button[][] boardButtons = new Button[3][3];
     private TextView instructions;
     private Button returnButton;
 
-    private enum squareState { EMPTY, X, O }
-    private enum strategy { RANDOM }
+    private enum SquareState { EMPTY, X, O }
+
+    // The larger the depth, the better Nao will play. In short, Nao will think depth - 1 moves
+    // ahead. Please don't use a depth of 0! This will cause the game to malfunction.
+    public int MINIMAX_DEPTH = 2;
+
+    // The break will end after this time limit (represented in seconds) is passed and the current
+    // game is finished.
+    public long TIME_LIMIT = 60;
 
     public String START_MSG =
         "Awesome! You will be exes, and I will be ohs. You can go first. Click any square on the " +
         "board.";
-    public String WIN_MSG =
-        "Looks like you won! Congrats! Click the button at the bottom of the tablet to return to " +
-        "the tutoring session.";
-    public String TIE_MSG =
-        "Looks like it's a tie! Good game! Click the button at the bottom of the tablet to " +
-        "return to the tutoring session.";
-    public String LOSS_MSG =
-        "Looks like I won this time, but it was super close! Click the button at the bottom of " +
-        "the tablet to return to the tutoring session.";
+    public String[] WIN_MSGS = {
+        "Looks like you won! Congrats!"
+    };
+    public String[] TIE_MSGS = {
+        "Looks like it's a tie! Good game!"
+    };
+    public String[] LOSS_MSGS = {
+        "Looks like I won this time, but it was super close!"
+    };
     public String[] NAO_TURN_MSGS = {
         "Alright, my turn now.",
         "Nice move! Let me think.",
@@ -46,6 +54,13 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
         "Done! Back to you.",
         "All set!"
     };
+    public String[] RESTART_MSGS = {
+        "Let's play again! You can go first.",
+        "How about one more game. Click any square on the board."
+    };
+    public String END_MSG =
+        "That was fun! You are really good at tic tac toe! Let's get back to our math problems " +
+        "now. Click the button at the bottom of the tablet to return to the tutoring session.";
 
     public String SQUARE_OCCUPIED_TEXT =
         "Sorry!\nThis square already has something in it.\nTry picking another square.";
@@ -60,7 +75,7 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                board[i][j] = squareState.EMPTY;
+                board[i][j] = SquareState.EMPTY;
             }
         }
 
@@ -89,6 +104,8 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
     // Button handlers =============================================================================
 
     public void boardButtonPressed(View view) {
+        instructions.setText("");
+
         // Identify the button that was pressed.
         Button button = (Button)view;
         int buttonRow = 0;
@@ -104,13 +121,13 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
         }
 
         // Check if the square is already occupied.
-        if (board[buttonRow][buttonCol] != squareState.EMPTY) {
+        if (board[buttonRow][buttonCol] != SquareState.EMPTY) {
             instructions.setText(SQUARE_OCCUPIED_TEXT);
 
         // If not,
         } else {
             // Place an X in the square.
-            board[buttonRow][buttonCol] = squareState.X;
+            board[buttonRow][buttonCol] = SquareState.X;
             button.setTextColor(Color.RED);
             button.setText("X");
 
@@ -119,18 +136,20 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
             // nao_server.py will send a message back to us containing the type of the message that
             // we sent. Our messageReceived() method will process the returned message and direct
             // the course of the activity accordingly.
-            if (won(squareState.X)) {
+            if (won(SquareState.X)) {
                 if (TCPClient.singleton != null) {
-                    TCPClient.singleton.sendMessage("TICTACTOE-WIN;-1;-1;" + WIN_MSG);
+                    TCPClient.singleton.sendMessage(
+                        "TICTACTOE-WIN;-1;-1;" + getRandomMsg(WIN_MSGS));
                 }
             } else if (full()) {
                 if (TCPClient.singleton != null) {
-                    TCPClient.singleton.sendMessage("TICTACTOE-TIE;-1;-1;" + TIE_MSG);
+                    TCPClient.singleton.sendMessage(
+                        "TICTACTOE-TIE;-1;-1;" + getRandomMsg(TIE_MSGS));
                 }
             } else {
-                String naoTurnMsg = NAO_TURN_MSGS[gen.nextInt(NAO_TURN_MSGS.length)];
                 if (TCPClient.singleton != null) {
-                    TCPClient.singleton.sendMessage("TICTACTOE-NAOTURN;-1;-1;" + naoTurnMsg);
+                    TCPClient.singleton.sendMessage(
+                        "TICTACTOE-NAOTURN;-1;-1;" + getRandomMsg(NAO_TURN_MSGS));
                 }
             }
         }
@@ -147,26 +166,12 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
      */
     public void naoTurn() {
         // Pick an available square for Nao.
-        int row = 0;
-        int col = 0;
-        if (naoStrategy == strategy.RANDOM) {
-            int[] options = new int[9];
-            int numOptions = 0;
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 3; j++) {
-                    if (board[i][j] == squareState.EMPTY) {
-                        options[numOptions] = i * 3 + j;
-                        numOptions++;
-                    }
-                }
-            }
-            int choice = options[gen.nextInt(numOptions)];
-            row = choice / 3;
-            col = choice % 3;
-        }
+        int selection = minimaxMain(SquareState.O, MINIMAX_DEPTH)[0];
+        int row = selection / 3;
+        int col = selection % 3;
 
         // Place an O in the square.
-        board[row][col] = squareState.O;
+        board[row][col] = SquareState.O;
         boardButtons[row][col].setTextColor(Color.GREEN);
         boardButtons[row][col].setText("O");
 
@@ -175,26 +180,117 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
         // nao_server.py will send a message back to us containing the type of the message that we
         // sent. Our messageReceived() method will process the returned message and direct the
         // course of the activity accordingly.
-        if (won(squareState.O)) {
+        if (won(SquareState.O)) {
             if (TCPClient.singleton != null) {
-                TCPClient.singleton.sendMessage("TICTACTOE-LOSS;-1;-1;" + LOSS_MSG);
+                TCPClient.singleton.sendMessage("TICTACTOE-LOSS;-1;-1;" + getRandomMsg(LOSS_MSGS));
             }
         } else if (full()) {
             if (TCPClient.singleton != null) {
-                TCPClient.singleton.sendMessage("TICTACTOE-TIE;-1;-1;" + TIE_MSG);
+                TCPClient.singleton.sendMessage("TICTACTOE-TIE;-1;-1;" + getRandomMsg(TIE_MSGS));
             }
         } else {
-            String studentTurnMsg = STUDENT_TURN_MSGS[gen.nextInt(STUDENT_TURN_MSGS.length)];
             if (TCPClient.singleton != null) {
-                TCPClient.singleton.sendMessage("TICTACTOE-STUDENTTURN;-1;-1;" + studentTurnMsg);
+                TCPClient.singleton.sendMessage(
+                    "TICTACTOE-STUDENTTURN;-1;-1;" + getRandomMsg(STUDENT_TURN_MSGS));
             }
         }
     }
 
     /**
-     * This helper method returns true if the specified player (Xs or Os) has won.
+     * This is the parent method for the minimax tic-tac-toe playing strategy.
      */
-    public boolean won(squareState player) {
+    public int[] minimaxMain(SquareState player, int depth) {
+        // Base case
+        if (gameOver() || depth == 0) {
+            return new int[]{-1, minimaxScore()};
+        }
+
+        // Recursive case
+        int[] scores = new int[9];
+        for (int i = 0; i < 9; i++) {
+            scores[i] = -1;
+        }
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (board[i][j] == SquareState.EMPTY) {
+                    board[i][j] = player;
+                    scores[i * 3 + j] = minimaxMain(opponent(player), depth - 1)[1];
+                    board[i][j] = SquareState.EMPTY;
+                }
+            }
+        }
+        if (player == SquareState.X) {
+            return maxScore(scores);
+        } else {
+            return minScore(scores);
+        }
+    }
+
+    /**
+     * This is a helper function for minimaxMain().
+     */
+    public int minimaxScore() {
+        if (won(SquareState.X)) return  10;
+        if (won(SquareState.O)) return -10;
+        return 0;
+    }
+
+    /**
+     * This is a helper function for minimaxMain(). It returns the index with the maximum value in
+     * <scores> along with the value. If multiple indexes have this value, one is randomly selected.
+     */
+    public int[] maxScore(int[] scores) {
+        ArrayList<Integer> maxIndexes = new ArrayList<>();
+        int max = -11;
+        for (int i = 0; i < 9; i++) {
+            if (scores[i] != -1) {
+                if (scores[i] > max) {
+                    maxIndexes.clear();
+                    maxIndexes.add(i);
+                    max = scores[i];
+                } else if (scores[i] == max) {
+                    maxIndexes.add(i);
+                }
+            }
+        }
+        int maxIndex = maxIndexes.get(gen.nextInt(maxIndexes.size()));
+        return new int[]{maxIndex, max};
+    }
+
+    /**
+     * This is a helper function for minimaxMain(). It returns the index with the minimum value in
+     * <scores> along with the value. If multiple indexes have this value, one is randomly selected.
+     */
+    public int[] minScore(int[] scores) {
+        ArrayList<Integer> minIndexes = new ArrayList<>();
+        int min = 11;
+        for (int i = 0; i < 9; i++) {
+            if (scores[i] != -1) {
+                if (scores[i] < min) {
+                    minIndexes.clear();
+                    minIndexes.add(i);
+                    min = scores[i];
+                } else if (scores[i] == min) {
+                    minIndexes.add(i);
+                }
+            }
+        }
+        int minIndex = minIndexes.get(gen.nextInt(minIndexes.size()));
+        return new int[]{minIndex, min};
+    }
+
+    /**
+     * This helper method returns true if the current state of <board> corresponds to a finished
+     * game.
+     */
+    public boolean gameOver() {
+        return won(SquareState.X) || won(SquareState.O) || full();
+    }
+
+    /**
+     * This helper method returns true if the specified player (X or O) has won.
+     */
+    public boolean won(SquareState player) {
         // Check rows.
         for (int i = 0; i < 3; i++) {
             if (board[i][0] == player && board[i][1] == player && board[i][2] == player) {
@@ -221,12 +317,21 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
     public boolean full() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if (board[i][j] == squareState.EMPTY) {
+                if (board[i][j] == SquareState.EMPTY) {
                     return false;
                 }
             }
         }
         return true;
+    }
+
+    /**
+     * This helper method returns the opponent of the specified player (X or O).
+     */
+    public SquareState opponent(SquareState player) {
+        if (player == SquareState.X) return SquareState.O;
+        if (player == SquareState.O) return SquareState.X;
+        return SquareState.EMPTY;
     }
 
     // Incoming message handler ====================================================================
@@ -245,11 +350,40 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
         } else if (   msg.equals("TICTACTOE-WIN")
                    || msg.equals("TICTACTOE-TIE")
                    || msg.equals("TICTACTOE-LOSS")) {
-            enableReturnButton();
-            instructions.setText(CLICK_RETURN_BUTTON_TEXT);
+            if (System.currentTimeMillis() - startTime > TIME_LIMIT * 1000) {
+                if (TCPClient.singleton != null) {
+                    TCPClient.singleton.sendMessage("TICTACTOE-END;-1;-1;" + END_MSG);
+                }
+            } else {
+                // Depending on whether the student won or lost, make Nao play better or worse.
+                if (msg.equals("TICTACTOE-WIN")) {
+                    MINIMAX_DEPTH++;
+                } else if (msg.equals("TICTACTOE-LOSS")) {
+                    if (MINIMAX_DEPTH > 1) {
+                        MINIMAX_DEPTH--;
+                    }
+                }
+                if (TCPClient.singleton != null) {
+                    TCPClient.singleton.sendMessage(
+                        "TICTACTOE-RESTART;-1;-1;" + getRandomMsg(RESTART_MSGS));
+                }
+            }
 
         } else if (msg.equals("TICTACTOE-NAOTURN")) {
             naoTurn();
+
+        } else if (msg.equals("TICTACTOE-RESTART")) {
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    board[i][j] = SquareState.EMPTY;
+                    boardButtons[i][j].setText("");
+                }
+            }
+            enableBoardButtons();
+
+        } else if (msg.equals("TICTACTOE-END")) {
+            enableReturnButton();
+            instructions.setText(CLICK_RETURN_BUTTON_TEXT);
         }
     }
 
@@ -282,5 +416,11 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
 
     public void enableReturnButton() {
         returnButton.setEnabled(true);
+    }
+
+    // Other helper methods ========================================================================\
+
+    public String getRandomMsg(String[] msgList) {
+        return msgList[gen.nextInt(msgList.length)];
     }
 }
