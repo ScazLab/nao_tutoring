@@ -434,6 +434,18 @@ class TutoringSession:
             else:
                 speech_return = self.goNao.genSpeech(robot_speech)
 
+        elif msg_sub_type == 'RESTART':
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                speech_return = self.goNao.genSpeech(robot_speech)
+
+        elif msg_sub_type == 'END':
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                speech_return = self.goNao.genSpeech(robot_speech)
+
         return speech_return
 
 

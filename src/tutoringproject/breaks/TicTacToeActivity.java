@@ -17,6 +17,7 @@ import java.util.Random;
 public class TicTacToeActivity extends Activity implements TutoringActivity {
     private SquareState[][] board = new SquareState[3][3];
     private Random gen = new Random();
+    private long startTime = System.currentTimeMillis();
 
     private Button[][] boardButtons = new Button[3][3];
     private TextView instructions;
@@ -28,18 +29,22 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
     // ahead. Please don't use a depth of 0! This will cause the game to malfunction.
     public int MINIMAX_DEPTH = 2;
 
+    // The break will end after this time limit (represented in seconds) is passed and the current
+    // game is finished.
+    public long TIME_LIMIT = 60;
+
     public String START_MSG =
         "Awesome! You will be exes, and I will be ohs. You can go first. Click any square on the " +
         "board.";
-    public String WIN_MSG =
-        "Looks like you won! Congrats! Click the button at the bottom of the tablet to return to " +
-        "the tutoring session.";
-    public String TIE_MSG =
-        "Looks like it's a tie! Good game! Click the button at the bottom of the tablet to " +
-        "return to the tutoring session.";
-    public String LOSS_MSG =
-        "Looks like I won this time, but it was super close! Click the button at the bottom of " +
-        "the tablet to return to the tutoring session.";
+    public String[] WIN_MSGS = {
+        "Looks like you won! Congrats!"
+    };
+    public String[] TIE_MSGS = {
+        "Looks like it's a tie! Good game!"
+    };
+    public String[] LOSS_MSGS = {
+        "Looks like I won this time, but it was super close!"
+    };
     public String[] NAO_TURN_MSGS = {
         "Alright, my turn now.",
         "Nice move! Let me think.",
@@ -50,6 +55,13 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
         "Done! Back to you.",
         "All set!"
     };
+    public String[] RESTART_MSGS = {
+        "Let's play again! You can go first.",
+        "How about one more game. Click any square on the board."
+    };
+    public String END_MSG =
+        "That was fun! You are really good at tic tac toe! Let's get back to our math problems " +
+        "now. Click the button at the bottom of the tablet to return to the tutoring session.";
 
     public String SQUARE_OCCUPIED_TEXT =
         "Sorry!\nThis square already has something in it.\nTry picking another square.";
@@ -93,6 +105,8 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
     // Button handlers =============================================================================
 
     public void boardButtonPressed(View view) {
+        instructions.setText("");
+
         // Identify the button that was pressed.
         Button button = (Button)view;
         int buttonRow = 0;
@@ -125,16 +139,18 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
             // the course of the activity accordingly.
             if (won(SquareState.X)) {
                 if (TCPClient.singleton != null) {
-                    TCPClient.singleton.sendMessage("TICTACTOE-WIN;-1;-1;" + WIN_MSG);
+                    TCPClient.singleton.sendMessage(
+                        "TICTACTOE-WIN;-1;-1;" + getRandomMsg(WIN_MSGS));
                 }
             } else if (full()) {
                 if (TCPClient.singleton != null) {
-                    TCPClient.singleton.sendMessage("TICTACTOE-TIE;-1;-1;" + TIE_MSG);
+                    TCPClient.singleton.sendMessage(
+                        "TICTACTOE-TIE;-1;-1;" + getRandomMsg(TIE_MSGS));
                 }
             } else {
-                String naoTurnMsg = NAO_TURN_MSGS[gen.nextInt(NAO_TURN_MSGS.length)];
                 if (TCPClient.singleton != null) {
-                    TCPClient.singleton.sendMessage("TICTACTOE-NAOTURN;-1;-1;" + naoTurnMsg);
+                    TCPClient.singleton.sendMessage(
+                        "TICTACTOE-NAOTURN;-1;-1;" + getRandomMsg(NAO_TURN_MSGS));
                 }
             }
         }
@@ -167,16 +183,16 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
         // course of the activity accordingly.
         if (won(SquareState.O)) {
             if (TCPClient.singleton != null) {
-                TCPClient.singleton.sendMessage("TICTACTOE-LOSS;-1;-1;" + LOSS_MSG);
+                TCPClient.singleton.sendMessage("TICTACTOE-LOSS;-1;-1;" + getRandomMsg(LOSS_MSGS));
             }
         } else if (full()) {
             if (TCPClient.singleton != null) {
-                TCPClient.singleton.sendMessage("TICTACTOE-TIE;-1;-1;" + TIE_MSG);
+                TCPClient.singleton.sendMessage("TICTACTOE-TIE;-1;-1;" + getRandomMsg(TIE_MSGS));
             }
         } else {
-            String studentTurnMsg = STUDENT_TURN_MSGS[gen.nextInt(STUDENT_TURN_MSGS.length)];
             if (TCPClient.singleton != null) {
-                TCPClient.singleton.sendMessage("TICTACTOE-STUDENTTURN;-1;-1;" + studentTurnMsg);
+                TCPClient.singleton.sendMessage(
+                    "TICTACTOE-STUDENTTURN;-1;-1;" + getRandomMsg(STUDENT_TURN_MSGS));
             }
         }
     }
@@ -313,11 +329,32 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
         } else if (   msg.equals("TICTACTOE-WIN")
                    || msg.equals("TICTACTOE-TIE")
                    || msg.equals("TICTACTOE-LOSS")) {
-            enableReturnButton();
-            instructions.setText(CLICK_RETURN_BUTTON_TEXT);
+            if (System.currentTimeMillis() - startTime > TIME_LIMIT * 1000) {
+                if (TCPClient.singleton != null) {
+                    TCPClient.singleton.sendMessage("TICTACTOE-END;-1;-1;" + END_MSG);
+                }
+            } else {
+                if (TCPClient.singleton != null) {
+                    TCPClient.singleton.sendMessage(
+                        "TICTACTOE-RESTART;-1;-1;" + getRandomMsg(RESTART_MSGS));
+                }
+            }
 
         } else if (msg.equals("TICTACTOE-NAOTURN")) {
             naoTurn();
+
+        } else if (msg.equals("TICTACTOE-RESTART")) {
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    board[i][j] = SquareState.EMPTY;
+                    boardButtons[i][j].setText("");
+                }
+            }
+            enableBoardButtons();
+
+        } else if (msg.equals("TICTACTOE-END")) {
+            enableReturnButton();
+            instructions.setText(CLICK_RETURN_BUTTON_TEXT);
         }
     }
 
@@ -350,5 +387,11 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
 
     public void enableReturnButton() {
         returnButton.setEnabled(true);
+    }
+
+    // Other helper methods ========================================================================\
+
+    public String getRandomMsg(String[] msgList) {
+        return msgList[gen.nextInt(msgList.length)];
     }
 }
