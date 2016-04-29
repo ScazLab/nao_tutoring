@@ -20,7 +20,7 @@ public class TCPClient {
     private String ipAddressVar;
     private int ipPortVar;
     private MainActivity owner;
-    private TutoringActivity sessionOwner;
+    private TCPClientOwner sessionOwner;
 
     PrintWriter out;
     BufferedReader in;
@@ -37,7 +37,7 @@ public class TCPClient {
         this.sessionOwner = null;
     }
 
-    public void setSessionOwner(TutoringActivity sessionOwner){
+    public void setSessionOwner(TCPClientOwner sessionOwner){
         this.sessionOwner = sessionOwner;
     }
 

@@ -22,7 +22,7 @@ import java.util.Calendar;
 
 
 
-public class MathActivity extends Activity implements TutoringActivity {
+public class MathActivity extends Activity implements TCPClientOwner {
 
     private final String SUBMIT_STRING = "Submit";
     private final String CORRECT_STRING = "Correct!";

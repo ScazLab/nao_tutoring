@@ -13,7 +13,7 @@ import java.util.Random;
 /**
  * Created by arsalan on 4/13/16.
  */
-public class TicTacToeActivity extends Activity implements TutoringActivity {
+public class TicTacToeActivity extends Activity implements TCPClientOwner {
     private SquareState[][] board = new SquareState[3][3];
     private Random gen = new Random();
     private long startTime = System.currentTimeMillis();
