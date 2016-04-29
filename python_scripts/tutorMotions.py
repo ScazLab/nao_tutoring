@@ -990,3 +990,6 @@ class Gesture:
             self.motion.stiffnessInterpolation("Body",0.0,self.stiffness)
         except Exception, e:
             print "Error when sitting down nao and making nao unstiff: "+str(e)
+
+    def stretchBreak(self):
+        pass
