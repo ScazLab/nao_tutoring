@@ -3,7 +3,6 @@ package tutoringproject.breaks;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.SparseIntArray;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -197,11 +196,16 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
         }
     }
 
+    /**
+     * This is the parent method for the minimax tic-tac-toe playing strategy.
+     */
     public int[] minimaxMain(SquareState player, int depth) {
+        // Base case
         if (gameOver() || depth == 0) {
             return new int[]{-1, minimaxScore()};
         }
 
+        // Recursive case
         int[] scores = new int[9];
         for (int i = 0; i < 9; i++) {
             scores[i] = -1;
@@ -215,7 +219,6 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
                 }
             }
         }
-
         if (player == SquareState.X) {
             return maxScore(scores);
         } else {
@@ -223,12 +226,19 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
         }
     }
 
+    /**
+     * This is a helper function for minimaxMain().
+     */
     public int minimaxScore() {
         if (won(SquareState.X)) return  10;
         if (won(SquareState.O)) return -10;
         return 0;
     }
 
+    /**
+     * This is a helper function for minimaxMain(). It returns the index with the maximum value in
+     * <scores> along with the value. If multiple indexes have this value, one is randomly selected.
+     */
     public int[] maxScore(int[] scores) {
         ArrayList<Integer> maxIndexes = new ArrayList<>();
         int max = -11;
@@ -247,6 +257,10 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
         return new int[]{maxIndex, max};
     }
 
+    /**
+     * This is a helper function for minimaxMain(). It returns the index with the minimum value in
+     * <scores> along with the value. If multiple indexes have this value, one is randomly selected.
+     */
     public int[] minScore(int[] scores) {
         ArrayList<Integer> minIndexes = new ArrayList<>();
         int min = 11;
@@ -265,12 +279,16 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
         return new int[]{minIndex, min};
     }
 
+    /**
+     * This helper method returns true if the current state of <board> corresponds to a finished
+     * game.
+     */
     public boolean gameOver() {
         return won(SquareState.X) || won(SquareState.O) || full();
     }
 
     /**
-     * This helper method returns true if the specified player (Xs or Os) has won.
+     * This helper method returns true if the specified player (X or O) has won.
      */
     public boolean won(SquareState player) {
         // Check rows.
@@ -307,6 +325,9 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
         return true;
     }
 
+    /**
+     * This helper method returns the opponent of the specified player (X or O).
+     */
     public SquareState opponent(SquareState player) {
         if (player == SquareState.X) return SquareState.O;
         if (player == SquareState.O) return SquareState.X;
