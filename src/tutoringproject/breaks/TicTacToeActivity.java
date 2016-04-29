@@ -355,6 +355,14 @@ public class TicTacToeActivity extends Activity implements TutoringActivity {
                     TCPClient.singleton.sendMessage("TICTACTOE-END;-1;-1;" + END_MSG);
                 }
             } else {
+                // Depending on whether the student won or lost, make Nao play better or worse.
+                if (msg.equals("TICTACTOE-WIN")) {
+                    MINIMAX_DEPTH++;
+                } else if (msg.equals("TICTACTOE-LOSS")) {
+                    if (MINIMAX_DEPTH > 1) {
+                        MINIMAX_DEPTH--;
+                    }
+                }
                 if (TCPClient.singleton != null) {
                     TCPClient.singleton.sendMessage(
                         "TICTACTOE-RESTART;-1;-1;" + getRandomMsg(RESTART_MSGS));
