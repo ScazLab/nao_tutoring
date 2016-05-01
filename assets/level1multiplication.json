@@ -1,0 +1,1102 @@
+[
+ {
+	"Question" : "What is 6 + 5 X 7?",
+	"Spoken Question" : "What is six plus five times seven?", 
+	"Answer" : 41,
+	"Spoken Answer" : "The correct answer is 41."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 77
+ },
+
+ {
+	"Question" : "What is 0 + 5 X 5?",
+	"Spoken Question" : "What is zero plus five times five?", 
+	"Answer" : 25,
+	"Spoken Answer" : "The correct answer is 25."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 25
+ },
+
+ {
+	"Question" : "What is 1 + 5 X 9?",
+	"Spoken Question" : "What is one plus five times nine?", 
+	"Answer" : 46,
+	"Spoken Answer" : "The correct answer is 46."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 54
+ },
+
+ {
+	"Question" : "What is 1 + 5 X 2?",
+	"Spoken Question" : "What is one plus five times two?", 
+	"Answer" : 11,
+	"Spoken Answer" : "The correct answer is 11."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 12
+ },
+
+ {
+	"Question" : "What is 8 + 5 X 4?",
+	"Spoken Question" : "What is eight plus five times four?", 
+	"Answer" : 28,
+	"Spoken Answer" : "The correct answer is 28."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 52
+ },
+
+ {
+	"Question" : "What is 1 + 5 X 6?",
+	"Spoken Question" : "What is one plus five times six?", 
+	"Answer" : 31,
+	"Spoken Answer" : "The correct answer is 31."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 36
+ },
+
+ {
+	"Question" : "What is 9 + 5 X 1?",
+	"Spoken Question" : "What is nine plus five times one?", 
+	"Answer" : 14,
+	"Spoken Answer" : "The correct answer is 14."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 14
+ },
+
+ {
+	"Question" : "What is 0 + 5 X 8?",
+	"Spoken Question" : "What is zero plus five times eight?", 
+	"Answer" : 40,
+	"Spoken Answer" : "The correct answer is 40."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 40
+ },
+
+ {
+	"Question" : "What is 2 + 5 X 0?",
+	"Spoken Question" : "What is two plus five times zero?", 
+	"Answer" : 2,
+	"Spoken Answer" : "The correct answer is 2."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 0
+ },
+
+ {
+	"Question" : "What is 6 + 5 X 3?",
+	"Spoken Question" : "What is six plus five times three?", 
+	"Answer" : 21,
+	"Spoken Answer" : "The correct answer is 21."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 33
+ },
+
+ {
+	"Question" : "What is 3 + 8 X 7?",
+	"Spoken Question" : "What is three plus eight times seven?", 
+	"Answer" : 59,
+	"Spoken Answer" : "The correct answer is 59."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 77
+ },
+
+ {
+	"Question" : "What is 1 + 8 X 5?",
+	"Spoken Question" : "What is one plus eight times five?", 
+	"Answer" : 41,
+	"Spoken Answer" : "The correct answer is 41."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 45
+ },
+
+ {
+	"Question" : "What is 3 + 8 X 9?",
+	"Spoken Question" : "What is three plus eight times nine?", 
+	"Answer" : 75,
+	"Spoken Answer" : "The correct answer is 75."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 99
+ },
+
+ {
+	"Question" : "What is 3 + 8 X 2?",
+	"Spoken Question" : "What is three plus eight times two?", 
+	"Answer" : 19,
+	"Spoken Answer" : "The correct answer is 19."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 22
+ },
+
+ {
+	"Question" : "What is 0 + 8 X 4?",
+	"Spoken Question" : "What is zero plus eight times four?", 
+	"Answer" : 32,
+	"Spoken Answer" : "The correct answer is 32."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 32
+ },
+
+ {
+	"Question" : "What is 1 + 8 X 6?",
+	"Spoken Question" : "What is one plus eight times six?", 
+	"Answer" : 49,
+	"Spoken Answer" : "The correct answer is 49."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 54
+ },
+
+ {
+	"Question" : "What is 0 + 8 X 1?",
+	"Spoken Question" : "What is zero plus eight times one?", 
+	"Answer" : 8,
+	"Spoken Answer" : "The correct answer is 8."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 8
+ },
+
+ {
+	"Question" : "What is 5 + 8 X 8?",
+	"Spoken Question" : "What is five plus eight times eight?", 
+	"Answer" : 69,
+	"Spoken Answer" : "The correct answer is 69."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 104
+ },
+
+ {
+	"Question" : "What is 6 + 8 X 0?",
+	"Spoken Question" : "What is six plus eight times zero?", 
+	"Answer" : 6,
+	"Spoken Answer" : "The correct answer is 6."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 0
+ },
+
+ {
+	"Question" : "What is 4 + 8 X 3?",
+	"Spoken Question" : "What is four plus eight times three?", 
+	"Answer" : 28,
+	"Spoken Answer" : "The correct answer is 28."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 36
+ },
+
+ {
+	"Question" : "What is 7 + 2 X 7?",
+	"Spoken Question" : "What is seven plus two times seven?", 
+	"Answer" : 21,
+	"Spoken Answer" : "The correct answer is 21."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 63
+ },
+
+ {
+	"Question" : "What is 8 + 2 X 5?",
+	"Spoken Question" : "What is eight plus two times five?", 
+	"Answer" : 18,
+	"Spoken Answer" : "The correct answer is 18."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 50
+ },
+
+ {
+	"Question" : "What is 4 + 2 X 9?",
+	"Spoken Question" : "What is four plus two times nine?", 
+	"Answer" : 22,
+	"Spoken Answer" : "The correct answer is 22."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 54
+ },
+
+ {
+	"Question" : "What is 9 + 2 X 2?",
+	"Spoken Question" : "What is nine plus two times two?", 
+	"Answer" : 13,
+	"Spoken Answer" : "The correct answer is 13."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 22
+ },
+
+ {
+	"Question" : "What is 7 + 2 X 4?",
+	"Spoken Question" : "What is seven plus two times four?", 
+	"Answer" : 15,
+	"Spoken Answer" : "The correct answer is 15."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 36
+ },
+
+ {
+	"Question" : "What is 2 + 2 X 6?",
+	"Spoken Question" : "What is two plus two times six?", 
+	"Answer" : 14,
+	"Spoken Answer" : "The correct answer is 14."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 24
+ },
+
+ {
+	"Question" : "What is 8 + 2 X 1?",
+	"Spoken Question" : "What is eight plus two times one?", 
+	"Answer" : 10,
+	"Spoken Answer" : "The correct answer is 10."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 10
+ },
+
+ {
+	"Question" : "What is 5 + 2 X 8?",
+	"Spoken Question" : "What is five plus two times eight?", 
+	"Answer" : 21,
+	"Spoken Answer" : "The correct answer is 21."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 56
+ },
+
+ {
+	"Question" : "What is 6 + 2 X 0?",
+	"Spoken Question" : "What is six plus two times zero?", 
+	"Answer" : 6,
+	"Spoken Answer" : "The correct answer is 6."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 0
+ },
+
+ {
+	"Question" : "What is 9 + 2 X 3?",
+	"Spoken Question" : "What is nine plus two times three?", 
+	"Answer" : 15,
+	"Spoken Answer" : "The correct answer is 15."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 33
+ },
+
+ {
+	"Question" : "What is 1 + 9 X 7?",
+	"Spoken Question" : "What is one plus nine times seven?", 
+	"Answer" : 64,
+	"Spoken Answer" : "The correct answer is 64."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 70
+ },
+
+ {
+	"Question" : "What is 8 + 9 X 5?",
+	"Spoken Question" : "What is eight plus nine times five?", 
+	"Answer" : 53,
+	"Spoken Answer" : "The correct answer is 53."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 85
+ },
+
+ {
+	"Question" : "What is 0 + 9 X 9?",
+	"Spoken Question" : "What is zero plus nine times nine?", 
+	"Answer" : 81,
+	"Spoken Answer" : "The correct answer is 81."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 81
+ },
+
+ {
+	"Question" : "What is 7 + 9 X 2?",
+	"Spoken Question" : "What is seven plus nine times two?", 
+	"Answer" : 25,
+	"Spoken Answer" : "The correct answer is 25."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 32
+ },
+
+ {
+	"Question" : "What is 8 + 9 X 4?",
+	"Spoken Question" : "What is eight plus nine times four?", 
+	"Answer" : 44,
+	"Spoken Answer" : "The correct answer is 44."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 68
+ },
+
+ {
+	"Question" : "What is 0 + 9 X 6?",
+	"Spoken Question" : "What is zero plus nine times six?", 
+	"Answer" : 54,
+	"Spoken Answer" : "The correct answer is 54."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 54
+ },
+
+ {
+	"Question" : "What is 5 + 9 X 1?",
+	"Spoken Question" : "What is five plus nine times one?", 
+	"Answer" : 14,
+	"Spoken Answer" : "The correct answer is 14."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 14
+ },
+
+ {
+	"Question" : "What is 6 + 9 X 8?",
+	"Spoken Question" : "What is six plus nine times eight?", 
+	"Answer" : 78,
+	"Spoken Answer" : "The correct answer is 78."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 120
+ },
+
+ {
+	"Question" : "What is 8 + 9 X 0?",
+	"Spoken Question" : "What is eight plus nine times zero?", 
+	"Answer" : 8,
+	"Spoken Answer" : "The correct answer is 8."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 0
+ },
+
+ {
+	"Question" : "What is 4 + 9 X 3?",
+	"Spoken Question" : "What is four plus nine times three?", 
+	"Answer" : 31,
+	"Spoken Answer" : "The correct answer is 31."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 39
+ },
+
+ {
+	"Question" : "What is 9 + 1 X 7?",
+	"Spoken Question" : "What is nine plus one times seven?", 
+	"Answer" : 16,
+	"Spoken Answer" : "The correct answer is 16."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 70
+ },
+
+ {
+	"Question" : "What is 1 + 1 X 5?",
+	"Spoken Question" : "What is one plus one times five?", 
+	"Answer" : 6,
+	"Spoken Answer" : "The correct answer is 6."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 10
+ },
+
+ {
+	"Question" : "What is 4 + 1 X 9?",
+	"Spoken Question" : "What is four plus one times nine?", 
+	"Answer" : 13,
+	"Spoken Answer" : "The correct answer is 13."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 45
+ },
+
+ {
+	"Question" : "What is 0 + 1 X 2?",
+	"Spoken Question" : "What is zero plus one times two?", 
+	"Answer" : 2,
+	"Spoken Answer" : "The correct answer is 2."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 2
+ },
+
+ {
+	"Question" : "What is 8 + 1 X 4?",
+	"Spoken Question" : "What is eight plus one times four?", 
+	"Answer" : 12,
+	"Spoken Answer" : "The correct answer is 12."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 36
+ },
+
+ {
+	"Question" : "What is 2 + 1 X 6?",
+	"Spoken Question" : "What is two plus one times six?", 
+	"Answer" : 8,
+	"Spoken Answer" : "The correct answer is 8."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 18
+ },
+
+ {
+	"Question" : "What is 6 + 1 X 1?",
+	"Spoken Question" : "What is six plus one times one?", 
+	"Answer" : 7,
+	"Spoken Answer" : "The correct answer is 7."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 7
+ },
+
+ {
+	"Question" : "What is 6 + 1 X 8?",
+	"Spoken Question" : "What is six plus one times eight?", 
+	"Answer" : 14,
+	"Spoken Answer" : "The correct answer is 14."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 56
+ },
+
+ {
+	"Question" : "What is 2 + 1 X 0?",
+	"Spoken Question" : "What is two plus one times zero?", 
+	"Answer" : 2,
+	"Spoken Answer" : "The correct answer is 2."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 0
+ },
+
+ {
+	"Question" : "What is 2 + 1 X 3?",
+	"Spoken Question" : "What is two plus one times three?", 
+	"Answer" : 5,
+	"Spoken Answer" : "The correct answer is 5."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 9
+ },
+
+ {
+	"Question" : "What is 7 + 3 X 7?",
+	"Spoken Question" : "What is seven plus three times seven?", 
+	"Answer" : 28,
+	"Spoken Answer" : "The correct answer is 28."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 70
+ },
+
+ {
+	"Question" : "What is 5 + 3 X 5?",
+	"Spoken Question" : "What is five plus three times five?", 
+	"Answer" : 20,
+	"Spoken Answer" : "The correct answer is 20."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 40
+ },
+
+ {
+	"Question" : "What is 6 + 3 X 9?",
+	"Spoken Question" : "What is six plus three times nine?", 
+	"Answer" : 33,
+	"Spoken Answer" : "The correct answer is 33."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 81
+ },
+
+ {
+	"Question" : "What is 9 + 3 X 2?",
+	"Spoken Question" : "What is nine plus three times two?", 
+	"Answer" : 15,
+	"Spoken Answer" : "The correct answer is 15."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 24
+ },
+
+ {
+	"Question" : "What is 5 + 3 X 4?",
+	"Spoken Question" : "What is five plus three times four?", 
+	"Answer" : 17,
+	"Spoken Answer" : "The correct answer is 17."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 32
+ },
+
+ {
+	"Question" : "What is 9 + 3 X 6?",
+	"Spoken Question" : "What is nine plus three times six?", 
+	"Answer" : 27,
+	"Spoken Answer" : "The correct answer is 27."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 72
+ },
+
+ {
+	"Question" : "What is 4 + 3 X 1?",
+	"Spoken Question" : "What is four plus three times one?", 
+	"Answer" : 7,
+	"Spoken Answer" : "The correct answer is 7."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 7
+ },
+
+ {
+	"Question" : "What is 6 + 3 X 8?",
+	"Spoken Question" : "What is six plus three times eight?", 
+	"Answer" : 30,
+	"Spoken Answer" : "The correct answer is 30."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 72
+ },
+
+ {
+	"Question" : "What is 2 + 3 X 0?",
+	"Spoken Question" : "What is two plus three times zero?", 
+	"Answer" : 2,
+	"Spoken Answer" : "The correct answer is 2."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 0
+ },
+
+ {
+	"Question" : "What is 8 + 3 X 3?",
+	"Spoken Question" : "What is eight plus three times three?", 
+	"Answer" : 17,
+	"Spoken Answer" : "The correct answer is 17."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 33
+ },
+
+ {
+	"Question" : "What is 0 + 4 X 7?",
+	"Spoken Question" : "What is zero plus four times seven?", 
+	"Answer" : 28,
+	"Spoken Answer" : "The correct answer is 28."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 28
+ },
+
+ {
+	"Question" : "What is 5 + 4 X 5?",
+	"Spoken Question" : "What is five plus four times five?", 
+	"Answer" : 25,
+	"Spoken Answer" : "The correct answer is 25."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 45
+ },
+
+ {
+	"Question" : "What is 8 + 4 X 9?",
+	"Spoken Question" : "What is eight plus four times nine?", 
+	"Answer" : 44,
+	"Spoken Answer" : "The correct answer is 44."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 108
+ },
+
+ {
+	"Question" : "What is 3 + 4 X 2?",
+	"Spoken Question" : "What is three plus four times two?", 
+	"Answer" : 11,
+	"Spoken Answer" : "The correct answer is 11."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 14
+ },
+
+ {
+	"Question" : "What is 9 + 4 X 4?",
+	"Spoken Question" : "What is nine plus four times four?", 
+	"Answer" : 25,
+	"Spoken Answer" : "The correct answer is 25."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 52
+ },
+
+ {
+	"Question" : "What is 1 + 4 X 6?",
+	"Spoken Question" : "What is one plus four times six?", 
+	"Answer" : 25,
+	"Spoken Answer" : "The correct answer is 25."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 30
+ },
+
+ {
+	"Question" : "What is 5 + 4 X 1?",
+	"Spoken Question" : "What is five plus four times one?", 
+	"Answer" : 9,
+	"Spoken Answer" : "The correct answer is 9."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 9
+ },
+
+ {
+	"Question" : "What is 6 + 4 X 8?",
+	"Spoken Question" : "What is six plus four times eight?", 
+	"Answer" : 38,
+	"Spoken Answer" : "The correct answer is 38."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 80
+ },
+
+ {
+	"Question" : "What is 9 + 4 X 0?",
+	"Spoken Question" : "What is nine plus four times zero?", 
+	"Answer" : 9,
+	"Spoken Answer" : "The correct answer is 9."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 0
+ },
+
+ {
+	"Question" : "What is 7 + 4 X 3?",
+	"Spoken Question" : "What is seven plus four times three?", 
+	"Answer" : 19,
+	"Spoken Answer" : "The correct answer is 19."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 33
+ },
+
+ {
+	"Question" : "What is 2 + 0 X 7?",
+	"Spoken Question" : "What is two plus zero times seven?", 
+	"Answer" : 2,
+	"Spoken Answer" : "The correct answer is 2."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 14
+ },
+
+ {
+	"Question" : "What is 1 + 0 X 5?",
+	"Spoken Question" : "What is one plus zero times five?", 
+	"Answer" : 1,
+	"Spoken Answer" : "The correct answer is 1."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 5
+ },
+
+ {
+	"Question" : "What is 5 + 0 X 9?",
+	"Spoken Question" : "What is five plus zero times nine?", 
+	"Answer" : 5,
+	"Spoken Answer" : "The correct answer is 5."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 45
+ },
+
+ {
+	"Question" : "What is 2 + 0 X 2?",
+	"Spoken Question" : "What is two plus zero times two?", 
+	"Answer" : 2,
+	"Spoken Answer" : "The correct answer is 2."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 4
+ },
+
+ {
+	"Question" : "What is 1 + 0 X 4?",
+	"Spoken Question" : "What is one plus zero times four?", 
+	"Answer" : 1,
+	"Spoken Answer" : "The correct answer is 1."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 4
+ },
+
+ {
+	"Question" : "What is 3 + 0 X 6?",
+	"Spoken Question" : "What is three plus zero times six?", 
+	"Answer" : 3,
+	"Spoken Answer" : "The correct answer is 3."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 18
+ },
+
+ {
+	"Question" : "What is 5 + 0 X 1?",
+	"Spoken Question" : "What is five plus zero times one?", 
+	"Answer" : 5,
+	"Spoken Answer" : "The correct answer is 5."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 5
+ },
+
+ {
+	"Question" : "What is 3 + 0 X 8?",
+	"Spoken Question" : "What is three plus zero times eight?", 
+	"Answer" : 3,
+	"Spoken Answer" : "The correct answer is 3."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 24
+ },
+
+ {
+	"Question" : "What is 9 + 0 X 0?",
+	"Spoken Question" : "What is nine plus zero times zero?", 
+	"Answer" : 9,
+	"Spoken Answer" : "The correct answer is 9."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 0
+ },
+
+ {
+	"Question" : "What is 5 + 0 X 3?",
+	"Spoken Question" : "What is five plus zero times three?", 
+	"Answer" : 5,
+	"Spoken Answer" : "The correct answer is 5."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 15
+ },
+
+ {
+	"Question" : "What is 2 + 6 X 7?",
+	"Spoken Question" : "What is two plus six times seven?", 
+	"Answer" : 44,
+	"Spoken Answer" : "The correct answer is 44."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 56
+ },
+
+ {
+	"Question" : "What is 4 + 6 X 5?",
+	"Spoken Question" : "What is four plus six times five?", 
+	"Answer" : 34,
+	"Spoken Answer" : "The correct answer is 34."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 50
+ },
+
+ {
+	"Question" : "What is 6 + 6 X 9?",
+	"Spoken Question" : "What is six plus six times nine?", 
+	"Answer" : 60,
+	"Spoken Answer" : "The correct answer is 60."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 108
+ },
+
+ {
+	"Question" : "What is 6 + 6 X 2?",
+	"Spoken Question" : "What is six plus six times two?", 
+	"Answer" : 18,
+	"Spoken Answer" : "The correct answer is 18."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 24
+ },
+
+ {
+	"Question" : "What is 7 + 6 X 4?",
+	"Spoken Question" : "What is seven plus six times four?", 
+	"Answer" : 31,
+	"Spoken Answer" : "The correct answer is 31."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 52
+ },
+
+ {
+	"Question" : "What is 2 + 6 X 6?",
+	"Spoken Question" : "What is two plus six times six?", 
+	"Answer" : 38,
+	"Spoken Answer" : "The correct answer is 38."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 48
+ },
+
+ {
+	"Question" : "What is 1 + 6 X 1?",
+	"Spoken Question" : "What is one plus six times one?", 
+	"Answer" : 7,
+	"Spoken Answer" : "The correct answer is 7."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 7
+ },
+
+ {
+	"Question" : "What is 0 + 6 X 8?",
+	"Spoken Question" : "What is zero plus six times eight?", 
+	"Answer" : 48,
+	"Spoken Answer" : "The correct answer is 48."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 48
+ },
+
+ {
+	"Question" : "What is 0 + 6 X 0?",
+	"Spoken Question" : "What is zero plus six times zero?", 
+	"Answer" : 0,
+	"Spoken Answer" : "The correct answer is 0."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 0
+ },
+
+ {
+	"Question" : "What is 5 + 6 X 3?",
+	"Spoken Question" : "What is five plus six times three?", 
+	"Answer" : 23,
+	"Spoken Answer" : "The correct answer is 23."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 33
+ },
+
+ {
+	"Question" : "What is 0 + 8 X 7?",
+	"Spoken Question" : "What is zero plus eight times seven?", 
+	"Answer" : 56,
+	"Spoken Answer" : "The correct answer is 56."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 56
+ },
+
+ {
+	"Question" : "What is 7 + 8 X 5?",
+	"Spoken Question" : "What is seven plus eight times five?", 
+	"Answer" : 47,
+	"Spoken Answer" : "The correct answer is 47."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 75
+ },
+
+ {
+	"Question" : "What is 4 + 8 X 9?",
+	"Spoken Question" : "What is four plus eight times nine?", 
+	"Answer" : 76,
+	"Spoken Answer" : "The correct answer is 76."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 108
+ },
+
+ {
+	"Question" : "What is 3 + 8 X 2?",
+	"Spoken Question" : "What is three plus eight times two?", 
+	"Answer" : 19,
+	"Spoken Answer" : "The correct answer is 19."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 22
+ },
+
+ {
+	"Question" : "What is 0 + 8 X 4?",
+	"Spoken Question" : "What is zero plus eight times four?", 
+	"Answer" : 32,
+	"Spoken Answer" : "The correct answer is 32."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 32
+ },
+
+ {
+	"Question" : "What is 9 + 8 X 6?",
+	"Spoken Question" : "What is nine plus eight times six?", 
+	"Answer" : 57,
+	"Spoken Answer" : "The correct answer is 57."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 102
+ },
+
+ {
+	"Question" : "What is 0 + 8 X 1?",
+	"Spoken Question" : "What is zero plus eight times one?", 
+	"Answer" : 8,
+	"Spoken Answer" : "The correct answer is 8."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 8
+ },
+
+ {
+	"Question" : "What is 4 + 8 X 8?",
+	"Spoken Question" : "What is four plus eight times eight?", 
+	"Answer" : 68,
+	"Spoken Answer" : "The correct answer is 68."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 96
+ },
+
+ {
+	"Question" : "What is 5 + 8 X 0?",
+	"Spoken Question" : "What is five plus eight times zero?", 
+	"Answer" : 5,
+	"Spoken Answer" : "The correct answer is 5."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 0
+ },
+
+ {
+	"Question" : "What is 7 + 8 X 3?",
+	"Spoken Question" : "What is seven plus eight times three?", 
+	"Answer" : 31,
+	"Spoken Answer" : "The correct answer is 31."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 45
+ },
+
+ {
+	"Question" : "What is 8 + 7 X 7?",
+	"Spoken Question" : "What is eight plus seven times seven?", 
+	"Answer" : 57,
+	"Spoken Answer" : "The correct answer is 57."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 105
+ },
+
+ {
+	"Question" : "What is 8 + 7 X 5?",
+	"Spoken Question" : "What is eight plus seven times five?", 
+	"Answer" : 43,
+	"Spoken Answer" : "The correct answer is 43."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 75
+ },
+
+ {
+	"Question" : "What is 3 + 7 X 9?",
+	"Spoken Question" : "What is three plus seven times nine?", 
+	"Answer" : 66,
+	"Spoken Answer" : "The correct answer is 66."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 90
+ },
+
+ {
+	"Question" : "What is 8 + 7 X 2?",
+	"Spoken Question" : "What is eight plus seven times two?", 
+	"Answer" : 22,
+	"Spoken Answer" : "The correct answer is 22."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 30
+ },
+
+ {
+	"Question" : "What is 9 + 7 X 4?",
+	"Spoken Question" : "What is nine plus seven times four?", 
+	"Answer" : 37,
+	"Spoken Answer" : "The correct answer is 37."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 64
+ },
+
+ {
+	"Question" : "What is 6 + 7 X 6?",
+	"Spoken Question" : "What is six plus seven times six?", 
+	"Answer" : 48,
+	"Spoken Answer" : "The correct answer is 48."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 78
+ },
+
+ {
+	"Question" : "What is 2 + 7 X 1?",
+	"Spoken Question" : "What is two plus seven times one?", 
+	"Answer" : 9,
+	"Spoken Answer" : "The correct answer is 9."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 9
+ },
+
+ {
+	"Question" : "What is 7 + 7 X 8?",
+	"Spoken Question" : "What is seven plus seven times eight?", 
+	"Answer" : 63,
+	"Spoken Answer" : "The correct answer is 63."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 112
+ },
+
+ {
+	"Question" : "What is 2 + 7 X 0?",
+	"Spoken Question" : "What is two plus seven times zero?", 
+	"Answer" : 2,
+	"Spoken Answer" : "The correct answer is 2."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 0
+ },
+
+ {
+	"Question" : "What is 8 + 7 X 3?",
+	"Spoken Question" : "What is eight plus seven times three?", 
+	"Answer" : 29,
+	"Spoken Answer" : "The correct answer is 29."
+ "Difficulty Level" : 1,
+	"Max Time" : 60,
+ "Most Common Mistake" : 45
+ },
+
+]
