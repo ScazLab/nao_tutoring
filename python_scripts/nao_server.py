@@ -92,7 +92,8 @@ class TutoringSession:
         self.logFile.write(transaction+"\n")
         self.logFile.flush()
 
-        self.update_session(msgType, questionNum, otherInfo)
+        # IMPORTANT! Commenting this out temporarily
+        # self.update_session(msgType, questionNum, otherInfo)
 
     def store_session(self, data):
         '''
@@ -225,7 +226,8 @@ class TutoringSession:
                             id = self.goNao.session_intro(int(self.sessionNum))
 
                         #create appropriate session object
-                        self.current_session = Session(pid=self.pid, sessionNum=self.sessionNum)    
+                        # IMPORTANT! Commenting this out temporarily
+                        # self.current_session = Session(pid=self.pid, sessionNum=self.sessionNum)
 
                     elif msgType == 'Q': #question
                         self.numQuestions += 1
@@ -361,6 +363,12 @@ class TutoringSession:
                             self.goNao.congratulations()
                             #self.goNao.sit()   
                         #break
+                    elif msgType.startswith('TICTACTOE'):
+                        id = self.handle_tictactoe_msg(msgType, robot_speech)
+                        returnMessage = msgType
+                    elif msgType.startswith('STRETCHBREAK'):
+                        id = self.handle_stretch_break_msg(msgType, robot_speech)
+                        returnMessage = 'STRETCHBREAK-DONE'
                     else:
                         print 'error: unknown message type'
 
@@ -383,6 +391,78 @@ class TutoringSession:
                 self.logFile.close()
                 conn.close()
                 sys.exit(0)
+
+
+    def handle_tictactoe_msg(self, msg_type, robot_speech):
+        speech_return = 0
+        msg_sub_type = msg_type[10:]
+
+        if msg_sub_type == 'START':
+            print 'Tic-tac-toe: Started'
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                speech_return = self.goNao.genSpeech(robot_speech)
+
+        elif msg_sub_type == 'WIN':
+            print 'Tic-tac-toe: Student won'
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                speech_return = self.goNao.genSpeech(robot_speech)
+
+        elif msg_sub_type == 'TIE':
+            print 'Tic-tac-toe: Student and robot tied'
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                speech_return = self.goNao.genSpeech(robot_speech)
+
+        elif msg_sub_type == 'LOSS':
+            print 'Tic-tac-toe: Student lost'
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                speech_return = self.goNao.genSpeech(robot_speech)
+
+        elif msg_sub_type == 'NAOTURN':
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                speech_return = self.goNao.genSpeech(robot_speech)
+
+        elif msg_sub_type == 'STUDENTTURN':
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                speech_return = self.goNao.genSpeech(robot_speech)
+
+        elif msg_sub_type == 'RESTART':
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                speech_return = self.goNao.genSpeech(robot_speech)
+
+        elif msg_sub_type == 'END':
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                speech_return = self.goNao.genSpeech(robot_speech)
+
+        return speech_return
+
+
+    def handle_stretch_break_msg(self, msg_type, robot_speech):
+        speech_return = 0
+        msg_sub_type = msg_type[13:]
+        if msg_sub_type == 'START':
+            print 'Stretch break: Started'
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                speech_return = self.goNao.genSpeech(robot_speech)
+                self.goNao.stretchBreak()
+        return speech_return
 
 
         """

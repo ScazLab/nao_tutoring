@@ -4,5 +4,9 @@
     <string name="app_name">TutoringBreaks</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="tic_tac_toe">Tic-Tac-Toe</string>
+    <string name="return_to_tutoring_session">Return to tutoring session</string>
+    <string name="stretch_break">Stretch Break</string>
+    <string name="follow_nao_s_lead">Follow Nao\'s lead!</string>
 
 </resources>
