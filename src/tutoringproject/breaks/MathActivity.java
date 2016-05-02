@@ -19,6 +19,7 @@ import android.os.Handler;
 import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.concurrent.TimeUnit;
 
 
 
@@ -107,6 +108,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private final int max_time_per_question = 10000;  //hard coded at 10 seconds, which should be ample time!
     private Timer timer;
     private TimerTask timerTask;
+    private TimeWatch timeWatch;
     private final Handler handler = new Handler();
 
     //break variables
@@ -122,6 +124,9 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
         //schedule the timer, after 5000ms, runs every max_timer_per_question
         timer.schedule(timerTask, delay, period);
+
+        //also start new timeWatch from time 0
+        timeWatch = TimeWatch.start();
     }
 
     private void initializeTimerTask() {
@@ -154,6 +159,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
             timer.cancel();
             timer = null;
         }
+
     }
 
     public void questionTimeout() {
@@ -182,7 +188,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
         //Send message
         if (TCPClient.singleton != null)
-            TCPClient.singleton.sendMessage("LIA;" + currentQuestionIndex + ";" + questionType + ";" + timeout_message + ";" + attempt);
+            TCPClient.singleton.sendMessage("TIMEOUT;" + currentQuestionIndex + ";" + questionType + ";" + timeout_message + ";" + attempt);
 
 
         RightWrongLabel.setText(timeout_string);
@@ -391,6 +397,10 @@ public class MathActivity extends Activity implements TCPClientOwner {
         String enteredStr1 = AnswerText1.getText().toString();
         String enteredStr2 = AnswerText2.getText().toString();
 
+        //store elapsed questionTime
+        long questionTime = timeWatch.time(TimeUnit.SECONDS);  //stores elapsed time in seconds
+
+
         if (format.equals(Questions.FORMAT_FRACTION) &&
                 (enteredStr1.equals("") || enteredStr2.equals(""))) {
             questionState = QState.INVALID;
@@ -423,7 +433,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
             //include TCP server stuff
             if (correct) {
                 if (TCPClient.singleton != null)
-                    TCPClient.singleton.sendMessage("CA;" + currentQuestionIndex + ";" + questionType + ";" + CORRECT_STRING + ";" + attempt);
+                    TCPClient.singleton.sendMessage("CA;" + currentQuestionIndex + ";" + questionType + ";" + CORRECT_STRING + ";" + attempt  + ";" + questionTime);
                 RightWrongLabel.setText(CORRECT_STRING);
                 SubmitButton.setText(NEXT_QUESTION_STRING);
                 questionState = QState.DISPLAYCORRECT;
@@ -506,7 +516,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
                     too_many_incorrect_message += " " + TOO_MANY_INCORRECT_POSTFIX;
                     //Send message
                     if (TCPClient.singleton != null)
-                        TCPClient.singleton.sendMessage("LIA;" + currentQuestionIndex + ";" + questionType + ";" + too_many_incorrect_message + ";" + attempt);
+                        TCPClient.singleton.sendMessage("LIA;" + currentQuestionIndex + ";" + questionType + ";" + too_many_incorrect_message + ";" + attempt + ";" + questionTime);
                     RightWrongLabel.setText(too_many_incorrect_string);
                     SubmitButton.setText(NEXT_QUESTION_STRING);
                     questionState = QState.DISPLAYCORRECT;

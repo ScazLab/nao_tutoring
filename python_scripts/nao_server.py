@@ -227,7 +227,7 @@ class TutoringSession:
 
                         #create appropriate session object
                         # IMPORTANT! Commenting this out temporarily
-                        # self.current_session = Session(pid=self.pid, session_num=self.sessionNum)
+                        self.current_session = Session(pid=self.pid, session_num=self.sessionNum)
 
                     elif msgType == 'Q': #question
                         self.numQuestions += 1
@@ -245,6 +245,8 @@ class TutoringSession:
                     elif msgType == 'CA': #correct attempt
                         self.numCorrect += 1
                         otherInfo = line.split(";",4)[4].strip()
+                        questionTime = line.split(";",5)[5].strip()
+
                         print 'correct answer' 
                         if self.goNao is None:
                             os.system("say " + robot_speech)

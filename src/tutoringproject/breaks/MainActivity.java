@@ -111,6 +111,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         //send message to computer to convey session starting
         if (TCPClient.singleton != null) {
             String startMessage = "START;" + "-1;-1;" + pid + "," + sessionNum + "," + expGroup;
+
             mTcpClient.sendMessage(startMessage);
         }
         startActivity(intent);
