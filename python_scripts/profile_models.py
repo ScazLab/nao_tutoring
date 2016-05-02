@@ -2,7 +2,7 @@ import time
 import pprint
 
 
-class Session:
+class Session(list):
     '''
     A session is a list of questions with the following properties:
 
@@ -21,7 +21,7 @@ class Session:
             (self.pid, self.session_num, pprint.pformat(list(self)))
 
 
-class Question:
+class Question(object):
     '''
     A Question contains live information about question being answered
 
@@ -131,3 +131,4 @@ class Question:
         return "Question(q_num=%r, attempts=%r, hints=%r, correct=%r, total_time=%r, complete=%r, \\\nhint_times=%s, attempt_times=%s)" % \
             (self.question_num, self.attempts, self.hints, self.correct, self.total_time, self.complete,
              pprint.pformat(list(self.hint_times)), pprint.pformat(list(self.attempt_times)))
+
