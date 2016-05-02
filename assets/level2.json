@@ -1,1102 +1,1201 @@
 [
  {
-	"Question" : "What is 7 + 6 X 3 + 7 X 4?",
-	"Spoken Question" : "What is seven plus six times three plus seven times four?", 
-	"Answer" : 53,
-	"Spoken Answer" : "The correct answer is fifty-three.",
-	"Most Common Mistake" : 67,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 1 + 5 X 1 + 7 X 1?",
-	"Spoken Question" : "What is one plus five times one plus seven times one?", 
-	"Answer" : 13,
-	"Spoken Answer" : "The correct answer is thirteen.",
+	"QuestionID" : 220,
+	"Question" : "What is 2 + 9 X 3 - 5 X 4?",
+	"Spoken Question" : "What is two plus nine times three minus five times four?", 
+	"Answer" : 9,
+	"Spoken Answer" : "The correct answer is nine.",
 	"Most Common Mistake" : 13,
-	"Difficulty Level" : 1,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Multiplication", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 6 + 7 X 1 + 5 X 3?",
-	"Spoken Question" : "What is six plus seven times one plus five times three?", 
-	"Answer" : 28,
-	"Spoken Answer" : "The correct answer is twenty-eight.",
-	"Most Common Mistake" : 28,
-	"Difficulty Level" : 1,
+	"QuestionID" : 221,
+	"Question" : "What is 1 + 9 X 2 + 9 X 2?",
+	"Spoken Question" : "What is one plus nine times two plus nine times two?", 
+	"Answer" : 37,
+	"Spoken Answer" : "The correct answer is thirty-seven.",
+	"Most Common Mistake" : 38,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Multiplication", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 5 + 6 X 3 + 7 X 3?",
-	"Spoken Question" : "What is five plus six times three plus seven times three?", 
-	"Answer" : 44,
-	"Spoken Answer" : "The correct answer is forty-four.",
-	"Most Common Mistake" : 54,
-	"Difficulty Level" : 1,
+	"QuestionID" : 222,
+	"Question" : "What is 8 + 8 X 4 - 7 X 0?",
+	"Spoken Question" : "What is eight plus eight times four minus seven times zero?", 
+	"Answer" : 40,
+	"Spoken Answer" : "The correct answer is forty.",
+	"Most Common Mistake" : 64,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Multiplication", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 0 + 7 X 1 - 6 X 0?",
-	"Spoken Question" : "What is zero plus seven times one minus six times zero?", 
-	"Answer" : 7,
-	"Spoken Answer" : "The correct answer is seven.",
-	"Most Common Mistake" : 7,
-	"Difficulty Level" : 1,
+	"QuestionID" : 223,
+	"Question" : "What is 1 + 6 X 0 + 8 X 2?",
+	"Spoken Question" : "What is one plus six times zero plus eight times two?", 
+	"Answer" : 17,
+	"Spoken Answer" : "The correct answer is seventeen.",
+	"Most Common Mistake" : 16,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Multiplication", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 2 + 6 X 1 + 5 X 2?",
-	"Spoken Question" : "What is two plus six times one plus five times two?", 
+	"QuestionID" : 224,
+	"Question" : "What is 3 + 9 X 1 + 9 X 4?",
+	"Spoken Question" : "What is three plus nine times one plus nine times four?", 
+	"Answer" : 48,
+	"Spoken Answer" : "The correct answer is forty-eight.",
+	"Most Common Mistake" : 48,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 225,
+	"Question" : "What is 7 + 7 X 4 - 8 X 2?",
+	"Spoken Question" : "What is seven plus seven times four minus eight times two?", 
+	"Answer" : 19,
+	"Spoken Answer" : "The correct answer is nineteen.",
+	"Most Common Mistake" : 40,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 226,
+	"Question" : "What is 2 + 5 X 3 - 5 X 0?",
+	"Spoken Question" : "What is two plus five times three minus five times zero?", 
+	"Answer" : 17,
+	"Spoken Answer" : "The correct answer is seventeen.",
+	"Most Common Mistake" : 21,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 227,
+	"Question" : "What is 3 + 7 X 0 + 6 X 4?",
+	"Spoken Question" : "What is three plus seven times zero plus six times four?", 
+	"Answer" : 27,
+	"Spoken Answer" : "The correct answer is twenty-seven.",
+	"Most Common Mistake" : 24,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 228,
+	"Question" : "What is 4 + 9 X 2 - 6 X 1?",
+	"Spoken Question" : "What is four plus nine times two minus six times one?", 
+	"Answer" : 16,
+	"Spoken Answer" : "The correct answer is sixteen.",
+	"Most Common Mistake" : 20,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 229,
+	"Question" : "What is 7 + 8 X 3 - 8 X 0?",
+	"Spoken Question" : "What is seven plus eight times three minus eight times zero?", 
+	"Answer" : 31,
+	"Spoken Answer" : "The correct answer is thirty-one.",
+	"Most Common Mistake" : 45,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 230,
+	"Question" : "What is 5 + 8 X 2 - 5 X 0?",
+	"Spoken Question" : "What is five plus eight times two minus five times zero?", 
+	"Answer" : 21,
+	"Spoken Answer" : "The correct answer is twenty-one.",
+	"Most Common Mistake" : 26,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 231,
+	"Question" : "What is 1 + 9 X 2 + 8 X 4?",
+	"Spoken Question" : "What is one plus nine times two plus eight times four?", 
+	"Answer" : 51,
+	"Spoken Answer" : "The correct answer is fifty-one.",
+	"Most Common Mistake" : 52,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 232,
+	"Question" : "What is 6 + 8 X 0 + 6 X 3?",
+	"Spoken Question" : "What is six plus eight times zero plus six times three?", 
+	"Answer" : 24,
+	"Spoken Answer" : "The correct answer is twenty-four.",
+	"Most Common Mistake" : 18,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 233,
+	"Question" : "What is 6 + 7 X 0 + 9 X 3?",
+	"Spoken Question" : "What is six plus seven times zero plus nine times three?", 
+	"Answer" : 33,
+	"Spoken Answer" : "The correct answer is thirty-three.",
+	"Most Common Mistake" : 27,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 234,
+	"Question" : "What is 3 + 7 X 2 - 5 X 0?",
+	"Spoken Question" : "What is three plus seven times two minus five times zero?", 
+	"Answer" : 17,
+	"Spoken Answer" : "The correct answer is seventeen.",
+	"Most Common Mistake" : 20,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 235,
+	"Question" : "What is 7 + 6 X 1 + 6 X 4?",
+	"Spoken Question" : "What is seven plus six times one plus six times four?", 
+	"Answer" : 37,
+	"Spoken Answer" : "The correct answer is thirty-seven.",
+	"Most Common Mistake" : 37,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 236,
+	"Question" : "What is 0 + 9 X 1 - 9 X 0?",
+	"Spoken Question" : "What is zero plus nine times one minus nine times zero?", 
+	"Answer" : 9,
+	"Spoken Answer" : "The correct answer is nine.",
+	"Most Common Mistake" : 9,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 237,
+	"Question" : "What is 2 + 6 X 4 - 5 X 3?",
+	"Spoken Question" : "What is two plus six times four minus five times three?", 
+	"Answer" : 11,
+	"Spoken Answer" : "The correct answer is eleven.",
+	"Most Common Mistake" : 17,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 238,
+	"Question" : "What is 6 + 9 X 2 + 7 X 4?",
+	"Spoken Question" : "What is six plus nine times two plus seven times four?", 
+	"Answer" : 52,
+	"Spoken Answer" : "The correct answer is fifty-two.",
+	"Most Common Mistake" : 58,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 239,
+	"Question" : "What is 7 + 8 X 2 - 8 X 1?",
+	"Spoken Question" : "What is seven plus eight times two minus eight times one?", 
+	"Answer" : 15,
+	"Spoken Answer" : "The correct answer is fifteen.",
+	"Most Common Mistake" : 22,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 240,
+	"Question" : "What is 6 + 6 X 2 + 8 X 3?",
+	"Spoken Question" : "What is six plus six times two plus eight times three?", 
+	"Answer" : 42,
+	"Spoken Answer" : "The correct answer is forty-two.",
+	"Most Common Mistake" : 48,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 241,
+	"Question" : "What is 6 + 5 X 3 - 5 X 0?",
+	"Spoken Question" : "What is six plus five times three minus five times zero?", 
+	"Answer" : 21,
+	"Spoken Answer" : "The correct answer is twenty-one.",
+	"Most Common Mistake" : 33,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 242,
+	"Question" : "What is 0 + 8 X 3 - 6 X 1?",
+	"Spoken Question" : "What is zero plus eight times three minus six times one?", 
 	"Answer" : 18,
 	"Spoken Answer" : "The correct answer is eighteen.",
 	"Most Common Mistake" : 18,
-	"Difficulty Level" : 1,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Multiplication", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 4 + 8 X 3 + 8 X 3?",
-	"Spoken Question" : "What is four plus eight times three plus eight times three?", 
-	"Answer" : 52,
-	"Spoken Answer" : "The correct answer is fifty-two.",
-	"Most Common Mistake" : 60,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 8 + 8 X 3 - 7 X 2?",
-	"Spoken Question" : "What is eight plus eight times three minus seven times two?", 
-	"Answer" : 18,
-	"Spoken Answer" : "The correct answer is eighteen.",
-	"Most Common Mistake" : 34,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 9 + 9 X 2 + 6 X 4?",
-	"Spoken Question" : "What is nine plus nine times two plus six times four?", 
-	"Answer" : 51,
-	"Spoken Answer" : "The correct answer is fifty-one.",
-	"Most Common Mistake" : 60,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 2 + 5 X 2 + 8 X 3?",
-	"Spoken Question" : "What is two plus five times two plus eight times three?", 
-	"Answer" : 36,
-	"Spoken Answer" : "The correct answer is thirty-six.",
-	"Most Common Mistake" : 38,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 8 + 7 X 2 + 7 X 2?",
-	"Spoken Question" : "What is eight plus seven times two plus seven times two?", 
-	"Answer" : 36,
-	"Spoken Answer" : "The correct answer is thirty-six.",
-	"Most Common Mistake" : 44,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 7 + 7 X 4 - 7 X 1?",
-	"Spoken Question" : "What is seven plus seven times four minus seven times one?", 
-	"Answer" : 28,
-	"Spoken Answer" : "The correct answer is twenty-eight.",
-	"Most Common Mistake" : 49,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 8 + 7 X 0 + 8 X 3?",
-	"Spoken Question" : "What is eight plus seven times zero plus eight times three?", 
+	"QuestionID" : 243,
+	"Question" : "What is 8 + 5 X 2 + 7 X 2?",
+	"Spoken Question" : "What is eight plus five times two plus seven times two?", 
 	"Answer" : 32,
 	"Spoken Answer" : "The correct answer is thirty-two.",
-	"Most Common Mistake" : 24,
-	"Difficulty Level" : 1,
+	"Most Common Mistake" : 40,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Multiplication", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 4 + 8 X 2 + 5 X 4?",
-	"Spoken Question" : "What is four plus eight times two plus five times four?", 
-	"Answer" : 40,
-	"Spoken Answer" : "The correct answer is forty.",
-	"Most Common Mistake" : 44,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 9 + 8 X 1 - 7 X 1?",
-	"Spoken Question" : "What is nine plus eight times one minus seven times one?", 
-	"Answer" : 10,
-	"Spoken Answer" : "The correct answer is ten.",
+	"QuestionID" : 244,
+	"Question" : "What is 6 + 7 X 0 + 5 X 2?",
+	"Spoken Question" : "What is six plus seven times zero plus five times two?", 
+	"Answer" : 16,
+	"Spoken Answer" : "The correct answer is sixteen.",
 	"Most Common Mistake" : 10,
-	"Difficulty Level" : 1,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Multiplication", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 0 + 6 X 3 + 6 X 3?",
-	"Spoken Question" : "What is zero plus six times three plus six times three?", 
-	"Answer" : 36,
-	"Spoken Answer" : "The correct answer is thirty-six.",
-	"Most Common Mistake" : 36,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 3 + 5 X 2 + 8 X 2?",
-	"Spoken Question" : "What is three plus five times two plus eight times two?", 
-	"Answer" : 29,
-	"Spoken Answer" : "The correct answer is twenty-nine.",
-	"Most Common Mistake" : 32,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 6 + 8 X 2 + 8 X 2?",
-	"Spoken Question" : "What is six plus eight times two plus eight times two?", 
-	"Answer" : 38,
-	"Spoken Answer" : "The correct answer is thirty-eight.",
-	"Most Common Mistake" : 44,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 9 + 9 X 0 + 5 X 3?",
-	"Spoken Question" : "What is nine plus nine times zero plus five times three?", 
-	"Answer" : 24,
-	"Spoken Answer" : "The correct answer is twenty-four.",
-	"Most Common Mistake" : 15,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 9 + 7 X 4 + 9 X 4?",
-	"Spoken Question" : "What is nine plus seven times four plus nine times four?", 
-	"Answer" : 73,
-	"Spoken Answer" : "The correct answer is seventy-three.",
-	"Most Common Mistake" : 100,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 9 + 5 X 2 + 5 X 2?",
-	"Spoken Question" : "What is nine plus five times two plus five times two?", 
-	"Answer" : 29,
-	"Spoken Answer" : "The correct answer is twenty-nine.",
-	"Most Common Mistake" : 38,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 0 + 6 X 1 + 8 X 3?",
-	"Spoken Question" : "What is zero plus six times one plus eight times three?", 
-	"Answer" : 30,
-	"Spoken Answer" : "The correct answer is thirty.",
-	"Most Common Mistake" : 30,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 4 + 9 X 1 + 9 X 2?",
-	"Spoken Question" : "What is four plus nine times one plus nine times two?", 
-	"Answer" : 31,
-	"Spoken Answer" : "The correct answer is thirty-one.",
-	"Most Common Mistake" : 31,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 2 + 7 X 0 + 6 X 1?",
-	"Spoken Question" : "What is two plus seven times zero plus six times one?", 
-	"Answer" : 8,
-	"Spoken Answer" : "The correct answer is eight.",
-	"Most Common Mistake" : 6,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 4 + 9 X 2 - 9 X 1?",
-	"Spoken Question" : "What is four plus nine times two minus nine times one?", 
-	"Answer" : 13,
-	"Spoken Answer" : "The correct answer is thirteen.",
-	"Most Common Mistake" : 17,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 7 + 6 X 4 - 6 X 3?",
-	"Spoken Question" : "What is seven plus six times four minus six times three?", 
-	"Answer" : 13,
-	"Spoken Answer" : "The correct answer is thirteen.",
-	"Most Common Mistake" : 34,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 1 + 5 X 2 - 8 X 1?",
-	"Spoken Question" : "What is one plus five times two minus eight times one?", 
-	"Answer" : 3,
-	"Spoken Answer" : "The correct answer is three.",
-	"Most Common Mistake" : 4,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 4 + 8 X 3 - 7 X 3?",
-	"Spoken Question" : "What is four plus eight times three minus seven times three?", 
-	"Answer" : 7,
-	"Spoken Answer" : "The correct answer is seven.",
-	"Most Common Mistake" : 15,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 6 + 8 X 2 - 9 X 1?",
-	"Spoken Question" : "What is six plus eight times two minus nine times one?", 
-	"Answer" : 13,
-	"Spoken Answer" : "The correct answer is thirteen.",
-	"Most Common Mistake" : 19,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 9 + 7 X 0 + 5 X 0?",
-	"Spoken Question" : "What is nine plus seven times zero plus five times zero?", 
+	"QuestionID" : 245,
+	"Question" : "What is 9 + 9 X 0 + 8 X 0?",
+	"Spoken Question" : "What is nine plus nine times zero plus eight times zero?", 
 	"Answer" : 9,
 	"Spoken Answer" : "The correct answer is nine.",
 	"Most Common Mistake" : 0,
-	"Difficulty Level" : 1,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Multiplication", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 6 + 5 X 0 + 7 X 1?",
-	"Spoken Question" : "What is six plus five times zero plus seven times one?", 
-	"Answer" : 13,
-	"Spoken Answer" : "The correct answer is thirteen.",
-	"Most Common Mistake" : 7,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 6 + 6 X 4 + 9 X 3?",
-	"Spoken Question" : "What is six plus six times four plus nine times three?", 
-	"Answer" : 57,
-	"Spoken Answer" : "The correct answer is fifty-seven.",
-	"Most Common Mistake" : 75,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 8 + 5 X 2 + 6 X 3?",
-	"Spoken Question" : "What is eight plus five times two plus six times three?", 
-	"Answer" : 36,
-	"Spoken Answer" : "The correct answer is thirty-six.",
-	"Most Common Mistake" : 44,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 4 + 7 X 1 - 7 X 0?",
-	"Spoken Question" : "What is four plus seven times one minus seven times zero?", 
+	"QuestionID" : 246,
+	"Question" : "What is 5 + 6 X 1 - 7 X 0?",
+	"Spoken Question" : "What is five plus six times one minus seven times zero?", 
 	"Answer" : 11,
 	"Spoken Answer" : "The correct answer is eleven.",
 	"Most Common Mistake" : 11,
-	"Difficulty Level" : 1,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Multiplication", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 4 + 5 X 2 - 6 X 0?",
-	"Spoken Question" : "What is four plus five times two minus six times zero?", 
-	"Answer" : 14,
-	"Spoken Answer" : "The correct answer is fourteen.",
-	"Most Common Mistake" : 18,
-	"Difficulty Level" : 1,
+	"QuestionID" : 247,
+	"Question" : "What is 2 + 5 X 4 + 8 X 4?",
+	"Spoken Question" : "What is two plus five times four plus eight times four?", 
+	"Answer" : 54,
+	"Spoken Answer" : "The correct answer is fifty-four.",
+	"Most Common Mistake" : 60,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Multiplication", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 4 + 6 X 0 + 5 X 0?",
-	"Spoken Question" : "What is four plus six times zero plus five times zero?", 
-	"Answer" : 4,
-	"Spoken Answer" : "The correct answer is four.",
-	"Most Common Mistake" : 0,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 7 + 8 X 4 - 5 X 1?",
-	"Spoken Question" : "What is seven plus eight times four minus five times one?", 
-	"Answer" : 34,
-	"Spoken Answer" : "The correct answer is thirty-four.",
-	"Most Common Mistake" : 55,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 5 + 6 X 3 - 8 X 2?",
-	"Spoken Question" : "What is five plus six times three minus eight times two?", 
-	"Answer" : 7,
-	"Spoken Answer" : "The correct answer is seven.",
-	"Most Common Mistake" : 17,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 7 + 8 X 2 + 8 X 4?",
-	"Spoken Question" : "What is seven plus eight times two plus eight times four?", 
+	"QuestionID" : 248,
+	"Question" : "What is 0 + 9 X 3 + 7 X 4?",
+	"Spoken Question" : "What is zero plus nine times three plus seven times four?", 
 	"Answer" : 55,
 	"Spoken Answer" : "The correct answer is fifty-five.",
-	"Most Common Mistake" : 62,
-	"Difficulty Level" : 1,
+	"Most Common Mistake" : 55,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Multiplication", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 9 + 9 X 4 - 9 X 1?",
-	"Spoken Question" : "What is nine plus nine times four minus nine times one?", 
-	"Answer" : 36,
-	"Spoken Answer" : "The correct answer is thirty-six.",
-	"Most Common Mistake" : 63,
-	"Difficulty Level" : 1,
+	"QuestionID" : 249,
+	"Question" : "What is 7 + 9 X 4 - 8 X 0?",
+	"Spoken Question" : "What is seven plus nine times four minus eight times zero?", 
+	"Answer" : 43,
+	"Spoken Answer" : "The correct answer is forty-three.",
+	"Most Common Mistake" : 64,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Multiplication", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 4 + 5 X 0 + 6 X 4?",
-	"Spoken Question" : "What is four plus five times zero plus six times four?", 
+	"QuestionID" : 250,
+	"Question" : "What is 9 + 8 X 0 + 7 X 3?",
+	"Spoken Question" : "What is nine plus eight times zero plus seven times three?", 
+	"Answer" : 30,
+	"Spoken Answer" : "The correct answer is thirty.",
+	"Most Common Mistake" : 21,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 251,
+	"Question" : "What is 1 + 7 X 1 + 8 X 3?",
+	"Spoken Question" : "What is one plus seven times one plus eight times three?", 
+	"Answer" : 32,
+	"Spoken Answer" : "The correct answer is thirty-two.",
+	"Most Common Mistake" : 32,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 252,
+	"Question" : "What is 8 + 9 X 0 + 6 X 4?",
+	"Spoken Question" : "What is eight plus nine times zero plus six times four?", 
+	"Answer" : 32,
+	"Spoken Answer" : "The correct answer is thirty-two.",
+	"Most Common Mistake" : 24,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 253,
+	"Question" : "What is 7 + 9 X 4 - 6 X 1?",
+	"Spoken Question" : "What is seven plus nine times four minus six times one?", 
+	"Answer" : 37,
+	"Spoken Answer" : "The correct answer is thirty-seven.",
+	"Most Common Mistake" : 58,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 254,
+	"Question" : "What is 3 + 6 X 3 + 8 X 4?",
+	"Spoken Question" : "What is three plus six times three plus eight times four?", 
+	"Answer" : 53,
+	"Spoken Answer" : "The correct answer is fifty-three.",
+	"Most Common Mistake" : 59,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 255,
+	"Question" : "What is 5 + 6 X 1 + 7 X 3?",
+	"Spoken Question" : "What is five plus six times one plus seven times three?", 
+	"Answer" : 32,
+	"Spoken Answer" : "The correct answer is thirty-two.",
+	"Most Common Mistake" : 32,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 256,
+	"Question" : "What is 1 + 9 X 3 - 5 X 0?",
+	"Spoken Question" : "What is one plus nine times three minus five times zero?", 
 	"Answer" : 28,
 	"Spoken Answer" : "The correct answer is twenty-eight.",
-	"Most Common Mistake" : 24,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 2 + 8 X 4 - 7 X 3?",
-	"Spoken Question" : "What is two plus eight times four minus seven times three?", 
-	"Answer" : 13,
-	"Spoken Answer" : "The correct answer is thirteen.",
-	"Most Common Mistake" : 19,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 3 + 5 X 2 + 5 X 4?",
-	"Spoken Question" : "What is three plus five times two plus five times four?", 
-	"Answer" : 33,
-	"Spoken Answer" : "The correct answer is thirty-three.",
-	"Most Common Mistake" : 36,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Multiplication", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 6 + 6 X 4 - 9 X 2?",
-	"Spoken Question" : "What is six plus six times four minus nine times two?", 
-	"Answer" : 12,
-	"Spoken Answer" : "The correct answer is twelve.",
 	"Most Common Mistake" : 30,
-	"Difficulty Level" : 1,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Multiplication", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 2 + 8 X 4 - 9 X 2?",
-	"Spoken Question" : "What is two plus eight times four minus nine times two?", 
-	"Answer" : 16,
-	"Spoken Answer" : "The correct answer is sixteen.",
-	"Most Common Mistake" : 22,
-	"Difficulty Level" : 1,
+	"QuestionID" : 257,
+	"Question" : "What is 9 + 5 X 2 - 8 X 1?",
+	"Spoken Question" : "What is nine plus five times two minus eight times one?", 
+	"Answer" : 11,
+	"Spoken Answer" : "The correct answer is eleven.",
+	"Most Common Mistake" : 20,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Multiplication", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 0 + 8 X 1 + 8 X 2?",
-	"Spoken Question" : "What is zero plus eight times one plus eight times two?", 
-	"Answer" : 24,
-	"Spoken Answer" : "The correct answer is twenty-four.",
-	"Most Common Mistake" : 24,
-	"Difficulty Level" : 1,
+	"QuestionID" : 258,
+	"Question" : "What is 2 + 9 X 2 - 8 X 2?",
+	"Spoken Question" : "What is two plus nine times two minus eight times two?", 
+	"Answer" : 4,
+	"Spoken Answer" : "The correct answer is four.",
+	"Most Common Mistake" : 6,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Multiplication", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 6 + 8 X 3 - 7 X 3?",
-	"Spoken Question" : "What is six plus eight times three minus seven times three?", 
-	"Answer" : 9,
-	"Spoken Answer" : "The correct answer is nine.",
-	"Most Common Mistake" : 21,
-	"Difficulty Level" : 1,
+	"QuestionID" : 259,
+	"Question" : "What is 3 + 8 X 1 - 9 X 0?",
+	"Spoken Question" : "What is three plus eight times one minus nine times zero?", 
+	"Answer" : 11,
+	"Spoken Answer" : "The correct answer is eleven.",
+	"Most Common Mistake" : 11,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Multiplication", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 3 + 6 X 4 - 7 X 2?",
-	"Spoken Question" : "What is three plus six times four minus seven times two?", 
-	"Answer" : 13,
-	"Spoken Answer" : "The correct answer is thirteen.",
-	"Most Common Mistake" : 22,
-	"Difficulty Level" : 1,
+	"QuestionID" : 260,
+	"Question" : "What is 4 + 8 X 4 + 9 X 4?",
+	"Spoken Question" : "What is four plus eight times four plus nine times four?", 
+	"Answer" : 72,
+	"Spoken Answer" : "The correct answer is seventy-two.",
+	"Most Common Mistake" : 84,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Multiplication", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 5 + 7 X 1 + 5 X 3?",
-	"Spoken Question" : "What is five plus seven times one plus five times three?", 
+	"QuestionID" : 261,
+	"Question" : "What is 9 + 7 X 2 + 5 X 4?",
+	"Spoken Question" : "What is nine plus seven times two plus five times four?", 
+	"Answer" : 43,
+	"Spoken Answer" : "The correct answer is forty-three.",
+	"Most Common Mistake" : 52,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 262,
+	"Question" : "What is 5 + 5 X 0 + 5 X 2?",
+	"Spoken Question" : "What is five plus five times zero plus five times two?", 
+	"Answer" : 15,
+	"Spoken Answer" : "The correct answer is fifteen.",
+	"Most Common Mistake" : 10,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 263,
+	"Question" : "What is 9 + 6 X 0 + 9 X 2?",
+	"Spoken Question" : "What is nine plus six times zero plus nine times two?", 
+	"Answer" : 27,
+	"Spoken Answer" : "The correct answer is twenty-seven.",
+	"Most Common Mistake" : 18,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 264,
+	"Question" : "What is 2 + 7 X 1 + 9 X 2?",
+	"Spoken Question" : "What is two plus seven times one plus nine times two?", 
 	"Answer" : 27,
 	"Spoken Answer" : "The correct answer is twenty-seven.",
 	"Most Common Mistake" : 27,
-	"Difficulty Level" : 1,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Multiplication", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 6 + 9 X 1 + 5 X 4?",
-	"Spoken Question" : "What is six plus nine times one plus five times four?", 
-	"Answer" : 35,
-	"Spoken Answer" : "The correct answer is thirty-five.",
-	"Most Common Mistake" : 35,
-	"Difficulty Level" : 1,
+	"QuestionID" : 265,
+	"Question" : "What is 4 + 6 X 2 - 5 X 2?",
+	"Spoken Question" : "What is four plus six times two minus five times two?", 
+	"Answer" : 6,
+	"Spoken Answer" : "The correct answer is six.",
+	"Most Common Mistake" : 10,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Multiplication", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 3 + 5 X (2 + 7) X 3?",
-	"Spoken Question" : "What is three plus five times (two plus seven) times three?", 
-	"Answer" : 138,
-	"Spoken Answer" : "The correct answer is one hundred and thirty-eight.",
-	"Most Common Mistake" : 37,
-	"Difficulty Level" : 1,
+	"QuestionID" : 266,
+	"Question" : "What is 2 + 8 X 2 - 8 X 1?",
+	"Spoken Question" : "What is two plus eight times two minus eight times one?", 
+	"Answer" : 10,
+	"Spoken Answer" : "The correct answer is ten.",
+	"Most Common Mistake" : 12,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 267,
+	"Question" : "What is 0 + 9 X 3 + 9 X 4?",
+	"Spoken Question" : "What is zero plus nine times three plus nine times four?", 
+	"Answer" : 63,
+	"Spoken Answer" : "The correct answer is sixty-three.",
+	"Most Common Mistake" : 63,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 268,
+	"Question" : "What is 9 + 9 X 2 - 7 X 0?",
+	"Spoken Question" : "What is nine plus nine times two minus seven times zero?", 
+	"Answer" : 27,
+	"Spoken Answer" : "The correct answer is twenty-seven.",
+	"Most Common Mistake" : 36,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 269,
+	"Question" : "What is 1 + 9 X 2 + 9 X 4?",
+	"Spoken Question" : "What is one plus nine times two plus nine times four?", 
+	"Answer" : 55,
+	"Spoken Answer" : "The correct answer is fifty-five.",
+	"Most Common Mistake" : 56,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 270,
+	"Question" : "What is 1 + 7 X (0 + 5) X 3?",
+	"Spoken Question" : "What is one plus seven times (zero plus five) times three?", 
+	"Answer" : 106,
+	"Spoken Answer" : "The correct answer is one hundred and six.",
+	"Most Common Mistake" : 15,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Parentheses", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 3 + 7 X (0 + 6) X 4?",
-	"Spoken Question" : "What is three plus seven times (zero plus six) times four?", 
-	"Answer" : 171,
-	"Spoken Answer" : "The correct answer is one hundred and seventy-one.",
-	"Most Common Mistake" : 24,
-	"Difficulty Level" : 1,
+	"QuestionID" : 271,
+	"Question" : "What is 6 + 5 X (1 + 5) X 1?",
+	"Spoken Question" : "What is six plus five times (one plus five) times one?", 
+	"Answer" : 36,
+	"Spoken Answer" : "The correct answer is thirty-six.",
+	"Most Common Mistake" : 16,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Parentheses", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is (9 + 7) X 2 - 7 X 0?",
-	"Spoken Question" : "What is (nine plus seven) times two minus seven times zero?", 
-	"Answer" : 32,
-	"Spoken Answer" : "The correct answer is thirty-two.",
-	"Most Common Mistake" : 23,
-	"Difficulty Level" : 1,
+	"QuestionID" : 272,
+	"Question" : "What is (9 + 9) X 4 - 6 X 0?",
+	"Spoken Question" : "What is (nine plus nine) times four minus six times zero?", 
+	"Answer" : 72,
+	"Spoken Answer" : "The correct answer is seventy-two.",
+	"Most Common Mistake" : 45,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Parentheses", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 0 + 5 X (2 + 6) X 3?",
-	"Spoken Question" : "What is zero plus five times (two plus six) times three?", 
-	"Answer" : 120,
-	"Spoken Answer" : "The correct answer is one hundred and twenty.",
+	"QuestionID" : 273,
+	"Question" : "What is 8 + 5 X (0 + 7) X 3?",
+	"Spoken Question" : "What is eight plus five times (zero plus seven) times three?", 
+	"Answer" : 113,
+	"Spoken Answer" : "The correct answer is one hundred and thirteen.",
+	"Most Common Mistake" : 21,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 274,
+	"Question" : "What is (8 + 5) X 4 - 6 X 0?",
+	"Spoken Question" : "What is (eight plus five) times four minus six times zero?", 
+	"Answer" : 52,
+	"Spoken Answer" : "The correct answer is fifty-two.",
 	"Most Common Mistake" : 28,
-	"Difficulty Level" : 1,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Parentheses", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 1 + 7 X (1 + 8) X 2?",
-	"Spoken Question" : "What is one plus seven times (one plus eight) times two?", 
+	"QuestionID" : 275,
+	"Question" : "What is 1 + 6 X (3 + 8) X 4?",
+	"Spoken Question" : "What is one plus six times (three plus eight) times four?", 
+	"Answer" : 265,
+	"Spoken Answer" : "The correct answer is two hundred and sixty-five.",
+	"Most Common Mistake" : 53,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 276,
+	"Question" : "What is 9 + 9 X (0 + 8) X 4?",
+	"Spoken Question" : "What is nine plus nine times (zero plus eight) times four?", 
+	"Answer" : 297,
+	"Spoken Answer" : "The correct answer is two hundred and ninety-seven.",
+	"Most Common Mistake" : 32,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 277,
+	"Question" : "What is 2 + 7 X (0 + 9) X 4?",
+	"Spoken Question" : "What is two plus seven times (zero plus nine) times four?", 
+	"Answer" : 254,
+	"Spoken Answer" : "The correct answer is two hundred and fifty-four.",
+	"Most Common Mistake" : 36,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 278,
+	"Question" : "What is (9 + 9) X 4 - 8 X 4?",
+	"Spoken Question" : "What is (nine plus nine) times four minus eight times four?", 
+	"Answer" : 40,
+	"Spoken Answer" : "The correct answer is forty.",
+	"Most Common Mistake" : 13,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 279,
+	"Question" : "What is 6 + 6 X (0 + 8) X 1?",
+	"Spoken Question" : "What is six plus six times (zero plus eight) times one?", 
+	"Answer" : 54,
+	"Spoken Answer" : "The correct answer is fifty-four.",
+	"Most Common Mistake" : 8,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 280,
+	"Question" : "What is 5 + 9 X (0 + 7) X 3?",
+	"Spoken Question" : "What is five plus nine times (zero plus seven) times three?", 
+	"Answer" : 194,
+	"Spoken Answer" : "The correct answer is one hundred and ninety-four.",
+	"Most Common Mistake" : 21,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 281,
+	"Question" : "What is (5 + 6) X 4 - 5 X 0?",
+	"Spoken Question" : "What is (five plus six) times four minus five times zero?", 
+	"Answer" : 44,
+	"Spoken Answer" : "The correct answer is forty-four.",
+	"Most Common Mistake" : 29,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 282,
+	"Question" : "What is (5 + 6) X 4 - 9 X 0?",
+	"Spoken Question" : "What is (five plus six) times four minus nine times zero?", 
+	"Answer" : 44,
+	"Spoken Answer" : "The correct answer is forty-four.",
+	"Most Common Mistake" : 29,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 283,
+	"Question" : "What is 1 + 7 X (0 + 7) X 4?",
+	"Spoken Question" : "What is one plus seven times (zero plus seven) times four?", 
+	"Answer" : 197,
+	"Spoken Answer" : "The correct answer is one hundred and ninety-seven.",
+	"Most Common Mistake" : 28,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 284,
+	"Question" : "What is 7 + 5 X (0 + 8) X 3?",
+	"Spoken Question" : "What is seven plus five times (zero plus eight) times three?", 
 	"Answer" : 127,
 	"Spoken Answer" : "The correct answer is one hundred and twenty-seven.",
 	"Most Common Mistake" : 24,
-	"Difficulty Level" : 1,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Parentheses", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 6 + 5 X (2 + 9) X 4?",
-	"Spoken Question" : "What is six plus five times (two plus nine) times four?", 
-	"Answer" : 226,
-	"Spoken Answer" : "The correct answer is two hundred and twenty-six.",
-	"Most Common Mistake" : 58,
-	"Difficulty Level" : 1,
+	"QuestionID" : 285,
+	"Question" : "What is (7 + 6) X 3 - 6 X 0?",
+	"Spoken Question" : "What is (seven plus six) times three minus six times zero?", 
+	"Answer" : 39,
+	"Spoken Answer" : "The correct answer is thirty-nine.",
+	"Most Common Mistake" : 25,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Parentheses", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is (0 + 6) X 4 - 7 X 0?",
-	"Spoken Question" : "What is (zero plus six) times four minus seven times zero?", 
-	"Answer" : 24,
-	"Spoken Answer" : "The correct answer is twenty-four.",
-	"Most Common Mistake" : 24,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 7 + 7 X (1 + 8) X 4?",
-	"Spoken Question" : "What is seven plus seven times (one plus eight) times four?", 
-	"Answer" : 259,
-	"Spoken Answer" : "The correct answer is two hundred and fifty-nine.",
-	"Most Common Mistake" : 46,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is (9 + 9) X 3 - 6 X 2?",
-	"Spoken Question" : "What is (nine plus nine) times three minus six times two?", 
-	"Answer" : 42,
-	"Spoken Answer" : "The correct answer is forty-two.",
-	"Most Common Mistake" : 24,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is (9 + 9) X 3 - 5 X 1?",
-	"Spoken Question" : "What is (nine plus nine) times three minus five times one?", 
-	"Answer" : 49,
-	"Spoken Answer" : "The correct answer is forty-nine.",
-	"Most Common Mistake" : 31,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 5 + 7 X (1 + 5) X 4?",
-	"Spoken Question" : "What is five plus seven times (one plus five) times four?", 
-	"Answer" : 173,
-	"Spoken Answer" : "The correct answer is one hundred and seventy-three.",
-	"Most Common Mistake" : 32,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is (7 + 6) X 3 - 5 X 1?",
-	"Spoken Question" : "What is (seven plus six) times three minus five times one?", 
-	"Answer" : 34,
-	"Spoken Answer" : "The correct answer is thirty-four.",
-	"Most Common Mistake" : 20,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 5 + 5 X (0 + 8) X 3?",
-	"Spoken Question" : "What is five plus five times (zero plus eight) times three?", 
+	"QuestionID" : 286,
+	"Question" : "What is 5 + 5 X (3 + 5) X 3?",
+	"Spoken Question" : "What is five plus five times (three plus five) times three?", 
 	"Answer" : 125,
 	"Spoken Answer" : "The correct answer is one hundred and twenty-five.",
-	"Most Common Mistake" : 24,
-	"Difficulty Level" : 1,
+	"Most Common Mistake" : 45,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Parentheses", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is (7 + 9) X 4 - 9 X 3?",
-	"Spoken Question" : "What is (seven plus nine) times four minus nine times three?", 
-	"Answer" : 37,
-	"Spoken Answer" : "The correct answer is thirty-seven.",
-	"Most Common Mistake" : 16,
-	"Difficulty Level" : 1,
+	"QuestionID" : 287,
+	"Question" : "What is 6 + 6 X (2 + 9) X 4?",
+	"Spoken Question" : "What is six plus six times (two plus nine) times four?", 
+	"Answer" : 270,
+	"Spoken Answer" : "The correct answer is two hundred and seventy.",
+	"Most Common Mistake" : 60,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Parentheses", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is (1 + 6) X 2 - 5 X 0?",
-	"Spoken Question" : "What is (one plus six) times two minus five times zero?", 
-	"Answer" : 14,
-	"Spoken Answer" : "The correct answer is fourteen.",
-	"Most Common Mistake" : 13,
-	"Difficulty Level" : 1,
+	"QuestionID" : 288,
+	"Question" : "What is (9 + 6) X 2 - 8 X 0?",
+	"Spoken Question" : "What is (nine plus six) times two minus eight times zero?", 
+	"Answer" : 30,
+	"Spoken Answer" : "The correct answer is thirty.",
+	"Most Common Mistake" : 21,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Parentheses", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 6 + 6 X (0 + 8) X 3?",
-	"Spoken Question" : "What is six plus six times (zero plus eight) times three?", 
+	"QuestionID" : 289,
+	"Question" : "What is (9 + 7) X 4 - 5 X 1?",
+	"Spoken Question" : "What is (nine plus seven) times four minus five times one?", 
+	"Answer" : 59,
+	"Spoken Answer" : "The correct answer is fifty-nine.",
+	"Most Common Mistake" : 32,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 290,
+	"Question" : "What is 5 + 6 X (2 + 9) X 2?",
+	"Spoken Question" : "What is five plus six times (two plus nine) times two?", 
+	"Answer" : 137,
+	"Spoken Answer" : "The correct answer is one hundred and thirty-seven.",
+	"Most Common Mistake" : 40,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 291,
+	"Question" : "What is 1 + 6 X (0 + 5) X 3?",
+	"Spoken Question" : "What is one plus six times (zero plus five) times three?", 
+	"Answer" : 91,
+	"Spoken Answer" : "The correct answer is ninety-one.",
+	"Most Common Mistake" : 15,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 292,
+	"Question" : "What is 6 + 9 X (0 + 8) X 0?",
+	"Spoken Question" : "What is six plus nine times (zero plus eight) times zero?", 
+	"Answer" : 6,
+	"Spoken Answer" : "The correct answer is six.",
+	"Most Common Mistake" : 0,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 293,
+	"Question" : "What is 0 + 9 X (1 + 8) X 3?",
+	"Spoken Question" : "What is zero plus nine times (one plus eight) times three?", 
+	"Answer" : 243,
+	"Spoken Answer" : "The correct answer is two hundred and forty-three.",
+	"Most Common Mistake" : 33,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 294,
+	"Question" : "What is (8 + 7) X 1 - 6 X 0?",
+	"Spoken Question" : "What is (eight plus seven) times one minus six times zero?", 
+	"Answer" : 15,
+	"Spoken Answer" : "The correct answer is fifteen.",
+	"Most Common Mistake" : 15,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 295,
+	"Question" : "What is (3 + 6) X 2 - 6 X 1?",
+	"Spoken Question" : "What is (three plus six) times two minus six times one?", 
+	"Answer" : 12,
+	"Spoken Answer" : "The correct answer is twelve.",
+	"Most Common Mistake" : 9,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 296,
+	"Question" : "What is (0 + 7) X 3 - 5 X 2?",
+	"Spoken Question" : "What is (zero plus seven) times three minus five times two?", 
+	"Answer" : 11,
+	"Spoken Answer" : "The correct answer is eleven.",
+	"Most Common Mistake" : 11,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 297,
+	"Question" : "What is 9 + 9 X (3 + 8) X 4?",
+	"Spoken Question" : "What is nine plus nine times (three plus eight) times four?", 
+	"Answer" : 405,
+	"Spoken Answer" : "The correct answer is four hundred and five.",
+	"Most Common Mistake" : 86,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 298,
+	"Question" : "What is 3 + 7 X (1 + 9) X 3?",
+	"Spoken Question" : "What is three plus seven times (one plus nine) times three?", 
+	"Answer" : 213,
+	"Spoken Answer" : "The correct answer is two hundred and thirteen.",
+	"Most Common Mistake" : 37,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 299,
+	"Question" : "What is 9 + 9 X (1 + 6) X 4?",
+	"Spoken Question" : "What is nine plus nine times (one plus six) times four?", 
+	"Answer" : 261,
+	"Spoken Answer" : "The correct answer is two hundred and sixty-one.",
+	"Most Common Mistake" : 42,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 300,
+	"Question" : "What is 0 + 5 X (3 + 7) X 3?",
+	"Spoken Question" : "What is zero plus five times (three plus seven) times three?", 
 	"Answer" : 150,
 	"Spoken Answer" : "The correct answer is one hundred and fifty.",
-	"Most Common Mistake" : 24,
-	"Difficulty Level" : 1,
+	"Most Common Mistake" : 36,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Parentheses", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 5 + 5 X (2 + 5) X 3?",
-	"Spoken Question" : "What is five plus five times (two plus five) times three?", 
-	"Answer" : 110,
-	"Spoken Answer" : "The correct answer is one hundred and ten.",
-	"Most Common Mistake" : 35,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 7 + 5 X (2 + 5) X 4?",
-	"Spoken Question" : "What is seven plus five times (two plus five) times four?", 
-	"Answer" : 147,
-	"Spoken Answer" : "The correct answer is one hundred and forty-seven.",
-	"Most Common Mistake" : 44,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is (5 + 9) X 2 - 8 X 2?",
-	"Spoken Question" : "What is (five plus nine) times two minus eight times two?", 
+	"QuestionID" : 301,
+	"Question" : "What is (5 + 8) X 2 - 7 X 2?",
+	"Spoken Question" : "What is (five plus eight) times two minus seven times two?", 
 	"Answer" : 12,
 	"Spoken Answer" : "The correct answer is twelve.",
 	"Most Common Mistake" : 7,
-	"Difficulty Level" : 1,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Parentheses", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is (9 + 7) X 3 - 8 X 2?",
-	"Spoken Question" : "What is (nine plus seven) times three minus eight times two?", 
-	"Answer" : 32,
-	"Spoken Answer" : "The correct answer is thirty-two.",
-	"Most Common Mistake" : 14,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 1 + 7 X (2 + 9) X 4?",
-	"Spoken Question" : "What is one plus seven times (two plus nine) times four?", 
-	"Answer" : 309,
-	"Spoken Answer" : "The correct answer is three hundred and nine.",
-	"Most Common Mistake" : 52,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is (4 + 9) X 2 - 9 X 1?",
-	"Spoken Question" : "What is (four plus nine) times two minus nine times one?", 
-	"Answer" : 17,
-	"Spoken Answer" : "The correct answer is seventeen.",
-	"Most Common Mistake" : 13,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 3 + 8 X (0 + 5) X 3?",
-	"Spoken Question" : "What is three plus eight times (zero plus five) times three?", 
-	"Answer" : 123,
-	"Spoken Answer" : "The correct answer is one hundred and twenty-three.",
-	"Most Common Mistake" : 15,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is (0 + 8) X 1 - 6 X 1?",
-	"Spoken Question" : "What is (zero plus eight) times one minus six times one?", 
-	"Answer" : 2,
-	"Spoken Answer" : "The correct answer is two.",
-	"Most Common Mistake" : 2,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is (7 + 9) X 2 - 9 X 1?",
-	"Spoken Question" : "What is (seven plus nine) times two minus nine times one?", 
+	"QuestionID" : 302,
+	"Question" : "What is (7 + 7) X 2 - 5 X 1?",
+	"Spoken Question" : "What is (seven plus seven) times two minus five times one?", 
 	"Answer" : 23,
 	"Spoken Answer" : "The correct answer is twenty-three.",
 	"Most Common Mistake" : 16,
-	"Difficulty Level" : 1,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Parentheses", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 5 + 8 X (3 + 9) X 3?",
-	"Spoken Question" : "What is five plus eight times (three plus nine) times three?", 
-	"Answer" : 293,
-	"Spoken Answer" : "The correct answer is two hundred and ninety-three.",
-	"Most Common Mistake" : 66,
-	"Difficulty Level" : 1,
+	"QuestionID" : 303,
+	"Question" : "What is 3 + 5 X (1 + 8) X 2?",
+	"Spoken Question" : "What is three plus five times (one plus eight) times two?", 
+	"Answer" : 93,
+	"Spoken Answer" : "The correct answer is ninety-three.",
+	"Most Common Mistake" : 24,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Parentheses", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 6 + 8 X (3 + 9) X 3?",
-	"Spoken Question" : "What is six plus eight times (three plus nine) times three?", 
-	"Answer" : 294,
-	"Spoken Answer" : "The correct answer is two hundred and ninety-four.",
-	"Most Common Mistake" : 69,
-	"Difficulty Level" : 1,
+	"QuestionID" : 304,
+	"Question" : "What is 5 + 8 X (1 + 6) X 2?",
+	"Spoken Question" : "What is five plus eight times (one plus six) times two?", 
+	"Answer" : 117,
+	"Spoken Answer" : "The correct answer is one hundred and seventeen.",
+	"Most Common Mistake" : 25,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Parentheses", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is (2 + 9) X 2 - 7 X 1?",
-	"Spoken Question" : "What is (two plus nine) times two minus seven times one?", 
-	"Answer" : 15,
-	"Spoken Answer" : "The correct answer is fifteen.",
-	"Most Common Mistake" : 13,
-	"Difficulty Level" : 1,
+	"QuestionID" : 305,
+	"Question" : "What is 5 + 5 X (2 + 7) X 4?",
+	"Spoken Question" : "What is five plus five times (two plus seven) times four?", 
+	"Answer" : 185,
+	"Spoken Answer" : "The correct answer is one hundred and eighty-five.",
+	"Most Common Mistake" : 48,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Parentheses", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is (8 + 5) X 4 - 9 X 2?",
-	"Spoken Question" : "What is (eight plus five) times four minus nine times two?", 
-	"Answer" : 34,
-	"Spoken Answer" : "The correct answer is thirty-four.",
-	"Most Common Mistake" : 10,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 3 + 8 X (1 + 7) X 3?",
-	"Spoken Question" : "What is three plus eight times (one plus seven) times three?", 
-	"Answer" : 195,
-	"Spoken Answer" : "The correct answer is one hundred and ninety-five.",
-	"Most Common Mistake" : 32,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is (8 + 7) X 3 - 5 X 3?",
-	"Spoken Question" : "What is (eight plus seven) times three minus five times three?", 
-	"Answer" : 30,
-	"Spoken Answer" : "The correct answer is thirty.",
-	"Most Common Mistake" : 14,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is (8 + 5) X 1 - 6 X 0?",
-	"Spoken Question" : "What is (eight plus five) times one minus six times zero?", 
-	"Answer" : 13,
-	"Spoken Answer" : "The correct answer is thirteen.",
-	"Most Common Mistake" : 13,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 7 + 9 X (0 + 8) X 1?",
-	"Spoken Question" : "What is seven plus nine times (zero plus eight) times one?", 
+	"QuestionID" : 306,
+	"Question" : "What is 7 + 8 X (1 + 8) X 1?",
+	"Spoken Question" : "What is seven plus eight times (one plus eight) times one?", 
 	"Answer" : 79,
 	"Spoken Answer" : "The correct answer is seventy-nine.",
-	"Most Common Mistake" : 8,
-	"Difficulty Level" : 1,
+	"Most Common Mistake" : 23,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Parentheses", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is (2 + 6) X 4 - 5 X 0?",
-	"Spoken Question" : "What is (two plus six) times four minus five times zero?", 
-	"Answer" : 32,
-	"Spoken Answer" : "The correct answer is thirty-two.",
-	"Most Common Mistake" : 26,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 2 + 9 X (2 + 6) X 3?",
-	"Spoken Question" : "What is two plus nine times (two plus six) times three?", 
-	"Answer" : 218,
-	"Spoken Answer" : "The correct answer is two hundred and eighteen.",
+	"QuestionID" : 307,
+	"Question" : "What is 6 + 5 X (2 + 6) X 3?",
+	"Spoken Question" : "What is six plus five times (two plus six) times three?", 
+	"Answer" : 126,
+	"Spoken Answer" : "The correct answer is one hundred and twenty-six.",
 	"Most Common Mistake" : 40,
-	"Difficulty Level" : 1,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Parentheses", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 5 + 9 X (0 + 9) X 2?",
-	"Spoken Question" : "What is five plus nine times (zero plus nine) times two?", 
-	"Answer" : 167,
-	"Spoken Answer" : "The correct answer is one hundred and sixty-seven.",
-	"Most Common Mistake" : 18,
-	"Difficulty Level" : 1,
+	"QuestionID" : 308,
+	"Question" : "What is (3 + 9) X 1 - 6 X 1?",
+	"Spoken Question" : "What is (three plus nine) times one minus six times one?", 
+	"Answer" : 6,
+	"Spoken Answer" : "The correct answer is six.",
+	"Most Common Mistake" : 6,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Parentheses", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is (2 + 8) X 4 - 6 X 2?",
-	"Spoken Question" : "What is (two plus eight) times four minus six times two?", 
-	"Answer" : 28,
-	"Spoken Answer" : "The correct answer is twenty-eight.",
-	"Most Common Mistake" : 22,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is (2 + 9) X 4 - 5 X 3?",
-	"Spoken Question" : "What is (two plus nine) times four minus five times three?", 
-	"Answer" : 29,
-	"Spoken Answer" : "The correct answer is twenty-nine.",
-	"Most Common Mistake" : 23,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is (1 + 8) X 4 - 8 X 0?",
-	"Spoken Question" : "What is (one plus eight) times four minus eight times zero?", 
-	"Answer" : 36,
-	"Spoken Answer" : "The correct answer is thirty-six.",
-	"Most Common Mistake" : 33,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 0 + 6 X (0 + 9) X 4?",
-	"Spoken Question" : "What is zero plus six times (zero plus nine) times four?", 
-	"Answer" : 216,
-	"Spoken Answer" : "The correct answer is two hundred and sixteen.",
-	"Most Common Mistake" : 36,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 7 + 5 X (0 + 5) X 0?",
-	"Spoken Question" : "What is seven plus five times (zero plus five) times zero?", 
-	"Answer" : 7,
-	"Spoken Answer" : "The correct answer is seven.",
-	"Most Common Mistake" : 0,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is (3 + 9) X 4 - 7 X 0?",
-	"Spoken Question" : "What is (three plus nine) times four minus seven times zero?", 
-	"Answer" : 48,
-	"Spoken Answer" : "The correct answer is forty-eight.",
-	"Most Common Mistake" : 39,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is (3 + 8) X 4 - 6 X 2?",
-	"Spoken Question" : "What is (three plus eight) times four minus six times two?", 
-	"Answer" : 32,
-	"Spoken Answer" : "The correct answer is thirty-two.",
-	"Most Common Mistake" : 23,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is (0 + 9) X 3 - 9 X 1?",
-	"Spoken Question" : "What is (zero plus nine) times three minus nine times one?", 
-	"Answer" : 18,
-	"Spoken Answer" : "The correct answer is eighteen.",
-	"Most Common Mistake" : 18,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is 3 + 7 X (0 + 7) X 0?",
-	"Spoken Question" : "What is three plus seven times (zero plus seven) times zero?", 
-	"Answer" : 3,
-	"Spoken Answer" : "The correct answer is three.",
-	"Most Common Mistake" : 0,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is (3 + 9) X 3 - 8 X 1?",
-	"Spoken Question" : "What is (three plus nine) times three minus eight times one?", 
-	"Answer" : 28,
-	"Spoken Answer" : "The correct answer is twenty-eight.",
-	"Most Common Mistake" : 22,
-	"Difficulty Level" : 1,
-	"Problem Type" : "Parentheses", 
-	"Max Time" : 60
- },
-
- {
-	"Question" : "What is (4 + 9) X 4 - 6 X 2?",
-	"Spoken Question" : "What is (four plus nine) times four minus six times two?", 
-	"Answer" : 40,
-	"Spoken Answer" : "The correct answer is forty.",
+	"QuestionID" : 309,
+	"Question" : "What is (5 + 7) X 4 - 5 X 1?",
+	"Spoken Question" : "What is (five plus seven) times four minus five times one?", 
+	"Answer" : 43,
+	"Spoken Answer" : "The correct answer is forty-three.",
 	"Most Common Mistake" : 28,
-	"Difficulty Level" : 1,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Parentheses", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 1 + 5 X (1 + 9) X 4?",
-	"Spoken Question" : "What is one plus five times (one plus nine) times four?", 
-	"Answer" : 201,
-	"Spoken Answer" : "The correct answer is two hundred and one.",
-	"Most Common Mistake" : 42,
-	"Difficulty Level" : 1,
+	"QuestionID" : 310,
+	"Question" : "What is 7 + 6 X (1 + 9) X 1?",
+	"Spoken Question" : "What is seven plus six times (one plus nine) times one?", 
+	"Answer" : 67,
+	"Spoken Answer" : "The correct answer is sixty-seven.",
+	"Most Common Mistake" : 22,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Parentheses", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 6 + 5 X (2 + 8) X 4?",
-	"Spoken Question" : "What is six plus five times (two plus eight) times four?", 
-	"Answer" : 206,
-	"Spoken Answer" : "The correct answer is two hundred and six.",
+	"QuestionID" : 311,
+	"Question" : "What is 7 + 6 X (1 + 7) X 1?",
+	"Spoken Question" : "What is seven plus six times (one plus seven) times one?", 
+	"Answer" : 55,
+	"Spoken Answer" : "The correct answer is fifty-five.",
+	"Most Common Mistake" : 20,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 312,
+	"Question" : "What is 6 + 6 X (0 + 9) X 2?",
+	"Spoken Question" : "What is six plus six times (zero plus nine) times two?", 
+	"Answer" : 114,
+	"Spoken Answer" : "The correct answer is one hundred and fourteen.",
+	"Most Common Mistake" : 18,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 313,
+	"Question" : "What is (8 + 7) X 2 - 7 X 0?",
+	"Spoken Question" : "What is (eight plus seven) times two minus seven times zero?", 
+	"Answer" : 30,
+	"Spoken Answer" : "The correct answer is thirty.",
+	"Most Common Mistake" : 22,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 314,
+	"Question" : "What is 8 + 7 X (0 + 5) X 4?",
+	"Spoken Question" : "What is eight plus seven times (zero plus five) times four?", 
+	"Answer" : 148,
+	"Spoken Answer" : "The correct answer is one hundred and forty-eight.",
+	"Most Common Mistake" : 20,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 315,
+	"Question" : "What is 6 + 9 X (3 + 9) X 4?",
+	"Spoken Question" : "What is six plus nine times (three plus nine) times four?", 
+	"Answer" : 438,
+	"Spoken Answer" : "The correct answer is four hundred and thirty-eight.",
+	"Most Common Mistake" : 81,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 316,
+	"Question" : "What is 0 + 5 X (0 + 6) X 4?",
+	"Spoken Question" : "What is zero plus five times (zero plus six) times four?", 
+	"Answer" : 120,
+	"Spoken Answer" : "The correct answer is one hundred and twenty.",
+	"Most Common Mistake" : 24,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 317,
+	"Question" : "What is 0 + 6 X (3 + 9) X 4?",
+	"Spoken Question" : "What is zero plus six times (three plus nine) times four?", 
+	"Answer" : 288,
+	"Spoken Answer" : "The correct answer is two hundred and eighty-eight.",
 	"Most Common Mistake" : 54,
-	"Difficulty Level" : 1,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Parentheses", 
 	"Max Time" : 60
  },
 
  {
-	"Question" : "What is 6 + 7 X (3 + 7) X 4?",
-	"Spoken Question" : "What is six plus seven times (three plus seven) times four?", 
-	"Answer" : 286,
-	"Spoken Answer" : "The correct answer is two hundred and eighty-six.",
-	"Most Common Mistake" : 67,
-	"Difficulty Level" : 1,
+	"QuestionID" : 318,
+	"Question" : "What is 1 + 8 X (1 + 7) X 4?",
+	"Spoken Question" : "What is one plus eight times (one plus seven) times four?", 
+	"Answer" : 257,
+	"Spoken Answer" : "The correct answer is two hundred and fifty-seven.",
+	"Most Common Mistake" : 37,
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 319,
+	"Question" : "What is 8 + 8 X (1 + 6) X 2?",
+	"Spoken Question" : "What is eight plus eight times (one plus six) times two?", 
+	"Answer" : 120,
+	"Spoken Answer" : "The correct answer is one hundred and twenty.",
+	"Most Common Mistake" : 28,
+	"Difficulty Level" : 2,
 	"Problem Type" : "Parentheses", 
 	"Max Time" : 60
  }
-
 ]
