@@ -169,17 +169,20 @@ class TutoringSession:
         # and correct experiment type
         take_break_message = ""
         if (msgType == 'CA' or msgType == 'LIA' or msgType == 'TIMEOUT'):
-            if self.expGroup == 2:  # Reward break
-                if take_break(self.current_session, rewardBreak=True):
+            print type(self.expGroup)
+            if int(self.expGroup) == 2:  # Reward break
+                if take_break(self.current_session, reward_break=True):
                     take_break_message = "REWARD_BREAK"
-            elif self.expGroup == 3:  # Frustration break
-                if take_break(self.current_session, rewardBreak=False):
+            elif int(self.expGroup) == 3:  # Frustration break
+                if take_break(self.current_session, reward_break=False):
                     take_break_message = "FRUSTRATION_BREAK"
             else:
                 pass
 
         print self.current_session
         print 'returned out!'
+        print take_break_message
+        print 'msgType: ' + msgType + ', expGroup: ' + self.expGroup
         return take_break_message
 
 
@@ -300,8 +303,10 @@ class TutoringSession:
                                 pump = "left_pump"
                             self.log_transaction("RA",questionNum,pump) 
                             #self.goNao.sit()
-                        self.update_session(msgType, questionNum, otherInfo)
-                        self.
+                        tempMessage = self.update_session(msgType, questionNum, otherInfo)
+                        if tempMessage:  # if not empty string, then return message should indicate break
+                            returnMessage = tempMessage
+                        
                     elif msgType == 'IA': #incorrect attempt
                         self.numIncorrect += 1
                         otherInfo = line.split(";",4)[4].strip()
@@ -335,7 +340,10 @@ class TutoringSession:
                             self.goNao.look()
                             id = self.goNao.genSpeech(robot_speech)
                             #self.goNao.last_shake()
-                            #self.goNao.sit()       
+                            #self.goNao.sit()
+                        tempMessage = self.update_session(msgType, questionNum, otherInfo)
+                        if tempMessage:  # if not empty string, then return message should indicate break
+                            returnMessage = tempMessage
                     elif msgType == 'H1': #hint request
                         self.numHintRequests += 1
                         otherInfo = line.split(";",4)[4].strip()
@@ -416,8 +424,14 @@ class TutoringSession:
                         returnMessage = 'STRETCHBREAK-DONE'
 
                     elif msgType.startswith('TIMEOUT'):
+<<<<<<< bd2f8d428151e14943236f9e94a85f964ef956ed
                         self.update_session(msgType, questionNum, "")
 
+=======
+                        tempMessage = self.update_session(msgType, questionNum, otherInfo)
+                        if tempMessage: # if not empty string, then return message should indicate break
+                            returnMessage = tempMessage
+>>>>>>> break messages passed back and forth successfully
                     else:
                         print 'error: unknown message type'
 

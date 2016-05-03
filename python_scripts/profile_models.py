@@ -10,8 +10,7 @@ class Session(list):
         session_num: Integer representing session number
         pid: Integer representing user pid
         window_size: int representing window size
-        total_avg_time: float representing total average time in seconds
-        window_avg_time: float representing most recent window average time in seconds
+        (tentative) breaks: int representing breaks taken in this session
     '''
 
     def __init__(self, questions=[], session_num=-1, pid=-1, window=5):
@@ -19,7 +18,6 @@ class Session(list):
         self.pid = pid
         self.window = window
         super(Session, self).__init__(questions)
-
 
     def calc_total_accuracy(self):
         '''
@@ -50,7 +48,6 @@ class Session(list):
         l = len(self)
         total_time = sum([q.total_time for i,q in enumerate(self) if i+self.window >= l])
         return 1.0*total_time/l
-
 
     def __repr__(self):
         return "Session(pid=%r, session_num=%r, questions=\\\n%s)" % \

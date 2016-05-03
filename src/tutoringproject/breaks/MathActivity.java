@@ -105,7 +105,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private boolean firstTimeCallingOnResume = true;
 
     //temporary variable (should be read in through question format)
-    private final int max_time_per_question = 60000;  //hard coded at 10 seconds, which should be ample time!
+    private final int max_time_per_question = 30000;  //hard coded at 10 seconds, which should be ample time!
     private Timer timer;
     private TimerTask timerTask;
     private TimeWatch timeWatch;
@@ -382,10 +382,12 @@ public class MathActivity extends Activity implements TCPClientOwner {
             enableButtons();
         }
         else if (expGroup == 2 && message.equals("REWARD_BREAK")) {
+            takeBreak = true;
             enableButtons();
+
         }
         else if (expGroup == 3 && message.equals("FRUSTRATION_BREAK")) {
-
+            takeBreak = true;
             enableButtons();
         }
     }
@@ -602,7 +604,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
     public void NextQuestion() {
         //preliminary fixed break interval calculation
-        if (num_consec_questions >= fixedBreakInterval) {
+        if (expGroup == 1 && num_consec_questions >= fixedBreakInterval) {
             takeBreak = true;
             num_consec_questions = 0;
         }
