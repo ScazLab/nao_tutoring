@@ -18,9 +18,10 @@ from naoqi import ALBehavior
 
 from tutorMotions import *
 
-import json
+# import json
 from profile_models import Question, Session
 import copy
+import pickle
 
 class TutoringSession:
     def __init__(self, host, port, goNao):
@@ -100,8 +101,9 @@ class TutoringSession:
         Appends session data to file for storage
         '''
 
-        with open('sample_person_data.txt', 'a') as outfile:
-            json.dump(data, outfile)
+        with open("data/"+"session_data_"+"P"+self.pid+"_S"+self.sessionNum+".txt", 'wb') as outfile:
+            # json.dump(data, outfile)
+            pickle.dump( data, outfile)
 
         return
 
@@ -112,8 +114,9 @@ class TutoringSession:
         Returns data
         '''
 
-        with open(file_name) as data_file:
-            data = json.load(data_file)
+        with open(file_name, 'rb') as data_file:
+            # data = json.load(data_file)
+            data = pickle.load(data_file)
 
         return data
 
@@ -122,14 +125,20 @@ class TutoringSession:
         '''
         Updates session data given interaction
         '''
-        question_data = {}
         english_msg_type = self.map_msg_type(msgType)
-        if msgType == 'Q':
+        if msgType == 'START':
+            print 'in START'
+            self.current_session = Session(pid=self.pid, session_num=self.sessionNum)
+        elif msgType == 'Q':
+            print 'in Q'
             self.__current_question = Question(question_num=questionNum)
         elif msgType == 'CA':
+            print 'in CA'
             self.__current_question.correct()
             self.current_session.append(copy.deepcopy(self.__current_question))
+            print "Question time (total time) in update_session: " + str(self.__current_question.total_time)
         elif msgType == 'IA':
+            print 'in IA, should not be here'
             self.__current_question.incorrect(last=False)
         elif msgType == 'LIA':
             self.__current_question.incorrect(last=True)
@@ -144,11 +153,17 @@ class TutoringSession:
             pass # = 'ROBOT SPEECH'
         elif msgType == 'RA':
             pass # = 'ROBOT ACTION'
+        elif msgType == 'TIMEOUT':
+            print 'in TIMEOUT'
+            self.__current_question.timeout()
+            self.current_session.append(copy.deepcopy(self.__current_question))
         else:
+            print "update_session error: non-handled msgType"
             pass
-        self.session[questionNum] = {}
+        # self.session[questionNum] = {}
 
-
+        print self.current_session
+        print 'returned out!'
         return
 
 
@@ -227,8 +242,8 @@ class TutoringSession:
 
                         #create appropriate session object
                         # IMPORTANT! Commenting this out temporarily
-                        self.current_session = Session(pid=self.pid, session_num=self.sessionNum)
-
+                        # self.current_session = Session(pid=self.pid, session_num=self.sessionNum)
+                        self.update_session(msgType, questionNum, "")
                     elif msgType == 'Q': #question
                         self.numQuestions += 1
                         otherInfo = line.split(";",4)[4].strip()
@@ -241,13 +256,17 @@ class TutoringSession:
                             #id = self.goNao.genSpeech(robot_speech)
                             [id,speech] = self.goNao.introQuestion(robot_speech)
                             self.log_transaction("RS",questionNum,speech)
-                            self.goNao.assessQuestion(questionType) 
+                            self.goNao.assessQuestion(questionType)
+                        self.update_session(msgType, questionNum, otherInfo)
                     elif msgType == 'CA': #correct attempt
                         self.numCorrect += 1
                         otherInfo = line.split(";",4)[4].strip()
-                        questionTime = line.split(";",5)[5].strip()
 
-                        print 'correct answer' 
+                        questionTime = line.split(";",5)[5].strip()  # DANGER maybe do something with this
+
+                        print "Question time in app: " + str(questionTime)  # DANGER DEBUGGING
+
+                        print 'correct answer'
                         if self.goNao is None:
                             os.system("say " + robot_speech)
                         else:
@@ -265,6 +284,7 @@ class TutoringSession:
                                 pump = "left_pump"
                             self.log_transaction("RA",questionNum,pump) 
                             #self.goNao.sit()
+                        self.update_session(msgType, questionNum, otherInfo)
                     elif msgType == 'IA': #incorrect attempt
                         self.numIncorrect += 1
                         otherInfo = line.split(";",4)[4].strip()
@@ -286,6 +306,11 @@ class TutoringSession:
                     elif msgType == 'LIA': #incorrect attempt
                         self.numIncorrect += 1
                         otherInfo = line.split(";",4)[4].strip()
+
+                        questionTime = line.split(";",5)[5].strip()  # DANGER maybe do something with this
+
+                        print "Question time in app: " + str(questionTime)  # DANGER DEBUGGING
+
                         print 'incorrect answer (last attempt)'
                         if self.goNao is None:
                             os.system("say " + robot_speech)
@@ -368,9 +393,14 @@ class TutoringSession:
                     elif msgType.startswith('TICTACTOE'):
                         id = self.handle_tictactoe_msg(msgType, robot_speech)
                         returnMessage = msgType
+
                     elif msgType.startswith('STRETCHBREAK'):
                         id = self.handle_stretch_break_msg(msgType, robot_speech)
                         returnMessage = 'STRETCHBREAK-DONE'
+
+                    elif msgType.startswith('TIMEOUT'):
+                        self.update_session(msgType, questionNum, "")
+
                     else:
                         print 'error: unknown message type'
 
@@ -387,11 +417,13 @@ class TutoringSession:
                     self.log_transaction(msgType,questionNum,otherInfo)
                 if sessionEnded:
                     self.logFile.close()
+                    self.store_session(self.current_session)
                     break
             except KeyboardInterrupt:
                 self.logFile.flush()
                 self.logFile.close()
                 conn.close()
+                self.store_session(self.current_session)
                 sys.exit(0)
 
 

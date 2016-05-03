@@ -28,7 +28,7 @@ public class TimeWatch {
 
     public long time() {
         long ends = System.nanoTime() - starts;
-        return ends - starts;
+        return ends;
     }
 
     public long time(TimeUnit unit) {

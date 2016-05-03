@@ -29,7 +29,7 @@ class Question(object):
         question_num: Integer representing question number in current session
         attempts: Integer representing number of attempts made at question (max 5)
         hints: Integer representing number of hints given (max 3)
-        correct: Boolean representing whether or not question was eventually answered correctly
+        answer_correct: Boolean representing whether or not question was eventually answered answer_correctly
         total_time: Float representing total time, in ms, that was spent on question
         hint_times: Array of Floats representing time (from start) when hint was given
             Note: -1 means that hint was not given
@@ -43,24 +43,39 @@ class Question(object):
                 attempt1 made 35.4 ms after start
                 attempt2 made 75.1 ms after start
                 attempt3/4/5 never made
+        q_complete: Bool representing whether or not quesiton is complete
+        q_timeout: Bool representing that quesiton timed out
     '''
     MAX_HINTS = 3
     MAX_ATTEMPTS = 5
 
-    def __init__(self, question_num=-1, attempts=0, hints=0, correct=False,
-                 total_time=0.0, hint_times=[], attempt_times=[], complete=False):
+    def __init__(self, question_num=-1, attempts=0, hints=0, answer_correct=False,
+                 total_time=0.0, hint_times=[], attempt_times=[], q_complete=False, q_timeout=False):
         self.question_num = question_num
         self.attempts = attempts
         self.hints = hints
-        self.correct = correct
+        self.answer_correct = answer_correct
         self.total_time = total_time
         self.hint_times = hint_times
         self.attempt_times = attempt_times
-        self.complete = complete
+        self.q_complete = q_complete
+        self.q_timeout = q_timeout
 
         # private vars for internal use
         self.__start_time = time.time()
         self.__elapsed_time = time.time()
+
+    def timeout(self):
+        '''
+        Handles case when question times out
+        '''
+        time_diff = self.time_step()
+
+        self.total_time = time_diff
+        self.answer_correct = False  # just to make sure
+
+        self.q_timeout = True
+        self.complete()
 
     def correct(self):
         '''
@@ -69,11 +84,11 @@ class Question(object):
 
         time_diff = self.time_step()
 
-        self.attempt_times[self.attempts] = time_diff
+        self.attempt_times.append(time_diff)
         self.attempts += 1
 
         self.total_time = time_diff
-        self.correct = True
+        self.answer_correct = True
 
         self.complete()
 
@@ -87,12 +102,12 @@ class Question(object):
 
         time_diff = self.time_step()
 
-        self.attempt_times[self.attempts] = time_diff
+        self.attempt_times.append(time_diff)
         self.attempts += 1
 
         if (last):
             self.total_time = time_diff
-            self.correct = False  # just to make sure
+            self.answer_correct = False  # just to make sure
 
             self.complete()
 
@@ -103,7 +118,7 @@ class Question(object):
 
         time_diff = self.time_step()
 
-        self.hint_times[self.hints] = time_diff
+        self.hint_times.append(time_diff)
         self.hints += 1
 
     def time_step(self):
@@ -123,12 +138,12 @@ class Question(object):
             self.hint_times.append(-1)
 
         while len(self.attempt_times) < self.MAX_ATTEMPTS:
-            self.hint_times.append(-1)
+            self.attempt_times.append(-1)
 
-        self.complete = True
+        self.q_complete = True
 
     def __repr__(self):
-        return "Question(q_num=%r, attempts=%r, hints=%r, correct=%r, total_time=%r, complete=%r, \\\nhint_times=%s, attempt_times=%s)" % \
-            (self.question_num, self.attempts, self.hints, self.correct, self.total_time, self.complete,
+        return "Question(q_num=%r, attempts=%r, hints=%r, answer_correct=%r, total_time=%r, q_complete=%r, q_timeout=%r, \\\nhint_times=%s, attempt_times=%s)" % \
+            (self.question_num, self.attempts, self.hints, self.answer_correct, self.total_time, self.q_complete, self.q_timeout,
              pprint.pformat(list(self.hint_times)), pprint.pformat(list(self.attempt_times)))
 

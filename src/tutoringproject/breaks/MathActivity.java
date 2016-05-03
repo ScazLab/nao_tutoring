@@ -105,7 +105,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private boolean firstTimeCallingOnResume = true;
 
     //temporary variable (should be read in through question format)
-    private final int max_time_per_question = 10000;  //hard coded at 10 seconds, which should be ample time!
+    private final int max_time_per_question = 60000;  //hard coded at 10 seconds, which should be ample time!
     private Timer timer;
     private TimerTask timerTask;
     private TimeWatch timeWatch;
@@ -382,7 +382,6 @@ public class MathActivity extends Activity implements TCPClientOwner {
             enableButtons();
         }
         else if (expGroup == 2 && message.equals("REWARD_BREAK")) {
-
             enableButtons();
         }
         else if (expGroup == 3 && message.equals("FRUSTRATION_BREAK")) {
@@ -396,9 +395,6 @@ public class MathActivity extends Activity implements TCPClientOwner {
         String format = questions.get(currentQuestionIndex).format;
         String enteredStr1 = AnswerText1.getText().toString();
         String enteredStr2 = AnswerText2.getText().toString();
-
-        //store elapsed questionTime
-        long questionTime = timeWatch.time(TimeUnit.SECONDS);  //stores elapsed time in seconds
 
 
         if (format.equals(Questions.FORMAT_FRACTION) &&
@@ -429,9 +425,14 @@ public class MathActivity extends Activity implements TCPClientOwner {
                 attempt = ""+entered1;
             }
 
+            //store elapsed questionTime
+            long questionTime = timeWatch.time(TimeUnit.MILLISECONDS);  //stores elapsed time in milliseconds
+            System.out.println("QuestionTime: " + Long.toString(questionTime) +"");
+
             //if(AnswerText.Text() == entered) {
             //include TCP server stuff
             if (correct) {
+                stopTimerTask();  // immediately kill timer task if correct
                 if (TCPClient.singleton != null)
                     TCPClient.singleton.sendMessage("CA;" + currentQuestionIndex + ";" + questionType + ";" + CORRECT_STRING + ";" + attempt  + ";" + questionTime);
                 RightWrongLabel.setText(CORRECT_STRING);
