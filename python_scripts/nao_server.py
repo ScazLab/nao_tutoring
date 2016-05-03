@@ -20,6 +20,7 @@ from tutorMotions import *
 
 # import json
 from profile_models import Question, Session
+from breaks import take_break
 import copy
 import pickle
 
@@ -124,6 +125,9 @@ class TutoringSession:
     def update_session(self, msgType, questionNum, otherInfo):
         '''
         Updates session data given interaction
+
+        Returns take_break_message if break needs to be taken.  
+            Otherwise, returns an empty string
         '''
         english_msg_type = self.map_msg_type(msgType)
         if msgType == 'START':
@@ -160,11 +164,23 @@ class TutoringSession:
         else:
             print "update_session error: non-handled msgType"
             pass
-        # self.session[questionNum] = {}
+
+        # send message of whether or not to take break if appropriate msgType
+        # and correct experiment type
+        take_break_message = ""
+        if (msgType == 'CA' or msgType == 'LIA' or msgType == 'TIMEOUT'):
+            if self.expGroup == 2:  # Reward break
+                if take_break(self.current_session, rewardBreak=True):
+                    take_break_message = "REWARD_BREAK"
+            elif self.expGroup == 3:  # Frustration break
+                if take_break(self.current_session, rewardBreak=False):
+                    take_break_message = "FRUSTRATION_BREAK"
+            else:
+                pass
 
         print self.current_session
         print 'returned out!'
-        return
+        return take_break_message
 
 
     #def tutor(history, data, categ):
@@ -285,6 +301,7 @@ class TutoringSession:
                             self.log_transaction("RA",questionNum,pump) 
                             #self.goNao.sit()
                         self.update_session(msgType, questionNum, otherInfo)
+                        self.
                     elif msgType == 'IA': #incorrect attempt
                         self.numIncorrect += 1
                         otherInfo = line.split(";",4)[4].strip()
