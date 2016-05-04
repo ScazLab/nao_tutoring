@@ -106,13 +106,13 @@ class TutoringSession:
         return
 
 
-    def load_session(self, data):
+    def load_session(self, file_name):
         '''
         Loads (most recent) session data from file for user
         Returns data
         '''
 
-        with open('data.json') as data_file:
+        with open(file_name) as data_file:
             data = json.load(data_file)
 
         return data
@@ -227,7 +227,7 @@ class TutoringSession:
 
                         #create appropriate session object
                         # IMPORTANT! Commenting this out temporarily
-                        # self.current_session = Session(pid=self.pid, sessionNum=self.sessionNum)
+                        # self.current_session = Session(pid=self.pid, session_num=self.sessionNum)
 
                     elif msgType == 'Q': #question
                         self.numQuestions += 1
