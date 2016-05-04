@@ -13,11 +13,34 @@ class Session(list):
         (tentative) breaks: int representing breaks taken in this session
     '''
 
-    def __init__(self, questions=[], session_num=-1, pid=-1, window=5):
+    def __init__(self, questions=[], session_num=-1, pid=-1, time_window=5, accuracy_window=5, breaks=[]):
         self.session_num = session_num
         self.pid = pid
-        self.window = window
+        self.time_window = time_window
+        self.accuracy_window = accuracy_window
+        self.breaks = breaks
+
+        # private vars for internal use
+        self.__start_time = time.time()
+        self.__now_time = time.time()
         super(Session, self).__init__(questions)
+
+    def time_step(self):
+        '''
+        Updates __now_time
+        Returns elapsed time i.e. Float representing (ms) difference between __now_time and __start_time
+        '''
+        self.__now_time = time.time()
+        return self.__now_time - self.__start_time
+
+    def insert_break(self, b_type, triggered_break):
+        '''
+        Inserts break into breaks (list) of session object
+
+        Returns void
+        '''
+        self.breaks.append(Break(b_num=len(self.breaks), after_question=self[-1].question_num, b_type=b_type, time_since_start=self.time_step(), triggered_break=triggered_break))
+        return
 
     def calc_total_accuracy(self):
         '''
@@ -26,13 +49,15 @@ class Session(list):
         total_correct = len([q for q in self if q.answer_correct])
         return 1.0*total_correct/len(self)
 
-    def calc_window_accuracy(self):
+    def calc_window_accuracy(self, offset=0):
         '''
         window_accuracy: float from 0-1 representing most recent window accuracy ratio
+        offset 0 gets most recent window, anything less gets windows starting offset behind most recent
+            i.e. offset 1 gets previous window value
         '''
         l = len(self)
-        total_correct = len([q for i,q in enumerate(self) if (q.answer_correct and i+self.window >= l)])
-        return 1.0*total_correct/self.window
+        total_correct = len([q for i, q in enumerate(self) if (q.answer_correct and i+self.accuracy_window+offset >= l and i+self.accuracy_window+offset < l+self.accuracy_window)])
+        return 1.0*total_correct/self.accuracy_window
 
     def calc_total_avg_time(self):
         '''
@@ -41,17 +66,37 @@ class Session(list):
         total_time = sum([q.total_time for q in self])
         return 1.0*total_time/len(self)
 
-    def calc_window_avg_time(self):
+    def calc_window_avg_time(self, offset=0):
         '''
-        window_avg_time: float representing most recent window average time in seconds
+        window_avg_time: float representing most recent time_window average time in seconds
+        offset 0 gets most recent time_window, anything less gets time_windows starting offset behind most recent
+            i.e. offset 1 gets previous time_window value
         '''
         l = len(self)
-        total_time = sum([q.total_time for i,q in enumerate(self) if i+self.window >= l])
-        return 1.0*total_time/l
+        total_time = sum([q.total_time for i, q in enumerate(self) if i+self.time_window+offset >= l and i+self.time_window+offset < l+self.time_window])
+        return 1.0*total_time/self.time_window
 
     def __repr__(self):
         return "Session(pid=%r, session_num=%r, questions=\\\n%s)" % \
             (self.pid, self.session_num, pprint.pformat(list(self)))
+
+
+class Break(object):
+    '''
+    Break object representing a break
+        b_type: integer that can be mapped from map_break_message
+        triggered_break: boolean representing whether or not a break was triggered
+    '''
+    def __init__(self, b_num=-1, after_question=-1, b_type=-1, time_since_start=0.0, triggered_break=False):
+        self.b_num = b_num
+        self.after_question = after_question
+        self.b_type = b_type
+        self.time_since_start = time_since_start
+        self.triggered_break = triggered_break
+
+    def __repr__(self):
+        return "Break(b_num=%r, after_question=%r, b_type=%r, time_since_start=%r, triggered_break=%r)" % \
+            (self.b_num, self.after_question, self.time_since_start, self.triggered_break)
 
 
 class Question(object):
@@ -96,7 +141,7 @@ class Question(object):
 
         # private vars for internal use
         self.__start_time = time.time()
-        self.__elapsed_time = time.time()
+        self.__now_time = time.time()
 
     def timeout(self):
         '''
@@ -156,11 +201,11 @@ class Question(object):
 
     def time_step(self):
         '''
-        Updates __elapsed_time
-        Returns Float representing (ms) difference between __elapsed_time and __start_time
+        Updates __now_time
+        Returns Float representing (ms) difference between __now_time and __start_time
         '''
-        self.__elapsed_time = time.time()
-        return self.__elapsed_time - self.__start_time
+        self.__now_time = time.time()
+        return self.__now_time - self.__start_time
 
     def complete(self):
         '''
