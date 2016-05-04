@@ -103,7 +103,6 @@ class TutoringSession:
         '''
 
         with open("data/"+"session_data_"+"P"+self.pid+"_S"+self.sessionNum+".txt", 'wb') as outfile:
-            # json.dump(data, outfile)
             pickle.dump( data, outfile)
 
         return
@@ -116,7 +115,6 @@ class TutoringSession:
         '''
 
         with open(file_name, 'rb') as data_file:
-            # data = json.load(data_file)
             data = pickle.load(data_file)
 
         return data
@@ -167,14 +165,18 @@ class TutoringSession:
 
         # send message of whether or not to take break if appropriate msgType
         # and correct experiment type
-        take_break_message = ""
+        take_break_message = ""  # message to be sent to Android
+        break_trigger = False
+        break_trigger_expl = ""  # explains why or why not break triggered
         if (msgType == 'CA' or msgType == 'LIA' or msgType == 'TIMEOUT'):
             print type(self.expGroup)
             if int(self.expGroup) == 2:  # Reward break
-                if take_break(self.current_session, reward_break=True):
+                (break_trigger, break_trigger_expl) = take_break(self.current_session, reward_break=True)
+                if break_trigger:
                     take_break_message = "REWARD_BREAK"
             elif int(self.expGroup) == 3:  # Frustration break
-                if take_break(self.current_session, reward_break=False):
+                (break_trigger, break_trigger_expl) = take_break(self.current_session, reward_break=False)
+                if break_trigger:
                     take_break_message = "FRUSTRATION_BREAK"
             else:
                 pass
@@ -441,7 +443,7 @@ class TutoringSession:
                             if introFlag is not True:
                                 self.goNao.sit()
                                 conn.send(returnMessage+"\n")
-                                print 'send tablet message that robot is done'
+                                print 'send tablet message that robot is done (or a REWARD_BREAK/FRUSTRATION_BREAK message!)'
                     else: #case just for testing without robot
                         time.sleep(2)
                         conn.send(returnMessage+"\n")
