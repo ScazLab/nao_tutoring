@@ -9,8 +9,12 @@ def map_break_message(b):
         0: "overcomes struggle, improves",
         1: "improves, takes time",
         2: "becoming faster/more confident",
+        3: "doing consistently well",
+        4: "not consistent for long enough (reward)",
         5: "bored/distracted/disengaged",
         6: "disengaged",
+        7: "not consistent for long enough (frustration)",
+        8: "doing consistently poorly, frustrated",
         9: "guessing, giving up",
         10: "performance drop",
         11: "guessing, making mistakes",
@@ -61,8 +65,6 @@ def take_break(s, reward_break=True):
                 break_val = 5
             else:  # no change
                 (break_trigger, break_val) = check_consistency(s, reward_break)
-                # consistency stuff
-                pass
         else:  # overall accuracy < 80%
             if time_change > 0:  # time slower
                 break_trigger = True
@@ -71,35 +73,52 @@ def take_break(s, reward_break=True):
                 break_trigger = True
                 break_val = 9
             else:  # no change
-                # consistency stuff
-                pass
+                (break_trigger, break_val) = check_consistency(s, reward_break)
 
     # finally, insert this break into session object
     s.insert_break(b_type=break_val, triggered_break=break_trigger)
     return (break_trigger, map_break_message(break_val))
 
 
-
-
-    return True
-    if len(s) % 2 == 1:
-        return True
-    else:
-        return False
-
-
-def check_consistency(s, reward_break):
+def check_consistency(s, reward_break, t=4):
     '''
     checks consistency condition for session, given a
         reward_break: boolean, True if reward break, False otherwise
-
+        t: integer representing how many questions should be evaluated "no change" in a row before consistency break given
     Returns (boolean, int)
         boolean: break_trigger, true if break should be triggered, false otherwise
         int: break_val, corresponds to appropriate string in map_break_message
     '''
     break_trigger = False
     break_val = -1
+    b_val_no_change = -1
 
+    if reward_break:
+        b_val_no_change = 4
+    else:
+        b_val_no_change = 7
+
+    in_a_row = 0
+    for b in reversed(s.breaks):
+        if b.b_type == b_val_no_change:  # no change in time yet <t (i.e. no break triggered in sequence)
+            in_a_row += 1
+        else:  # otherwise, stop counting
+            break
+
+    if in_a_row == t:  # means time to trigger break!
+        break_trigger = True
+        if reward_break:  # means reward situation
+            break_val = 3
+        else:
+            break_val = 8
+    elif in_a_row < t:b
+        break_trigger = False
+        if reward_break:
+            break_val = 4
+        else:
+            break_val = 7
+    else:  # should never get here!
+        print 'error in check_consistency: logic'
 
     return (break_trigger, break_val)
 
