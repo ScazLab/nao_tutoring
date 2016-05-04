@@ -1,5 +1,3 @@
-
-
 def map_break_message(b):
     '''
     given integer b representing break message
@@ -94,6 +92,7 @@ def take_break(s, reward_break=True, acc_min_change=.2, time_min_change=10, t=4,
         break_trigger = super_rule3(s, max_study_time=max_study_time)
 
     # finally, insert this break into session object
+    # DANGER: this is an important implementation detail!
     # note, b_type could be of type that expects a break_trigger, except break_trigger might
     # be inconsistent because it depends on reward_break type!
     s.insert_break(b_type=break_val, triggered_break=break_trigger)
@@ -107,7 +106,7 @@ def super_rule3(s, max_study_time=15):
     max_time_ms = max_study_time*60000  # convert to ms
     current_time_since_start_ms = s.time_step()
 
-    # check if there has been break in last max_time_ms 
+    # check if there has been break in last max_time_ms
     breaked_recently = False
     for b in reversed(s.breaks):
         if current_time_since_start_ms - b.time_since_start < max_time_ms:
@@ -118,6 +117,7 @@ def super_rule3(s, max_study_time=15):
             break
 
     return breaked_recently
+
 
 def super_rule2(s, refractory_period=4):
     '''
