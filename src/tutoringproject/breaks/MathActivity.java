@@ -717,11 +717,13 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
     public void startTicTacToe() {
         Intent intent = new Intent(this, TicTacToeActivity.class);
+        intent.putExtra("expGroup", "" + expGroup);
         startActivity(intent);
     }
 
     public void startStretchBreak() {
         Intent intent = new Intent(this, StretchBreakActivity.class);
+        intent.putExtra("expGroup", "" + expGroup);
         startActivity(intent);
     }
 
