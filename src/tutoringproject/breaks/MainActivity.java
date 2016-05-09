@@ -40,9 +40,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private int expGroup;
     private EditText fixedBreakInterval;
 
-
-    private EditText fixedBreakInterval;
-
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
