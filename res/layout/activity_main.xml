@@ -114,7 +114,7 @@
             android:background="@drawable/key_drawable"
             android:textSize="30dp" />
 
-        <TextView
+<!--        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -122,9 +122,9 @@
             android:id="@+id/textView3"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="60dp"
-            android:textSize="30dp" />
+            android:textSize="30dp" />-->
 
-        <LinearLayout
+       <!-- <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -168,7 +168,7 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:onClick="HintPressed" />
-        </LinearLayout>
+        </LinearLayout>-->
 
 
     </LinearLayout>

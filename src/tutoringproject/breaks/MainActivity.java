@@ -28,10 +28,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private EditText iPandPort;
     private TCPClient mTcpClient;
     private Button connectButton;
-    private Button session1Button;
-    private Button session2Button;
-    private Button session3Button;
-    private Button session4Button;
+    private Button fixedButton;
+    private Button rewardButton;
+    private Button frustrationButton;
     private EditText participantID;
     private TextView connectionStatus;
     private EditText startQuestionNum;
@@ -39,6 +38,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private RadioButton adaptiveRB;
     private int sessionNum;
     private int expGroup;
+    private EditText fixedBreakInterval;
+
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +71,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
         rewardButton = (Button) findViewById(R.id.RewardButton);
         frustrationButton = (Button) findViewById(R.id.FrustrationButton);
 
+        fixedButton.setOnClickListener(this);
+        rewardButton.setOnClickListener(this);
+        frustrationButton.setOnClickListener(this);
     }
 
     @Override
