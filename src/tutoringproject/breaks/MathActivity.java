@@ -227,8 +227,8 @@ public class MathActivity extends Activity implements TCPClientOwner {
         Bundle extras = getIntent().getExtras();
         if (extras != null){
             sessionNum = Integer.parseInt(extras.getString("sessionNum"));
-            json_file = "Session"+sessionNum+".json";
-            if (sessionNum == 2) json_file = "level2.json";
+            json_file = "level2.json";//"Session"+sessionNum+".json";
+            //if (sessionNum == 2) json_file = "level2.json";
             expGroup = Integer.parseInt(extras.getString("expGroup"));
             System.out.println("expGroup is: " + expGroup);
             startQuestionNum = Integer.parseInt(extras.getString("startQuestionNum"));
