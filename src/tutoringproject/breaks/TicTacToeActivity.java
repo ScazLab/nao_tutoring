@@ -90,9 +90,9 @@ public class TicTacToeActivity extends Activity implements TCPClientOwner {
         if (expGroupIndex == 1) {
             expGroup = ExpGroup.FIXED;
         } else if (expGroupIndex == 2) {
-            expGroup = ExpGroup.FRUSTRATION;
-        } else if (expGroupIndex == 3) {
             expGroup = ExpGroup.REWARD;
+        } else if (expGroupIndex == 3) {
+            expGroup = ExpGroup.FRUSTRATION;
         }
 
         for (int i = 0; i < 3; i++) {
