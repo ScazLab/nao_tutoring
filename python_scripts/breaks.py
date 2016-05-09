@@ -117,7 +117,7 @@ def super_rule3(s, max_study_time=15):
             breaked_recently = False
             break
 
-    return breaked_recently
+    return not breaked_recently
 
 
 def super_rule2(s, refractory_period=4):

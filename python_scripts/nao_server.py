@@ -428,14 +428,9 @@ class TutoringSession:
                         returnMessage = 'STRETCHBREAK-DONE'
 
                     elif msgType.startswith('TIMEOUT'):
-<<<<<<< bd2f8d428151e14943236f9e94a85f964ef956ed
-                        self.update_session(msgType, questionNum, "")
-
-=======
                         tempMessage = self.update_session(msgType, questionNum, otherInfo)
                         if tempMessage: # if not empty string, then return message should indicate break
                             returnMessage = tempMessage
->>>>>>> break messages passed back and forth successfully
                     else:
                         print 'error: unknown message type'
 
