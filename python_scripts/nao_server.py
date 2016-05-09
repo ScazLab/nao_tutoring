@@ -148,9 +148,9 @@ class TutoringSession:
         elif msgType == 'H1' or msgType == 'H2' or msgType == 'H3':
             self.__current_question.hint()
         elif msgType == 'AH':
-            __special(msgType) # = 'AUTOMATIC HINT'
+            pass
         elif msgType == 'DH':
-            __special(msgType) # = 'DENIED HINT'
+            pass
         elif msgType == 'RS':
             pass # = 'ROBOT SPEECH'
         elif msgType == 'RA':

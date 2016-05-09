@@ -43,13 +43,13 @@ class Session(list):
         self.__now_time = time.time()
         return self.__now_time - self.__start_time
 
-    def insert_break(self, b_type, triggered_break):
+    def insert_break(self, b_type, b_super, triggered_break):
         '''
         Inserts break into breaks (list) of session object
 
         Returns void
         '''
-        self.breaks.append(Break(b_num=len(self.breaks), after_question=self[-1].question_num, b_type=b_type, time_since_start=self.time_step(), triggered_break=triggered_break))
+        self.breaks.append(Break(b_num=len(self.breaks), after_question=self[-1].question_num, b_type=b_type, b_super=b_super, time_since_start=self.time_step(), triggered_break=triggered_break))
         return
 
     def calc_total_accuracy(self):
@@ -97,16 +97,17 @@ class Break(object):
         b_type: integer that can be mapped from map_break_message
         triggered_break: boolean representing whether or not a break was triggered
     '''
-    def __init__(self, b_num=-1, after_question=-1, b_type=-1, time_since_start=0.0, triggered_break=False):
+    def __init__(self, b_num=-1, after_question=-1, b_type=-1, b_super=-1, time_since_start=0.0, triggered_break=False):
         self.b_num = b_num
         self.after_question = after_question
         self.b_type = b_type
         self.time_since_start = time_since_start
         self.triggered_break = triggered_break
+        self.b_super = b_super
 
     def __repr__(self):
-        return "Break(b_num=%r, after_question=%r, b_type=%r, time_since_start=%r, triggered_break=%r)" % \
-            (self.b_num, self.after_question, self.b_type, self.time_since_start, self.triggered_break)
+        return "Break(b_num=%r, after_question=%r, b_type=%r, b_super=%r, time_since_start=%r, triggered_break=%r)" % \
+            (self.b_num, self.after_question, self.b_type, self.b_super, self.time_since_start, self.triggered_break)
 
 
 class Question(object):
