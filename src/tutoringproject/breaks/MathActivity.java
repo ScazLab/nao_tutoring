@@ -71,7 +71,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
     public final int MAX_HINTS = 3;
     public int hintsRemaining = MAX_HINTS;
 
-    public final int MAX_ATTEMPTS = 5;
+    public final int MAX_ATTEMPTS = 1;
     public int attemptsRemaining = MAX_ATTEMPTS;
 
     public final int NUM_HINTS_TO_LIMIT = 3;
@@ -198,10 +198,10 @@ public class MathActivity extends Activity implements TCPClientOwner {
         AnswerText2.setEnabled(false);
         mKeyboardView.setVisibility(View.INVISIBLE);
         mKeyboardView.setEnabled(false);
-        HintButton1.setVisibility(View.INVISIBLE);
-        HintButton2.setVisibility(View.INVISIBLE);
-        HintButton3.setVisibility(View.INVISIBLE);
-        AskRobotLabel.setVisibility(View.INVISIBLE);
+        //HintButton1.setVisibility(View.INVISIBLE);
+        //HintButton2.setVisibility(View.INVISIBLE);
+        //HintButton3.setVisibility(View.INVISIBLE);
+        //AskRobotLabel.setVisibility(View.INVISIBLE);
         numberCorrect++;  //DANGER: is this a bug?
     }
 
@@ -228,6 +228,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
         if (extras != null){
             sessionNum = Integer.parseInt(extras.getString("sessionNum"));
             json_file = "Session"+sessionNum+".json";
+            if (sessionNum == 2) json_file = "level2.json";
             expGroup = Integer.parseInt(extras.getString("expGroup"));
             System.out.println("expGroup is: " + expGroup);
             startQuestionNum = Integer.parseInt(extras.getString("startQuestionNum"));
@@ -251,10 +252,10 @@ public class MathActivity extends Activity implements TCPClientOwner {
         AnswerText2 = (NoImeEditText) findViewById(R.id.editText2);
         RightWrongLabel = (TextView) findViewById(R.id.RightWrongLabel);
         CurrentQuestion = (AutoResizeTextView) findViewById(R.id.QuestionLabel);
-        HintButton1 = (Button) findViewById(R.id.hint1);
-        HintButton2 = (Button) findViewById(R.id.hint2);
-        HintButton3 = (Button) findViewById(R.id.hint3);
-        AskRobotLabel = (TextView) findViewById(R.id.textView3);
+        //HintButton1 = (Button) findViewById(R.id.hint1);
+        //HintButton2 = (Button) findViewById(R.id.hint2);
+        //HintButton3 = (Button) findViewById(R.id.hint3);
+        //AskRobotLabel = (TextView) findViewById(R.id.textView3);
         SubmitButton = (Button) findViewById(R.id.AnswerButton);
         TitleLabel = (TextView) findViewById(R.id.TitleLabel);
 
@@ -324,9 +325,9 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
     public void disableButtons() {
         //System.out.println("MATHACTIVITY: IN disableButtons method!");
-        HintButton1.setEnabled(false);
-        HintButton2.setEnabled(false);
-        HintButton3.setEnabled(false);
+        //HintButton1.setEnabled(false);
+        //HintButton2.setEnabled(false);
+        //HintButton3.setEnabled(false);
         SubmitButton.setEnabled(false);
         mKeyboardView.setEnabled(false);
         //mKeyboardView.getKeyboard().getKeys().get(0).
@@ -334,9 +335,9 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
     public void enableButtons() {
         //System.out.println("MATHACTIVITY: IN enableButtons method!");
-        HintButton1.setEnabled(true);
-        HintButton2.setEnabled(true);
-        HintButton3.setEnabled(true);
+        //HintButton1.setEnabled(true);
+        //HintButton2.setEnabled(true);
+        //HintButton3.setEnabled(true);
         SubmitButton.setEnabled(true);
         mKeyboardView.setEnabled(true);
     }
@@ -348,8 +349,8 @@ public class MathActivity extends Activity implements TCPClientOwner {
         mKeyboardView.setVisibility(View.INVISIBLE);
         mKeyboardView.setEnabled(false);
         SubmitButton.setVisibility(View.INVISIBLE);
-        AskRobotLabel.setVisibility(View.INVISIBLE);
-        HintButton1.setVisibility(View.INVISIBLE);
+        //AskRobotLabel.setVisibility(View.INVISIBLE);
+        //HintButton1.setVisibility(View.INVISIBLE);
         AnswerText1.setVisibility(View.INVISIBLE);
         AnswerText2.setVisibility(View.INVISIBLE);
         fractionLine.setVisibility(View.INVISIBLE);
@@ -362,8 +363,8 @@ public class MathActivity extends Activity implements TCPClientOwner {
         mKeyboardView.setVisibility(View.VISIBLE);
         mKeyboardView.setEnabled(true);
         SubmitButton.setVisibility(View.VISIBLE);
-        AskRobotLabel.setVisibility(View.VISIBLE);
-        HintButton1.setVisibility(View.VISIBLE);
+        //AskRobotLabel.setVisibility(View.VISIBLE);
+        //HintButton1.setVisibility(View.VISIBLE);
         AnswerText1.setVisibility(View.VISIBLE);
         if (answerType.equals(Questions.FORMAT_FRACTION)){
             fractionLine.setVisibility(View.VISIBLE);
@@ -444,10 +445,10 @@ public class MathActivity extends Activity implements TCPClientOwner {
                 AnswerText2.setEnabled(false);
                 mKeyboardView.setVisibility(View.INVISIBLE);
                 mKeyboardView.setEnabled(false);
-                HintButton1.setVisibility(View.INVISIBLE);
-                HintButton2.setVisibility(View.INVISIBLE);
-                HintButton3.setVisibility(View.INVISIBLE);
-                AskRobotLabel.setVisibility(View.INVISIBLE);
+                //HintButton1.setVisibility(View.INVISIBLE);
+                //HintButton2.setVisibility(View.INVISIBLE);
+                //HintButton3.setVisibility(View.INVISIBLE);
+                //AskRobotLabel.setVisibility(View.INVISIBLE);
                 numberCorrect++;
             } else {
                 attemptsRemaining--;
@@ -527,10 +528,10 @@ public class MathActivity extends Activity implements TCPClientOwner {
                     AnswerText2.setEnabled(false);
                     mKeyboardView.setVisibility(View.INVISIBLE);
                     mKeyboardView.setEnabled(false);
-                    HintButton1.setVisibility(View.INVISIBLE);
-                    HintButton2.setVisibility(View.INVISIBLE);
-                    HintButton3.setVisibility(View.INVISIBLE);
-                    AskRobotLabel.setVisibility(View.INVISIBLE);
+                    //HintButton1.setVisibility(View.INVISIBLE);
+                    //HintButton2.setVisibility(View.INVISIBLE);
+                    //HintButton3.setVisibility(View.INVISIBLE);
+                    //AskRobotLabel.setVisibility(View.INVISIBLE);
                     numberCorrect++;  //DANGER: is this a bug?
                 }
 
@@ -640,22 +641,22 @@ public class MathActivity extends Activity implements TCPClientOwner {
         RightWrongLabel.setText("");
         AnswerText1.setText("");
         AnswerText2.setText("");
-        HintButton1.setVisibility(View.VISIBLE);
-        HintButton2.setVisibility(View.INVISIBLE);
-        HintButton3.setVisibility(View.INVISIBLE);
-        HintButton1.setText(REQUEST_HINT_STRING1);
-        HintButton2.setText(REQUEST_HINT_STRING2);
-        HintButton3.setText(REQUEST_HINT_STRING3);
-        AskRobotLabel.setVisibility(View.VISIBLE);
-        HintButton1.setBackground(getResources().getDrawable(R.drawable.hint_drawable));
-        HintButton2.setBackground(getResources().getDrawable(R.drawable.hint_drawable));
-        HintButton3.setBackground(getResources().getDrawable(R.drawable.hint_drawable));
+        //HintButton1.setVisibility(View.VISIBLE);
+        //HintButton2.setVisibility(View.INVISIBLE);
+        //HintButton3.setVisibility(View.INVISIBLE);
+        //HintButton1.setText(REQUEST_HINT_STRING1);
+        //HintButton2.setText(REQUEST_HINT_STRING2);
+        //HintButton3.setText(REQUEST_HINT_STRING3);
+        //AskRobotLabel.setVisibility(View.VISIBLE);
+        //HintButton1.setBackground(getResources().getDrawable(R.drawable.hint_drawable));
+        //HintButton2.setBackground(getResources().getDrawable(R.drawable.hint_drawable));
+        //HintButton3.setBackground(getResources().getDrawable(R.drawable.hint_drawable));
 
         hintsRemaining = MAX_HINTS;
         attemptsRemaining = MAX_ATTEMPTS;
         String questionType = "none";
 
-        if (currentQuestionIndex >= questions.length()) {
+        if (currentQuestionIndex >= questions.length() || currentQuestionIndex >=10) { //TODO: add condition for reaching full session time limit
             Intent intent = new Intent(this, Completed.class);
             //send END message before displaying completed screen
             String goodbyeMessage = "Congratulations! You have completed the session. ";
@@ -678,7 +679,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
         String newQuestion = question.question;
         questionType = question.type;
         //String questionIntro = QUESTION_INTRO_PREFIX + questionType + QUESTION_INTRO_POSTFIX;
-        String questionIntro = question.spokenType;
+        String questionIntro = question.type;//question.spokenType;
         SubmitButton.setText(SUBMIT_STRING);
         CurrentQuestion.setText(newQuestion);
         questionState = QState.INIT;
