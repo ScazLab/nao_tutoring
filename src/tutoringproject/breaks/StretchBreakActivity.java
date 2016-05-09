@@ -6,16 +6,29 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.HashMap;
+
 /**
  * Created by arsalan on 4/14/16.
  */
 public class StretchBreakActivity extends Activity implements TCPClientOwner {
+    private ExpGroup expGroup = ExpGroup.FIXED;
+
     private Button returnButton;
     private TextView instructions;
 
-    public String START_MSG =
-        "Let's take a break and stretch! Go ahead and stand up. Follow my lead.";
+    private enum ExpGroup { FIXED, REWARD, FRUSTRATION }
 
+    public HashMap<ExpGroup, String> START_MSGS = new HashMap<ExpGroup, String>() {{
+        put(ExpGroup.FIXED,
+            "Let's take a quick break to stretch. Follow my lead!");
+        put(ExpGroup.REWARD,
+            "You're doing really well! I think you deserve a break. Let's stretch. Follow my " +
+            "lead!");
+        put(ExpGroup.FRUSTRATION,
+            "Why don't we take a break and stretch. Some rest might be helpful for you. Follow " +
+            "my lead!");
+    }};
     public String CLICK_RETURN_BUTTON_TEXT =
         "Click the button below to return to the tutoring session.";
 
@@ -25,6 +38,16 @@ public class StretchBreakActivity extends Activity implements TCPClientOwner {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stretchbreak);
 
+        Bundle extras = getIntent().getExtras();
+        int expGroupIndex = Integer.parseInt(extras.getString("expGroup"));
+        if (expGroupIndex == 1) {
+            expGroup = ExpGroup.FIXED;
+        } else if (expGroupIndex == 2) {
+            expGroup = ExpGroup.FRUSTRATION;
+        } else if (expGroupIndex == 3) {
+            expGroup = ExpGroup.REWARD;
+        }
+
         returnButton = (Button)   findViewById(R.id.returnButton);
         instructions = (TextView) findViewById(R.id.instructions);
 
@@ -33,7 +56,7 @@ public class StretchBreakActivity extends Activity implements TCPClientOwner {
             TCPClient.singleton.setSessionOwner(this);
         }
         if (TCPClient.singleton != null) {
-            TCPClient.singleton.sendMessage("STRETCHBREAK-START;-1;-1;" + START_MSG);
+            TCPClient.singleton.sendMessage("STRETCHBREAK-START;-1;-1;" + START_MSGS.get(expGroup));
         }
     }
 
