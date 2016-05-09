@@ -111,6 +111,10 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private TimeWatch timeWatch;
     private final Handler handler = new Handler();
 
+    // ends session at max_session_time seconds
+    private int max_session_time = 70;
+    private TimeWatch total_elapsed_timewatch;
+
     //break variables
     private int fixedBreakInterval = 3;
     private int num_consec_questions = 0;  //number of consecutive quesitons without break givne
@@ -272,8 +276,8 @@ public class MathActivity extends Activity implements TCPClientOwner {
             public void onKey(int primaryCode, int[] keyCodes) {
                 //Here check the primaryCode to see which key is pressed
                 //based on the android:codes property
-                EditText target= AnswerText1;
-                if (AnswerText2.hasFocus())    target=AnswerText2;
+                EditText target = AnswerText1;
+                if (AnswerText2.hasFocus()) target = AnswerText2;
 
                 if (primaryCode >= 0 && primaryCode <= 9) {
                     if (target.getText().toString().length() < MAX_NUM_DIGITS)
@@ -318,7 +322,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
             public void swipeUp() {
             }
         });
-
+        total_elapsed_timewatch = TimeWatch.start();
         NextQuestion();
     }
 
@@ -655,7 +659,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
         attemptsRemaining = MAX_ATTEMPTS;
         String questionType = "none";
 
-        if (currentQuestionIndex >= questions.length()) {
+        if (currentQuestionIndex >= questions.length() || total_elapsed_timewatch.time(TimeUnit.SECONDS) > max_session_time) {
             Intent intent = new Intent(this, Completed.class);
             //send END message before displaying completed screen
             String goodbyeMessage = "Congratulations! You have completed the session. ";
