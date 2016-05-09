@@ -8,5 +8,7 @@
     <string name="return_to_tutoring_session">Return to tutoring session</string>
     <string name="stretch_break">Stretch Break</string>
     <string name="follow_nao_s_lead">Follow Nao\'s lead!</string>
+    <string name="order_of_operations_lesson">Order of Operations Lesson</string>
+    <string name="begin_tutoring_session">Begin tutoring session</string>
 
 </resources>
