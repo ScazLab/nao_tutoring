@@ -40,6 +40,7 @@ def take_break(s, reward_break=True, acc_min_change=.2, time_min_change=10, t=4,
     total_accuracy = s.calc_total_accuracy()
     accuracy_change = calc_accuracy_change(s, min_change=acc_min_change)  # -1 if decrease, 0 if no change, 1 if increased
     time_change = calc_time_change(s, min_change=time_min_change)  # -1 if decrease, 0 if no change, 1 if increased
+    b_super = -1
 
     if accuracy_change > 0:  # accuracy increase
         if time_change <= 0:  # time faster or no change
@@ -86,16 +87,18 @@ def take_break(s, reward_break=True, acc_min_change=.2, time_min_change=10, t=4,
     # super rule #2: no break if < 4 questions answered since last break
     if break_trigger:  # if break will be taken...
         break_trigger = super_rule2(s, refractory_period=refractory_period)
+        b_super = 2
 
     # super rule #3: take break if no break has been taken in last 15 minutes
     if not break_trigger:
         break_trigger = super_rule3(s, max_study_time=max_study_time)
+        b_super = 3
 
     # finally, insert this break into session object
     # DANGER: this is an important implementation detail!
     # note, b_type could be of type that expects a break_trigger, except break_trigger might
     # be inconsistent because it depends on reward_break type!
-    s.insert_break(b_type=break_val, triggered_break=break_trigger)
+    s.insert_break(b_type=break_val, b_super=b_super, triggered_break=break_trigger)
 
     return (break_trigger, map_break_message(break_val))
 

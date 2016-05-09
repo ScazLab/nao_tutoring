@@ -38,6 +38,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private RadioButton adaptiveRB;
     private int sessionNum;
     private int expGroup;
+    private EditText fixedBreakInterval;
+
 
     private EditText fixedBreakInterval;
 

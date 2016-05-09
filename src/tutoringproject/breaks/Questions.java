@@ -2,8 +2,8 @@ package tutoringproject.breaks;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.json.simple.JSONValue;
-import org.json.simple.parser.JSONParser;
+//import org.json.simple.JSONValue;
+//import org.json.simple.parser.JSONParser;
 
 import java.util.ArrayList;
 
@@ -14,9 +14,10 @@ public class Questions {
 
     // define constants for all of the keys
     public static final String SOURCE_TEXT = "Sample Source";
+    public static final String KEY_QUESTION_ID = "QuestionID";
     public static final String KEY_QUESTION = "Question";
     public static final String KEY_SPOKEN_QUESTION = "Spoken Question";
-    public static final String KEY_TYPE = "Type";
+    public static final String KEY_TYPE = "Problem Type";
     public static final String KEY_SPOKEN_TYPE = "Spoken Type";
     public static final String KEY_DIFFICULTY_LEVEL = "Difficulty Level";
     public static final String KEY_FORMAT = "Format";
@@ -34,6 +35,7 @@ public class Questions {
     public static final String KEY_SPOKEN_ANSWER = "Spoken Answer";
     public static final String KEY_EXPLANATION = "Written Explanation";
     public static final String KEY_SPOKEN_EXPLANATION = "Spoken Explanation";
+    public static final String KEY_MAX_TIME = "Max Time";
 
 
     public static final String FORMAT_FRACTION = "fraction";

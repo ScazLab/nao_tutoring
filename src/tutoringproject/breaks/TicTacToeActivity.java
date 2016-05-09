@@ -262,7 +262,7 @@ public class TicTacToeActivity extends Activity implements TCPClientOwner {
      * <scores> along with the value. If multiple indexes have this value, one is randomly selected.
      */
     public int[] maxScore(int[] scores) {
-        ArrayList<Integer> maxIndexes = new ArrayList<>();
+        ArrayList<Integer> maxIndexes = new ArrayList<Integer>();
         int max = -11;
         for (int i = 0; i < 9; i++) {
             if (scores[i] != -1) {
@@ -284,7 +284,7 @@ public class TicTacToeActivity extends Activity implements TCPClientOwner {
      * <scores> along with the value. If multiple indexes have this value, one is randomly selected.
      */
     public int[] minScore(int[] scores) {
-        ArrayList<Integer> minIndexes = new ArrayList<>();
+        ArrayList<Integer> minIndexes = new ArrayList<Integer>();
         int min = 11;
         for (int i = 0; i < 9; i++) {
             if (scores[i] != -1) {
