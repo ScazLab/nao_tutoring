@@ -18,9 +18,11 @@ from naoqi import ALBehavior
 
 from tutorMotions import *
 
-import json
+# import json
 from profile_models import Question, Session
+from breaks import take_break
 import copy
+import pickle
 
 class TutoringSession:
     def __init__(self, host, port, goNao):
@@ -100,8 +102,8 @@ class TutoringSession:
         Appends session data to file for storage
         '''
 
-        with open('sample_person_data.txt', 'a') as outfile:
-            json.dump(data, outfile)
+        with open("data/"+"session_data_"+"P"+self.pid+"_S"+self.sessionNum+".txt", 'wb') as outfile:
+            pickle.dump( data, outfile)
 
         return
 
@@ -112,8 +114,8 @@ class TutoringSession:
         Returns data
         '''
 
-        with open(file_name) as data_file:
-            data = json.load(data_file)
+        with open(file_name, 'rb') as data_file:
+            data = pickle.load(data_file)
 
         return data
 
@@ -121,15 +123,24 @@ class TutoringSession:
     def update_session(self, msgType, questionNum, otherInfo):
         '''
         Updates session data given interaction
+
+        Returns take_break_message if break needs to be taken.  
+            Otherwise, returns an empty string
         '''
-        question_data = {}
         english_msg_type = self.map_msg_type(msgType)
-        if msgType == 'Q':
+        if msgType == 'START':
+            print 'in START'
+            self.current_session = Session(pid=self.pid, session_num=self.sessionNum)
+        elif msgType == 'Q':
+            print 'in Q'
             self.__current_question = Question(question_num=questionNum)
         elif msgType == 'CA':
+            print 'in CA'
             self.__current_question.correct()
             self.current_session.append(copy.deepcopy(self.__current_question))
+            print "Question time (total time) in update_session: " + str(self.__current_question.total_time)
         elif msgType == 'IA':
+            print 'in IA, should not be here'
             self.__current_question.incorrect(last=False)
         elif msgType == 'LIA':
             self.__current_question.incorrect(last=True)
@@ -144,12 +155,39 @@ class TutoringSession:
             pass # = 'ROBOT SPEECH'
         elif msgType == 'RA':
             pass # = 'ROBOT ACTION'
+        elif msgType == 'TIMEOUT':
+            print 'in TIMEOUT'
+            self.__current_question.timeout()
+            self.current_session.append(copy.deepcopy(self.__current_question))
         else:
+            print "update_session error: non-handled msgType"
             pass
-        self.session[questionNum] = {}
 
+        # send message of whether or not to take break if appropriate msgType
+        # and correct experiment type
+        take_break_message = ""  # message to be sent to Android
+        break_trigger = False
+        break_trigger_expl = ""  # explains why or why not break triggered
+        if (msgType == 'CA' or msgType == 'LIA' or msgType == 'TIMEOUT'):
+            print type(self.expGroup)
+            if int(self.expGroup) == 2:  # Reward break
+                (break_trigger, break_trigger_expl) = take_break(self.current_session, reward_break=True)
+                if break_trigger:
+                    take_break_message = "REWARD_BREAK"
+            elif int(self.expGroup) == 3:  # Frustration break
+                (break_trigger, break_trigger_expl) = take_break(self.current_session, reward_break=False)
+                if break_trigger:
+                    take_break_message = "FRUSTRATION_BREAK"
+            else:
+                pass
 
-        return
+        print self.current_session
+        print 'returned out!'
+        print take_break_message
+        print 'msgType: ' + msgType + ', expGroup: ' + self.expGroup
+
+        print "take_break_message: " + take_break_message
+        return take_break_message
 
 
     #def tutor(history, data, categ):
@@ -228,7 +266,7 @@ class TutoringSession:
                         #create appropriate session object
                         # IMPORTANT! Commenting this out temporarily
                         # self.current_session = Session(pid=self.pid, session_num=self.sessionNum)
-
+                        self.update_session(msgType, questionNum, "")
                     elif msgType == 'Q': #question
                         self.numQuestions += 1
                         otherInfo = line.split(";",4)[4].strip()
@@ -241,11 +279,17 @@ class TutoringSession:
                             #id = self.goNao.genSpeech(robot_speech)
                             [id,speech] = self.goNao.introQuestion(robot_speech)
                             self.log_transaction("RS",questionNum,speech)
-                            self.goNao.assessQuestion(questionType) 
+                            self.goNao.assessQuestion(questionType)
+                        self.update_session(msgType, questionNum, otherInfo)
                     elif msgType == 'CA': #correct attempt
                         self.numCorrect += 1
                         otherInfo = line.split(";",4)[4].strip()
-                        print 'correct answer' 
+
+                        questionTime = line.split(";",5)[5].strip()  # DANGER maybe do something with this
+
+                        print "Question time in app: " + str(questionTime)  # DANGER DEBUGGING
+
+                        print 'correct answer'
                         if self.goNao is None:
                             os.system("say " + robot_speech)
                         else:
@@ -263,6 +307,10 @@ class TutoringSession:
                                 pump = "left_pump"
                             self.log_transaction("RA",questionNum,pump) 
                             #self.goNao.sit()
+                        tempMessage = self.update_session(msgType, questionNum, otherInfo)
+                        if tempMessage:  # if not empty string, then return message should indicate break
+                            returnMessage = tempMessage
+                        
                     elif msgType == 'IA': #incorrect attempt
                         self.numIncorrect += 1
                         otherInfo = line.split(";",4)[4].strip()
@@ -284,6 +332,11 @@ class TutoringSession:
                     elif msgType == 'LIA': #incorrect attempt
                         self.numIncorrect += 1
                         otherInfo = line.split(";",4)[4].strip()
+
+                        questionTime = line.split(";",5)[5].strip()  # DANGER maybe do something with this
+
+                        print "Question time in app: " + str(questionTime)  # DANGER DEBUGGING
+
                         print 'incorrect answer (last attempt)'
                         if self.goNao is None:
                             os.system("say " + robot_speech)
@@ -291,7 +344,10 @@ class TutoringSession:
                             self.goNao.look()
                             id = self.goNao.genSpeech(robot_speech)
                             #self.goNao.last_shake()
-                            #self.goNao.sit()       
+                            #self.goNao.sit()
+                        tempMessage = self.update_session(msgType, questionNum, otherInfo)
+                        if tempMessage:  # if not empty string, then return message should indicate break
+                            returnMessage = tempMessage
                     elif msgType == 'H1': #hint request
                         self.numHintRequests += 1
                         otherInfo = line.split(";",4)[4].strip()
@@ -366,9 +422,20 @@ class TutoringSession:
                     elif msgType.startswith('TICTACTOE'):
                         id = self.handle_tictactoe_msg(msgType, robot_speech)
                         returnMessage = msgType
+
                     elif msgType.startswith('STRETCHBREAK'):
                         id = self.handle_stretch_break_msg(msgType, robot_speech)
                         returnMessage = 'STRETCHBREAK-DONE'
+
+                    elif msgType.startswith('TIMEOUT'):
+<<<<<<< bd2f8d428151e14943236f9e94a85f964ef956ed
+                        self.update_session(msgType, questionNum, "")
+
+=======
+                        tempMessage = self.update_session(msgType, questionNum, otherInfo)
+                        if tempMessage: # if not empty string, then return message should indicate break
+                            returnMessage = tempMessage
+>>>>>>> break messages passed back and forth successfully
                     else:
                         print 'error: unknown message type'
 
@@ -378,18 +445,20 @@ class TutoringSession:
                             if introFlag is not True:
                                 self.goNao.sit()
                                 conn.send(returnMessage+"\n")
-                                print 'send tablet message that robot is done'
+                                print 'send tablet message that robot is done (or a REWARD_BREAK/FRUSTRATION_BREAK message!)'
                     else: #case just for testing without robot
                         time.sleep(2)
                         conn.send(returnMessage+"\n")
                     self.log_transaction(msgType,questionNum,otherInfo)
                 if sessionEnded:
                     self.logFile.close()
+                    self.store_session(self.current_session)
                     break
             except KeyboardInterrupt:
                 self.logFile.flush()
                 self.logFile.close()
                 conn.close()
+                self.store_session(self.current_session)
                 sys.exit(0)
 
 

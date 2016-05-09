@@ -19,6 +19,7 @@ import android.os.Handler;
 import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.concurrent.TimeUnit;
 
 
 
@@ -60,7 +61,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private TextView AskRobotLabel;
     private KeyboardView mKeyboardView;
     private int sessionNum = -1;
-    private int expGroup = 0;
+    private int expGroup = 0;  //1: fixed, 2: reward, 3: frustration
     private int startQuestionNum = 1;
 
     private Questions questions;
@@ -104,10 +105,15 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private boolean firstTimeCallingOnResume = true;
 
     //temporary variable (should be read in through question format)
-    private final int max_time_per_question = 50000;  //hard coded at 50 seconds, which should be ample time!
+    private final int max_time_per_question = 30000;  //hard coded at 10 seconds, which should be ample time!
     private Timer timer;
     private TimerTask timerTask;
+    private TimeWatch timeWatch;
     private final Handler handler = new Handler();
+
+    //break variables
+    private int fixedBreakInterval = 3;
+    private int num_consec_questions = 0;  //number of consecutive quesitons without break givne
 
     private void startTimer(long delay, long period) {
         //set new Timer
@@ -118,6 +124,9 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
         //schedule the timer, after 5000ms, runs every max_timer_per_question
         timer.schedule(timerTask, delay, period);
+
+        //also start new timeWatch from time 0
+        timeWatch = TimeWatch.start();
     }
 
     private void initializeTimerTask() {
@@ -150,6 +159,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
             timer.cancel();
             timer = null;
         }
+
     }
 
     public void questionTimeout() {
@@ -178,7 +188,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
         //Send message
         if (TCPClient.singleton != null)
-            TCPClient.singleton.sendMessage("LIA;" + currentQuestionIndex + ";" + questionType + ";" + timeout_message + ";" + attempt);
+            TCPClient.singleton.sendMessage("TIMEOUT;" + currentQuestionIndex + ";" + questionType + ";" + timeout_message + ";" + attempt);
 
 
         RightWrongLabel.setText(timeout_string);
@@ -193,7 +203,6 @@ public class MathActivity extends Activity implements TCPClientOwner {
         HintButton3.setVisibility(View.INVISIBLE);
         AskRobotLabel.setVisibility(View.INVISIBLE);
         numberCorrect++;  //DANGER: is this a bug?
-//        NextQuestion();
     }
 
 
@@ -372,6 +381,15 @@ public class MathActivity extends Activity implements TCPClientOwner {
             enableQuestion(message);
             enableButtons();
         }
+        else if (expGroup == 2 && message.equals("REWARD_BREAK")) {
+            takeBreak = true;
+            enableButtons();
+
+        }
+        else if (expGroup == 3 && message.equals("FRUSTRATION_BREAK")) {
+            takeBreak = true;
+            enableButtons();
+        }
     }
 
     public void AnswerButtonPress(View view) {
@@ -379,6 +397,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
         String format = questions.get(currentQuestionIndex).format;
         String enteredStr1 = AnswerText1.getText().toString();
         String enteredStr2 = AnswerText2.getText().toString();
+
 
         if (format.equals(Questions.FORMAT_FRACTION) &&
                 (enteredStr1.equals("") || enteredStr2.equals(""))) {
@@ -408,11 +427,16 @@ public class MathActivity extends Activity implements TCPClientOwner {
                 attempt = ""+entered1;
             }
 
+            //store elapsed questionTime
+            long questionTime = timeWatch.time(TimeUnit.MILLISECONDS);  //stores elapsed time in milliseconds
+            System.out.println("QuestionTime: " + Long.toString(questionTime) +"");
+
             //if(AnswerText.Text() == entered) {
             //include TCP server stuff
             if (correct) {
+                stopTimerTask();  // immediately kill timer task if correct
                 if (TCPClient.singleton != null)
-                    TCPClient.singleton.sendMessage("CA;" + currentQuestionIndex + ";" + questionType + ";" + CORRECT_STRING + ";" + attempt);
+                    TCPClient.singleton.sendMessage("CA;" + currentQuestionIndex + ";" + questionType + ";" + CORRECT_STRING + ";" + attempt  + ";" + questionTime);
                 RightWrongLabel.setText(CORRECT_STRING);
                 SubmitButton.setText(NEXT_QUESTION_STRING);
                 questionState = QState.DISPLAYCORRECT;
@@ -495,7 +519,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
                     too_many_incorrect_message += " " + TOO_MANY_INCORRECT_POSTFIX;
                     //Send message
                     if (TCPClient.singleton != null)
-                        TCPClient.singleton.sendMessage("LIA;" + currentQuestionIndex + ";" + questionType + ";" + too_many_incorrect_message + ";" + attempt);
+                        TCPClient.singleton.sendMessage("LIA;" + currentQuestionIndex + ";" + questionType + ";" + too_many_incorrect_message + ";" + attempt + ";" + questionTime);
                     RightWrongLabel.setText(too_many_incorrect_string);
                     SubmitButton.setText(NEXT_QUESTION_STRING);
                     questionState = QState.DISPLAYCORRECT;
@@ -579,6 +603,12 @@ public class MathActivity extends Activity implements TCPClientOwner {
     }
 
     public void NextQuestion() {
+        //preliminary fixed break interval calculation
+        if (expGroup == 1 && num_consec_questions >= fixedBreakInterval) {
+            takeBreak = true;
+            num_consec_questions = 0;
+        }
+
         if (takeBreak) {
             stopTimerTask();
             if (numberBreaksGiven == 0) {
@@ -600,6 +630,8 @@ public class MathActivity extends Activity implements TCPClientOwner {
             takeBreak = false;
             return;
         }
+        //consecutive questions without break counter
+        num_consec_questions++;
 
         currentQuestionIndex++;
         numConsecHintsRequested = 0; //reset at new question
