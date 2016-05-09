@@ -12,13 +12,17 @@ import java.util.HashMap;
  * Created by arsalan on 4/14/16.
  */
 public class StretchBreakActivity extends Activity implements TCPClientOwner {
+    private enum ExpGroup { FIXED, REWARD, FRUSTRATION }
+
     private ExpGroup expGroup = ExpGroup.FIXED;
 
+    // XML element variables
     private Button returnButton;
     private TextView instructions;
 
-    private enum ExpGroup { FIXED, REWARD, FRUSTRATION }
+    // Public variables ============================================================================
 
+    // Speech strings
     public HashMap<ExpGroup, String> START_MSGS = new HashMap<ExpGroup, String>() {{
         put(ExpGroup.FIXED,
             "Let's take a quick break to stretch. Follow my lead!");
@@ -29,6 +33,8 @@ public class StretchBreakActivity extends Activity implements TCPClientOwner {
             "Why don't we take a break and stretch. Some rest might be helpful for you. Follow " +
             "my lead!");
     }};
+
+    // Tablet text strings
     public String CLICK_RETURN_BUTTON_TEXT =
         "Click the button below to return to the tutoring session.";
 

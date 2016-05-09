@@ -148,9 +148,9 @@ class TutoringSession:
         elif msgType == 'H1' or msgType == 'H2' or msgType == 'H3':
             self.__current_question.hint()
         elif msgType == 'AH':
-            __special(msgType) # = 'AUTOMATIC HINT'
+            pass
         elif msgType == 'DH':
-            __special(msgType) # = 'DENIED HINT'
+            pass
         elif msgType == 'RS':
             pass # = 'ROBOT SPEECH'
         elif msgType == 'RA':
@@ -419,6 +419,11 @@ class TutoringSession:
                             self.goNao.congratulations()
                             #self.goNao.sit()   
                         #break
+
+                    elif msgType.startswith('LESSON'):
+                        id = self.handle_lesson_msg(msgType, robot_speech)
+                        returnMessage = msgType
+
                     elif msgType.startswith('TICTACTOE'):
                         id = self.handle_tictactoe_msg(msgType, robot_speech)
                         returnMessage = msgType
@@ -455,6 +460,18 @@ class TutoringSession:
                 conn.close()
                 self.store_session(self.current_session)
                 sys.exit(0)
+
+
+    def handle_lesson_msg(self, msg_type, robot_speech):
+        speech_return = 0
+        msg_sub_type = msg_type[7:]
+        if msg_sub_type == 'START':
+            print 'Lesson: Started'
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                speech_return = self.goNao.genSpeech(robot_speech)
+        return speech_return
 
 
     def handle_tictactoe_msg(self, msg_type, robot_speech):

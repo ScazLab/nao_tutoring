@@ -15,17 +15,20 @@ import java.util.Random;
  * Created by arsalan on 4/13/16.
  */
 public class TicTacToeActivity extends Activity implements TCPClientOwner {
+    private enum SquareState { EMPTY, X, O }
+    private enum ExpGroup { FIXED, REWARD, FRUSTRATION }
+
     private SquareState[][] board = new SquareState[3][3];
     private ExpGroup expGroup = ExpGroup.FIXED;
     private Random gen = new Random();
     private long startTime = System.currentTimeMillis();
 
+    // XML element variables
     private Button[][] boardButtons = new Button[3][3];
     private TextView instructions;
     private Button returnButton;
 
-    private enum SquareState { EMPTY, X, O }
-    private enum ExpGroup { FIXED, REWARD, FRUSTRATION }
+    // Public variables ============================================================================
 
     // The larger the depth, the better Nao will play. In short, Nao will think depth - 1 moves
     // ahead. Please don't use a depth of 0! This will cause the game to malfunction.
@@ -35,6 +38,7 @@ public class TicTacToeActivity extends Activity implements TCPClientOwner {
     // game is finished.
     public long TIME_LIMIT = 60;
 
+    // Speech strings
     public HashMap<ExpGroup, String> START_MSGS = new HashMap<ExpGroup, String>() {{
         put(ExpGroup.FIXED,
             "Let's take a break and play a game of tic tac toe. You will be exes, and I will be " +
@@ -74,6 +78,7 @@ public class TicTacToeActivity extends Activity implements TCPClientOwner {
         "That was fun! You are really good at tic tac toe! Let's get back to our math problems " +
         "now. Click the button at the bottom of the tablet to return to the tutoring session.";
 
+    // Tablet text strings
     public String SQUARE_OCCUPIED_TEXT =
         "Sorry!\nThis square already has something in it.\nTry picking another square.";
     public String CLICK_RETURN_BUTTON_TEXT =
@@ -117,7 +122,6 @@ public class TicTacToeActivity extends Activity implements TCPClientOwner {
         if (TCPClient.singleton != null ) {
             TCPClient.singleton.setSessionOwner(this);
         }
-
         if (TCPClient.singleton != null) {
             TCPClient.singleton.sendMessage("TICTACTOE-START;-1;-1;" + START_MSGS.get(expGroup));
         }
@@ -440,7 +444,7 @@ public class TicTacToeActivity extends Activity implements TCPClientOwner {
         returnButton.setEnabled(true);
     }
 
-    // Other helper methods ========================================================================\
+    // Other helper methods ========================================================================
 
     public String getRandomMsg(String[] msgList) {
         return msgList[gen.nextInt(msgList.length)];
