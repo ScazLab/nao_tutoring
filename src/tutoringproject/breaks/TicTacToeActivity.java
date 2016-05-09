@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 
 /**
@@ -15,6 +16,7 @@ import java.util.Random;
  */
 public class TicTacToeActivity extends Activity implements TCPClientOwner {
     private SquareState[][] board = new SquareState[3][3];
+    private ExpGroup expGroup = ExpGroup.FIXED;
     private Random gen = new Random();
     private long startTime = System.currentTimeMillis();
 
@@ -23,6 +25,7 @@ public class TicTacToeActivity extends Activity implements TCPClientOwner {
     private Button returnButton;
 
     private enum SquareState { EMPTY, X, O }
+    private enum ExpGroup { FIXED, REWARD, FRUSTRATION }
 
     // The larger the depth, the better Nao will play. In short, Nao will think depth - 1 moves
     // ahead. Please don't use a depth of 0! This will cause the game to malfunction.
@@ -32,9 +35,18 @@ public class TicTacToeActivity extends Activity implements TCPClientOwner {
     // game is finished.
     public long TIME_LIMIT = 60;
 
-    public String START_MSG =
-        "Awesome! You will be exes, and I will be ohs. You can go first. Click any square on the " +
-        "board.";
+    public HashMap<ExpGroup, String> START_MSGS = new HashMap<ExpGroup, String>() {{
+        put(ExpGroup.FIXED,
+            "Let's take a break and play a game of tic tac toe. You will be exes, and I will be " +
+            "ohs. You can go first. Click any square on the board.");
+        put(ExpGroup.REWARD,
+            "You've been doing so well! You deserve a break. Let's play a game of tic tac toe. " +
+            "You will be exes, and I will be ohs. You can go first. Click any square on the " +
+            "board.");
+        put(ExpGroup.FRUSTRATION,
+            "Why don't we take a break and play a game of tic tac toe. You will be exes, and I " +
+            "will be ohs. You can go first. Click any square on the board.");
+    }};
     public String[] WIN_MSGS = {
         "Looks like you won! Congrats!"
     };
@@ -73,6 +85,16 @@ public class TicTacToeActivity extends Activity implements TCPClientOwner {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tictactoe);
 
+        Bundle extras = getIntent().getExtras();
+        int expGroupIndex = Integer.parseInt(extras.getString("expGroup"));
+        if (expGroupIndex == 1) {
+            expGroup = ExpGroup.FIXED;
+        } else if (expGroupIndex == 2) {
+            expGroup = ExpGroup.REWARD;
+        } else if (expGroupIndex == 3) {
+            expGroup = ExpGroup.FRUSTRATION;
+        }
+
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 board[i][j] = SquareState.EMPTY;
@@ -97,7 +119,7 @@ public class TicTacToeActivity extends Activity implements TCPClientOwner {
         }
 
         if (TCPClient.singleton != null) {
-            TCPClient.singleton.sendMessage("TICTACTOE-START;-1;-1;" + START_MSG);
+            TCPClient.singleton.sendMessage("TICTACTOE-START;-1;-1;" + START_MSGS.get(expGroup));
         }
     }
 
