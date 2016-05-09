@@ -4,14 +4,14 @@ def map_break_message(b):
     returns appropriate string representing the type of break given (if any)
     '''
     dic = {
-        0: "overcomes struggle, improves",
+        0: "overcomes struggle, improves",  # REWARD start
         1: "improves, takes time",
         2: "becoming faster/more confident",
         3: "doing consistently well",
-        4: "not consistent for long enough (reward)",
-        5: "bored/distracted/disengaged",
+        4: "not consistent for long enough (reward)",  # note: no break!
+        5: "bored/distracted/disengaged",  # FRUSTRATION start
         6: "disengaged",
-        7: "not consistent for long enough (frustration)",
+        7: "not consistent for long enough (frustration)",  # note: no break!
         8: "doing consistently poorly, frustrated",
         9: "guessing, giving up",
         10: "performance drop",
@@ -96,6 +96,7 @@ def take_break(s, reward_break=True, acc_min_change=.2, time_min_change=10, t=4,
     # note, b_type could be of type that expects a break_trigger, except break_trigger might
     # be inconsistent because it depends on reward_break type!
     s.insert_break(b_type=break_val, triggered_break=break_trigger)
+
     return (break_trigger, map_break_message(break_val))
 
 

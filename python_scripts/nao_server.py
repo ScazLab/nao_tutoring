@@ -185,6 +185,8 @@ class TutoringSession:
         print 'returned out!'
         print take_break_message
         print 'msgType: ' + msgType + ', expGroup: ' + self.expGroup
+
+        print "take_break_message: " + take_break_message
         return take_break_message
 
 

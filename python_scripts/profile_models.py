@@ -13,17 +13,27 @@ class Session(list):
         (tentative) breaks: int representing breaks taken in this session
     '''
 
-    def __init__(self, questions=[], session_num=-1, pid=-1, time_window=5, accuracy_window=5, breaks=[]):
+    def __init__(self, questions=None, session_num=-1, pid=-1, time_window=5, accuracy_window=5, breaks=None):
         self.session_num = session_num
         self.pid = pid
         self.time_window = time_window
         self.accuracy_window = accuracy_window
         self.breaks = breaks
 
+        if questions is None:
+            self.questions = []
+        else:
+            self.questions = questions
+
+        if breaks is None:
+            self.breaks = []
+        else:
+            self.breaks = breaks
+
         # private vars for internal use
         self.__start_time = time.time()
         self.__now_time = time.time()
-        super(Session, self).__init__(questions)
+        super(Session, self).__init__(self.questions)
 
     def time_step(self):
         '''
@@ -77,8 +87,8 @@ class Session(list):
         return 1.0*total_time/self.time_window
 
     def __repr__(self):
-        return "Session(pid=%r, session_num=%r, questions=\\\n%s)" % \
-            (self.pid, self.session_num, pprint.pformat(list(self)))
+        return "Session(pid=%r, session_num=%r, questions=\\\n%s, breaks=\\\n%s)" % \
+            (self.pid, self.session_num, pprint.pformat(list(self)), pprint.pformat(list(self.breaks)))
 
 
 class Break(object):
@@ -96,7 +106,7 @@ class Break(object):
 
     def __repr__(self):
         return "Break(b_num=%r, after_question=%r, b_type=%r, time_since_start=%r, triggered_break=%r)" % \
-            (self.b_num, self.after_question, self.time_since_start, self.triggered_break)
+            (self.b_num, self.after_question, self.b_type, self.time_since_start, self.triggered_break)
 
 
 class Question(object):
@@ -128,7 +138,7 @@ class Question(object):
     MAX_ATTEMPTS = 5
 
     def __init__(self, question_num=-1, attempts=0, hints=0, answer_correct=False,
-                 total_time=0.0, hint_times=[], attempt_times=[], q_complete=False, q_timeout=False):
+                 total_time=0.0, hint_times=None, attempt_times=None, q_complete=False, q_timeout=False):
         self.question_num = question_num
         self.attempts = attempts
         self.hints = hints
@@ -138,6 +148,16 @@ class Question(object):
         self.attempt_times = attempt_times
         self.q_complete = q_complete
         self.q_timeout = q_timeout
+
+        if hint_times is None:
+            self.hint_times = []
+        else:
+            self.hint_times = hint_times
+
+        if attempt_times is None:
+            self.attempt_times = []
+        else:
+            self.hint_times = hint_times
 
         # private vars for internal use
         self.__start_time = time.time()
