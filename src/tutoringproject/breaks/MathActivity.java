@@ -324,7 +324,9 @@ public class MathActivity extends Activity implements TCPClientOwner {
             }
         });
         total_elapsed_timewatch = TimeWatch.start();
-        NextQuestion();
+
+        Intent intent = new Intent(this, LessonActivity.class);
+        startActivity(intent);
     }
 
     public void disableButtons() {
