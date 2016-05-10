@@ -235,28 +235,26 @@ def calc_accuracy_change(s, min_change=.2):
 
 
 BREAK_SPEECH = {
-    "fixed": [
-        "Why don't we take a break."
-        "I think we should take a break."
-    ],
+    "fixed": [ "Why don't we take a break."
+               "I think we should take a break." ],
     "base-rules": {
         # Reward breaks
-        0: ["Wow! Looks like you're really improving! Time for a little activity and then we'll get back to it.",
-            "You've really improved! You deserve a break."],
-        1: ["I think you're really trying and improving! How about we do a quick activity and then keep going!"],
-        2: ["You're getting the problems even faster, good job! Let's take a quick break and then do some more problems!"],
-        3: ["Wow, you've been doing great for a while now! How about a quick activity?"],
+        0: [ "Wow! Looks like you're really improving! Time for a little activity and then we'll get back to it.",
+             "You've really improved! You deserve a break." ],
+        1: [ "I think you're really trying and improving! How about we do a quick activity and then keep going!" ],
+        2: [ "You're getting the problems even faster, good job! Let's take a quick break and then do some more problems!" ],
+        3: [ "Wow, you've been doing great for a while now! How about a quick activity?" ],
 
         # Frustration breaks
-        5:  ["bored/distracted/disengaged"],
-        6:  ["disengaged"],
-        8:  ["doing consistently poorly, frustrated"],
-        9:  ["guessing, giving up"],
-        10: ["performance drop"],
-        11: ["guessing, making mistakes"],
+        5:  [ "bored/distracted/disengaged" ],
+        6:  [ "disengaged" ],
+        8:  [ "doing consistently poorly, frustrated" ],
+        9:  [ "guessing, giving up" ],
+        10: [ "Hmm, why don’t we take a little break to refocus and then come back to our problems!" ],
+        11: [ "guessing, making mistakes" ],
     },
     "super-rules": {
-        3: ["long time no breaks"]
+        3: [ "long time no breaks" ]
     }
 }
 

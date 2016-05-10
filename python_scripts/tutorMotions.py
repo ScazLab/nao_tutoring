@@ -116,10 +116,9 @@ class Gesture:
         self.look()
 
         if sessionNum == 1:
-            self.genSpeech("I'm here to help you with some fractions problems today.")
-            self.genSpeech("For each session, I have put the math problems on the tablet in front of you.")
-            self.genSpeech("If you need any help, you can ask me by pressing the hint buttons at the bottom of each screen.")
-            id = self.genSpeech("Great! Now let's work on some questions together!")
+            self.genSpeech("I'm here to help you with some order of operations problems today.")
+            self.genSpeech("I will put the math problems on the tablet in front of you.")
+            id = self.genSpeech("Great! Let's get started!")
         elif sessionNum == 2:
             self.genSpeech("Just remember, if you need help on the problems, you can ask me by pressing the buttons on the bottom of the screen.")
             id = self.genSpeech("Let's get started!")
@@ -992,15 +991,8 @@ class Gesture:
             print "Error when sitting down nao and making nao unstiff: "+str(e)
 
 
-    def lookDown(self, restore=False):
-        if restore:
-            self.motion.setAngles("HeadPitch", 0.0, 0.1)
-        else:
-            self.motion.setAngles("HeadPitch", 0.5, 0.1)
-
-
     def stretchBreak(self):
-        self.posture.goToPosture("Sit", 1.0)
+        self.posture.goToPosture("Sit", 0.2)
         # I intentionally mispelled "lead" to make the speech clearer!
         self.genSpeech("Follow my leed!")
         time.sleep(2.5)
@@ -1093,4 +1085,4 @@ class Gesture:
             "problems now. Click the button at the bottom of the tablet to return to the tutoring "
             "session."
         )
-        self.posture.goToPosture("Sit", 0.3)
+        self.posture.goToPosture("Sit", 0.2)
