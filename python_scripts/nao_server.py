@@ -187,13 +187,12 @@ class TutoringSession:
         #     print "Most recent question: " + str(self.current_session[-1])
         #     print "Most recent break   : " + str(self.current_session.breaks[-1])
         if take_break_message in ["REWARD_BREAK", "FRUSTRATION_BREAK"]:
-            log_msg = (
-                '[ BREAK ] '
+            other_info = (
                 'break message: ' + str(take_break_message) + ', '
                 'break type: ' + str(self.current_session.breaks[-1].b_type) + ', '
                 'break super: ' + str(self.current_session.breaks[-1].b_super)
             )
-            print log_msg
+            self.log_transaction('BREAK', -1, other_info)
         return take_break_message
 
 
@@ -483,7 +482,7 @@ class TutoringSession:
         speech_return = 0
         msg_sub_type = msg_type[7:]
         if msg_sub_type == 'START':
-            print 'Lesson: Started'
+            self.log_transaction('LESSON-START', -1, 'speech: ' + robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
@@ -496,7 +495,6 @@ class TutoringSession:
         msg_sub_type = msg_type[10:]
 
         if msg_sub_type == 'START':
-            print 'Tic-tac-toe: Started'
             # <robot_speech> won't be sent from the tablet in this case. Because the robot's speech
             # needs to be modified depending on the reason that the break was triggered, the speech
             # will be constructed here.
@@ -510,27 +508,28 @@ class TutoringSession:
                 self.current_session.breaks[-1].b_type
             ) + " " + robot_speech_base
 
+            self.log_transaction('TICTACTOE-START', -1, 'speech: ' + robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
                 speech_return = self.goNao.genSpeech(robot_speech)
 
         elif msg_sub_type == 'WIN':
-            print 'Tic-tac-toe: Student won'
+            self.log_transaction('TICTACTOE-WON', -1, 'speech: ' + robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
                 speech_return = self.goNao.genSpeech(robot_speech)
 
         elif msg_sub_type == 'TIE':
-            print 'Tic-tac-toe: Student and robot tied'
+            self.log_transaction('TICTACTOE-TIE', -1, 'speech: ' + robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
                 speech_return = self.goNao.genSpeech(robot_speech)
 
         elif msg_sub_type == 'LOSS':
-            print 'Tic-tac-toe: Student lost'
+            self.log_transaction('TICTACTOE-LOSS', -1, 'speech: ' + robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
@@ -551,12 +550,14 @@ class TutoringSession:
                 self.goNao.lookDown(restore=True)
 
         elif msg_sub_type == 'RESTART':
+            self.log_transaction('TICTACTOE-RESTART', -1, 'speech: ' + robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
                 speech_return = self.goNao.genSpeech(robot_speech)
 
         elif msg_sub_type == 'END':
+            self.log_transaction('TICTACTOE-END', -1, 'speech: ' + robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
@@ -570,7 +571,6 @@ class TutoringSession:
         msg_sub_type = msg_type[13:]
 
         if msg_sub_type == 'START':
-            print 'Stretch break: Started'
             # <robot_speech> won't be sent from the tablet in this case. Because the robot's speech
             # needs to be modified depending on the reason that the break was triggered, the speech
             # will be constructed here.
@@ -581,6 +581,7 @@ class TutoringSession:
                 self.current_session.breaks[-1].b_type
             ) + " " + robot_speech_base
 
+            self.log_transaction('STRETCHBREAK-START', -1, 'speech: ' + robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
