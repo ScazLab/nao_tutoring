@@ -186,8 +186,13 @@ class TutoringSession:
         # if len(self.current_session) > 0:
         #     print "Most recent question: " + str(self.current_session[-1])
         #     print "Most recent break   : " + str(self.current_session.breaks[-1])
-
-        print "take break message: " + str(take_break_message)
+        log_msg = (
+            '[ BREAKS ] '
+            'take break message: ' + str(take_break_message) + ', '
+            'break type: ' + str(self.current_session.breaks[-1].b_type) + ', '
+            'break super: ' + str(self.current_session.breaks[-1].b_super)
+        )
+        print log_msg
         return take_break_message
 
 
