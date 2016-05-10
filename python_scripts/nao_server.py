@@ -103,7 +103,7 @@ class TutoringSession:
         '''
 
         with open("data/"+"session_data_"+"P"+self.pid+"_S"+self.sessionNum+".txt", 'wb') as outfile:
-            pickle.dump( data, outfile)
+            pickle.dump(data, outfile)
 
         return
 
@@ -117,6 +117,7 @@ class TutoringSession:
         with open(file_name, 'rb') as data_file:
             data = pickle.load(data_file)
 
+        self.current_session = data
         return data
 
 
@@ -124,9 +125,11 @@ class TutoringSession:
         '''
         Updates session data given interaction
 
-        Returns take_break_message if break needs to be taken.  
+        Returns take_break_message if break needs to be taken.
             Otherwise, returns an empty string
         '''
+        print "Otherinfo: " + str(otherInfo)
+
         english_msg_type = self.map_msg_type(msgType)
         if msgType == 'START':
             print 'in START'
@@ -135,15 +138,17 @@ class TutoringSession:
             print 'in Q'
             self.__current_question = Question(question_num=questionNum)
         elif msgType == 'CA':
+            ms_question_time = int(otherInfo.split(';')[1])  # in milliseconds
             print 'in CA'
-            self.__current_question.correct()
+            self.__current_question.correct(ms_android_time=ms_question_time)
             self.current_session.append(copy.deepcopy(self.__current_question))
             print "Question time (total time) in update_session: " + str(self.__current_question.total_time)
         elif msgType == 'IA':
             print 'in IA, should not be here'
             self.__current_question.incorrect(last=False)
         elif msgType == 'LIA':
-            self.__current_question.incorrect(last=True)
+            ms_question_time = int(otherInfo.split(';')[1])  # in milliseconds
+            self.__current_question.incorrect(ms_android_time=ms_question_time, last=True)
             self.current_session.append(copy.deepcopy(self.__current_question))
         elif msgType == 'H1' or msgType == 'H2' or msgType == 'H3':
             self.__current_question.hint()
@@ -156,8 +161,9 @@ class TutoringSession:
         elif msgType == 'RA':
             pass # = 'ROBOT ACTION'
         elif msgType == 'TIMEOUT':
+            ms_question_time = int(otherInfo.split(';')[1])  # in milliseconds
             print 'in TIMEOUT'
-            self.__current_question.timeout()
+            self.__current_question.timeout(ms_android_time=ms_question_time)
             self.current_session.append(copy.deepcopy(self.__current_question))
         else:
             print "update_session error: non-handled msgType"
@@ -182,11 +188,7 @@ class TutoringSession:
                 pass
 
         print self.current_session
-        print 'returned out!'
-        print take_break_message
-        print 'msgType: ' + msgType + ', expGroup: ' + self.expGroup
 
-        print "take_break_message: " + take_break_message
         return take_break_message
 
 
@@ -428,6 +430,7 @@ class TutoringSession:
                         returnMessage = 'STRETCHBREAK-DONE'
 
                     elif msgType.startswith('TIMEOUT'):
+                        otherInfo = line.split(";",4)[4].strip()
                         tempMessage = self.update_session(msgType, questionNum, otherInfo)
                         if tempMessage: # if not empty string, then return message should indicate break
                             returnMessage = tempMessage

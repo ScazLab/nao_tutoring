@@ -112,7 +112,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private final Handler handler = new Handler();
 
     // ends session at max_session_time seconds
-    private int max_session_time = 70;
+    private int max_session_time = 240;
     private TimeWatch total_elapsed_timewatch;
 
     //break variables
@@ -184,7 +184,8 @@ public class MathActivity extends Activity implements TCPClientOwner {
             AnswerText1.setText(correct_value_string);
         }
 
-        String attempt = "";
+        String attempt = "-1";
+        long questionTime = timeWatch.time(TimeUnit.MILLISECONDS);  //stores elapsed time in milliseconds
         Boolean correct;
 
         String timeout_string = " " + TOO_MANY_INCORRECT_POSTFIX;
@@ -192,7 +193,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
         //Send message
         if (TCPClient.singleton != null)
-            TCPClient.singleton.sendMessage("TIMEOUT;" + currentQuestionIndex + ";" + questionType + ";" + timeout_message + ";" + attempt);
+            TCPClient.singleton.sendMessage("TIMEOUT;" + currentQuestionIndex + ";" + questionType + ";" + timeout_message + ";" + attempt + ";" + questionTime);
 
 
         RightWrongLabel.setText(timeout_string);
@@ -398,6 +399,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
     }
 
     public void AnswerButtonPress(View view) {
+        stopTimerTask();  // stop timer task right when answer button is pressed
 
         String format = questions.get(currentQuestionIndex).format;
         String enteredStr1 = AnswerText1.getText().toString();
@@ -618,15 +620,19 @@ public class MathActivity extends Activity implements TCPClientOwner {
             stopTimerTask();
             if (numberBreaksGiven == 0) {
                 numberBreaksGiven++;
-                startTicTacToe();
+                System.out.println("Start phantom tic tac toe");  //DANGER: remove this before commit
+//                startTicTacToe();
+                startStretchBreak();
             } else if (numberBreaksGiven == 1) {
                 numberBreaksGiven++;
                 startStretchBreak();
             } else if (numberBreaksGiven == 2) {
                 numberBreaksGiven++;
+                startStretchBreak();
                 // Start break activity 3.
             } else if (numberBreaksGiven == 3) {
                 numberBreaksGiven++;
+                startStretchBreak();
                 // Start break activity 4.
             } else {
                 // Don't start any activity here. But still let nao_server.py know that a break was

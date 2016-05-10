@@ -67,7 +67,13 @@ class Session(list):
         '''
         l = len(self)
         total_correct = len([q for i, q in enumerate(self) if (q.answer_correct and i+self.accuracy_window+offset >= l and i+self.accuracy_window+offset < l+self.accuracy_window)])
-        return 1.0*total_correct/self.accuracy_window
+
+        real_window = min(l-offset, self.accuracy_window)
+
+        if real_window <= 0:
+            return 0.0
+
+        return 1.0*total_correct/real_window
 
     def calc_total_avg_time(self):
         '''
@@ -84,7 +90,13 @@ class Session(list):
         '''
         l = len(self)
         total_time = sum([q.total_time for i, q in enumerate(self) if i+self.time_window+offset >= l and i+self.time_window+offset < l+self.time_window])
-        return 1.0*total_time/self.time_window
+
+        real_window = min(l-offset, self.time_window)
+
+        if real_window <= 0:
+            return 0.0
+
+        return 1.0*total_time/real_window
 
     def __repr__(self):
         return "Session(pid=%r, session_num=%r, questions=\\\n%s, breaks=\\\n%s)" % \
@@ -164,11 +176,15 @@ class Question(object):
         self.__start_time = time.time()
         self.__now_time = time.time()
 
-    def timeout(self):
+    def timeout(self, ms_android_time=None):
         '''
         Handles case when question times out
         '''
-        time_diff = self.time_step()
+        time_diff = -1.0
+        if ms_android_time:
+            time_diff = ms_android_time/1000.0  # convert to seconds
+        else:
+            time_diff = self.time_step()
 
         self.total_time = time_diff
         self.answer_correct = False  # just to make sure
@@ -176,12 +192,15 @@ class Question(object):
         self.q_timeout = True
         self.complete()
 
-    def correct(self):
+    def correct(self, ms_android_time=None):
         '''
         Handles case when question answered correctly
         '''
-
-        time_diff = self.time_step()
+        time_diff = -1.0
+        if ms_android_time:
+            time_diff = ms_android_time/1000.0  # convert to seconds
+        else:
+            time_diff = self.time_step()
 
         self.attempt_times.append(time_diff)
         self.attempts += 1
@@ -191,15 +210,18 @@ class Question(object):
 
         self.complete()
 
-    def incorrect(self, last=False):
+    def incorrect(self, ms_android_time=None, last=False):
         '''
         Handles case when question answered incorrectly
 
         Parameters:
             last: Boolean representing whether or not this is the "last" incorrect allowed
         '''
-
-        time_diff = self.time_step()
+        time_diff = -1.0
+        if ms_android_time:
+            time_diff = ms_android_time/1000.0  # convert to seconds
+        else:
+            time_diff = self.time_step()
 
         self.attempt_times.append(time_diff)
         self.attempts += 1
@@ -245,4 +267,3 @@ class Question(object):
         return "Question(q_num=%r, attempts=%r, hints=%r, answer_correct=%r, total_time=%r, q_complete=%r, q_timeout=%r, \\\nhint_times=%s, attempt_times=%s)" % \
             (self.question_num, self.attempts, self.hints, self.answer_correct, self.total_time, self.q_complete, self.q_timeout,
              pprint.pformat(list(self.hint_times)), pprint.pformat(list(self.attempt_times)))
-
