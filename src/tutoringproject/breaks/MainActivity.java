@@ -36,6 +36,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private TextView connectionStatus;
     private EditText startQuestionNum;
     private EditText conditionNum;
+    private EditText maxTime;
     private int sessionNum;
     private int expGroup;
     private EditText fixedBreakInterval;
@@ -80,6 +81,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 fixedBreakInterval.setText("");
             }
         });
+
+        maxTime = (EditText) findViewById(R.id.MaxTime);
+        maxTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                maxTime.setText("");
+            }
+        });
+
         fixedButton = (Button) findViewById(R.id.FixedButton);
         rewardButton = (Button) findViewById(R.id.RewardButton);
         frustrationButton = (Button) findViewById(R.id.FrustrationButton);
@@ -144,6 +154,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
             fixedBreakIntervalString = "5";
         }
         intent.putExtra("fixedBreakInterval", fixedBreakIntervalString);
+
+        String maxTimeString = maxTime.getText().toString();
+        try {
+            Integer.parseInt(maxTimeString);
+        } catch (NumberFormatException e) {  //if nothing entered into field
+            maxTimeString = "-1";
+        }
+        intent.putExtra("maxTime", maxTimeString);
+
         intent.putExtra("expGroup", ""+expGroup);
 
         //send message to computer to convey session starting

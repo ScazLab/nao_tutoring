@@ -111,7 +111,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private final Handler handler = new Handler();
 
     // ends session at max_session_time seconds
-    private int max_session_time = 1030;
+    private int max_session_time = 30;
     private TimeWatch total_elapsed_timewatch;
 
     //break variables
@@ -240,6 +240,12 @@ public class MathActivity extends Activity implements TCPClientOwner {
             System.out.println("startQuestionNum is: " + startQuestionNum);
             currentQuestionIndex = startQuestionNum - 2;
             fixedBreakInterval = Integer.parseInt(extras.getString("fixedBreakInterval"));
+
+            int max_time = Integer.parseInt(extras.getString("maxTime"));
+            if (max_time != -1) {  //means different max_time specified
+                max_session_time = max_time;
+            }
+
         }
         //set this MathActivity as the sessionOwner for the tcpClient
         if (TCPClient.singleton != null)

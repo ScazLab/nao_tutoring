@@ -250,7 +250,7 @@ BREAK_SPEECH = {
         6:  [ "disengaged" ],
         8:  [ "doing consistently poorly, frustrated" ],
         9:  [ "guessing, giving up" ],
-        10: [ "Hmm, why don’t we take a little break to refocus and then come back to our problems!" ],
+        10: [ "Hmm, why don't we take a little break to refocus and then come back to our problems!" ],
         11: [ "guessing, making mistakes" ],
     },
     "super-rules": {
