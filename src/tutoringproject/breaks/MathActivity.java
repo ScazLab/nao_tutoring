@@ -624,7 +624,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
             if (numberBreaksGiven % 4 == 0) {
                 numberBreaksGiven++;
                 System.out.println("Break 1");
-//                startTicTacToe();
+                startTicTacToe();
             } else if (numberBreaksGiven % 4 == 1) {
                 numberBreaksGiven++;
                 System.out.println("Break 2");

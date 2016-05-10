@@ -173,7 +173,7 @@ def check_consistency(s, reward_break, acc_high, t=4):
 
     if in_a_row == t:  # means time to trigger break!
         break_trigger = True
-        if acc_high:  # means accuracy increased tree situation
+        if acc_high:  # means accuracy high tree situation
             break_val = 3
         else:
             break_val = 8

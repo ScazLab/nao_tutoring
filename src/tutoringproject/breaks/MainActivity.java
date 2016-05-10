@@ -122,22 +122,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
         startActivity(intent);
     }
-
-    public void onRadioButtonClicked(View view){
-        boolean checked = ((RadioButton) view).isChecked();
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.controlRB:
-                if (checked)
-                    expGroup = 0;
-                    break;
-            case R.id.adaptiveRB:
-                if (checked)
-                    expGroup = 1;
-                    break;
-        }
-    }
-
+    
     public void connectTablet(View view){
         String ipInput = iPandPort.getText().toString();
         String ipaddress = ipInput.split(":")[0];

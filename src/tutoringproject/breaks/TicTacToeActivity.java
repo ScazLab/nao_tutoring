@@ -36,7 +36,7 @@ public class TicTacToeActivity extends Activity implements TCPClientOwner {
 
     // The break will end after this time limit (represented in seconds) is passed and the current
     // game is finished.
-    public long TIME_LIMIT = 120;
+    public long TIME_LIMIT = 10;
 
     // Speech strings
     /* These strings are no longer necessary. The start speech is now generated in nao_server.py.

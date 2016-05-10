@@ -499,8 +499,8 @@ class TutoringSession:
                 "board."
             )
             robot_speech = get_break_speech(
-                self.session.breaks[-1].b_super,
-                self.session.breaks[-1].b_num
+                self.current_session.breaks[-1].b_super,
+                self.current_session.breaks[-1].b_num
             ) + robot_speech_base
             if self.goNao is None:
                 os.system('say ' + robot_speech)
@@ -568,8 +568,8 @@ class TutoringSession:
             # will be constructed here.
             robot_speech_base = "Let's stretch. Follow my lead!"
             robot_speech = get_break_speech(
-                self.session.breaks[-1].b_super,
-                self.session.breaks[-1].b_num
+                self.current_session.breaks[-1].b_super,
+                self.current_session.breaks[-1].b_num
             ) + robot_speech_base
             if self.goNao is None:
                 os.system('say ' + robot_speech)
