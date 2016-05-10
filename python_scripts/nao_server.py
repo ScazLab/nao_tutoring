@@ -21,6 +21,7 @@ from tutorMotions import *
 # import json
 from profile_models import Question, Session
 from breaks import take_break
+from breaks import get_break_speech
 import copy
 import pickle
 
@@ -490,6 +491,17 @@ class TutoringSession:
 
         if msg_sub_type == 'START':
             print 'Tic-tac-toe: Started'
+            # <robot_speech> won't be sent from the tablet in this case. Because the robot's speech
+            # needs to be modified depending on the reason that the break was triggered, the speech
+            # will be constructed here.
+            robot_speech_base = (
+                "You will be exes, and I will be ohs. You can go first. Click any square on the "
+                "board.
+            )
+            robot_speech = get_break_speech(
+                self.session.breaks[-1].b_super,
+                self.session.breaks[-1].b_num
+            ) + robot_speech_base
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
@@ -548,13 +560,23 @@ class TutoringSession:
     def handle_stretch_break_msg(self, msg_type, robot_speech):
         speech_return = 0
         msg_sub_type = msg_type[13:]
+
         if msg_sub_type == 'START':
             print 'Stretch break: Started'
+            # <robot_speech> won't be sent from the tablet in this case. Because the robot's speech
+            # needs to be modified depending on the reason that the break was triggered, the speech
+            # will be constructed here.
+            robot_speech_base = "Let's stretch. Follow my lead!"
+            robot_speech = get_break_speech(
+                self.session.breaks[-1].b_super,
+                self.session.breaks[-1].b_num
+            ) + robot_speech_base
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
                 speech_return = self.goNao.genSpeech(robot_speech)
                 self.goNao.stretchBreak()
+
         return speech_return
 
 

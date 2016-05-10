@@ -37,6 +37,7 @@ public class LessonActivity extends Activity implements TCPClientOwner {
         if (TCPClient.singleton != null ) {
             TCPClient.singleton.setSessionOwner(this);
         }
+
         if (TCPClient.singleton != null) {
             TCPClient.singleton.sendMessage("LESSON-START;-1;-1;" + START_MSG);
         }
