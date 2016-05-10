@@ -111,7 +111,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private final Handler handler = new Handler();
 
     // ends session at max_session_time seconds
-    private int max_session_time = 6000;
+    private int max_session_time = 1030;
     private TimeWatch total_elapsed_timewatch;
 
     //break variables

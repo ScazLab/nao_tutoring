@@ -108,7 +108,7 @@
         android:layout_marginBottom="20dp" />
 
     <EditText
-        android:layout_width="106dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="Start Question Number"
         android:inputType="number"
@@ -118,9 +118,9 @@
         android:layout_column="1" />
 
     <EditText
-        android:layout_width="106dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="Condition Number (1, 2, or 3)"
+        android:text="ExpGroup (1, 2, or 3)"
         android:inputType="number"
         android:ems="10"
         android:id="@+id/ConditionNum"
