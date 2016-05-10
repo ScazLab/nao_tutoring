@@ -23,6 +23,7 @@ public class StretchBreakActivity extends Activity implements TCPClientOwner {
     // Public variables ============================================================================
 
     // Speech strings
+    /* These strings are no longer necessary. The start speech is now generated in nao_server.py.
     public HashMap<ExpGroup, String> START_MSGS = new HashMap<ExpGroup, String>() {{
         put(ExpGroup.FIXED,
             "Let's take a break to stretch.");
@@ -31,6 +32,7 @@ public class StretchBreakActivity extends Activity implements TCPClientOwner {
         put(ExpGroup.FRUSTRATION,
             "Why don't we take a break and stretch. The mental rest will be good for you.");
     }};
+    */
 
     // Tablet text strings
     public String CLICK_RETURN_BUTTON_TEXT =
@@ -42,6 +44,8 @@ public class StretchBreakActivity extends Activity implements TCPClientOwner {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stretchbreak);
 
+        // <expGroup> is no longer used in this class. But I'm going to leave it here just in case
+        // we find a use for it in the future.
         Bundle extras = getIntent().getExtras();
         int expGroupIndex = Integer.parseInt(extras.getString("expGroup"));
         if (expGroupIndex == 1) {
@@ -59,8 +63,9 @@ public class StretchBreakActivity extends Activity implements TCPClientOwner {
         if (TCPClient.singleton != null ) {
             TCPClient.singleton.setSessionOwner(this);
         }
+
         if (TCPClient.singleton != null) {
-            TCPClient.singleton.sendMessage("STRETCHBREAK-START;-1;-1;" + START_MSGS.get(expGroup));
+            TCPClient.singleton.sendMessage("STRETCHBREAK-START;-1;-1;-1");
         }
     }
 
