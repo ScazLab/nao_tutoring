@@ -21,9 +21,9 @@ class Session(list):
         self.breaks = breaks
 
         if questions is None:
-            self.questions = []
+            super(Session, self).__init__([])
         else:
-            self.questions = questions
+            super(Session, self).__init__(questions)
 
         if breaks is None:
             self.breaks = []
@@ -33,7 +33,7 @@ class Session(list):
         # private vars for internal use
         self.__start_time = time.time()
         self.__now_time = time.time()
-        super(Session, self).__init__(self.questions)
+        # super(Session, self).__init__(self.questions)
 
     def time_step(self):
         '''

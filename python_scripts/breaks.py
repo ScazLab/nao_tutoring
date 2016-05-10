@@ -21,7 +21,7 @@ def map_break_message(b):
     return dic[b]
 
 
-def take_break(s, reward_break=True, acc_min_change=.2, time_min_change=10, t=4, refractory_period=4, max_study_time=15):
+def take_break(s, reward_break=True, acc_min_change=.05, time_min_change=3, t=4, refractory_period=4, max_study_time=15):
     '''
     Intended for determination of breaks for reward and frustration break scenarios
     (expGroup == 2 or expGroup == 3)
@@ -65,7 +65,7 @@ def take_break(s, reward_break=True, acc_min_change=.2, time_min_change=10, t=4,
                 break_trigger = True
                 break_val = 5
             else:  # no change
-                (break_trigger, break_val) = check_consistency(s, reward_break=reward_break, acc_inc=True, t=4)
+                (break_trigger, break_val) = check_consistency(s, reward_break=reward_break, acc_high=True, t=4)
         else:  # overall accuracy < 80%
             if time_change > 0:  # time slower
                 break_trigger = True
@@ -74,7 +74,7 @@ def take_break(s, reward_break=True, acc_min_change=.2, time_min_change=10, t=4,
                 break_trigger = True
                 break_val = 9
             else:  # no change
-                (break_trigger, break_val) = check_consistency(s, reward_break=reward_break, acc_inc=False, t=4)
+                (break_trigger, break_val) = check_consistency(s, reward_break=reward_break, acc_high=False, t=4)
 
     # break_trigger depends on whether or not reward_break:
     if reward_break:  # reward
@@ -111,6 +111,7 @@ def super_rule3(s, max_study_time=15):
     '''
     max_time_ms = max_study_time*60000  # convert to ms
     current_time_since_start_ms = s.time_step()
+    first_block_of_time = current_time_since_start_ms <= max_time_ms # True if first block of time and shouldn't take break
 
     # check if there has been break in last max_time_ms
     breaked_recently = False
@@ -121,6 +122,9 @@ def super_rule3(s, max_study_time=15):
         else:  # breaks too far in past to count
             breaked_recently = False
             break
+
+    if first_block_of_time:  # do not take break if still in first block of time
+        return False
 
     return not breaked_recently
 
@@ -139,12 +143,12 @@ def super_rule2(s, refractory_period=4):
     return (num_questions_since_last_break >= refractory_period)
 
 
-def check_consistency(s, reward_break, acc_inc, t=4):
+def check_consistency(s, reward_break, acc_high, t=4):
     '''
     checks consistency condition for session, given a
         reward_break: boolean, True if reward break, False otherwise
         t: integer representing how many questions should be evaluated "no change" in a row before consistency break given
-        acc_ince: boolean, True if accuracy increased condition, False otherwise
+        acc_high: boolean, True if accuracy high condition, False otherwise
     Returns (boolean, int)
         boolean: break_trigger, true if break should be triggered, false otherwise
         int: break_val, corresponds to appropriate string in map_break_message
@@ -153,7 +157,7 @@ def check_consistency(s, reward_break, acc_inc, t=4):
     break_val = -1
     b_val_no_change = -1
 
-    if acc_inc:
+    if acc_high:
         b_val_no_change = 4
     else:
         b_val_no_change = 7
@@ -167,13 +171,13 @@ def check_consistency(s, reward_break, acc_inc, t=4):
 
     if in_a_row == t:  # means time to trigger break!
         break_trigger = True
-        if acc_inc:  # means accuracy increased tree situation
+        if acc_high:  # means accuracy increased tree situation
             break_val = 3
         else:
             break_val = 8
     elif in_a_row < t:
         break_trigger = False
-        if acc_inc:
+        if acc_high:
             break_val = 4
         else:
             break_val = 7
@@ -193,14 +197,14 @@ def calc_time_change(s, min_change=1):
     '''
 
     current_window_avg_time = s.calc_window_avg_time(offset=0)
-    prev_window_avg_time = s.calc_window_avg_time(offset=1)
+    total_window_avg_time = s.calc_total_avg_time()
 
     print "current_window_avg_time: " + str(current_window_avg_time)
-    print "prev_window_avg_time: " + str(prev_window_avg_time)
+    print "total_window_avg_time: " + str(total_window_avg_time)
 
-    if current_window_avg_time > prev_window_avg_time + abs(min_change):
+    if current_window_avg_time > total_window_avg_time + abs(min_change):
         return 1
-    elif current_window_avg_time < prev_window_avg_time - abs(min_change):
+    elif current_window_avg_time < total_window_avg_time - abs(min_change):
         return -1
     else:
         return 0
@@ -215,14 +219,14 @@ def calc_accuracy_change(s, min_change=.2):
     Returns -1 if decreased (less accurate), 0 if no change, and 1 if increased (more accurate)
     '''
     current_window_accuracy = s.calc_window_accuracy(offset=0)
-    prev_window_accuracy = s.calc_window_accuracy(offset=1)
+    total_window_accuracy = s.calc_total_accuracy()
 
     print "current_window_accuracy: " + str(current_window_accuracy)
-    print "prev_window_accuracy: " + str(prev_window_accuracy)
+    print "total_window_accuracy: " + str(total_window_accuracy)
 
-    if current_window_accuracy > prev_window_accuracy + abs(min_change):  # check increasing condition
+    if current_window_accuracy > total_window_accuracy + abs(min_change):  # check increasing condition
         return 1
-    elif current_window_accuracy < prev_window_accuracy - abs(min_change):  # check decreasing condition
+    elif current_window_accuracy < total_window_accuracy - abs(min_change):  # check decreasing condition
         return -1
     else:  # no change
         return 0

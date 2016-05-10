@@ -128,23 +128,18 @@ class TutoringSession:
         Returns take_break_message if break needs to be taken.
             Otherwise, returns an empty string
         '''
-        print "Otherinfo: " + str(otherInfo)
 
         english_msg_type = self.map_msg_type(msgType)
         if msgType == 'START':
-            print 'in START'
             self.current_session = Session(pid=self.pid, session_num=self.sessionNum)
         elif msgType == 'Q':
-            print 'in Q'
             self.__current_question = Question(question_num=questionNum)
         elif msgType == 'CA':
             ms_question_time = int(otherInfo.split(';')[1])  # in milliseconds
-            print 'in CA'
             self.__current_question.correct(ms_android_time=ms_question_time)
             self.current_session.append(copy.deepcopy(self.__current_question))
             print "Question time (total time) in update_session: " + str(self.__current_question.total_time)
         elif msgType == 'IA':
-            print 'in IA, should not be here'
             self.__current_question.incorrect(last=False)
         elif msgType == 'LIA':
             ms_question_time = int(otherInfo.split(';')[1])  # in milliseconds
@@ -162,7 +157,6 @@ class TutoringSession:
             pass # = 'ROBOT ACTION'
         elif msgType == 'TIMEOUT':
             ms_question_time = int(otherInfo.split(';')[1])  # in milliseconds
-            print 'in TIMEOUT'
             self.__current_question.timeout(ms_android_time=ms_question_time)
             self.current_session.append(copy.deepcopy(self.__current_question))
         else:
@@ -175,7 +169,6 @@ class TutoringSession:
         break_trigger = False
         break_trigger_expl = ""  # explains why or why not break triggered
         if (msgType == 'CA' or msgType == 'LIA' or msgType == 'TIMEOUT'):
-            print type(self.expGroup)
             if int(self.expGroup) == 2:  # Reward break
                 (break_trigger, break_trigger_expl) = take_break(self.current_session, reward_break=True)
                 if break_trigger:
@@ -187,8 +180,13 @@ class TutoringSession:
             else:
                 pass
 
-        print self.current_session
+        if msgType == 'CA' or msgType == 'LIA' or msgType == 'TIMEOUT':
+            print self.current_session
+        # if len(self.current_session) > 0:
+        #     print "Most recent question: " + str(self.current_session[-1])
+        #     print "Most recent break   : " + str(self.current_session.breaks[-1])
 
+        print "take break message: " + str(take_break_message)
         return take_break_message
 
 
@@ -263,7 +261,7 @@ class TutoringSession:
                         #do intro depending on the sessionNum
                         if self.goNao is not None:
                             introFlag = True
-                            id = self.goNao.session_intro(int(self.sessionNum))
+                            # id = self.goNao.session_intro(int(self.sessionNum))  #DANGER 
 
                         #create appropriate session object
                         # IMPORTANT! Commenting this out temporarily
@@ -435,10 +433,12 @@ class TutoringSession:
                         returnMessage = 'STRETCHBREAK-DONE'
 
                     elif msgType.startswith('TIMEOUT'):
+                        id = self.handle_timeout_msg(msgType, robot_speech)
                         otherInfo = line.split(";",4)[4].strip()
                         tempMessage = self.update_session(msgType, questionNum, otherInfo)
                         if tempMessage: # if not empty string, then return message should indicate break
                             returnMessage = tempMessage
+                        print "ReturnMessage: " + returnMessage
                     else:
                         print 'error: unknown message type'
 
@@ -464,6 +464,13 @@ class TutoringSession:
                 self.store_session(self.current_session)
                 sys.exit(0)
 
+    def handle_timeout_msg(self, msg_type, robot_speech):
+        speech_return = 0
+        if self.goNao is None:
+            os.system('say ' + robot_speech)
+        else:
+            speech_return = self.goNao.genSpeech(robot_speech)
+        return speech_return
 
     def handle_lesson_msg(self, msg_type, robot_speech):
         speech_return = 0

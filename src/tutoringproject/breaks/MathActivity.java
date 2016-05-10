@@ -104,14 +104,14 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private boolean firstTimeCallingOnResume = true;
 
     //temporary variable (should be read in through question format)
-    private final int max_time_per_question = 30000;  //hard coded at 10 seconds, which should be ample time!
+    private int max_time_per_question = 10000;  //hard coded at 10 seconds, which should be ample time!
     private Timer timer;
     private TimerTask timerTask;
     private TimeWatch timeWatch;
     private final Handler handler = new Handler();
 
     // ends session at max_session_time seconds
-    private int max_session_time = 240;
+    private int max_session_time = 6000;
     private TimeWatch total_elapsed_timewatch;
 
     //break variables
@@ -188,7 +188,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
         Boolean correct;
 
         String timeout_string = " " + TOO_MANY_INCORRECT_POSTFIX;
-        String timeout_message = " " + TOO_MANY_INCORRECT_POSTFIX;
+        String timeout_message = "Let's try the next problem.";
 
         //Send message
         if (TCPClient.singleton != null)
@@ -207,6 +207,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
         //HintButton3.setVisibility(View.INVISIBLE);
         //AskRobotLabel.setVisibility(View.INVISIBLE);
         numberCorrect++;  //DANGER: is this a bug?
+        stopTimerTask();
     }
 
 
@@ -238,6 +239,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
             startQuestionNum = Integer.parseInt(extras.getString("startQuestionNum"));
             System.out.println("startQuestionNum is: " + startQuestionNum);
             currentQuestionIndex = startQuestionNum - 2;
+            fixedBreakInterval = Integer.parseInt(extras.getString("fixedBreakInterval"));
         }
         //set this MathActivity as the sessionOwner for the tcpClient
         if (TCPClient.singleton != null)
@@ -621,17 +623,21 @@ public class MathActivity extends Activity implements TCPClientOwner {
             stopTimerTask();
             if (numberBreaksGiven % 4 == 0) {
                 numberBreaksGiven++;
-                startTicTacToe();
+                System.out.println("Break 1");
+//                startTicTacToe();
             } else if (numberBreaksGiven % 4 == 1) {
                 numberBreaksGiven++;
+                System.out.println("Break 2");
                 startStretchBreak();
             } else if (numberBreaksGiven % 4 == 2) {
                 numberBreaksGiven++;
-                startStretchBreak();
+//                startStretchBreak();
+                System.out.println("Break 3");
                 // Start break activity 3.
             } else if (numberBreaksGiven % 4 == 3) {
                 numberBreaksGiven++;
-                startStretchBreak();
+//                startStretchBreak();
+                System.out.println("Break 4");
                 // Start break activity 4.
             }
             takeBreak = false;
@@ -684,6 +690,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
         Question question = questions.get(currentQuestionIndex);
         String newQuestion = question.question;
         questionType = question.type;
+        max_time_per_question = question.maxTime * 1000;
         //String questionIntro = QUESTION_INTRO_PREFIX + questionType + QUESTION_INTRO_POSTFIX;
         String questionIntro = question.type;//question.spokenType;
         SubmitButton.setText(SUBMIT_STRING);

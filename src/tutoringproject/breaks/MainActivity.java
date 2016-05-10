@@ -108,6 +108,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         //fixed break information added
         String fixedBreakIntervalString = fixedBreakInterval.getText().toString();
+        if (fixedBreakIntervalString.equals("Enter Fixed Break Interval")) {  //if nothing entered into field
+            fixedBreakIntervalString = "5";
+        }
         intent.putExtra("fixedBreakInterval", fixedBreakIntervalString);
         intent.putExtra("expGroup", ""+expGroup);
 
