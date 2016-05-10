@@ -31,9 +31,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button fixedButton;
     private Button rewardButton;
     private Button frustrationButton;
+    private Button loadButton;
     private EditText participantID;
     private TextView connectionStatus;
     private EditText startQuestionNum;
+    private EditText conditionNum;
     private RadioButton controlRB;
     private RadioButton adaptiveRB;
     private int sessionNum;
@@ -58,6 +60,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         });
 
         startQuestionNum = (EditText) findViewById(R.id.StartQuestionNum);
+        conditionNum = (EditText) findViewById(R.id.ConditionNum);
         
         fixedBreakInterval = (EditText) findViewById(R.id.FixedBreakInterval);
         fixedBreakInterval.setOnClickListener(new View.OnClickListener() {
@@ -69,10 +72,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
         fixedButton = (Button) findViewById(R.id.FixedButton);
         rewardButton = (Button) findViewById(R.id.RewardButton);
         frustrationButton = (Button) findViewById(R.id.FrustrationButton);
+        loadButton = (Button) findViewById((R.id.LoadButton));
 
         fixedButton.setOnClickListener(this);
         rewardButton.setOnClickListener(this);
         frustrationButton.setOnClickListener(this);
+        loadButton.setOnClickListener(this);
     }
 
     @Override
@@ -89,6 +94,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
             sessionNum = 3;
             expGroup = 3;
         }
+        else if (v == loadButton) {
+            try {
+                expGroup = Integer.parseInt(conditionNum.getText().toString());
+                sessionNum = Integer.parseInt(conditionNum.getText().toString());
+            } catch (NumberFormatException e) {  //if nothing entered into field
+                expGroup = 1;
+                sessionNum = 1;
+            }
+        }
 
         startMathSession(v);
     }
@@ -104,11 +118,18 @@ public class MainActivity extends Activity implements View.OnClickListener {
         String pid = participantID.getText().toString();
         intent.putExtra("participantID", pid);
         String startQuestion = startQuestionNum.getText().toString();
+        try {
+            Integer.parseInt(startQuestion);
+        } catch (NumberFormatException e) {  //if nothing entered into field
+            startQuestion = "1";
+        }
         intent.putExtra("startQuestionNum", startQuestion);
 
         //fixed break information added
         String fixedBreakIntervalString = fixedBreakInterval.getText().toString();
-        if (fixedBreakIntervalString.equals("Enter Fixed Break Interval")) {  //if nothing entered into field
+        try {
+            Integer.parseInt(fixedBreakIntervalString);
+        } catch (NumberFormatException e) {  //if nothing entered into field
             fixedBreakIntervalString = "5";
         }
         intent.putExtra("fixedBreakInterval", fixedBreakIntervalString);
@@ -116,13 +137,20 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         //send message to computer to convey session starting
         if (TCPClient.singleton != null) {
-            String startMessage = "START;" + "-1;-1;" + pid + "," + sessionNum + "," + expGroup;
+            if (view == loadButton) {
+                String startMessage = "LOAD;" + "-1;-1;" + pid + "," + sessionNum + "," + conditionNum;
 
-            mTcpClient.sendMessage(startMessage);
+                mTcpClient.sendMessage(startMessage);
+            }
+            else {
+                String startMessage = "START;" + "-1;-1;" + pid + "," + sessionNum + "," + expGroup;
+
+                mTcpClient.sendMessage(startMessage);
+            }
         }
         startActivity(intent);
     }
-    
+
     public void connectTablet(View view){
         String ipInput = iPandPort.getText().toString();
         String ipaddress = ipInput.split(":")[0];

@@ -87,7 +87,7 @@ class TutoringSession:
         if otherInfo == 'false':
             otherInfo = ''
 
-        transaction = self.pid + "," + self.expGroup + "," + self.sessionNum + ","
+        transaction = self.pid + "," + self.expGroup + "," + str(self.sessionNum) + ","
         transaction += str(datetime.datetime.now()) + ","
         transaction += str(questionNum) + ","
         transaction += self.map_msg_type(msgType) + ","
