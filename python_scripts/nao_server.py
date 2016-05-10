@@ -495,13 +495,15 @@ class TutoringSession:
             # needs to be modified depending on the reason that the break was triggered, the speech
             # will be constructed here.
             robot_speech_base = (
-                "You will be exes, and I will be ohs. You can go first. Click any square on the "
-                "board."
+                "Let's play a game of tic-tac-toe. You will be exes, and I will be ohs. You can "
+                "go first. Click any square on the board."
             )
             robot_speech = get_break_speech(
+                int(self.expGroup),
                 self.current_session.breaks[-1].b_super,
-                self.current_session.breaks[-1].b_num
-            ) + robot_speech_base
+                self.current_session.breaks[-1].b_type
+            ) + " " + robot_speech_base
+
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
@@ -566,11 +568,13 @@ class TutoringSession:
             # <robot_speech> won't be sent from the tablet in this case. Because the robot's speech
             # needs to be modified depending on the reason that the break was triggered, the speech
             # will be constructed here.
-            robot_speech_base = "Let's stretch. Follow my lead!"
+            robot_speech_base = "Let's stretch. Follow my leed!"
             robot_speech = get_break_speech(
+                int(self.expGroup),
                 self.current_session.breaks[-1].b_super,
-                self.current_session.breaks[-1].b_num
-            ) + robot_speech_base
+                self.current_session.breaks[-1].b_type
+            ) + " " + robot_speech_base
+
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:

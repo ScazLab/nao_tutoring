@@ -235,6 +235,10 @@ def calc_accuracy_change(s, min_change=.2):
 
 
 BREAK_SPEECH = {
+    "fixed": [
+        "Why don't we take a break."
+        "I think we should take a break."
+    ],
     "base-rules": {
         # Reward breaks
         0: ["Wow! Looks like you're really improving! Time for a little activity and then we'll get back to it.",
@@ -257,9 +261,15 @@ BREAK_SPEECH = {
 }
 
 
-def get_break_speech(b_super, b_num):
+def get_break_speech(exp_group, b_super, b_type):
+    # If fixed condition
+    if exp_group == 1:
+        return random.choice(BREAK_SPEECH["fixed"])
+
+    # If reward or frustration condition
     if b_super in BREAK_SPEECH["super-rules"]:
         return random.choice(BREAK_SPEECH["super-rules"][b_super])
     if b_num in BREAK_SPEECH["base-rules"]:
-        return random.choice(BREAK_SPEECH["base-rules"][b_num])
+        return random.choice(BREAK_SPEECH["base-rules"][b_type])
+
     return str()
