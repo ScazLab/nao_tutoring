@@ -496,7 +496,7 @@ class TutoringSession:
             # will be constructed here.
             robot_speech_base = (
                 "You will be exes, and I will be ohs. You can go first. Click any square on the "
-                "board.
+                "board."
             )
             robot_speech = get_break_speech(
                 self.session.breaks[-1].b_super,
