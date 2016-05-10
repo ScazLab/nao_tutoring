@@ -116,10 +116,9 @@ class Gesture:
         self.look()
 
         if sessionNum == 1:
-            self.genSpeech("I'm here to help you with some fractions problems today.")
-            self.genSpeech("For each session, I have put the math problems on the tablet in front of you.")
-            self.genSpeech("If you need any help, you can ask me by pressing the hint buttons at the bottom of each screen.")
-            id = self.genSpeech("Great! Now let's work on some questions together!")
+            self.genSpeech("I'm here to help you with some order of operations problems today.")
+            self.genSpeech("I will put the math problems on the tablet in front of you.")
+            id = self.genSpeech("Great! Let's get started!")
         elif sessionNum == 2:
             self.genSpeech("Just remember, if you need help on the problems, you can ask me by pressing the buttons on the bottom of the screen.")
             id = self.genSpeech("Let's get started!")
