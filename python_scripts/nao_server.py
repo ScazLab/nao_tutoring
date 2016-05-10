@@ -421,6 +421,11 @@ class TutoringSession:
                             self.goNao.congratulations()
                             #self.goNao.sit()   
                         #break
+
+                    elif msgType.startswith('LESSON'):
+                        id = self.handle_lesson_msg(msgType, robot_speech)
+                        returnMessage = msgType
+
                     elif msgType.startswith('TICTACTOE'):
                         id = self.handle_tictactoe_msg(msgType, robot_speech)
                         returnMessage = msgType
@@ -460,6 +465,18 @@ class TutoringSession:
                 sys.exit(0)
 
 
+    def handle_lesson_msg(self, msg_type, robot_speech):
+        speech_return = 0
+        msg_sub_type = msg_type[7:]
+        if msg_sub_type == 'START':
+            print 'Lesson: Started'
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                speech_return = self.goNao.genSpeech(robot_speech)
+        return speech_return
+
+
     def handle_tictactoe_msg(self, msg_type, robot_speech):
         speech_return = 0
         msg_sub_type = msg_type[10:]
@@ -497,12 +514,14 @@ class TutoringSession:
                 os.system('say ' + robot_speech)
             else:
                 speech_return = self.goNao.genSpeech(robot_speech)
+                self.goNao.lookDown()
 
         elif msg_sub_type == 'STUDENTTURN':
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
                 speech_return = self.goNao.genSpeech(robot_speech)
+                self.goNao.lookDown(restore=True)
 
         elif msg_sub_type == 'RESTART':
             if self.goNao is None:
@@ -686,6 +705,7 @@ def main():
         ("o", "And so on"),
         ("c", "Conversion problems"),
         ("z", "Congratulations!"),
+        ("b", "Stretch break"),
         ("s", "Start tutoring interaction"),
         ("q", "Quit"),
         ))
@@ -775,6 +795,9 @@ def main():
 
         elif(choice == "z"):
             goNao.congratulations()
+
+        elif(choice == "b"):
+            goNao.stretchBreak()
 
         #elif(choice == 'o'):
         #   goNao.tilt()
