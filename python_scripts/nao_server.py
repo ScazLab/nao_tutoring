@@ -700,6 +700,7 @@ def main():
         ("o", "And so on"),
         ("c", "Conversion problems"),
         ("z", "Congratulations!"),
+        ("b", "Stretch break"),
         ("s", "Start tutoring interaction"),
         ("q", "Quit"),
         ))
@@ -789,6 +790,9 @@ def main():
 
         elif(choice == "z"):
             goNao.congratulations()
+
+        elif(choice == "b"):
+            goNao.stretchBreak()
 
         #elif(choice == 'o'):
         #   goNao.tilt()
