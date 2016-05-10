@@ -991,6 +991,14 @@ class Gesture:
         except Exception, e:
             print "Error when sitting down nao and making nao unstiff: "+str(e)
 
+
+    def lookDown(self, restore=False):
+        if restore:
+            self.motion.setAngles("HeadPitch", 0.0, 0.1)
+        else:
+            self.motion.setAngles("HeadPitch", 0.5, 0.1)
+
+
     def stretchBreak(self):
         self.posture.goToPosture("Sit", 1.0)
         # I intentionally mispelled "lead" to make the speech clearer!
