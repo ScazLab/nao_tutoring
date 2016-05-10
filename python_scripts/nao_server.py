@@ -470,6 +470,7 @@ class TutoringSession:
                 self.store_session(self.current_session)
                 sys.exit(0)
 
+
     def handle_timeout_msg(self, msg_type, robot_speech):
         speech_return = 0
         if self.goNao is None:
@@ -477,6 +478,7 @@ class TutoringSession:
         else:
             speech_return = self.goNao.genSpeech(robot_speech)
         return speech_return
+
 
     def handle_lesson_msg(self, msg_type, robot_speech):
         speech_return = 0
@@ -486,6 +488,7 @@ class TutoringSession:
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
+                self.goNao.look()
                 speech_return = self.goNao.genSpeech(robot_speech)
         return speech_return
 
@@ -512,6 +515,7 @@ class TutoringSession:
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
+                self.goNao.look()
                 speech_return = self.goNao.genSpeech(robot_speech)
 
         elif msg_sub_type == 'WIN':
@@ -519,6 +523,7 @@ class TutoringSession:
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
+                self.goNao.look()
                 speech_return = self.goNao.genSpeech(robot_speech)
 
         elif msg_sub_type == 'TIE':
@@ -526,6 +531,7 @@ class TutoringSession:
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
+                self.goNao.look()
                 speech_return = self.goNao.genSpeech(robot_speech)
 
         elif msg_sub_type == 'LOSS':
@@ -533,27 +539,29 @@ class TutoringSession:
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
+                self.goNao.look()
                 speech_return = self.goNao.genSpeech(robot_speech)
 
         elif msg_sub_type == 'NAOTURN':
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
+                self.goNao.look()
                 speech_return = self.goNao.genSpeech(robot_speech)
-                self.goNao.lookDown()
 
         elif msg_sub_type == 'STUDENTTURN':
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
+                self.goNao.look()
                 speech_return = self.goNao.genSpeech(robot_speech)
-                self.goNao.lookDown(restore=True)
 
         elif msg_sub_type == 'RESTART':
             self.log_transaction('TICTACTOE-RESTART', -1, 'speech: ' + robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
+                self.goNao.look()
                 speech_return = self.goNao.genSpeech(robot_speech)
 
         elif msg_sub_type == 'END':
@@ -561,6 +569,7 @@ class TutoringSession:
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
+                self.goNao.look()
                 speech_return = self.goNao.genSpeech(robot_speech)
 
         return speech_return
@@ -585,6 +594,7 @@ class TutoringSession:
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
+                self.goNao.look()
                 speech_return = self.goNao.genSpeech(robot_speech)
                 self.goNao.stretchBreak()
 

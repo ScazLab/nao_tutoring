@@ -991,15 +991,8 @@ class Gesture:
             print "Error when sitting down nao and making nao unstiff: "+str(e)
 
 
-    def lookDown(self, restore=False):
-        if restore:
-            self.motion.setAngles("HeadPitch", 0.0, 0.1)
-        else:
-            self.motion.setAngles("HeadPitch", 0.5, 0.1)
-
-
     def stretchBreak(self):
-        self.posture.goToPosture("Sit", 1.0)
+        self.posture.goToPosture("Sit", 0.2)
         # I intentionally mispelled "lead" to make the speech clearer!
         self.genSpeech("Follow my leed!")
         time.sleep(2.5)
@@ -1092,4 +1085,4 @@ class Gesture:
             "problems now. Click the button at the bottom of the tablet to return to the tutoring "
             "session."
         )
-        self.posture.goToPosture("Sit", 0.3)
+        self.posture.goToPosture("Sit", 0.2)
