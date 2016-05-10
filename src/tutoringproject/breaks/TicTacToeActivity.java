@@ -36,9 +36,10 @@ public class TicTacToeActivity extends Activity implements TCPClientOwner {
 
     // The break will end after this time limit (represented in seconds) is passed and the current
     // game is finished.
-    public long TIME_LIMIT = 60;
+    public long TIME_LIMIT = 120;
 
     // Speech strings
+    /* These strings are no longer necessary. The start speech is now generated in nao_server.py.
     public HashMap<ExpGroup, String> START_MSGS = new HashMap<ExpGroup, String>() {{
         put(ExpGroup.FIXED,
             "Let's take a break and play a game of tic tac toe. You will be exes, and I will be " +
@@ -51,6 +52,7 @@ public class TicTacToeActivity extends Activity implements TCPClientOwner {
             "Why don't we take a break and play a game of tic tac toe. You will be exes, and I " +
             "will be ohs. You can go first. Click any square on the board.");
     }};
+    */
     public String[] WIN_MSGS = {
         "Looks like you won! Congrats!"
     };
@@ -90,6 +92,8 @@ public class TicTacToeActivity extends Activity implements TCPClientOwner {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tictactoe);
 
+        // <expGroup> is no longer used in this class. But I'm going to leave it here just in case
+        // we find a use for it in the future.
         Bundle extras = getIntent().getExtras();
         int expGroupIndex = Integer.parseInt(extras.getString("expGroup"));
         if (expGroupIndex == 1) {
@@ -122,8 +126,9 @@ public class TicTacToeActivity extends Activity implements TCPClientOwner {
         if (TCPClient.singleton != null ) {
             TCPClient.singleton.setSessionOwner(this);
         }
+
         if (TCPClient.singleton != null) {
-            TCPClient.singleton.sendMessage("TICTACTOE-START;-1;-1;" + START_MSGS.get(expGroup));
+            TCPClient.singleton.sendMessage("TICTACTOE-START;-1;-1;-1");
         }
     }
 
