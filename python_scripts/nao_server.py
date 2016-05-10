@@ -511,12 +511,14 @@ class TutoringSession:
                 os.system('say ' + robot_speech)
             else:
                 speech_return = self.goNao.genSpeech(robot_speech)
+                self.goNao.lookDown()
 
         elif msg_sub_type == 'STUDENTTURN':
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
                 speech_return = self.goNao.genSpeech(robot_speech)
+                self.goNao.lookDown(restore=True)
 
         elif msg_sub_type == 'RESTART':
             if self.goNao is None:

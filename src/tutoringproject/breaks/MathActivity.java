@@ -98,8 +98,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private boolean autoHint = false;
 
     // New attributes for break study. Setting <takeBreak> to true will cause a break to be
-    // triggered the next time NextQuestion() is called, assuming that all 4 breaks have not yet
-    // been given.
+    // triggered the next time NextQuestion() is called.
     private boolean takeBreak = false;
     private int numberBreaksGiven = 0;
     private boolean firstTimeCallingOnResume = true;
@@ -618,21 +617,18 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
         if (takeBreak) {
             stopTimerTask();
-            if (numberBreaksGiven == 0) {
+            if (numberBreaksGiven % 4 == 0) {
                 numberBreaksGiven++;
                 startTicTacToe();
-            } else if (numberBreaksGiven == 1) {
+            } else if (numberBreaksGiven % 4 == 1) {
                 numberBreaksGiven++;
                 startStretchBreak();
-            } else if (numberBreaksGiven == 2) {
+            } else if (numberBreaksGiven % 4 == 2) {
                 numberBreaksGiven++;
                 // Start break activity 3.
-            } else if (numberBreaksGiven == 3) {
+            } else if (numberBreaksGiven % 4 == 3) {
                 numberBreaksGiven++;
                 // Start break activity 4.
-            } else {
-                // Don't start any activity here. But still let nao_server.py know that a break was
-                // triggered for logging purposes.
             }
             takeBreak = false;
             return;
