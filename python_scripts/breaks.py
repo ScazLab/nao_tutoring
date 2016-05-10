@@ -269,7 +269,7 @@ def get_break_speech(exp_group, b_super, b_type):
     # If reward or frustration condition
     if b_super in BREAK_SPEECH["super-rules"]:
         return random.choice(BREAK_SPEECH["super-rules"][b_super])
-    if b_num in BREAK_SPEECH["base-rules"]:
+    if b_type in BREAK_SPEECH["base-rules"]:
         return random.choice(BREAK_SPEECH["base-rules"][b_type])
 
     return str()
