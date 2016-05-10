@@ -25,13 +25,11 @@ public class StretchBreakActivity extends Activity implements TCPClientOwner {
     // Speech strings
     public HashMap<ExpGroup, String> START_MSGS = new HashMap<ExpGroup, String>() {{
         put(ExpGroup.FIXED,
-            "Let's take a quick break to stretch. Follow my lead!");
+            "Let's take a break to stretch.");
         put(ExpGroup.REWARD,
-            "You're doing really well! I think you deserve a break. Let's stretch. Follow my " +
-            "lead!");
+            "You're doing really well! You deserve a break. Let's stretch.");
         put(ExpGroup.FRUSTRATION,
-            "Why don't we take a break and stretch. Some rest might be helpful for you. Follow " +
-            "my lead!");
+            "Why don't we take a break and stretch. The mental rest will be good for you.");
     }};
 
     // Tablet text strings
