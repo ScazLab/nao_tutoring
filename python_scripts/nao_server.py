@@ -440,7 +440,7 @@ class TutoringSession:
                         returnMessage = msgType
 
                     elif msgType.startswith('STRETCHBREAK'):
-                        id, otherInfo = self.handle_stretch_break_msg(msgType, robot_speech)
+                        id = self.handle_stretch_break_msg(msgType, robot_speech)
                         returnMessage = 'STRETCHBREAK-DONE'
 
                     elif msgType.startswith('TIMEOUT'):
@@ -593,6 +593,7 @@ class TutoringSession:
                     self.current_session.breaks[-1].b_type
                 ) + " " + robot_speech_base
 
+            self.log_transaction('STRETCHBREAK-START', 0, robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
@@ -600,7 +601,7 @@ class TutoringSession:
                 speech_return = self.goNao.genSpeech(robot_speech)
                 self.goNao.stretchBreak()
 
-        return speech_return, robot_speech
+        return speech_return
 
 
         """
