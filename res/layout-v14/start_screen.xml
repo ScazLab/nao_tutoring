@@ -135,7 +135,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Start Question Number" />
+            android:text="Start Question Number (default 1)" />
     </LinearLayout>
 
     <LinearLayout
@@ -155,7 +155,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ExpGroup (1, 2, or 3)" />
+            android:text="ExpGroup (1=fixed; 2=reward; or 3=frustration)" />
     </LinearLayout>
 
     <LinearLayout
@@ -175,7 +175,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Max Session Time (sec)" />
+            android:text="Max Session Time (default 1800 seconds)" />
     </LinearLayout>
 
     <LinearLayout
@@ -195,6 +195,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Breaks Given (default 0)" />
+            android:text="Breaks Already Given (default 0)" />
     </LinearLayout>
 </GridLayout>
