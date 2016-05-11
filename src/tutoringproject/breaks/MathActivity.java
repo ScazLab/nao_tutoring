@@ -629,22 +629,16 @@ public class MathActivity extends Activity implements TCPClientOwner {
             stopTimerTask();
             if (numberBreaksGiven % 4 == 0) {
                 numberBreaksGiven++;
-                System.out.println("Break 1");
                 startTicTacToe();
             } else if (numberBreaksGiven % 4 == 1) {
                 numberBreaksGiven++;
-                System.out.println("Break 2");
                 startStretchBreak();
             } else if (numberBreaksGiven % 4 == 2) {
                 numberBreaksGiven++;
-//                startStretchBreak();
                 System.out.println("Break 3");
-                // Start break activity 3.
             } else if (numberBreaksGiven % 4 == 3) {
                 numberBreaksGiven++;
-//                startStretchBreak();
                 System.out.println("Break 4");
-                // Start break activity 4.
             }
             takeBreak = false;
             return;
