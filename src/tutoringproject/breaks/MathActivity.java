@@ -333,8 +333,10 @@ public class MathActivity extends Activity implements TCPClientOwner {
         });
         total_elapsed_timewatch = TimeWatch.start();
 
-        Intent intent = new Intent(this, LessonActivity.class);
-        startActivity(intent);
+        if (extras.getString("startOrLoad").equals("start")) {
+            Intent intent = new Intent(this, LessonActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void disableButtons() {

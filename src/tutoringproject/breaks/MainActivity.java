@@ -133,7 +133,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 sessionNum = 1;
             }
         }
-
         startMathSession(v);
     }
 
@@ -187,9 +186,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
             String startMessage = "";
             if (view == loadButton) {
                 startMessage = "LOAD;" + "-1;-1;" + pid + "," + sessionNum + "," + expGroup;
+                intent.putExtra("startOrLoad", "load");
             }
             else {
                 startMessage = "START;" + "-1;-1;" + pid + "," + sessionNum + "," + expGroup;
+                intent.putExtra("startOrLoad", "start");
             }
             mTcpClient.sendMessage(startMessage);
         }
