@@ -245,7 +245,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
             if (max_time != -1) {  //means different max_time specified
                 max_session_time = max_time;
             }
-
+            numberBreaksGiven = Integer.parseInt(extras.getString("breaksGiven"));
         }
         //set this MathActivity as the sessionOwner for the tcpClient
         if (TCPClient.singleton != null)
@@ -413,7 +413,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
     public void AnswerButtonPress(View view) {
         stopTimerTask();  // stop timer task right when answer button is pressed
-
+        
         String format = questions.get(currentQuestionIndex).format;
         String enteredStr1 = AnswerText1.getText().toString();
         String enteredStr2 = AnswerText2.getText().toString();
