@@ -411,8 +411,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
     public void AnswerButtonPress(View view) {
         stopTimerTask();  // stop timer task right when answer button is pressed
-
-        System.out.println("Current Question Index: " + currentQuestionIndex);
+        
         String format = questions.get(currentQuestionIndex).format;
         String enteredStr1 = AnswerText1.getText().toString();
         String enteredStr2 = AnswerText2.getText().toString();
