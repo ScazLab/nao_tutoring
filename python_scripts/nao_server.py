@@ -509,7 +509,7 @@ class TutoringSession:
                 "go first. Click any square on the board."
             )
             if int(self.expGroup) == 1:
-                robot_speech = get_break_speech(1, -1, -1) + robot_speech_base
+                robot_speech = get_break_speech(1, -1, -1) + " " + robot_speech_base
             else:
                 robot_speech = get_break_speech(
                     int(self.expGroup),
@@ -585,7 +585,7 @@ class TutoringSession:
             # will be constructed here.
             robot_speech_base = "Let's stretch."
             if int(self.expGroup) == 1:
-                robot_speech = get_break_speech(1, -1, -1) + robot_speech_base
+                robot_speech = get_break_speech(1, -1, -1) + " " + robot_speech_base
             else:
                 robot_speech = get_break_speech(
                     int(self.expGroup),
