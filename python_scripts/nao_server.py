@@ -511,7 +511,7 @@ class TutoringSession:
             if int(self.expGroup) == 1:
                 robot_speech = get_break_speech(1, -1, -1) + robot_speech_base
             else:
-                robot_speech = (
+                robot_speech = get_break_speech(
                     int(self.expGroup),
                     self.current_session.breaks[-1].b_super,
                     self.current_session.breaks[-1].b_type
@@ -587,7 +587,7 @@ class TutoringSession:
             if int(self.expGroup) == 1:
                 robot_speech = get_break_speech(1, -1, -1) + robot_speech_base
             else:
-                robot_speech = (
+                robot_speech = get_break_speech(
                     int(self.expGroup),
                     self.current_session.breaks[-1].b_super,
                     self.current_session.breaks[-1].b_type
