@@ -583,7 +583,7 @@ class TutoringSession:
             # <robot_speech> won't be sent from the tablet in this case. Because the robot's speech
             # needs to be modified depending on the reason that the break was triggered, the speech
             # will be constructed here.
-            robot_speech_base = "Let's stretch. Follow my leed!"
+            robot_speech_base = "Let's stretch."
             robot_speech = get_break_speech(
                 int(self.expGroup),
                 self.current_session.breaks[-1].b_super,
