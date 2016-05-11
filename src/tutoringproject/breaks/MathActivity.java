@@ -104,14 +104,14 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private boolean firstTimeCallingOnResume = true;
 
     //temporary variable (should be read in through question format)
-    private int max_time_per_question = 10000;  //hard coded at 10 seconds, which should be ample time!
+    private int max_time_per_question = 10000;  // This initial value doesn't matter. A new value is loaded in for every question.
     private Timer timer;
     private TimerTask timerTask;
     private TimeWatch timeWatch;
     private final Handler handler = new Handler();
 
     // ends session at max_session_time seconds
-    private int max_session_time = 6000;
+    private int max_session_time = 1800;
     private TimeWatch total_elapsed_timewatch;
 
     //break variables
