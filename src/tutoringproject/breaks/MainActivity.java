@@ -36,8 +36,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private TextView connectionStatus;
     private EditText startQuestionNum;
     private EditText conditionNum;
-    private RadioButton controlRB;
-    private RadioButton adaptiveRB;
+    private EditText maxTime;
     private int sessionNum;
     private int expGroup;
     private EditText fixedBreakInterval;
@@ -60,7 +59,20 @@ public class MainActivity extends Activity implements View.OnClickListener {
         });
 
         startQuestionNum = (EditText) findViewById(R.id.StartQuestionNum);
+        startQuestionNum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startQuestionNum.setText("");
+            }
+        });
+
         conditionNum = (EditText) findViewById(R.id.ConditionNum);
+        conditionNum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                conditionNum.setText("");
+            }
+        });
         
         fixedBreakInterval = (EditText) findViewById(R.id.FixedBreakInterval);
         fixedBreakInterval.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +81,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 fixedBreakInterval.setText("");
             }
         });
+
+        maxTime = (EditText) findViewById(R.id.MaxTime);
+        maxTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                maxTime.setText("");
+            }
+        });
+
         fixedButton = (Button) findViewById(R.id.FixedButton);
         rewardButton = (Button) findViewById(R.id.RewardButton);
         frustrationButton = (Button) findViewById(R.id.FrustrationButton);
@@ -133,20 +154,27 @@ public class MainActivity extends Activity implements View.OnClickListener {
             fixedBreakIntervalString = "5";
         }
         intent.putExtra("fixedBreakInterval", fixedBreakIntervalString);
+
+        String maxTimeString = maxTime.getText().toString();
+        try {
+            Integer.parseInt(maxTimeString);
+        } catch (NumberFormatException e) {  //if nothing entered into field
+            maxTimeString = "-1";
+        }
+        intent.putExtra("maxTime", maxTimeString);
+
         intent.putExtra("expGroup", ""+expGroup);
 
         //send message to computer to convey session starting
         if (TCPClient.singleton != null) {
+            String startMessage = "";
             if (view == loadButton) {
-                String startMessage = "LOAD;" + "-1;-1;" + pid + "," + sessionNum + "," + conditionNum;
-
-                mTcpClient.sendMessage(startMessage);
+                startMessage = "LOAD;" + "-1;-1;" + pid + "," + sessionNum + "," + expGroup;
             }
             else {
-                String startMessage = "START;" + "-1;-1;" + pid + "," + sessionNum + "," + expGroup;
-
-                mTcpClient.sendMessage(startMessage);
+                startMessage = "START;" + "-1;-1;" + pid + "," + sessionNum + "," + expGroup;
             }
+            mTcpClient.sendMessage(startMessage);
         }
         startActivity(intent);
     }

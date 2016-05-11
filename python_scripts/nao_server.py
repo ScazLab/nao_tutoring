@@ -103,7 +103,7 @@ class TutoringSession:
         Appends session data to file for storage
         '''
 
-        with open("data/"+"session_data_"+"P"+self.pid+"_S"+self.sessionNum+".txt", 'wb') as outfile:
+        with open("data/"+"session_data_"+"P"+self.pid+"_E"+self.sessionNum+".txt", 'wb') as outfile:
             pickle.dump(data, outfile)
 
         return
@@ -119,7 +119,7 @@ class TutoringSession:
             data = pickle.load(data_file)
 
         self.current_session = data
-        return data
+        return
 
 
     def update_session(self, msgType, questionNum, otherInfo):
@@ -133,6 +133,9 @@ class TutoringSession:
         english_msg_type = self.map_msg_type(msgType)
         if msgType == 'START':
             self.current_session = Session(pid=self.pid, session_num=self.sessionNum)
+        elif msgType == 'LOAD':
+            session_file_name = "data/"+"session_data_P"+self.pid+"_E"+self.expGroup+".txt"
+            self.load_session(session_file_name)
         elif msgType == 'Q':
             self.__current_question = Question(question_num=questionNum)
         elif msgType == 'CA':
@@ -183,16 +186,19 @@ class TutoringSession:
 
         if msgType == 'CA' or msgType == 'LIA' or msgType == 'TIMEOUT':
             print self.current_session
-        # if len(self.current_session) > 0:
-        #     print "Most recent question: " + str(self.current_session[-1])
-        #     print "Most recent break   : " + str(self.current_session.breaks[-1])
+
         if take_break_message in ["REWARD_BREAK", "FRUSTRATION_BREAK"]:
             other_info = (
                 'break message: ' + str(take_break_message) + ', '
                 'break type: ' + str(self.current_session.breaks[-1].b_type) + ', '
                 'break super: ' + str(self.current_session.breaks[-1].b_super)
             )
+
             self.log_transaction('BREAK', -1, other_info)
+
+        # store session after every update just in case of crash
+        self.store_session(self.current_session)
+
         return take_break_message
 
 
@@ -251,12 +257,12 @@ class TutoringSession:
                         robot_speech = robot_speech.replace("/", " over ").strip()
                     #robot_speech = "What does " + robot_speech + " equal?"
 
-                    if msgType == 'START': #starting session
+                    if msgType == 'START' or msgType == 'LOAD': #starting session
                         info = robot_speech.split(",")
                         self.pid = info[0]
                         self.sessionNum = info[1]
                         self.expGroup = info[2].strip()
-                        fileString = "data/"+"P"+self.pid+"_S"+self.sessionNum+".txt"
+                        fileString = "data/"+"P"+self.pid+"_E"+self.expGroup+".txt"
                         print fileString
                         if os.path.exists(fileString):
                             self.logFile = open(fileString, "a")
@@ -265,14 +271,13 @@ class TutoringSession:
                         self.logFile.write("PARTICIPANT_ID,EXP_GROUP,SESSION_NUM,TIMESTAMP,QUESTION_NUM,TYPE,OTHER_INFO\n");
 
                         #do intro depending on the sessionNum
-                        if self.goNao is not None:
+                        if self.goNao is not None and msgType != 'LOAD':
                             introFlag = True
                             # id = self.goNao.session_intro(int(self.sessionNum))  #DANGER 
 
-                        #create appropriate session object
-                        # IMPORTANT! Commenting this out temporarily
-                        # self.current_session = Session(pid=self.pid, session_num=self.sessionNum)
+                        #create or load appropriate session object
                         self.update_session(msgType, questionNum, "")
+
                     elif msgType == 'Q': #question
                         self.numQuestions += 1
                         otherInfo = line.split(";",4)[4].strip()
@@ -444,7 +449,6 @@ class TutoringSession:
                         tempMessage = self.update_session(msgType, questionNum, otherInfo)
                         if tempMessage: # if not empty string, then return message should indicate break
                             returnMessage = tempMessage
-                        print "ReturnMessage: " + returnMessage
                     else:
                         print 'error: unknown message type'
 
