@@ -189,8 +189,8 @@ class TutoringSession:
 
         if take_break_message in ["REWARD_BREAK", "FRUSTRATION_BREAK"]:
             other_info = (
-                'break message: ' + str(take_break_message) + ', '
-                'break type: ' + str(self.current_session.breaks[-1].b_type) + ', '
+                'break message: ' + str(take_break_message) + '| '
+                'break type: ' + str(self.current_session.breaks[-1].b_type) + '| '
                 'break super: ' + str(self.current_session.breaks[-1].b_super)
             )
 
@@ -432,15 +432,15 @@ class TutoringSession:
                         #break
 
                     elif msgType.startswith('LESSON'):
-                        id = self.handle_lesson_msg(msgType, robot_speech)
+                        id, otherInfo = self.handle_lesson_msg(msgType, robot_speech)
                         returnMessage = msgType
 
                     elif msgType.startswith('TICTACTOE'):
-                        id = self.handle_tictactoe_msg(msgType, robot_speech)
+                        id, otherInfo = self.handle_tictactoe_msg(msgType, robot_speech)
                         returnMessage = msgType
 
                     elif msgType.startswith('STRETCHBREAK'):
-                        id = self.handle_stretch_break_msg(msgType, robot_speech)
+                        id, otherInfo = self.handle_stretch_break_msg(msgType, robot_speech)
                         returnMessage = 'STRETCHBREAK-DONE'
 
                     elif msgType.startswith('TIMEOUT'):
@@ -488,13 +488,12 @@ class TutoringSession:
         speech_return = 0
         msg_sub_type = msg_type[7:]
         if msg_sub_type == 'START':
-            self.log_transaction('LESSON-START', -1, 'speech: ' + robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
                 self.goNao.look()
                 speech_return = self.goNao.genSpeech(robot_speech)
-        return speech_return
+        return speech_return, robot_speech
 
 
     def handle_tictactoe_msg(self, msg_type, robot_speech):
@@ -515,7 +514,6 @@ class TutoringSession:
                 self.current_session.breaks[-1].b_type
             ) + " " + robot_speech_base
 
-            self.log_transaction('TICTACTOE-START', -1, 'speech: ' + robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
@@ -523,7 +521,6 @@ class TutoringSession:
                 speech_return = self.goNao.genSpeech(robot_speech)
 
         elif msg_sub_type == 'WIN':
-            self.log_transaction('TICTACTOE-WON', -1, 'speech: ' + robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
@@ -531,7 +528,6 @@ class TutoringSession:
                 speech_return = self.goNao.genSpeech(robot_speech)
 
         elif msg_sub_type == 'TIE':
-            self.log_transaction('TICTACTOE-TIE', -1, 'speech: ' + robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
@@ -539,7 +535,6 @@ class TutoringSession:
                 speech_return = self.goNao.genSpeech(robot_speech)
 
         elif msg_sub_type == 'LOSS':
-            self.log_transaction('TICTACTOE-LOSS', -1, 'speech: ' + robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
@@ -561,7 +556,6 @@ class TutoringSession:
                 speech_return = self.goNao.genSpeech(robot_speech)
 
         elif msg_sub_type == 'RESTART':
-            self.log_transaction('TICTACTOE-RESTART', -1, 'speech: ' + robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
@@ -569,14 +563,13 @@ class TutoringSession:
                 speech_return = self.goNao.genSpeech(robot_speech)
 
         elif msg_sub_type == 'END':
-            self.log_transaction('TICTACTOE-END', -1, 'speech: ' + robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
                 self.goNao.look()
                 speech_return = self.goNao.genSpeech(robot_speech)
 
-        return speech_return
+        return speech_return, robot_speech
 
 
     def handle_stretch_break_msg(self, msg_type, robot_speech):
@@ -594,7 +587,6 @@ class TutoringSession:
                 self.current_session.breaks[-1].b_type
             ) + " " + robot_speech_base
 
-            self.log_transaction('STRETCHBREAK-START', -1, 'speech: ' + robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
@@ -602,7 +594,7 @@ class TutoringSession:
                 speech_return = self.goNao.genSpeech(robot_speech)
                 self.goNao.stretchBreak()
 
-        return speech_return
+        return speech_return, robot_speech
 
 
         """
