@@ -104,7 +104,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private boolean firstTimeCallingOnResume = true;
 
     //temporary variable (should be read in through question format)
-    private int max_time_per_question = 10000;  //hard coded at 10 seconds, which should be ample time!
+    private int max_time_per_question = 100000;  //hard coded at 100 seconds, which should be ample time!  Overwritten by json problem files
     private Timer timer;
     private TimerTask timerTask;
     private TimeWatch timeWatch;
