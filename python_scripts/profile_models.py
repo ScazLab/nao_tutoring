@@ -4,13 +4,17 @@ import pprint
 
 class Session(list):
     '''
+    Note: to access questions, call Session object like a list: a session IS a list of questions
     A session is a list of questions with the following properties:
 
     Properties:
-        session_num: Integer representing session number
+        session_num: Integer representing session number (or expGroup in break tutoring)
         pid: Integer representing user pid
-        window_size: int representing window size
-        (tentative) breaks: int representing breaks taken in this session
+        time_window: int representing window size for time calculations
+        accuracy_window: int representing window size for accuracy calculations
+        breaks: list of break objects representing break decisions taken in this session
+            each break is associated with one question
+            thus, the 'ith' question of session is associated with the 'ith' break in breaks
     '''
 
     def __init__(self, questions=None, session_num=-1, pid=-1, time_window=5, accuracy_window=5, breaks=None):
@@ -33,12 +37,13 @@ class Session(list):
         # private vars for internal use
         self.__start_time = time.time()
         self.__now_time = time.time()
-        # super(Session, self).__init__(self.questions)
 
     def time_step(self):
         '''
         Updates __now_time
-        Returns elapsed time i.e. Float representing (ms) difference between __now_time and __start_time
+
+        Returns elapsed time since session creation 
+            i.e. Float representing (ms) difference between __now_time and __start_time
         '''
         self.__now_time = time.time()
         return self.__now_time - self.__start_time
@@ -54,16 +59,19 @@ class Session(list):
 
     def calc_total_accuracy(self):
         '''
-        total_accuracy: float from 0-1 representing total accuracy ratio
+        Returns total_accuracy: float from 0-1 representing total accuracy ratio
         '''
         total_correct = len([q for q in self if q.answer_correct])
         return 1.0*total_correct/len(self)
 
     def calc_window_accuracy(self, offset=0):
         '''
-        window_accuracy: float from 0-1 representing most recent window accuracy ratio
-        offset 0 gets most recent window, anything less gets windows starting offset behind most recent
-            i.e. offset 1 gets previous window value
+        Parameter:
+            offset: int representing offset from end that should be used for window
+                offset 0 gets most recent window, anything less gets windows starting offset behind most recent window
+                i.e. offset 1 gets previous window value
+
+        Returns window_accuracy: float from 0-1 representing most recent window accuracy ratio
         '''
         l = len(self)
         total_correct = len([q for i, q in enumerate(self) if (q.answer_correct and i+self.accuracy_window+offset >= l and i+self.accuracy_window+offset < l+self.accuracy_window)])
@@ -77,16 +85,19 @@ class Session(list):
 
     def calc_total_avg_time(self):
         '''
-        total_avg_time: float representing total average time in seconds
+        Returns total_avg_time: float representing total average time in seconds
         '''
         total_time = sum([q.total_time for q in self])
         return 1.0*total_time/len(self)
 
     def calc_window_avg_time(self, offset=0):
         '''
-        window_avg_time: float representing most recent time_window average time in seconds
-        offset 0 gets most recent time_window, anything less gets time_windows starting offset behind most recent
-            i.e. offset 1 gets previous time_window value
+        Property:
+            offset: int representing offset from end that should be used for window
+                offset 0 gets most recent time_window, anything less gets time_windows starting offset behind most recent
+                i.e. offset 1 gets previous time_window value
+        Returns window_avg_time: float representing most recent time_window average time in seconds
+
         '''
         l = len(self)
         total_time = sum([q.total_time for i, q in enumerate(self) if i+self.time_window+offset >= l and i+self.time_window+offset < l+self.time_window])
@@ -105,8 +116,20 @@ class Session(list):
 
 class Break(object):
     '''
-    Break object representing a break
-        b_type: integer that can be mapped from map_break_message
+    Note: Break object does not necessarily correspond to triggered breaks.
+        Rather, break objects correspond to break decisions, which are made after each question
+        Thus, each break has one associated question that it comes after
+
+    Break object representing a break decision with the following properties:
+
+    Properties:
+        b_num: int representing 0-indexed break number (subsequent breaks increase b_num chronologically)
+        after_question: int representing question that break
+        b_type: int representing break type that can be mapped to a reason from map_break_message in breaks.py
+            Note: A b_type that normally triggers a break does not necessarily mean a break was given.
+                the logic behind break triggers is elaborated upon in take_break of breaks.py
+        b_super: int representing break super rule that was used.  defaults at -1 if no super_rule used
+        time_since_start: float representing in seconds the time since start that break decision was made
         triggered_break: boolean representing whether or not a break was triggered
     '''
     def __init__(self, b_num=-1, after_question=-1, b_type=-1, b_super=-1, time_since_start=0.0, triggered_break=False):
@@ -132,13 +155,13 @@ class Question(object):
         hints: Integer representing number of hints given (max 3)
         answer_correct: Boolean representing whether or not question was eventually answered answer_correctly
         total_time: Float representing total time, in ms, that was spent on question
-        hint_times: Array of Floats representing time (from start) when hint was given
+        hint_times [deprecated]: Array of Floats representing time (from start) when hint was given
             Note: -1 means that hint was not given
             [24.3, 59.6, -1]:
                 hint1 given 24.3 ms after start
                 hint2 given 59.6 ms after start
                 hint3 not given
-        attempt_times: Array of Floats representing time (from start) when attempt was made
+        attempt_times [deprecated]: Array of Floats representing time (from start) when attempt was made
             Note: -1 means that attempt was never made
             [35.4, 75.1, -1, -1, -1]:
                 attempt1 made 35.4 ms after start

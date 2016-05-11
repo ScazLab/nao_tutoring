@@ -2,8 +2,14 @@ import random
 
 def map_break_message(b):
     '''
-    given integer b representing break message
-    returns appropriate string representing the type of break given (if any)
+    [deprecated]
+    A method based on preliminary break messages in break decision tree
+    https://docs.google.com/presentation/d/1zC5jF_YhU6bmlgypRAwLjTgIELat0LAns3Q02QWbwBM/edit#slide=id.g12565d9b4e_0_73
+
+    Parameters:
+        b: integer representing break message type
+
+    Returns appropriate string representing the type of break given (if any)
     '''
     dic = {
         0: "overcomes struggle, improves",  # REWARD start
@@ -25,17 +31,21 @@ def map_break_message(b):
 
 def take_break(s, reward_break=True, acc_min_change=.05, time_min_change=3, t=4, refractory_period=4, max_study_time=15):
     '''
-    Intended for determination of breaks for reward and frustration break scenarios
-    (expGroup == 2 or expGroup == 3)
+    Method intended for determination of breaks for reward and frustration break scenarios
+
     Parameters:
         s: session object
-        reward_break: True if reward breaks, False if frustration breaks
-        t: int, consistency value
+        reward_break: boolean.  True if reward breaks, False if frustration breaks
+        acc_min_change: Float represneting min accuracy change needed to trigger increase/decrease condition
+        time_min_change: float representing min time change needed to trigger increase/decrease condition
+        t: int, consistency constant
+            i.e. number of questions answered previously 'consistently' before consistency break can be triggered
         refractory_period: int, for super rule 2 (no break if less than refractory_period questions answered since last break)
         max_study_time: int, for super rule 3 (take break if no break has been taken in last max_study_time minutes)
-    returns (boolean, string)
+
+    Returns (boolean, string)
         boolean: represents whether or not to trigger a break
-        string: message representing reasoning for break
+        string: message representing reasoning for break based on map_break_message [deprecated]
     '''
     break_trigger = False
     break_val = 0
@@ -99,9 +109,6 @@ def take_break(s, reward_break=True, acc_min_change=.05, time_min_change=3, t=4,
             b_super = 2
 
     # finally, insert this break into session object
-    # DANGER: this is an important implementation detail!
-    # note, b_type could be of type that expects a break_trigger, except break_trigger might
-    # be inconsistent because it depends on reward_break type!
     s.insert_break(b_type=break_val, b_super=b_super, triggered_break=break_trigger)
 
     return (break_trigger, map_break_message(break_val))
@@ -109,7 +116,10 @@ def take_break(s, reward_break=True, acc_min_change=.05, time_min_change=3, t=4,
 
 def super_rule3(s, max_study_time=15):
     '''
-    returns True if break must be taken because of super rule 3, False otherwise (i.e. break could be taken, maybe)
+    Parameters:
+        max_study_time: int representing max study time in minutes
+
+    Returns True if break must be taken because of super rule 3, False otherwise (i.e. break could be taken, maybe)
     '''
     max_time_ms = max_study_time*60000  # convert to ms
     current_time_since_start_ms = s.time_step()
@@ -133,7 +143,10 @@ def super_rule3(s, max_study_time=15):
 
 def super_rule2(s, refractory_period=4):
     '''
-    returns True if break_trigger could be true, False if it fails this rule
+    Parameters:
+        refractory_period: int representing number of questions needed before another break allowed to be served
+    
+    Returns True if break_trigger could be true, False if it fails this rule
     '''
     num_questions_since_last_break = 0
     for b in reversed(s.breaks):
@@ -147,10 +160,14 @@ def super_rule2(s, refractory_period=4):
 
 def check_consistency(s, reward_break, acc_high, t=4):
     '''
-    checks consistency condition for session, given a
-        reward_break: boolean, True if reward break, False otherwise
+    Checks consistency condition for session, given the following properties
+
+    Parameters:
+        reward_break [deprecated, not used]: boolean, True if reward break, False otherwise
+            DANGER: currently not used in method
         t: integer representing how many questions should be evaluated "no change" in a row before consistency break given
         acc_high: boolean, True if accuracy high condition, False otherwise
+    
     Returns (boolean, int)
         boolean: break_trigger, true if break should be triggered, false otherwise
         int: break_val, corresponds to appropriate string in map_break_message
@@ -192,9 +209,11 @@ def check_consistency(s, reward_break, acc_high, t=4):
 def calc_time_change(s, min_change=1):
     '''
     Calculates whether or not time has increased, decreased, or no change
+
     Parameters:
         s: session object
         min_change: float representing minimum change needed for accuracy change to count as 'increasing' or 'decreasing'
+
     Returns -1 if decreased (faster), 0 if no change, and 1 if increased (slower)
     '''
 
@@ -215,9 +234,11 @@ def calc_time_change(s, min_change=1):
 def calc_accuracy_change(s, min_change=.2):
     '''
     Calculates whether or not accuracy has increased, decreased, or no change
+
     Parameters:
         s: session object
         min_change: float representing minimum change needed for accuracy change to count as 'increasing' or 'decreasing'
+
     Returns -1 if decreased (less accurate), 0 if no change, and 1 if increased (more accurate)
     '''
     current_window_accuracy = s.calc_window_accuracy(offset=0)
