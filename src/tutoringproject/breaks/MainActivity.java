@@ -40,6 +40,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private int sessionNum;
     private int expGroup;
     private EditText fixedBreakInterval;
+    private EditText breaksGiven;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,6 +88,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
             @Override
             public void onClick(View v) {
                 maxTime.setText("");
+            }
+        });
+
+        breaksGiven = (EditText) findViewById(R.id.BreaksGiven);
+        breaksGiven.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                breaksGiven.setText("");
             }
         });
 
@@ -162,6 +171,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
             maxTimeString = "-1";
         }
         intent.putExtra("maxTime", maxTimeString);
+
+        String breaksGivenString = breaksGiven.getText().toString();
+        try {
+            Integer.parseInt(breaksGivenString);
+        } catch (NumberFormatException e) {  //if nothing entered into field
+            breaksGivenString = "0";
+        }
+        intent.putExtra("breaksGiven", breaksGivenString);
 
         intent.putExtra("expGroup", ""+expGroup);
 

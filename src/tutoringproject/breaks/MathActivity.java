@@ -245,7 +245,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
             if (max_time != -1) {  //means different max_time specified
                 max_session_time = max_time;
             }
-
+            numberBreaksGiven = Integer.parseInt(extras.getString("breaksGiven"));
         }
         //set this MathActivity as the sessionOwner for the tcpClient
         if (TCPClient.singleton != null)
