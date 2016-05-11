@@ -508,11 +508,14 @@ class TutoringSession:
                 "Let's play a game of tic-tac-toe. You will be exes, and I will be ohs. You can "
                 "go first. Click any square on the board."
             )
-            robot_speech = get_break_speech(
-                int(self.expGroup),
-                self.current_session.breaks[-1].b_super,
-                self.current_session.breaks[-1].b_type
-            ) + " " + robot_speech_base
+            if int(self.expGroup) == 1:
+                robot_speech = get_break_speech(1, -1, -1) + robot_speech_base
+            else:
+                robot_speech = (
+                    int(self.expGroup),
+                    self.current_session.breaks[-1].b_super,
+                    self.current_session.breaks[-1].b_type
+                ) + " " + robot_speech_base
 
             if self.goNao is None:
                 os.system('say ' + robot_speech)
@@ -581,11 +584,14 @@ class TutoringSession:
             # needs to be modified depending on the reason that the break was triggered, the speech
             # will be constructed here.
             robot_speech_base = "Let's stretch."
-            robot_speech = get_break_speech(
-                int(self.expGroup),
-                self.current_session.breaks[-1].b_super,
-                self.current_session.breaks[-1].b_type
-            ) + " " + robot_speech_base
+            if int(self.expGroup) == 1:
+                robot_speech = get_break_speech(1, -1, -1) + robot_speech_base
+            else:
+                robot_speech = (
+                    int(self.expGroup),
+                    self.current_session.breaks[-1].b_super,
+                    self.current_session.breaks[-1].b_type
+                ) + " " + robot_speech_base
 
             if self.goNao is None:
                 os.system('say ' + robot_speech)
