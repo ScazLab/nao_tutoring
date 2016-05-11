@@ -336,6 +336,8 @@ public class MathActivity extends Activity implements TCPClientOwner {
         if (extras.getString("startOrLoad").equals("start")) {
             Intent intent = new Intent(this, LessonActivity.class);
             startActivity(intent);
+        } else {
+            NextQuestion();
         }
     }
 
