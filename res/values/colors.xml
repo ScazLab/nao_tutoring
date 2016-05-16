@@ -20,4 +20,7 @@
 <color name="math_background">#ff456bff</color>
 <color name="key_background">#DADCE0</color>
 <color name="key_text">#000000</color>
+<color name="lesson_background">#ff5083c6</color>
+<color name="simon_says_background">#ff4b4b4b</color>
+<color name="other_background">#ff67b08a</color>
 </resources>

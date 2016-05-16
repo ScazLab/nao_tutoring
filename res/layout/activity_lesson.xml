@@ -1,36 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:layout_width="match_parent"
+    android:background="@color/lesson_background">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_gravity="top|center_horizontal"
-        android:layout_marginTop="60dp"
-        android:text="@string/order_of_operations_lesson"
-        android:textSize="40sp" />
-
-    <TextView
-        android:id="@+id/content"
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_gravity="center"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:text="Put content here!"
-        android:textSize="30sp"
-        android:gravity="center" />
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:weightSum="1"
+        android:id="@+id/linearlayout">
 
-    <Button
-        android:id="@+id/beginButton"
-        android:clickable="true"
-        android:onClick="beginButtonPressed"
-        android:layout_height="50dp"
-        android:layout_width="300dp"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginBottom="60dp"
-        android:text="@string/begin_tutoring_session"
-        android:textSize="20sp" />
+        <TextView
+            android:id="@+id/title"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="60dp"
+            android:text="@string/order_of_operations_lesson"
+            android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:text="Put content here!"
+            android:textSize="30sp"
+            android:gravity="center" />
+
+        <Button
+            android:id="@+id/beginButton"
+            android:clickable="true"
+            android:onClick="beginButtonPressed"
+            android:layout_height="50dp"
+            android:layout_width="300dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="60dp"
+            android:text="@string/begin_tutoring_session"
+            android:textSize="20sp" />
+
+    </LinearLayout>
 </FrameLayout>
