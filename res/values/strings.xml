@@ -17,6 +17,7 @@
     <string name="lesson_string2">When we have multiplication, addition, and subtraction in the problem, we have to do the multiplication first! Let\'s look at the problem below:</string>
     <string name="lets_try_it">Let\'s look at the problem below: </string>
 
+    <string name="continue_lesson">Continue lesson</string>
     <string name="begin_tutoring_session">Begin tutoring session</string>
 
 </resources>

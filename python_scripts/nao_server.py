@@ -487,12 +487,12 @@ class TutoringSession:
     def handle_lesson_msg(self, msg_type, robot_speech):
         speech_return = 0
         msg_sub_type = msg_type[7:]
-        if msg_sub_type == 'START':
-            if self.goNao is None:
-                os.system('say ' + robot_speech)
-            else:
-                self.goNao.look()
-                speech_return = self.goNao.genSpeech(robot_speech)
+        #if msg_sub_type == 'START':
+        if self.goNao is None:
+            os.system('say ' + robot_speech)
+        else:
+            self.goNao.look()
+            speech_return = self.goNao.genSpeech(robot_speech)
         return speech_return, robot_speech
 
 

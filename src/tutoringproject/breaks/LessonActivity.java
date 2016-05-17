@@ -14,17 +14,22 @@ import android.widget.TextView;
  */
 public class LessonActivity extends Activity implements TCPClientOwner {
     // XML element variables
-    private Button beginButton;
     private TextView content;
     private TextView exampleProblem;
     private TextView exampleStep1;
     private TextView exampleStep2;
     private TextView exampleStep3;
+    private TextView exampleStep4;
+    private TextView exampleStep5;
     private NoImeEditText AnswerText1;
     private NoImeEditText AnswerText2;
+    private NoImeEditText AnswerText3;
     private Button AnswerButton1;
     private Button AnswerButton2;
+    private Button AnswerButton3;
     private KeyboardView mKeyboardView;
+    private Button continueLessonButton;
+    private Button beginButton;
 
     private enum LessonView {
         MULTPLICATIONVIEW, PARENTHESESVIEW
@@ -36,22 +41,45 @@ public class LessonActivity extends Activity implements TCPClientOwner {
     // Public variables ============================================================================
 
     // Speech strings
-    //TODO: fix START_MSG string to be correct intro for lesson activity
+    //TODO: fix all strings to be correct phrases for lesson activity
     public String START_MSG =
         "Before we start answering questions, let's review how order of operations works.";
-
     public String MULT_STEP1_MSG =
         "Let me show you what I mean! Let's look at the problem three plus six times two minus five";
-
     public String MULT_STEP2_CORRECT_MSG =
-            "";
+            "Correct!";
     public String MULT_STEP2_INCORRECT_MSG =
-            "";
+            "Oops! The correct answer is 12.";
     public String MULT_STEP3_MSG =
-            "";
+            "Go ahead and enter your answer in the box.";
+    public String MULT_STEP4_CORRECT_MSG =
+            "Correct!";
+    public String MULT_STEP4_INCORRECT_MSG =
+            "Oops! The correct answer is 10.";
+    public String PAREN_INTRO_MSG =
+            "Now we will learn about parentheses.";
+    public String PAREN_STEP1_MSG =
+            "Let me show you what I mean! Let's look at this problem.";
+    public String PAREN_STEP2_CORRECT_MSG =
+            "Correct!";
+    public String PAREN_STEP2_INCORRECT_MSG =
+            "Oops! The correct answer is 9.";
+
+
     // Tablet text strings
     public String CLICK_BEGIN_BUTTON_TEXT =
         "Click the button below to begin the tutoring session.";
+    public String PAREN_CONTENT =
+        "These symbols are called parentheses: () \n When we have these in a math problem, we always do what's inside the parentheses first! Let's look at this problem together:";
+    public String PAREN_EXAMPLE_PROBLEM =
+        "2 + (3 + 6) x 5";
+    public String PAREN_STEP1_TEXT =
+        "So, first we do: (3 + 6) = ";
+    public String PAREN_STEP2_TEXT =
+        "Now, the problem looks like this: 2 + 9 x 5. From what we learned in our last lesson, we have to do the multiplication next.";
+    public String PAREN_STEP3_TEXT =
+            "So, next we do: 9 x 5 = ";
+
 
     // Constructor =================================================================================
 
@@ -70,6 +98,12 @@ public class LessonActivity extends Activity implements TCPClientOwner {
         exampleStep3 = (TextView) findViewById(R.id.example1_step3);
         AnswerText2 = (NoImeEditText) findViewById(R.id.answer2);
         AnswerButton2 = (Button) findViewById(R.id.AnswerButton2);
+
+        exampleStep4 = (TextView) findViewById(R.id.example1_step4);
+        exampleStep5 = (TextView) findViewById(R.id.example1_step5);
+        AnswerText3 = (NoImeEditText) findViewById(R.id.answer3);
+        AnswerButton3 = (Button) findViewById(R.id.AnswerButton3);
+        continueLessonButton = (Button) findViewById(R.id.continueLessonButton);
 
         Keyboard mKeyboard= new Keyboard(getApplicationContext(), R.xml.numbers_keyboard);
 
@@ -142,8 +176,14 @@ public class LessonActivity extends Activity implements TCPClientOwner {
         exampleStep3.setVisibility(View.INVISIBLE);
         AnswerText2.setVisibility(View.INVISIBLE);
         AnswerButton2.setVisibility(View.INVISIBLE);
+        exampleStep4.setVisibility(View.INVISIBLE);
+        exampleStep5.setVisibility(View.INVISIBLE);
+        AnswerText3.setVisibility(View.INVISIBLE);
+        AnswerButton3.setVisibility(View.INVISIBLE);
         mKeyboardView.setVisibility(View.INVISIBLE);
+        continueLessonButton.setVisibility(View.INVISIBLE);
         beginButton.setVisibility(View.INVISIBLE);
+
 
 
         // Transfer control of TCP client from MathActivity to this activity.
@@ -162,7 +202,7 @@ public class LessonActivity extends Activity implements TCPClientOwner {
         int correctAnswer = 0;
         String msgType = "";
         String robotSpeechToSend = "";
-        String enteredStr1;
+        String enteredStr1 = "";
         if (view == AnswerButton1){
             enteredStr1 = AnswerText1.getText().toString();
             if (!enteredStr1.equals("")) { //only process if something is in the answertext field
@@ -193,11 +233,11 @@ public class LessonActivity extends Activity implements TCPClientOwner {
                 int entered1 = Integer.parseInt(enteredStr1);
                 if (lessonView == LessonView.MULTPLICATIONVIEW) {
                     correctAnswer = 10;
-                    msgType = "";
+                    msgType = "LESSON-PART4";
                     if (entered1 == correctAnswer){
-                        robotSpeechToSend = "";
+                        robotSpeechToSend = MULT_STEP4_CORRECT_MSG;
                     } else {
-                        robotSpeechToSend = "";
+                        robotSpeechToSend = MULT_STEP4_INCORRECT_MSG;
                     }
 
                 } else if (lessonView == LessonView.PARENTHESESVIEW) {
@@ -215,9 +255,11 @@ public class LessonActivity extends Activity implements TCPClientOwner {
 
         }
 
-        //depending on which button was pressed and where in the lesson we are, send msg to robot
-        if (TCPClient.singleton != null) {
-            TCPClient.singleton.sendMessage(msgType +";-1;-1;" + robotSpeechToSend);
+        if (!enteredStr1.equals("")) {
+            //depending on which button was pressed and where in the lesson we are, send msg to robot
+            if (TCPClient.singleton != null) {
+                TCPClient.singleton.sendMessage(msgType + ";-1;-1;" + robotSpeechToSend);
+            }
         }
     }
 
@@ -225,8 +267,25 @@ public class LessonActivity extends Activity implements TCPClientOwner {
     public void nextLesson(View view) {
         lessonView = LessonView.PARENTHESESVIEW;
 
-        //setText appropriately for the second lesson - parentheses
+        //make almost everything invisible again on lesson screen and mention that now we will learn something else
+        content.setVisibility(View.INVISIBLE);
+        exampleProblem.setVisibility(View.INVISIBLE);
+        exampleStep1.setVisibility(View.INVISIBLE);
+        exampleStep2.setVisibility(View.INVISIBLE);
+        exampleStep3.setVisibility(View.INVISIBLE);
+        AnswerText1.setVisibility(View.INVISIBLE);
+        AnswerButton1.setVisibility(View.INVISIBLE);
+        AnswerText2.setVisibility(View.INVISIBLE);
+        AnswerButton2.setVisibility(View.INVISIBLE);
+        mKeyboardView.setVisibility(View.INVISIBLE);
+        continueLessonButton.setVisibility(View.INVISIBLE);
 
+        String msgType = "LESSON-PART5";
+        String robotSpeechToSend = PAREN_INTRO_MSG;
+        //send message
+        if (TCPClient.singleton != null) {
+            TCPClient.singleton.sendMessage(msgType + ";-1;-1;" + robotSpeechToSend);
+        }
     }
 
     public void beginButtonPressed(View view) {
@@ -247,14 +306,16 @@ public class LessonActivity extends Activity implements TCPClientOwner {
                 TCPClient.singleton.sendMessage("LESSON-PART1;-1;-1;" + MULT_STEP1_MSG);
             }
         }
-        else if(msg.equals("LESSON-PART1")) {
+        else if (msg.equals("LESSON-PART1")) {
             exampleStep1.setVisibility(View.VISIBLE);
             AnswerText1.setVisibility(View.VISIBLE);
             AnswerText1.setEnabled(true);
             AnswerButton1.setVisibility(View.VISIBLE);
             AnswerButton1.setEnabled(true);
+            mKeyboardView.setVisibility(View.VISIBLE);
+            mKeyboardView.setEnabled(true);
         }
-        else if(msg.equals("LESSON-PART2")){
+        else if (msg.equals("LESSON-PART2")){
             AnswerText1.setEnabled(false);
             AnswerButton1.setEnabled(false);
             exampleStep2.setVisibility(View.VISIBLE);
@@ -263,14 +324,37 @@ public class LessonActivity extends Activity implements TCPClientOwner {
                 TCPClient.singleton.sendMessage("LESSON-PART3;-1;-1;" + MULT_STEP3_MSG);
             }
         }
-        else if(msg.equals("LESSON-PART3")){
+        else if (msg.equals("LESSON-PART3")){
             exampleStep3.setVisibility(View.VISIBLE);
             AnswerText2.setVisibility(View.VISIBLE);
             AnswerText2.setEnabled(true);
+            AnswerText2.requestFocus();
             AnswerButton2.setVisibility(View.VISIBLE);
             AnswerButton2.setEnabled(true);
         }
-        else if(msg.equals("LESSON-PART4")){
+        else if (msg.equals("LESSON-PART4")){
+            AnswerText2.setEnabled(false);
+            AnswerButton2.setEnabled(false);
+            continueLessonButton.setVisibility(View.VISIBLE);
+            continueLessonButton.setEnabled(true);
+
+        }
+        else if (msg.equals("LESSON-PART5")){
+            content.setText(PAREN_CONTENT);
+            content.setVisibility(View.VISIBLE);
+            exampleProblem.setText(PAREN_EXAMPLE_PROBLEM);
+            exampleProblem.setVisibility(View.VISIBLE);
+            if (TCPClient.singleton != null) {
+                TCPClient.singleton.sendMessage("LESSON-PART6;-1;-1;" + PAREN_STEP1_MSG);
+            }
+        }
+        else if (msg.equals("LESSON-PART6")){
+
+        }
+        else if (msg.equals("LESSON-PART7")){
+
+        }
+        else if (msg.equals("LESSON-PART8")){
 
         }
         else if (msg.equals("LESSON-END")) {
@@ -281,6 +365,10 @@ public class LessonActivity extends Activity implements TCPClientOwner {
     // Button disabling and enabling methods =======================================================
 
     public void disableButtons() {
+        AnswerButton1.setEnabled(false);
+        AnswerButton2.setEnabled(false);
+        AnswerButton3.setEnabled(false);
+        continueLessonButton.setEnabled(false);
         beginButton.setEnabled(false);
     }
 
