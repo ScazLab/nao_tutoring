@@ -36,9 +36,19 @@ public class LessonActivity extends Activity implements TCPClientOwner {
     // Public variables ============================================================================
 
     // Speech strings
+    //TODO: fix START_MSG string to be correct intro for lesson activity
     public String START_MSG =
         "Before we start answering questions, let's review how order of operations works.";
 
+    public String MULT_STEP1_MSG =
+        "Let me show you what I mean! Let's look at the problem three plus six times two minus five";
+
+    public String MULT_STEP2_CORRECT_MSG =
+            "";
+    public String MULT_STEP2_INCORRECT_MSG =
+            "";
+    public String MULT_STEP3_MSG =
+            "";
     // Tablet text strings
     public String CLICK_BEGIN_BUTTON_TEXT =
         "Click the button below to begin the tutoring session.";
@@ -149,42 +159,65 @@ public class LessonActivity extends Activity implements TCPClientOwner {
     // Button handlers =============================================================================
 
     public void exampleSubmit(View view) {
+        int correctAnswer = 0;
+        String msgType = "";
+        String robotSpeechToSend = "";
+        String enteredStr1;
         if (view == AnswerButton1){
+            enteredStr1 = AnswerText1.getText().toString();
+            if (!enteredStr1.equals("")) { //only process if something is in the answertext field
+                int entered1 = Integer.parseInt(enteredStr1);
+                if (lessonView == LessonView.MULTPLICATIONVIEW) {
+                    correctAnswer = 12;
+                    msgType = "LESSON-PART2";
+                    if (entered1 == correctAnswer){
+                        robotSpeechToSend = MULT_STEP2_CORRECT_MSG;
+                    } else {
+                        robotSpeechToSend = MULT_STEP2_INCORRECT_MSG;
+                    }
 
+                } else if (lessonView == LessonView.PARENTHESESVIEW) {
+                    correctAnswer = 9;
+                    msgType = "LESSON-PART6"; //check that this is the right number
+                    if (entered1 == correctAnswer){
+                        robotSpeechToSend = "";
+                    } else {
+                        robotSpeechToSend = "";
+                    }
+                }
+            }
         }
         else if (view == AnswerButton2){
+            enteredStr1 = AnswerText2.getText().toString();
+            if (!enteredStr1.equals("")) { //only process if something is in the answertext field
+                int entered1 = Integer.parseInt(enteredStr1);
+                if (lessonView == LessonView.MULTPLICATIONVIEW) {
+                    correctAnswer = 10;
+                    msgType = "";
+                    if (entered1 == correctAnswer){
+                        robotSpeechToSend = "";
+                    } else {
+                        robotSpeechToSend = "";
+                    }
 
+                } else if (lessonView == LessonView.PARENTHESESVIEW) {
+                    correctAnswer = 45;
+                    msgType = ""; //check that this is the right number
+                    if (entered1 == correctAnswer){
+                        robotSpeechToSend = "";
+                    } else {
+                        robotSpeechToSend = "";
+                    }
+                }
+            }
         }
         else { //AnswerButton3
 
         }
 
-        String enteredStr1 = AnswerText1.getText().toString();
-        if (enteredStr1.equals("")){
-
-        }
-        else {
-            int entered1 = Integer.parseInt(enteredStr1);
-            if (lessonView == LessonView.MULTPLICATIONVIEW) {
-                if (entered1 == 12){
-                    //correct answer for intermediate step
-                    //send tcp message
-                }
-                else {
-                    //incorrect answer
-                    //send tcp message
-                }
-
-            } else if (lessonView == LessonView.PARENTHESESVIEW) {
-                if (entered1 == 12){
-                    //correct answer for intermediate step
-                    //send tcp message
-                }
-                else {
-                    //incorrect answer
-                    //send tcp message
-                }
-            }
+        //depending on which button was pressed and where in the lesson we are, send msg to robot
+        if (TCPClient.singleton != null) {
+            TCPClient.singleton.sendMessage(msgType +";-1;-1;" + robotSpeechToSend);
         }
     }
 
@@ -210,6 +243,9 @@ public class LessonActivity extends Activity implements TCPClientOwner {
             content.setVisibility(View.VISIBLE);
             exampleProblem.setVisibility(View.VISIBLE);
             //send message to get nao speech and then move to next part of lesson
+            if (TCPClient.singleton != null) {
+                TCPClient.singleton.sendMessage("LESSON-PART1;-1;-1;" + MULT_STEP1_MSG);
+            }
         }
         else if(msg.equals("LESSON-PART1")) {
             exampleStep1.setVisibility(View.VISIBLE);
@@ -223,6 +259,9 @@ public class LessonActivity extends Activity implements TCPClientOwner {
             AnswerButton1.setEnabled(false);
             exampleStep2.setVisibility(View.VISIBLE);
             //send message to get nao speech and then move to next part of lesson
+            if (TCPClient.singleton != null) {
+                TCPClient.singleton.sendMessage("LESSON-PART3;-1;-1;" + MULT_STEP3_MSG);
+            }
         }
         else if(msg.equals("LESSON-PART3")){
             exampleStep3.setVisibility(View.VISIBLE);
@@ -230,6 +269,9 @@ public class LessonActivity extends Activity implements TCPClientOwner {
             AnswerText2.setEnabled(true);
             AnswerButton2.setVisibility(View.VISIBLE);
             AnswerButton2.setEnabled(true);
+        }
+        else if(msg.equals("LESSON-PART4")){
+
         }
         else if (msg.equals("LESSON-END")) {
             enableButtons();
