@@ -11,6 +11,12 @@ import android.widget.TextView;
 
 /**
  * Created by arsalan on 5/9/16.
+ *
+ * Filled out by aditi.
+ * NOTE: This class makes the lesson flow in a very specific order.
+ * Many things in the LessonActivity have been hard-coded for the purposes of our specific
+ * study where the robot teaches a simple lesson on multiplication and parentheses in the context
+ * of order of operations.
  */
 public class LessonActivity extends Activity implements TCPClientOwner {
     // XML element variables
@@ -64,6 +70,12 @@ public class LessonActivity extends Activity implements TCPClientOwner {
             "Correct!";
     public String PAREN_STEP2_INCORRECT_MSG =
             "Oops! The correct answer is 9.";
+    public String PAREN_STEP3_MSG =
+            "Enter your answer in the box.";
+    public String PAREN_STEP4_CORRECT_MSG =
+            "Correct!";
+    public String PAREN_STEP4_INCORRECT_MSG =
+            "Oops! The correct answer is 45.";
 
 
     // Tablet text strings
@@ -203,7 +215,7 @@ public class LessonActivity extends Activity implements TCPClientOwner {
         String msgType = "";
         String robotSpeechToSend = "";
         String enteredStr1 = "";
-        if (view == AnswerButton1){
+        if (view == AnswerButton1) {
             enteredStr1 = AnswerText1.getText().toString();
             if (!enteredStr1.equals("")) { //only process if something is in the answertext field
                 int entered1 = Integer.parseInt(enteredStr1);
@@ -218,16 +230,16 @@ public class LessonActivity extends Activity implements TCPClientOwner {
 
                 } else if (lessonView == LessonView.PARENTHESESVIEW) {
                     correctAnswer = 9;
-                    msgType = "LESSON-PART6"; //check that this is the right number
+                    msgType = "LESSON-PART7"; //check that this is the right number
                     if (entered1 == correctAnswer){
-                        robotSpeechToSend = "";
+                        robotSpeechToSend = PAREN_STEP2_CORRECT_MSG;
                     } else {
-                        robotSpeechToSend = "";
+                        robotSpeechToSend = PAREN_STEP2_INCORRECT_MSG;
                     }
                 }
             }
         }
-        else if (view == AnswerButton2){
+        else if (view == AnswerButton2) {
             enteredStr1 = AnswerText2.getText().toString();
             if (!enteredStr1.equals("")) { //only process if something is in the answertext field
                 int entered1 = Integer.parseInt(enteredStr1);
@@ -242,17 +254,27 @@ public class LessonActivity extends Activity implements TCPClientOwner {
 
                 } else if (lessonView == LessonView.PARENTHESESVIEW) {
                     correctAnswer = 45;
-                    msgType = ""; //check that this is the right number
+                    msgType = "LESSON-PART9"; //check that this is the right number
                     if (entered1 == correctAnswer){
-                        robotSpeechToSend = "";
+                        robotSpeechToSend = PAREN_STEP4_CORRECT_MSG;
                     } else {
-                        robotSpeechToSend = "";
+                        robotSpeechToSend = PAREN_STEP4_INCORRECT_MSG;
                     }
                 }
             }
         }
-        else { //AnswerButton3
-
+        else if (view == AnswerButton3) { //AnswerButton3
+            enteredStr1 = AnswerText2.getText().toString();
+            if (!enteredStr1.equals("")) { //only process if something is in the answertext field
+                int entered1 = Integer.parseInt(enteredStr1);
+                correctAnswer = 47;
+                msgType = "";
+                if (entered1 == correctAnswer){
+                    robotSpeechToSend = "";
+                } else {
+                    robotSpeechToSend = "";
+                }
+            }
         }
 
         if (!enteredStr1.equals("")) {
@@ -349,12 +371,41 @@ public class LessonActivity extends Activity implements TCPClientOwner {
             }
         }
         else if (msg.equals("LESSON-PART6")){
-
+            exampleStep1.setText(PAREN_STEP1_TEXT);
+            exampleStep1.setVisibility(View.VISIBLE);
+            AnswerText1.setVisibility(View.VISIBLE);
+            AnswerText1.requestFocus();
+            AnswerButton1.setVisibility(View.VISIBLE);
+            AnswerButton1.setEnabled(true);
+            mKeyboardView.setVisibility(View.VISIBLE);
+            mKeyboardView.setEnabled(true);
         }
         else if (msg.equals("LESSON-PART7")){
+            AnswerText1.setEnabled(false);
+            AnswerButton1.setEnabled(false);
+            exampleStep2.setText(PAREN_STEP2_TEXT);
+            exampleStep2.setVisibility(View.VISIBLE);
+            if (TCPClient.singleton != null) {
+                TCPClient.singleton.sendMessage("LESSON-PART8;-1;-1;" + PAREN_STEP3_MSG);
+            }
 
         }
         else if (msg.equals("LESSON-PART8")){
+            exampleStep3.setText(PAREN_STEP3_TEXT);
+            exampleStep3.setVisibility(View.VISIBLE);
+            AnswerText2.setVisibility(View.VISIBLE);
+            AnswerText2.setEnabled(true);
+            AnswerText2.requestFocus();
+            AnswerButton2.setVisibility(View.VISIBLE);
+            AnswerButton2.setEnabled(true);
+        }
+        else if (msg.equals("LESSON-PART9")){
+            AnswerText2.setEnabled(false);
+            AnswerButton2.setEnabled(false);
+            exampleStep4.setVisibility(View.VISIBLE);
+            //send message
+        }
+        else if (msg.equals("LESSON-PART10")){
 
         }
         else if (msg.equals("LESSON-END")) {
