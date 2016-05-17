@@ -16,13 +16,22 @@ public class LessonActivity extends Activity implements TCPClientOwner {
     // XML element variables
     private Button beginButton;
     private TextView content;
+    private TextView exampleProblem;
+    private TextView exampleStep1;
+    private TextView exampleStep2;
+    private TextView exampleStep3;
     private NoImeEditText AnswerText1;
     private NoImeEditText AnswerText2;
     private Button AnswerButton1;
     private Button AnswerButton2;
     private KeyboardView mKeyboardView;
 
-    public final int MAX_NUM_DIGITS = 6;
+    private enum LessonView {
+        MULTPLICATIONVIEW, PARENTHESESVIEW
+    }
+    private LessonView lessonView = LessonView.MULTPLICATIONVIEW;
+
+    public final int MAX_NUM_DIGITS = 5;
 
     // Public variables ============================================================================
 
@@ -42,9 +51,14 @@ public class LessonActivity extends Activity implements TCPClientOwner {
 
         beginButton = (Button)   findViewById(R.id.beginButton);
         content     = (TextView) findViewById(R.id.content2);
+        exampleProblem = (TextView) findViewById(R.id.example_problem1);
+        exampleStep1 = (TextView) findViewById(R.id.example1_step1);
         AnswerText1 = (NoImeEditText) findViewById(R.id.answer1);
-        AnswerText2 = (NoImeEditText) findViewById(R.id.answer2);
         AnswerButton1 = (Button) findViewById(R.id.AnswerButton);
+
+        exampleStep2 = (TextView) findViewById(R.id.example1_step2);
+        exampleStep3 = (TextView) findViewById(R.id.example1_step3);
+        AnswerText2 = (NoImeEditText) findViewById(R.id.answer2);
         AnswerButton2 = (Button) findViewById(R.id.AnswerButton2);
 
         Keyboard mKeyboard= new Keyboard(getApplicationContext(), R.xml.numbers_keyboard);
@@ -78,6 +92,7 @@ public class LessonActivity extends Activity implements TCPClientOwner {
                     }
                 }
             }
+
             @Override
             public void onPress(int arg0) {
             }
@@ -107,6 +122,20 @@ public class LessonActivity extends Activity implements TCPClientOwner {
             }
         });
 
+        //set elements to be invisible before lesson starts
+        content.setVisibility(View.INVISIBLE);
+        exampleProblem.setVisibility(View.INVISIBLE);
+        exampleStep1.setVisibility(View.INVISIBLE);
+        AnswerText1.setVisibility(View.INVISIBLE);
+        AnswerButton1.setVisibility(View.INVISIBLE);
+        exampleStep2.setVisibility(View.INVISIBLE);
+        exampleStep3.setVisibility(View.INVISIBLE);
+        AnswerText2.setVisibility(View.INVISIBLE);
+        AnswerButton2.setVisibility(View.INVISIBLE);
+        mKeyboardView.setVisibility(View.INVISIBLE);
+        beginButton.setVisibility(View.INVISIBLE);
+
+
         // Transfer control of TCP client from MathActivity to this activity.
         if (TCPClient.singleton != null ) {
             TCPClient.singleton.setSessionOwner(this);
@@ -119,11 +148,51 @@ public class LessonActivity extends Activity implements TCPClientOwner {
 
     // Button handlers =============================================================================
 
-    public void exampleSubmit1(View view) {
-        
+    public void exampleSubmit(View view) {
+        if (view == AnswerButton1){
+
+        }
+        else if (view == AnswerButton2){
+
+        }
+        else { //AnswerButton3
+
+        }
+
+        String enteredStr1 = AnswerText1.getText().toString();
+        if (enteredStr1.equals("")){
+
+        }
+        else {
+            int entered1 = Integer.parseInt(enteredStr1);
+            if (lessonView == LessonView.MULTPLICATIONVIEW) {
+                if (entered1 == 12){
+                    //correct answer for intermediate step
+                    //send tcp message
+                }
+                else {
+                    //incorrect answer
+                    //send tcp message
+                }
+
+            } else if (lessonView == LessonView.PARENTHESESVIEW) {
+                if (entered1 == 12){
+                    //correct answer for intermediate step
+                    //send tcp message
+                }
+                else {
+                    //incorrect answer
+                    //send tcp message
+                }
+            }
+        }
     }
 
-    public void exampleSubmit2(View view) {
+
+    public void nextLesson(View view) {
+        lessonView = LessonView.PARENTHESESVIEW;
+
+        //setText appropriately for the second lesson - parentheses
 
     }
 
@@ -136,8 +205,34 @@ public class LessonActivity extends Activity implements TCPClientOwner {
     public void messageReceived(String msg) {
         System.out.println("[ LessonActivity ] Received the following message: " + msg);
         if (msg.equals("LESSON-START")) {
-            enableButtons();
+            //enableButtons();
             //content.setText(CLICK_BEGIN_BUTTON_TEXT);
+            content.setVisibility(View.VISIBLE);
+            exampleProblem.setVisibility(View.VISIBLE);
+            //send message to get nao speech and then move to next part of lesson
+        }
+        else if(msg.equals("LESSON-PART1")) {
+            exampleStep1.setVisibility(View.VISIBLE);
+            AnswerText1.setVisibility(View.VISIBLE);
+            AnswerText1.setEnabled(true);
+            AnswerButton1.setVisibility(View.VISIBLE);
+            AnswerButton1.setEnabled(true);
+        }
+        else if(msg.equals("LESSON-PART2")){
+            AnswerText1.setEnabled(false);
+            AnswerButton1.setEnabled(false);
+            exampleStep2.setVisibility(View.VISIBLE);
+            //send message to get nao speech and then move to next part of lesson
+        }
+        else if(msg.equals("LESSON-PART3")){
+            exampleStep3.setVisibility(View.VISIBLE);
+            AnswerText2.setVisibility(View.VISIBLE);
+            AnswerText2.setEnabled(true);
+            AnswerButton2.setVisibility(View.VISIBLE);
+            AnswerButton2.setEnabled(true);
+        }
+        else if (msg.equals("LESSON-END")) {
+            enableButtons();
         }
     }
 
