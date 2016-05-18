@@ -1086,3 +1086,19 @@ class Gesture:
             "session."
         )
         self.posture.goToPosture("Sit", 0.2)
+
+    def mindfulnessBreak(self):
+        self.posture.goToPosture("Sit", 0.2)
+        # I intentionally mispelled "lead" to make the speech clearer!
+        self.genSpeech("Follow my leed!")
+        time.sleep(2.5)
+
+        #TODO: fill in rest of break here with speech and motions
+        self.genSpeech("Lets start by sitting up nice and straight.")
+
+        self.genSpeech("You can close your eyes if you want to!")
+        self.genSpeech("We are going to take three really deep breaths.")
+
+        self.genSpeech("Lets start. IN")
+        self.genSpeech("and OUT")
+
