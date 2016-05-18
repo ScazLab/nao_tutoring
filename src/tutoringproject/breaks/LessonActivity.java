@@ -52,7 +52,7 @@ public class LessonActivity extends Activity implements TCPClientOwner {
     // Public variables ============================================================================
 
     // Speech strings
-    //TODO: fix all strings to be correct phrases for lesson activity
+    //TODO: check speech with nao and adjust as necessary
     public String START_MSG =
         "Let's get started on our lesson.";
     public String MULT_STEP1_MSG =
