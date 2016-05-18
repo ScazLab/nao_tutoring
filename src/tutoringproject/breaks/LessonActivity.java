@@ -54,46 +54,67 @@ public class LessonActivity extends Activity implements TCPClientOwner {
     // Speech strings
     //TODO: fix all strings to be correct phrases for lesson activity
     public String START_MSG =
-        "Before we start answering questions, let's review how order of operations works.";
+        "Let's get started on our lesson.";
     public String MULT_STEP1_MSG =
-        "Let me show you what I mean! Let's look at the problem three plus six times two minus five";
+        "When we have a problem with just addition and subtraction, we do it in order, from left to right. " +
+        "But, when we have multiplication, addition, and subtraction in the problem, we have to do the multiplication first. " +
+        "Let me show you what I mean! Let's look at the problem on the screen. " +
+        "We can see there is multiplication here, so we have to do six times two first. " +
+        "Enter your answer in the box on the screen.";
     public String MULT_STEP2_CORRECT_MSG =
-            "Correct!";
+        "That's correct! ";
     public String MULT_STEP2_INCORRECT_MSG =
-            "Oops! The correct answer is 12.";
+        "Oops! The correct answer here is twelve. ";
     public String MULT_STEP3_MSG =
-            "Go ahead and enter your answer in the box.";
+        "Now that we have the answer to that part, the problem looks like three plus twelve minus five. " +
+        "You can just complete this part in order since there is just addition and subtraction in it! " +
+        "Go ahead and enter your answer to this part in the box on the screen. ";
     public String MULT_STEP4_CORRECT_MSG =
-            "Correct!";
+            "Nice job! " +
+            "Press the button on the bottom of the screen to continue to the next part of the lesson!";
     public String MULT_STEP4_INCORRECT_MSG =
-            "Oops! The correct answer is 10.";
+            "The correct answer is ten. " +
+            "Press the button on the bottom of the screen to continue to the next part of the lesson!";
     public String PAREN_INTRO_MSG =
             "Now we will learn about parentheses.";
     public String PAREN_STEP1_MSG =
-            "Let me show you what I mean! Let's look at this problem.";
+            "The symbols you see on the screen are called parentheses. " +
+            "When we have these in a math problem, we always do what's inside the parentheses first! " +
+            "Let me show you what I mean! Let's look at this problem on the screen together. " +
+            "We see parentheses in this problem, so we have to do three plus six first since that part is inside the parentheses. " +
+            "Enter your answer to this part in the box on the screen.";
     public String PAREN_STEP2_CORRECT_MSG =
-            "Correct!";
+            "That's right!";
     public String PAREN_STEP2_INCORRECT_MSG =
-            "Oops! The correct answer is 9.";
+            "The correct answer here is nine.";
     public String PAREN_STEP3_MSG =
-            "Enter your answer in the box.";
+            "Now that we did the parentheses, the problem looks like two plus nine times five. " +
+            "We just learned in our last lesson that multiplication comes before addition so next we have to do nine times five. " +
+            "Enter your answer to this part in the box on the screen.";
     public String PAREN_STEP4_CORRECT_MSG =
-            "Correct!";
+            "That's Correct!";
     public String PAREN_STEP4_INCORRECT_MSG =
-            "Oops! The correct answer is 45.";
+            "Oops! The correct answer is forty-five.";
     public String PAREN_STEP5_MSG =
+            "Now we have completed another step and the problem just looks like two plus forty-five. " +
+            "This is just addition so we are ready to finish the whole problem. " +
             "Put your answer in the box on the screen.";
     public String PAREN_STEP6_CORRECT_MSG =
-            "Correct!";
+            "Good job! " +
+            "Now let's try practicing what we just learned about multiplication and parentheses! " +
+            "Press the button on the bottom of the screen to start!";
     public String PAREN_STEP6_INCORRECT_MSG =
-            "The correct answer is 47.";
+            "The correct answer is forty-seven. " +
+            "Now let's try practicing what we just learned about multiplication and parentheses! " +
+            "Press the button on the bottom of the screen to start!";
+
 
 
     // Tablet text strings
     public String CLICK_BEGIN_BUTTON_TEXT =
         "Click the button below to begin the tutoring session.";
     public String PAREN_CONTENT =
-        "These symbols are called parentheses: () \n When we have these in a math problem, we always do what's inside the parentheses first! Let's look at this problem together:";
+        "These symbols are called parentheses: ( ) \n When we have these in a math problem, we always do what's inside the parentheses first! Let's look at this problem together:";
     public String PAREN_EXAMPLE_PROBLEM =
         "2 + (3 + 6) x 5";
     public String PAREN_STEP1_TEXT =
