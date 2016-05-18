@@ -10,7 +10,7 @@
     <string name="follow_nao_s_lead">Follow Nao\'s lead!</string>
     <string name="focus_game">Focus Game</string>
     <string name="press_different_button">Press the button that has a different symbol than all the rest!</string>
-    <string name="mindfulness_break">Mindfulness Break</string>
+    <string name="mindfulness_break">Relaxation Break</string>
 
     <string name="order_of_operations_lesson">Order of Operations Lesson</string>
     <string name="lesson_string1">When we have addition and subtraction in a problem, we just solve the problem in order, from left to right.</string>

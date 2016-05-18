@@ -1,10 +1,14 @@
 package tutoringproject.breaks;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by aditi on 5/14/16.
@@ -15,9 +19,15 @@ public class VisualFocusActivity extends Activity implements TCPClientOwner {
     private Button[]boardButtons = new Button[36];
     private TextView instructions;
     private Button returnButton;
+    private Button currentRoundButton;
+    private Random gen = new Random();
 
-    //public methods
+    private ArrayList<String> symbols = new ArrayList<String>();
+    private ArrayList<String> pairs = new ArrayList<String>();
+
+    //public variables
     public int NUM_BUTTONS = 36;
+    public int NUM_SYMBOL_PAIRS;
 
     // Constructor =================================================================================
 
@@ -71,6 +81,21 @@ public class VisualFocusActivity extends Activity implements TCPClientOwner {
         instructions       = (TextView) findViewById(R.id.instructions);
         returnButton       = (Button)   findViewById(R.id.returnButton);
 
+        currentRoundButton = boardButtons[0];
+
+        //initialize game symbols
+        symbols.add("p");
+        pairs.add("q");
+        symbols.add("+");
+        pairs.add("x");
+        symbols.add("5");
+        pairs.add("S");
+        symbols.add("B");
+        pairs.add("8");
+        symbols.add("Z");
+        pairs.add("2");
+        NUM_SYMBOL_PAIRS = symbols.size();
+
         // Transfer control of TCP client from MathActivity to this activity.
         if (TCPClient.singleton != null ) {
             TCPClient.singleton.setSessionOwner(this);
@@ -85,6 +110,25 @@ public class VisualFocusActivity extends Activity implements TCPClientOwner {
 
     public void boardButtonPressed(View view) {
         Button button = (Button)view;
+        String robot_speech = "";
+        if (button == currentRoundButton){
+            //chose button correctly, have robot say nice job
+            //TODO: randomly select a phrase
+        }
+        else {
+            //choose button incorrectly, move on to next round?
+        }
+        disableBoardButtons();
+        highlightUniqueButton();
+
+        //send tcp message
+        if (TCPClient.singleton != null) {
+            TCPClient.singleton.sendMessage("VISUALFOCUS-ROUNDOVER;-1;-1;" + robot_speech);
+        }
+    }
+
+    public void highlightUniqueButton() {
+        currentRoundButton.setBackgroundColor(Color.YELLOW);
     }
 
     public void returnButtonPressed(View view) {
@@ -93,7 +137,27 @@ public class VisualFocusActivity extends Activity implements TCPClientOwner {
 
 
     // Game-playing methods ========================================================================
-    public void startRound(){
+    public void nextRound(){
+        //choose a symbol pair randomly
+        int pick = gen.nextInt(NUM_SYMBOL_PAIRS);
+        String symbol = symbols.get(pick);
+        String pair = pairs.get(pick);
+        currentRoundButton.setBackgroundColor(Color.GRAY); //TODO: figure out what the default button color is
+
+        //randomly select one button and set this as the currentAnswer
+        int pickButton = gen.nextInt(NUM_BUTTONS);
+        //put the symbol on all buttons and put the pair on the randomly selected button
+        currentRoundButton = boardButtons[pickButton];
+        for (int i=0; i<NUM_BUTTONS; i++){
+            if (i == pickButton){
+                boardButtons[i].setText(pair);
+            }
+            else {
+                boardButtons[i].setText(symbol);
+            }
+        }
+
+        enableBoardButtons();
 
     }
 
@@ -107,7 +171,13 @@ public class VisualFocusActivity extends Activity implements TCPClientOwner {
         System.out.println("[ VisualFocusActivity ] Received the following message: " + msg);
 
         if (msg.equals("VISUALFOCUS-START")) {
-            startRound();
+            nextRound();
+        }
+        else if (msg.equals("VISUALFOCUS-ROUNDOVER")) {
+            nextRound();
+        }
+        else if (msg.equals("VISUALFOCUS-END")) {
+            enableReturnButton();
         }
     }
 
