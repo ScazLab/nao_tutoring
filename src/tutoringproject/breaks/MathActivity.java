@@ -640,7 +640,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
             } else if (numberBreaksGiven % 4 == 2) {
                 numberBreaksGiven++;
                 System.out.println("Break 3");
-                startSimonSays();
+                startVisualFocus();
             } else if (numberBreaksGiven % 4 == 3) {
                 numberBreaksGiven++;
                 System.out.println("Break 4");
@@ -747,8 +747,8 @@ public class MathActivity extends Activity implements TCPClientOwner {
         startActivity(intent);
     }
 
-    public void startSimonSays() {
-        Intent intent = new Intent(this, SimonSaysActivity.class);
+    public void startVisualFocus() {
+        Intent intent = new Intent(this, VisualFocusActivity.class);
         intent.putExtra("expGroup", "" + expGroup);
         startActivity(intent);
     }
