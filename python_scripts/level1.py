@@ -19,7 +19,7 @@ for number in first:
 		print '	"Answer" : %d,' % (third + (number * multiplier))
 		print '	"Spoken Answer" : "The correct answer is %s.",' %(num2words(third + (number * multiplier)))
 		print '	"Difficulty Level" : 1,'
-		print '	"Problem Type" :"Multiplication", '
+		print '	"Problem Type" : "Multiplication", '
 		print '	"Max Time" : 60,'
 		print '	"Most Common Mistake" : %d' % ((third + number ) * multiplier)
 		print ' },'
@@ -32,14 +32,22 @@ for number in second:
 		print ' {'
 		print '	"QuestionID" : %d,' % counter
 		counter = counter + 1
-		print '	"Question" : "What is (%d + %d) X %d?",' % (third, number, multiplier)
-		print '	"Spoken Question" : "What is (%s plus %s) times %s?", ' % (num2words(third), num2words(number), num2words(multiplier))
-		print '	"Answer" : %d,' % ((third + number) * multiplier)
+		if counter % 2 == 0:
+			print '	"Question" : "What is (%d + %d) X %d?",' % (third, number, multiplier)
+			print '	"Spoken Question" : "What is (%s plus %s) times %s?", ' % (num2words(third), num2words(number), num2words(multiplier))
+			print '	"Answer" : %d,' % ((third + number) * multiplier)
+		else:
+			print '	"Question" : "What is %d X (%d + %d)?",' % (third, number, multiplier)
+			print '	"Spoken Question" : "What is %s times (%s plus %s?)", ' % (num2words(third), num2words(number), num2words(multiplier))
+			print '	"Answer" : %d,' % (third * (number + multiplier))
 		print '	"Spoken Answer" : "The correct answer is %s.",' %(num2words((third + number) * multiplier))
 		print '	"Difficulty Level" : 1,'
-		print '	"Problem Type:" "Parentheses", '
+		print '	"Problem Type" : "Parentheses", '
 		print '	"Max Time" : 60,'
-		print '	"Most Common Mistake" : %d' % (third + number  * multiplier)
+		if counter % 2 == 0:
+			print '	"Most Common Mistake" : %d' % (third + number  * multiplier)
+		else:
+			print '	"Most Common Mistake" : %d' % (third * number + multiplier)
 		print ' },'
 		print ""
 print "]"
