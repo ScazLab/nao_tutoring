@@ -1,36 +1,270 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:layout_width="match_parent"
+    android:background="@color/lesson_background">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_gravity="top|center_horizontal"
-        android:layout_marginTop="60dp"
-        android:text="@string/order_of_operations_lesson"
-        android:textSize="40sp" />
-
-    <TextView
-        android:id="@+id/content"
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_gravity="center"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:text="Put content here!"
-        android:textSize="30sp"
-        android:gravity="center" />
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:weightSum="1"
+        android:id="@+id/linearlayout">
 
-    <Button
-        android:id="@+id/beginButton"
-        android:clickable="true"
-        android:onClick="beginButtonPressed"
-        android:layout_height="50dp"
-        android:layout_width="300dp"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginBottom="60dp"
-        android:text="@string/begin_tutoring_session"
-        android:textSize="20sp" />
+        <TextView
+            android:id="@+id/title"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="60dp"
+            android:text="@string/order_of_operations_lesson"
+            android:textSize="40sp" />
+
+        <!--<TextView-->
+            <!--android:id="@+id/content1"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginLeft="30dp"-->
+            <!--android:layout_marginRight="30dp"-->
+            <!--android:layout_marginTop="30dp"-->
+            <!--android:text="@string/lesson_string1"-->
+            <!--android:textSize="30sp"-->
+            <!--android:gravity="center" />-->
+
+        <TextView
+            android:id="@+id/content2"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/lesson_string2"
+            android:textSize="30sp"
+            android:gravity="center" />
+
+
+        <TextView
+            android:id="@+id/example_problem1"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:text="3 + 6 x 2 - 5"
+            android:textSize="30sp"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/example_layout1"
+            android:layout_weight="0.04"
+            android:layout_marginTop="5dp">
+
+
+            <TextView
+                android:id="@+id/example1_step1"
+                android:layout_height="50dp"
+                android:layout_width="403dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_gravity="center"
+                android:text="So, first we do:  6 x 2 = "
+                android:textSize="30sp"
+                android:gravity="right" />
+
+            <tutoringproject.breaks.NoImeEditText
+                android:layout_width="128dp"
+                android:layout_height="50dp"
+                android:inputType="none"
+                android:digits="1234567890"
+                android:ems="10"
+                android:id="@+id/answer1"
+                android:layout_gravity="center"
+                android:hint="Answer"
+                android:textSize="30dp"
+                android:gravity="center_vertical|center_horizontal" />
+
+            <Button
+                android:layout_width="135dp"
+                android:layout_height="40dp"
+                android:text="Submit"
+                android:id="@+id/AnswerButton"
+                android:clickable="true"
+                android:onClick="exampleSubmit"
+                android:ellipsize="middle"
+                android:background="@drawable/key_drawable"
+                android:textSize="30dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/example1_step2"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Now the problem looks like this: 3 + 12 - 5. You can complete this in order!"
+            android:textSize="30sp"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/example_layout2"
+            android:layout_weight="0.04"
+            android:layout_marginTop="5dp">
+
+
+            <TextView
+                android:id="@+id/example1_step3"
+                android:layout_height="50dp"
+                android:layout_width="403dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_gravity="center"
+                android:text="Enter your answer here: "
+                android:textSize="30sp"
+                android:gravity="right" />
+
+            <tutoringproject.breaks.NoImeEditText
+                android:layout_width="128dp"
+                android:layout_height="50dp"
+                android:inputType="none"
+                android:digits="1234567890"
+                android:ems="10"
+                android:id="@+id/answer2"
+                android:layout_gravity="center"
+                android:hint="Answer"
+                android:textSize="30dp"
+                android:gravity="center_vertical|center_horizontal" />
+
+            <Button
+                android:layout_width="135dp"
+                android:layout_height="40dp"
+                android:text="Submit"
+                android:id="@+id/AnswerButton2"
+                android:clickable="true"
+                android:onClick="exampleSubmit"
+                android:ellipsize="middle"
+                android:background="@drawable/key_drawable"
+                android:textSize="30dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/example1_step4"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Now the problem looks like this: 2 + 45. You can complete this in order!"
+            android:textSize="30sp"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/example_layout3"
+            android:layout_weight="0.04"
+            android:layout_marginTop="5dp">
+
+
+            <TextView
+                android:id="@+id/example1_step5"
+                android:layout_height="50dp"
+                android:layout_width="403dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_gravity="center"
+                android:text="Enter your answer here: "
+                android:textSize="30sp"
+                android:gravity="right" />
+
+            <tutoringproject.breaks.NoImeEditText
+                android:layout_width="128dp"
+                android:layout_height="50dp"
+                android:inputType="none"
+                android:digits="1234567890"
+                android:ems="10"
+                android:id="@+id/answer3"
+                android:layout_gravity="center"
+                android:hint="Answer"
+                android:textSize="30dp"
+                android:gravity="center_vertical|center_horizontal" />
+
+            <Button
+                android:layout_width="135dp"
+                android:layout_height="40dp"
+                android:text="Submit"
+                android:id="@+id/AnswerButton3"
+                android:clickable="true"
+                android:onClick="exampleSubmit"
+                android:ellipsize="middle"
+                android:background="@drawable/key_drawable"
+                android:textSize="30dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp" />
+
+
+        </LinearLayout>
+
+        <android.inputmethodservice.KeyboardView
+            android:shadowRadius="0.0"
+            android:id="@+id/keyboardview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:background="@color/lesson_background"
+            android:keyBackground="@drawable/key_drawable"
+            android:keyTextColor="@color/key_text"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp" />
+
+        <Button
+            android:id="@+id/continueLessonButton"
+            android:clickable="true"
+            android:onClick="nextLesson"
+            android:layout_height="50dp"
+            android:layout_width="300dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="0dp"
+            android:text="@string/continue_lesson"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/beginButton"
+            android:clickable="true"
+            android:onClick="beginButtonPressed"
+            android:layout_height="50dp"
+            android:layout_width="300dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="60dp"
+            android:text="@string/begin_tutoring_session"
+            android:textSize="20sp" />
+
+    </LinearLayout>
 </FrameLayout>

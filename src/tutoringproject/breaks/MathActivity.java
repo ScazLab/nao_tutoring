@@ -116,7 +116,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
     //break variables
     private int fixedBreakInterval = 3;
-    private int num_consec_questions = 0;  //number of consecutive quesitons without break givne
+    private int num_consec_questions = 0;  //number of consecutive questions without break given
 
     private void startTimer(long delay, long period) {
         //set new Timer
@@ -640,9 +640,11 @@ public class MathActivity extends Activity implements TCPClientOwner {
             } else if (numberBreaksGiven % 4 == 2) {
                 numberBreaksGiven++;
                 System.out.println("Break 3");
+                startSimonSays();
             } else if (numberBreaksGiven % 4 == 3) {
                 numberBreaksGiven++;
                 System.out.println("Break 4");
+                startMindfulnessBreak();
             }
             takeBreak = false;
             return;
@@ -741,6 +743,18 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
     public void startStretchBreak() {
         Intent intent = new Intent(this, StretchBreakActivity.class);
+        intent.putExtra("expGroup", "" + expGroup);
+        startActivity(intent);
+    }
+
+    public void startSimonSays() {
+        Intent intent = new Intent(this, SimonSaysActivity.class);
+        intent.putExtra("expGroup", "" + expGroup);
+        startActivity(intent);
+    }
+
+    public void startMindfulnessBreak() {
+        Intent intent = new Intent(this, MindfulnessBreakActivity.class);
         intent.putExtra("expGroup", "" + expGroup);
         startActivity(intent);
     }

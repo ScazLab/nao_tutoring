@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:background="@color/teal">
+    android:background="@color/simon_says_background">
 
     <TextView
         android:id="@+id/title"
@@ -11,7 +11,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_gravity="top|center_horizontal"
         android:layout_marginTop="60dp"
-        android:text="@string/stretch_break"
+        android:text="@string/simon_says"
         android:textSize="40sp" />
 
     <TextView
@@ -21,7 +21,7 @@
         android:layout_gravity="center"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:text="@string/follow_nao_s_lead"
+        android:text="@string/nao_will_be_simon"
         android:textSize="30sp"
         android:gravity="center" />
 
@@ -35,4 +35,5 @@
         android:layout_marginBottom="60dp"
         android:text="@string/return_to_tutoring_session"
         android:textSize="20sp" />
+
 </FrameLayout>

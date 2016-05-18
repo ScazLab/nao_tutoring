@@ -1086,3 +1086,45 @@ class Gesture:
             "session."
         )
         self.posture.goToPosture("Sit", 0.2)
+
+    def mindfulnessBreak(self):
+        self.posture.goToPosture("Sit", 0.2)
+        # I intentionally mispelled "lead" to make the speech clearer!
+        self.genSpeech("Follow my leed!")
+        time.sleep(2.5)
+
+        #TODO: fill in rest of break here with speech and motions
+        self.genSpeech("Lets start by sitting up nice and straight.")
+        self.genSpeech("Put your arms down at your side.")
+
+        self.genSpeech("You can close your eyes if you want to!")
+        self.genSpeech("We are going to take five deep breaths nice and slow.")
+        self.genSpeech("I will guide you and say in when you breathe in and out when you breathe out.")
+
+        self.genSpeech("Lets start. IN")
+        #likely sleep here to make these long, drawn out breaths
+        self.genSpeech("and OUT")
+
+        self.genSpeech("IN")
+        self.genSpeech("and out")
+
+        self.genSpeech("and IN")
+        self.genSpeech("out")
+
+        self.genSpeech("IN")
+        self.genSpeech("out")
+
+        self.genSpeech("One more breath")
+        self.genSpeech("and IN")
+        self.genSpeech("out")
+
+        self.genSpeech("Now as we stay relaxed, notice the sounds you can hear and how you are feeling.")
+        self.genSpeech("Focus on what is happening right now. ")
+
+        self.genSpeech("Now slowly open your eyes if you had them closed and relax your body. ")
+
+        self.genSpeech("You did a great job following along with that relaxation exercise. Why don't we get back "
+            "to our math activity now. Go ahead and click the button at the bottom of the screen to get back "
+            "to the session."
+        )
+
