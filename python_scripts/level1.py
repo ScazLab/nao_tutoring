@@ -21,7 +21,12 @@ for number in first:
 		print '	"Difficulty Level" : 1,'
 		print '	"Problem Type" : "Multiplication", '
 		print '	"Max Time" : 60,'
-		print '	"Most Common Mistake" : %d' % ((third + number ) * multiplier)
+		print '		"Mistakes" : {'
+		print '		"Common Mistake" : %d,' % ((third + number) * multiplier)
+		print '		"Spoken Explanation" : "I think you added %s and %s before you multiplied by %s.",' % (num2words(third), num2words(number), num2words(multiplier))
+		print '		"Written Explanation" : "Multiply %d X %d before adding %d to that product",' %(number, multiplier, third)
+		print ' 	"Written General Feedback" : "%d X %d = %d; %d + %d = %d"' %(number, multiplier, number*multiplier, third, number*multiplier, third + (number*multiplier))
+		print '		}'
 		print ' },'
 		print ""
 
@@ -45,9 +50,19 @@ for number in second:
 		print '	"Problem Type" : "Parentheses", '
 		print '	"Max Time" : 60,'
 		if counter % 2 == 0:
-			print '	"Most Common Mistake" : %d' % (third + number  * multiplier)
+			print '		"Mistakes" : {'
+			print '		"Common Mistake" : %d,' % (third + number * multiplier)
+			print '		"Spoken Explanation" : "I think you multiplied %s and %s before you added %s.",' % (num2words(number), num2words(multiplier), num2words(third))
+			print '		"Written Explanation" : "Add %d + %d before multiplying %d with that sum",' %(third,number, multiplier)
+			print ' 	"Written General Feedback" : "%d + %d = %d; %d X %d = %d"' %(third, number,third + number, third + number, multiplier, ((third + number) * multiplier))
+			print '		}'
 		else:
-			print '	"Most Common Mistake" : %d' % (third * number + multiplier)
+			print '		"Mistakes" : {'
+			print '		"Common Mistake" : %d,' % (third * number + multiplier)
+			print '		"Spoken Explanation" : "I think you multiplied %s and %s before you added %s.",' % (num2words(third), num2words(number), num2words(multiplier))
+			print '		"Written Explanation" : "Add %d + %d before multiplying %d with that sum",' %(multiplier,number, third)
+			print ' 	"Written General Feedback" : "%d + %d = %d; %d X %d = %d"' %(number, multiplier, multiplier + number, multiplier + number, third, third * (number + multiplier))
+			print '		}'
 		print ' },'
 		print ""
 print "]"
