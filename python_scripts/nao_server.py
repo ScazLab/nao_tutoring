@@ -616,8 +616,8 @@ class TutoringSession:
         msg_sub_type = msg_type[12:]
 
         if msg_sub_type == 'START':
-            #TODO: properly fill out robot speech to start the break here, including "press unique button"
-            robot_speech = "break"
+            #TODO: properly fill out robot speech to start the break here, depending on the expGroup
+            robot_speech = "Let's play a focus game. Press the button that is different from the rest!"
             self.log_transaction('VISUALFOCUS-START', 0, robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
@@ -625,7 +625,7 @@ class TutoringSession:
                 self.goNao.look()
                 speech_return = self.goNao.genSpeech(robot_speech)
         
-        elif msg_sub_type == 'ROUNDOVER':
+        elif msg_sub_type == 'ROUNDOVER' or msg_sub_type == 'RESTART':
             self.log_transaction('VISUALFOCUS-ROUNDOVER', 0, robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)

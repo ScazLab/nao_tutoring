@@ -35,12 +35,16 @@ public class VisualFocusActivity extends Activity implements TCPClientOwner {
 
     public String[] CORRECT_TAP_MSGS = {
             "Good job!",
+            "That's it!",
             "Nice!",
+            "Great",
+            "That's right!",
             "You picked the right one!"
     };
     public String[] INCORRECT_TAP_MSGS = {
             "Oops! That was close!",
             "You almost got it!",
+            "So close!",
     };
     public String[] RESTART_MSGS = {
             "Let's do another round!",
@@ -166,7 +170,6 @@ public class VisualFocusActivity extends Activity implements TCPClientOwner {
         String symbol = symbols.get(pick);
         String pair = pairs.get(pick);
         currentRoundButton.setBackgroundResource(android.R.drawable.btn_default);
-        //currentRoundButton.setBackgroundColor(Color.GRAY); //TODO: figure out what the default button color is
 
         //randomly select one button and set this as the currentAnswer
         int pickButton = gen.nextInt(NUM_BUTTONS);
