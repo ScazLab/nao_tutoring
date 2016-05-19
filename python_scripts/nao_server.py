@@ -625,7 +625,7 @@ class TutoringSession:
                 self.goNao.look()
                 speech_return = self.goNao.genSpeech(robot_speech)
         
-        elif msg_sub_type == 'ROUNDOVER' or msg_sub_type == 'RESTART':
+        elif msg_sub_type == 'ROUNDOVER' or msg_sub_type == 'RESTART' or msg_sub_type == 'END':
             self.log_transaction('VISUALFOCUS-ROUNDOVER', 0, robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
