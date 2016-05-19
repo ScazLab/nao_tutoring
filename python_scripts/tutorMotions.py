@@ -136,16 +136,17 @@ class Gesture:
     def intro(self):
         #self.posture.goToPosture("Crouch", 1.0)
         self.posture.goToPosture("Sit", 1.0)
-        self.motion.setAngles("HeadPitch", -0.1, 0.5)
-	self.led.fadeListRGB("FaceLeds",[0x00FFFFFF],[0.1])
-        self.genSpeech("Hello! My name is Nao, your personal robot tutor.")
-        self.genSpeech("I'm really excited to meet you and work on some problems together!")
-	self.genSpeech("I hope you have a great session with me today!")
-        #self.genSpeech("Have a great day, and I look forward to seeing you again soon!")
-        self.wave()     
-        #self.genSpeech("Let's work on some fractions problems together.")
-        #self.genSpeech("I'm going to put some problems on your tablet!")
-        time.sleep(8)
+        #self.motion.setAngles("HeadPitch", -0.1, 0.5)
+	    self.led.fadeListRGB("FaceLeds",[0x00FFFFFF],[0.1])
+        self.genSpeech("Hello! My name is Nao!")
+        self.genSpeech("I'm excited to meet you and work on some math problems together today!")
+        self.wave()
+	    self.genSpeech("First, I'm going to teach you about some math concepts called order of operations.")
+        self.genSpeech("Then, we are going to practice what we learn by doing some problems!")     
+        self.genSpeech("I will put the problems on the tablet for you.")
+        #time.sleep(8)
+        id = self.genSpeech("Lets work through these problems together and have some fun along the way too!")
+        return id
 
     def move_head(self):
         #self.posture.goToPosture("Sit", 1.0)

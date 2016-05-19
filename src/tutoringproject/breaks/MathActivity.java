@@ -396,6 +396,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
         if (message == null){
             //TODO: figure out if this bug happens and it causes the app to crash
             //possibly catch a null pointer exception?
+            System.out.println("null message received from server");
         }
 
         if (message.equals("DONE")){
