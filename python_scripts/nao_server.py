@@ -623,7 +623,16 @@ class TutoringSession:
         if msg_sub_type == 'START':
             print 'into start block, happens once'
             #TODO: properly fill out robot speech to start the break here, depending on the expGroup
-            robot_speech = "Lets play a focus game. Press the button that is different from the rest."
+            robot_speech_base = "Lets play a focus game. Press the button that is different from the rest."
+            if int(self.expGroup) == 1:
+                robot_speech = get_break_speech(1, -1, -1) + " " + robot_speech_base
+            else:
+                robot_speech = get_break_speech(
+                    int(self.expGroup),
+                    self.current_session.breaks[-1].b_super,
+                    self.current_session.breaks[-1].b_type
+                ) + " " + robot_speech_base
+
             print 'before log_transaction'
             self.log_transaction('VISUALFOCUS-START', 0, robot_speech)
             print 'after log_transaction'
@@ -651,7 +660,15 @@ class TutoringSession:
 
         if msg_sub_type == 'START':
             #TODO: properly fill out robot speech to start the break here, including "lets relax."
-            robot_speech = "break"
+            robot_speech_base = "Lets do a small exercise to relax."
+            if int(self.expGroup) == 1:
+                robot_speech = get_break_speech(1, -1, -1) + " " + robot_speech_base
+            else:
+                robot_speech = get_break_speech(
+                    int(self.expGroup),
+                    self.current_session.breaks[-1].b_super,
+                    self.current_session.breaks[-1].b_type
+                ) + " " + robot_speech_base
             self.log_transaction('MINDFULNESSBREAK-START', 0, robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
