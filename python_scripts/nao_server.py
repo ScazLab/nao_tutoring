@@ -275,7 +275,7 @@ class TutoringSession:
                         #do intro depending on the sessionNum
                         if self.goNao is not None and msgType != 'LOAD':
                             introFlag = True
-                            id = self.goNao.intro() #new intro for breaks study
+                            #id = self.goNao.intro() #new intro for breaks study #ADD BACK IN, COMMENTED OUT FOR TESTING
                             # id = self.goNao.session_intro(int(self.sessionNum))  #DANGER 
 
                         #create or load appropriate session object
@@ -292,11 +292,12 @@ class TutoringSession:
                             #self.goNao.assessQuestion(questionType)
                             #id = self.goNao.genSpeech(robot_speech)
                             #[id,speech] = self.goNao.introQuestion(robot_speech)
-                            [id,speech] = self.goNao.introQuestionGeneric(robot_speech) #changing for breaks study problems
+                            [id,speech] = self.goNao.introQuestionGeneric() #changing for breaks study problems
                             self.log_transaction("RS",questionNum,speech)
                             rand_choice = random.randint(0,3)
                             point = "no_point"
                             if(rand_choice == 1):
+                                id = self.goNao.genSpeech("Here it is.")
                                 self.goNao.point_question()
                                 point = "point_to_question"
                             self.log_transaction("RA",questionNum,point)
@@ -630,7 +631,7 @@ class TutoringSession:
         if msg_sub_type == 'START':
             print 'into start block, happens once'
             #TODO: properly fill out robot speech to start the break here, depending on the expGroup
-            robot_speech_base = "Lets play a focus game. Press the button that is different from the rest."
+            robot_speech_base = "Lets play a. focus game. Press the button that is different from the rest! "
             if int(self.expGroup) == 1:
                 robot_speech = get_break_speech(1, -1, -1) + " " + robot_speech_base
             else:
@@ -651,13 +652,20 @@ class TutoringSession:
                 self.goNao.look()
                 speech_return = self.goNao.genSpeech(robot_speech)
         
-        elif msg_sub_type == 'ROUNDOVER' or msg_sub_type == 'RESTART' or msg_sub_type == 'END':
+        elif msg_sub_type == 'ROUNDOVER' or msg_sub_type == 'END':
             self.log_transaction('VISUALFOCUS-ROUNDOVER', 0, robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
                 self.goNao.look()
-                speech_return = self.goNao.genSpeech(robot_speech)        
+                speech_return = self.goNao.genSpeech(robot_speech)
+
+        elif msg_sub_type == 'RESTART':
+            self.log_transaction('VISUALFOCUS-ROUNDOVER', 0, robot_speech)
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                speech_return = self.goNao.genSpeech(robot_speech)                
 
         return speech_return, robot_speech
 

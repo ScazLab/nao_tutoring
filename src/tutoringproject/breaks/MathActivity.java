@@ -335,7 +335,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
         if (extras.getString("startOrLoad").equals("start")) {
             Intent intent = new Intent(this, LessonActivity.class);
-            NextQuestion(); //startActivity(intent); //just for testing breaks!
+            NextQuestion();//startActivity(intent); //use NextQuestion() here just for testing breaks!
         } else {
             NextQuestion();
         }
@@ -639,14 +639,14 @@ public class MathActivity extends Activity implements TCPClientOwner {
             stopTimerTask();
             if (numberBreaksGiven % 4 == 0) {
                 numberBreaksGiven++;
-                startVisualFocus();//startTicTacToe(); //just for testing
+                startTicTacToe(); //just for testing
             } else if (numberBreaksGiven % 4 == 1) {
                 numberBreaksGiven++;
-                startStretchBreak();
+                startStretchBreak();//just for testing
             } else if (numberBreaksGiven % 4 == 2) {
                 numberBreaksGiven++;
                 System.out.println("Break 3");
-                startVisualFocus();
+                startVisualFocus();//just for testing
             } else if (numberBreaksGiven % 4 == 3) {
                 numberBreaksGiven++;
                 System.out.println("Break 4");

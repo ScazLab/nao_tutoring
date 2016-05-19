@@ -34,6 +34,7 @@ class Gesture:
         self.confused = anim.confused
         self.auto_hint = anim.auto_hint
         self.question_intro = anim.question_intro
+        self.question_intro_generic = anim.question_intro_generic
         self.connectNao()
     
     
@@ -738,7 +739,7 @@ class Gesture:
 
     def point_question(self):
         #move left hand to point to tablet
-        time.sleep(3.5)
+        time.sleep(1.5)#3.5
         self.motion.setAngles("LShoulderRoll", 0.3, 0.25)
         self.motion.setAngles("LShoulderPitch", 0.4, 0.25)
         self.motion.setAngles("LElbowRoll", -0.2, 0.25)
@@ -1086,12 +1087,13 @@ class Gesture:
             self.genSpeech(str(i + 1))
             time.sleep(1)
 
-        self.genSpeech(
+        id = self.genSpeech(
             "Great job following along! I hope that was relaxing. Let's get back to our math "
             "problems now. Click the button at the bottom of the tablet to return to the tutoring "
             "session."
         )
         self.posture.goToPosture("Sit", 0.2)
+        self.speechDevice.wait(id, 0)
 
     def breathe_in_guide(self):
         #start position of the arm
@@ -1145,6 +1147,7 @@ class Gesture:
 
     def mindfulnessBreak(self):
         self.posture.goToPosture("Sit", 0.2)
+        self.look()
         # I intentionally mispelled "lead" to make the speech clearer!
         self.genSpeech("Follow my leed!")
         time.sleep(1.5)
@@ -1215,15 +1218,17 @@ class Gesture:
         self.motion.setAngles("RElbowRoll", 0.8, 0.1)
         self.motion.setAngles("RWristYaw", 1.3, 0.1)
         self.posture.goToPosture("Sit", 0.1)
+        self.look()
         
         self.genSpeech("Now as we stay relaxed, notice the sounds you can hear and how you are feeling.")
         self.genSpeech("Focus on what is happening right now. ")
 
         self.genSpeech("Now slowly sit back in your chair and relax your body. ")
 
-        self.genSpeech("You did a great job following along with that relaxation exercise. Why don't we get back "
+        id = self.genSpeech("You did a great job following along with that relaxation exercise. Why don't we get back "
             "to our math activity now. Go ahead and click the button at the bottom of the screen to get back "
             "to the session."
         )
+        self.speechDevice.wait(id, 0)
         
 
