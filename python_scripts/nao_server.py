@@ -803,9 +803,6 @@ def main():
         ("g", "Right fist of triumph for correct answer"),
         #("n", "Nod for correct answer"),
         ("a", "Shake for incorrect answer"),
-        #("o", "Head off to the side for thinking"),
-        #("h", "Hands together for thinking"),
-        #("b", "Stand up and try to breathe"),
         ("u", "Scale up"),
         ("d", "Scale down"),
         ("p", "Adding and subtracting problems"),
@@ -815,10 +812,13 @@ def main():
         ("y", "Relaxed idle behavior right"),
         ("n", "Numerator"),
         ("e", "Denominator"),
+        ("bi", "breathe in guide"),
+        ("bo", "breathe out guide"),
         ("o", "And so on"),
         ("c", "Conversion problems"),
         ("z", "Congratulations!"),
         ("b", "Stretch break"),
+        ("mind", "Mindfulness break"),
         ("s", "Start tutoring interaction"),
         ("q", "Quit"),
         ))
@@ -900,6 +900,12 @@ def main():
         elif(choice == "e"):
             goNao.denominator()
 
+        elif(choice == "bi"):
+            goNao.breathe_in_guide()
+
+        elif(choice == "bo"):
+            goNao.breathe_out_guide()    
+
         elif(choice == "o"):
             goNao.etc()
 
@@ -911,6 +917,9 @@ def main():
 
         elif(choice == "b"):
             goNao.stretchBreak()
+
+        elif(choice == "mind"):
+            goNao.mindfulnessBreak()    
 
         #elif(choice == 'o'):
         #   goNao.tilt()
