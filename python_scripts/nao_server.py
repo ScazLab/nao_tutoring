@@ -240,6 +240,7 @@ class TutoringSession:
                 while '' in msg:
                     msg.remove('')
 
+                print 'between received msg and msg line is'
                 for line in msg:
                     print "msg line is: ", line
                     #parse message type to know what to do with it
@@ -251,6 +252,7 @@ class TutoringSession:
                     id = -1
                     introFlag = False
                     returnMessage = "DONE"
+                    print 'split line in msg'
 
                     robot_speech = robot_speech.replace("'","").strip()
                     if self.goNao is None:
@@ -444,6 +446,7 @@ class TutoringSession:
                         returnMessage = 'STRETCHBREAK-DONE'
 
                     elif msgType.startswith('VISUALFOCUS'):
+                        print 'made it into msgType starts with visualfocus'
                         id, otherInfo = self.handle_visualfocus_msg(msgType, robot_speech)
                         returnMessage = msgType
 
@@ -513,7 +516,7 @@ class TutoringSession:
             # needs to be modified depending on the reason that the break was triggered, the speech
             # will be constructed here.
             robot_speech_base = (
-                "Let's play a game of tic-tac-toe. You will be exes, and I will be ohs. You can "
+                "Lets play a game of tic-tac-toe. You will be exes, and I will be ohs. You can "
                 "go first. Click any square on the board."
             )
             if int(self.expGroup) == 1:
@@ -591,7 +594,7 @@ class TutoringSession:
             # <robot_speech> won't be sent from the tablet in this case. Because the robot's speech
             # needs to be modified depending on the reason that the break was triggered, the speech
             # will be constructed here.
-            robot_speech_base = "Let's stretch."
+            robot_speech_base = "Lets stretch."
             if int(self.expGroup) == 1:
                 robot_speech = get_break_speech(1, -1, -1) + " " + robot_speech_base
             else:
@@ -614,13 +617,19 @@ class TutoringSession:
     def handle_visualfocus_msg(self, msg_type, robot_speech):
         speech_return = 0
         msg_sub_type = msg_type[12:]
+        print 'got into handle_visualfocus_msg'
 
         if msg_sub_type == 'START':
+            print 'into start block, happens once'
             #TODO: properly fill out robot speech to start the break here, depending on the expGroup
-            robot_speech = "Let's play a focus game. Press the button that is different from the rest!"
+            robot_speech = "Lets play a focus game. Press the button that is different from the rest."
+            print 'before log_transaction'
             self.log_transaction('VISUALFOCUS-START', 0, robot_speech)
+            print 'after log_transaction'
             if self.goNao is None:
+                print 'before os call'
                 os.system('say ' + robot_speech)
+                print 'after os call'
             else:
                 self.goNao.look()
                 speech_return = self.goNao.genSpeech(robot_speech)
@@ -642,7 +651,7 @@ class TutoringSession:
         if msg_sub_type == 'START':
             #TODO: properly fill out robot speech to start the break here, including "lets relax."
             robot_speech = "break"
-            self.log.transaction('MINDFULNESSBREAK-START', 0, robot_speech)
+            self.log_transaction('MINDFULNESSBREAK-START', 0, robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:

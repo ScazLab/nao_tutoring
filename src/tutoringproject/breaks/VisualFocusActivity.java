@@ -52,7 +52,7 @@ public class VisualFocusActivity extends Activity implements TCPClientOwner {
             "How about one more round. "
     };
     public String END_MSG =
-            "That was fun! Great job with the game! Now let's get back to our math problems " +
+            "That was fun! Great job with the game! Now let's get back to our math problems. " +
             "Click the button at the bottom of the tablet to return to the tutoring session.";
 
     // Constructor =================================================================================
@@ -128,7 +128,7 @@ public class VisualFocusActivity extends Activity implements TCPClientOwner {
         }
 
         if (TCPClient.singleton != null) {
-            TCPClient.singleton.sendMessage("VISUALFOCUS-START;-1;-1;-1");
+            TCPClient.singleton.sendMessage("VISUALFOCUS-START;-1;-1;"+"start");
         }
     }
 
