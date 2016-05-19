@@ -961,6 +961,11 @@ class Gesture:
         id = self.genSpeech(speech)
         return [id,speech]
 
+    def introQuestionGeneric(self):
+        randnr = random.randint(0,len(self.question_intro_generic)-1)
+        speech = self.question_intro_generic[randnr]
+        id = self.genSpeech(speech)
+        return [id,speech]
 
     def assessHint2(self, what):
         if (what == "Scaling Up"):

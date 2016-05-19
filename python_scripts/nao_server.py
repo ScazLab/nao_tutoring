@@ -291,9 +291,16 @@ class TutoringSession:
                             self.goNao.look()
                             #self.goNao.assessQuestion(questionType)
                             #id = self.goNao.genSpeech(robot_speech)
-                            [id,speech] = self.goNao.introQuestion(robot_speech)
+                            #[id,speech] = self.goNao.introQuestion(robot_speech)
+                            [id,speech] = self.goNao.introQuestionGeneric(robot_speech) #changing for breaks study problems
                             self.log_transaction("RS",questionNum,speech)
-                            self.goNao.assessQuestion(questionType)
+                            rand_choice = random.randint(0,3)
+                            point = "no_point"
+                            if(rand_choice == 1):
+                                self.goNao.point_question()
+                                point = "point_to_question"
+                            self.log_transaction("RA",questionNum,point)
+                            #self.goNao.assessQuestion(questionType) #dont need for break study
                         self.update_session(msgType, questionNum, otherInfo)
                     elif msgType == 'CA': #correct attempt
                         self.numCorrect += 1
