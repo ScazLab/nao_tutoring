@@ -443,6 +443,10 @@ class TutoringSession:
                         id, otherInfo = self.handle_stretch_break_msg(msgType, robot_speech)
                         returnMessage = 'STRETCHBREAK-DONE'
 
+                    elif msgType.startswith('VISUALFOCUS'):
+                        id, otherInfo = self.handle_visualfocus_msg(msgType, robot_speech)
+                        returnMessage = msgType
+
                     elif msgType.startswith('MINDFULNESSBREAK'):
                         id, otherInfo = self.handle_mindfulness_break_msg(msgType, robot_speech)
                         returnMessage = 'MINDFULNESSBREAK-DONE'    
@@ -607,7 +611,31 @@ class TutoringSession:
 
         return speech_return, robot_speech
 
-    def handle_mindfulness_break_msg():
+    def handle_visualfocus_msg(self, msg_type, robot_speech):
+        speech_return = 0
+        msg_sub_type = msg_type[12:]
+
+        if msg_sub_type == 'START':
+            #TODO: properly fill out robot speech to start the break here, including "press unique button"
+            robot_speech = "break"
+            self.log_transaction('VISUALFOCUS-START', 0, robot_speech)
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                self.goNao.look()
+                speech_return = self.goNao.genSpeech(robot_speech)
+        
+        elif msg_sub_type == 'ROUNDOVER':
+            self.log_transaction('VISUALFOCUS-ROUNDOVER', 0, robot_speech)
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                self.goNao.look()
+                speech_return = self.goNao.genSpeech(robot_speech)        
+
+        return speech_return, robot_speech
+
+    def handle_mindfulness_break_msg(self, msg_type, robot_speech):
         speech_return = 0
         msg_sub_type = msg_type[17:]
 

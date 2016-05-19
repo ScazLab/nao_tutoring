@@ -21,6 +21,7 @@ public class VisualFocusActivity extends Activity implements TCPClientOwner {
     private Button returnButton;
     private Button currentRoundButton;
     private Random gen = new Random();
+    private long startTime = System.currentTimeMillis();
 
     private ArrayList<String> symbols = new ArrayList<String>();
     private ArrayList<String> pairs = new ArrayList<String>();
@@ -28,6 +29,27 @@ public class VisualFocusActivity extends Activity implements TCPClientOwner {
     //public variables
     public int NUM_BUTTONS = 36;
     public int NUM_SYMBOL_PAIRS;
+    // The break will end after this time limit (represented in seconds) is passed and the current
+    // round is finished.
+    public long TIME_LIMIT = 120;
+
+    public String[] CORRECT_TAP_MSGS = {
+            "Good job!",
+            "Nice!",
+            "You picked the right one!"
+    };
+    public String[] INCORRECT_TAP_MSGS = {
+            "Oops! That was close!",
+            "You almost got it!",
+    };
+    public String[] RESTART_MSGS = {
+            "Let's do another round!",
+            "Let's try another!",
+            "How about one more round. "
+    };
+    public String END_MSG =
+            "That was fun! Great job with the game! Now let's get back to our math problems " +
+            "Click the button at the bottom of the tablet to return to the tutoring session.";
 
     // Constructor =================================================================================
 
@@ -113,10 +135,11 @@ public class VisualFocusActivity extends Activity implements TCPClientOwner {
         String robot_speech = "";
         if (button == currentRoundButton){
             //chose button correctly, have robot say nice job
-            //TODO: randomly select a phrase
+            robot_speech = getRandomMsg(CORRECT_TAP_MSGS);
         }
         else {
             //choose button incorrectly, move on to next round?
+            robot_speech = getRandomMsg(INCORRECT_TAP_MSGS);
         }
         disableBoardButtons();
         highlightUniqueButton();
@@ -128,7 +151,7 @@ public class VisualFocusActivity extends Activity implements TCPClientOwner {
     }
 
     public void highlightUniqueButton() {
-        currentRoundButton.setBackgroundColor(Color.YELLOW);
+        currentRoundButton.setBackgroundResource(android.R.color.holo_orange_light);
     }
 
     public void returnButtonPressed(View view) {
@@ -142,7 +165,8 @@ public class VisualFocusActivity extends Activity implements TCPClientOwner {
         int pick = gen.nextInt(NUM_SYMBOL_PAIRS);
         String symbol = symbols.get(pick);
         String pair = pairs.get(pick);
-        currentRoundButton.setBackgroundColor(Color.GRAY); //TODO: figure out what the default button color is
+        currentRoundButton.setBackgroundResource(android.R.drawable.btn_default);
+        //currentRoundButton.setBackgroundColor(Color.GRAY); //TODO: figure out what the default button color is
 
         //randomly select one button and set this as the currentAnswer
         int pickButton = gen.nextInt(NUM_BUTTONS);
@@ -174,6 +198,18 @@ public class VisualFocusActivity extends Activity implements TCPClientOwner {
             nextRound();
         }
         else if (msg.equals("VISUALFOCUS-ROUNDOVER")) {
+            if (System.currentTimeMillis() - startTime > TIME_LIMIT * 1000) {
+                if (TCPClient.singleton != null) {
+                    TCPClient.singleton.sendMessage("VISUALFOCUS-END;-1;-1;" + END_MSG);
+                }
+            }
+            else {
+                if (TCPClient.singleton != null) {
+                    TCPClient.singleton.sendMessage("VISUALFOCUS-RESTART;-1;-1;" + getRandomMsg(RESTART_MSGS));
+                }
+            }
+        }
+        else if (msg.equals("VISUALFOCUS-RESTART")) {
             nextRound();
         }
         else if (msg.equals("VISUALFOCUS-END")) {
@@ -206,5 +242,11 @@ public class VisualFocusActivity extends Activity implements TCPClientOwner {
 
     public void enableReturnButton() {
         returnButton.setEnabled(true);
+    }
+
+    // Other helper methods ========================================================================
+
+    public String getRandomMsg(String[] msgList) {
+        return msgList[gen.nextInt(msgList.length)];
     }
 }
