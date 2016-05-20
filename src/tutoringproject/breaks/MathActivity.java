@@ -122,6 +122,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private int num_consec_questions = 0;  //number of consecutive questions without break given
     private TimeWatch fixed_break_timewatch;
     private int fixed_break_time = 120; //break every x minutes, 2 for testing
+    private boolean first_problem = true;
 
     //choosing question variables
     public int BASE_NUM_QS_PER_LEVEL = 3;
@@ -358,7 +359,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
             }
         });
         total_elapsed_timewatch = TimeWatch.start();
-        //fixed_break_timewatch = TimeWatch.start(); //wait, we want to start that at the first question
+        fixed_break_timewatch = TimeWatch.start(); //initialize here but reset when we get to question 1
 
         if (extras.getString("startOrLoad").equals("start")) {
             Intent intent = new Intent(this, LessonActivity.class);
@@ -683,7 +684,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
         //    takeBreak = true;
         //    num_consec_questions = 0;
         //}
-        if (expGroup == 1 && fixed_break_timewatch.time(TimeUnit.SECONDS) > fixed_break_time){
+        if (expGroup == 1 && !first_problem && fixed_break_timewatch.time(TimeUnit.SECONDS) > fixed_break_time){
             takeBreak = true;
             System.out.println("Taking break in fixed condition, completed: " + num_consec_questions + " questions.");
             num_consec_questions = 0;
@@ -765,6 +766,11 @@ public class MathActivity extends Activity implements TCPClientOwner {
             return;
         }
 
+        if (currentQuestionIndex == 0 && current_difficulty_level == 1 && first_problem){
+            System.out.println("starting fixed break time watch when first problem starts");
+            fixed_break_timewatch.reset();
+            first_problem = false;
+        }
         Question question = questions.get(currentQuestionIndex);
         String newQuestion = question.question;
         questionType = question.type;
@@ -840,7 +846,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
             NextQuestion();
         } else {
             firstTimeCallingOnResume = false;
-            fixed_break_timewatch = TimeWatch.start(); //starts the first time MathActivity is run?
+            //fixed_break_timewatch = TimeWatch.start(); //starts the first time MathActivity is run?
         }
     }
 }
