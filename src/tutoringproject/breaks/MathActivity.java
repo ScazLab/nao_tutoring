@@ -65,6 +65,9 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private int startQuestionNum = 1;
 
     private Questions questions;
+    private Questions level1_questions;
+    private Questions level2_questions;
+    private Questions level3_questions;
 
     public final int MAX_NUM_DIGITS = 6;
 
@@ -117,6 +120,17 @@ public class MathActivity extends Activity implements TCPClientOwner {
     //break variables
     private int fixedBreakInterval = 3;
     private int num_consec_questions = 0;  //number of consecutive questions without break given
+
+    //choosing question variables
+    public int BASE_NUM_QS_PER_LEVEL = 3;
+    public int NUM_DIFFICULTY_LEVELS = 3;
+    public double MASTERY_LEVEL = 0.8;
+    private int num_consec_difficulty = 0;
+    private int current_difficulty_level = 1;
+    private double percent_difficulty_correct = 0.0;
+    private int num_correct_difficulty = 0;
+    private int save_index = 0;
+
 
     private void startTimer(long delay, long period) {
         //set new Timer
@@ -227,12 +241,14 @@ public class MathActivity extends Activity implements TCPClientOwner {
         setContentView(R.layout.activity_main);
 
         //Load JSON file
-        String json_file = "sample.json";
+        String json_file1 = "level1.json";
+        String json_file2 = "level2.json";
+        String json_file3 = "level3.json";
 
         Bundle extras = getIntent().getExtras();
         if (extras != null){
             sessionNum = Integer.parseInt(extras.getString("sessionNum"));
-            json_file = "level2.json";//"Session"+sessionNum+".json";
+            //json_file = "level1.json";//"Session"+sessionNum+".json";
             //if (sessionNum == 2) json_file = "level2.json";
             expGroup = Integer.parseInt(extras.getString("expGroup"));
             System.out.println("expGroup is: " + expGroup);
@@ -251,13 +267,20 @@ public class MathActivity extends Activity implements TCPClientOwner {
         if (TCPClient.singleton != null)
             TCPClient.singleton.setSessionOwner(this);
 
-        String json = "";
+        String json1 = "";
+        String json2 = "";
+        String json3 = "";
         try {
-            json = AssetJSONFile(json_file);
+            json1 = AssetJSONFile(json_file1);
+            json2 = AssetJSONFile(json_file2);
+            json3 = AssetJSONFile(json_file3);
         } catch (IOException e){
             e.printStackTrace();
         }
-        questions = new Questions(json);
+        level1_questions = new Questions(json1);
+        level2_questions = new Questions(json2);
+        level3_questions = new Questions(json3);
+        questions = level1_questions;
 
         fractionLine = (TextView) findViewById(R.id.fractionLine);
         AnswerText1 = (NoImeEditText) findViewById(R.id.editText1);
@@ -398,22 +421,20 @@ public class MathActivity extends Activity implements TCPClientOwner {
             //possibly catch a null pointer exception?
             System.out.println("null message received from server");
         }
+        else {
+            if (message.equals("DONE")) {
+                enableButtons();
+            } else if (message.equals(Questions.FORMAT_FRACTION) || message.equals(Questions.FORMAT_TEXT)) {
+                enableQuestion(message);
+                enableButtons();
+            } else if (expGroup == 2 && message.equals("REWARD_BREAK")) {
+                takeBreak = true;
+                enableButtons();
 
-        if (message.equals("DONE")){
-            enableButtons();
-        }
-        else if (message.equals(Questions.FORMAT_FRACTION) || message.equals(Questions.FORMAT_TEXT)){
-            enableQuestion(message);
-            enableButtons();
-        }
-        else if (expGroup == 2 && message.equals("REWARD_BREAK")) {
-            takeBreak = true;
-            enableButtons();
-
-        }
-        else if (expGroup == 3 && message.equals("FRUSTRATION_BREAK")) {
-            takeBreak = true;
-            enableButtons();
+            } else if (expGroup == 3 && message.equals("FRUSTRATION_BREAK")) {
+                takeBreak = true;
+                enableButtons();
+            }
         }
     }
 
@@ -475,6 +496,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
                 //HintButton3.setVisibility(View.INVISIBLE);
                 //AskRobotLabel.setVisibility(View.INVISIBLE);
                 numberCorrect++;
+                num_correct_difficulty++;
             } else {
                 attemptsRemaining--;
                 numIncorrectWithoutHint++;
@@ -628,6 +650,29 @@ public class MathActivity extends Activity implements TCPClientOwner {
         autoHint = false;
     }
 
+    public void assessDifficultyLevel() {
+        percent_difficulty_correct = (double)num_correct_difficulty / ((double)num_consec_difficulty - 1);
+        System.out.println("In assessDifficultyLevel, num_correct_difficulty is: " + num_correct_difficulty);
+        System.out.println("In assessDifficultyLevel, num_consec_difficulty is: " + num_consec_difficulty);
+        System.out.println("In assessDifficultyLevel, percent_difficulty_correct is: " + percent_difficulty_correct);
+        if (percent_difficulty_correct >= MASTERY_LEVEL) {
+            if (current_difficulty_level < NUM_DIFFICULTY_LEVELS){
+                if (current_difficulty_level == 1) {
+                    questions = level2_questions;
+                }
+                else if (current_difficulty_level == 2) {
+                    questions = level3_questions;
+                }
+                current_difficulty_level++;
+                save_index += currentQuestionIndex;
+                currentQuestionIndex = 0; //reset questionIndex for new set of questions
+                percent_difficulty_correct = 0;
+                num_consec_difficulty = 1;
+                num_correct_difficulty = 0;
+            }
+        }
+    }
+
     public void NextQuestion() {
         //preliminary fixed break interval calculation
         if (expGroup == 1 && num_consec_questions >= fixedBreakInterval) {
@@ -657,10 +702,19 @@ public class MathActivity extends Activity implements TCPClientOwner {
         }
         //consecutive questions without break counter
         num_consec_questions++;
+        num_consec_difficulty++;
 
+
+        //figure out here where to pull the question from
         currentQuestionIndex++;
         numConsecHintsRequested = 0; //reset at new question
         numIncorrectWithoutHint = 0; //reset at new question
+
+        if (num_consec_difficulty > BASE_NUM_QS_PER_LEVEL){
+            System.out.println("ASSESSING_DIFFICULTY_LEVEL");
+            assessDifficultyLevel();
+        }
+
 
         RightWrongLabel.setText("");
         AnswerText1.setText("");
@@ -727,7 +781,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
         mKeyboardView.setVisibility(View.VISIBLE);
         mKeyboardView.setEnabled(true);
-        TitleLabel.setText(TITLE_PREFIX + " " + (currentQuestionIndex + 1));
+        TitleLabel.setText(TITLE_PREFIX + " " + (save_index + currentQuestionIndex + 1));
 
         //Send message
         if (TCPClient.singleton != null) {
