@@ -24,7 +24,7 @@ for problem in range(50):
 		print '		"Mistakes" : {'
 		print '		"Common Mistake 1" : %d,'% commonmistake1
 		print '		"Spoken Explanation 1" : " %s",' % (spokenexplanation1)
-		print '		"Written Explanation" : "Multiply %s by %s and %s by %s, and subtract the second product from the first. Then, add %s to that difference",' % (num2words(a1), num2words(b1), num2words(a2), num2words(b2), num2words(s1))
+		print '		"Written Explanation" : "Multiply %s by %s and %s by %s, and subtract the second product from the first. Then, add %s to that difference",' % ((a1), (b1), (a2), (b2), (s1))
 		print ' 	"Written General Feedback" : "%d X %d = %d; %d X %d = %d; %d - %d = %d; %d + %d = %d"' %(a1,b1, a1*b1, a2, b2, a2*b2, a1*b1, a2*b2,a1*b1- a2*b2, s1, a1*b1- a2*b2, answer)
 		print '		},'
 
@@ -40,7 +40,7 @@ for problem in range(50):
 		print '		"Mistakes" : {'
 		print '		"Common Mistake 1" : %d,'% commonmistake1
 		print '		"Spoken Explanation 1" : " %s",' % (spokenexplanation1)
-		print '		"Written Explanation" : "Multiply %s by %s and %s by %s, and add the second product to the first. Then, add %s to that sum",' % (num2words(a1), num2words(b1), num2words(a2), num2words(b2), num2words(s1))
+		print '		"Written Explanation" : "Multiply %s by %s and %s by %s, and add the second product to the first. Then, add %s to that sum",' % ((a1), (b1), (a2), (b2), (s1))
 		print ' 	"Written General Feedback" : "%d X %d = %d; %d X %d = %d; %d + %d = %d; %d + %d = %d"' %(a1,b1, a1*b1, a2, b2, a2*b2, a1*b1, a2*b2,a1*b1 + a2*b2, s1, a1*b1 + a2*b2, answer)
 		print '		},'
 	print '	"Difficulty Level" : 2,'
