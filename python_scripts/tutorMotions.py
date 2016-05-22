@@ -34,6 +34,7 @@ class Gesture:
         self.confused = anim.confused
         self.auto_hint = anim.auto_hint
         self.question_intro = anim.question_intro
+        self.question_intro_generic = anim.question_intro_generic
         self.connectNao()
     
     
@@ -136,16 +137,17 @@ class Gesture:
     def intro(self):
         #self.posture.goToPosture("Crouch", 1.0)
         self.posture.goToPosture("Sit", 1.0)
-        self.motion.setAngles("HeadPitch", -0.1, 0.5)
-	self.led.fadeListRGB("FaceLeds",[0x00FFFFFF],[0.1])
-        self.genSpeech("Hello! My name is Nao, your personal robot tutor.")
-        self.genSpeech("I'm really excited to meet you and work on some problems together!")
-	self.genSpeech("I hope you have a great session with me today!")
-        #self.genSpeech("Have a great day, and I look forward to seeing you again soon!")
-        self.wave()     
-        #self.genSpeech("Let's work on some fractions problems together.")
-        #self.genSpeech("I'm going to put some problems on your tablet!")
-        time.sleep(8)
+        #self.motion.setAngles("HeadPitch", -0.1, 0.5)
+        #self.led.fadeListRGB("FaceLeds",[0x00FFFFFF],[0.1])
+        self.genSpeech("Hello! My name is Nao!")
+        self.genSpeech("I'm excited to meet you and work on some math problems together today!")
+        self.wave()
+        self.genSpeech("First, I'm going to teach you about some math concepts called order of operations.")
+        self.genSpeech("Then, we are going to practice what we learn by doing some problems!")     
+        self.genSpeech("I will put the problems on the tablet for you.")
+        #time.sleep(8)
+        id = self.genSpeech("Lets work through these problems together and have some fun along the way too!")
+        return id
 
     def move_head(self):
         #self.posture.goToPosture("Sit", 1.0)
@@ -737,7 +739,7 @@ class Gesture:
 
     def point_question(self):
         #move left hand to point to tablet
-        time.sleep(3.5)
+        time.sleep(1.5)#3.5
         self.motion.setAngles("LShoulderRoll", 0.3, 0.25)
         self.motion.setAngles("LShoulderPitch", 0.4, 0.25)
         self.motion.setAngles("LElbowRoll", -0.2, 0.25)
@@ -960,6 +962,11 @@ class Gesture:
         id = self.genSpeech(speech)
         return [id,speech]
 
+    def introQuestionGeneric(self):
+        randnr = random.randint(0,len(self.question_intro_generic)-1)
+        speech = self.question_intro_generic[randnr]
+        id = self.genSpeech(speech)
+        return [id,speech]
 
     def assessHint2(self, what):
         if (what == "Scaling Up"):
@@ -1080,51 +1087,148 @@ class Gesture:
             self.genSpeech(str(i + 1))
             time.sleep(1)
 
-        self.genSpeech(
+        id = self.genSpeech(
             "Great job following along! I hope that was relaxing. Let's get back to our math "
             "problems now. Click the button at the bottom of the tablet to return to the tutoring "
             "session."
         )
         self.posture.goToPosture("Sit", 0.2)
+        self.speechDevice.wait(id, 0)
+
+    def breathe_in_guide(self):
+        #start position of the arm
+        #self.motion.setAngles("HeadPitch", 0, 0.15)
+        self.motion.setAngles("RShoulderPitch", 0.4, 0.1)
+        self.motion.setAngles("RShoulderRoll", -0.5, 0.1)
+        self.motion.setAngles("RElbowYaw", 1.5, 0.1)
+        self.motion.setAngles("RElbowRoll", 0.3, 0.1)
+        self.motion.setAngles("RWristYaw", 1.6, 0.1)
+        self.motion.openHand("RHand")
+
+        #time.sleep(0.3)
+
+        #end position of the arm
+        self.motion.setAngles("RShoulderPitch", 0.4, 0.1)
+        self.motion.setAngles("RElbowRoll", 1.3, 0.1)
+
+        #time.sleep(2)
+
+        #self.posture.goToPosture("Sit", 0.5)
+
+    def breathe_out_guide(self):
+        #start position of the arm
+        #self.motion.setAngles("HeadPitch", 0, 0.15)
+
+        #time.sleep(2.5)
+
+        self.motion.setAngles("RShoulderPitch", 0.4, 0.1)
+        #self.motion.setAngles("RShoulderRoll", -0.5, 0.1)
+        #self.motion.setAngles("RElbowYaw", 1.5, 0.1)
+        #self.motion.setAngles("RElbowRoll", 0.4, 0.1)
+        self.motion.setAngles("RWristYaw", -1.0, 0.1)
+        self.motion.openHand("RHand")
+
+        #time.sleep(0.3)
+
+        self.motion.setAngles("RShoulderPitch", 1.2, 0.1)
+        #self.motion.setAngles("RShoulderRoll", -0.5, 0.2)
+        #self.motion.setAngles("RElbowYaw", 1.5, 0.2)
+        #self.motion.setAngles("RElbowRoll", 0.4, 0.2)
+        self.motion.setAngles("RWristYaw", -1.0, 0.1)
+        self.motion.openHand("RHand")
+
+        #time.sleep(0.5)
+
+        #raise up elbow to avoid collision
+        #self.motion.setAngles("RElbowRoll", 0.8, 0.2)
+        #self.motion.setAngles("RWristYaw", 1.3, 0.2)
+
+        #self.posture.goToPosture("Sit", 0.5)    
 
     def mindfulnessBreak(self):
         self.posture.goToPosture("Sit", 0.2)
+        self.look()
         # I intentionally mispelled "lead" to make the speech clearer!
         self.genSpeech("Follow my leed!")
-        time.sleep(2.5)
+        time.sleep(1.5)
 
         #TODO: fill in rest of break here with speech and motions
         self.genSpeech("Lets start by sitting up nice and straight.")
-        self.genSpeech("Put your arms down at your side.")
+        id = self.genSpeech("You can rest your hands on your lap.")
+        self.speechDevice.wait(id, 0)
 
-        self.genSpeech("You can close your eyes if you want to!")
         self.genSpeech("We are going to take five deep breaths nice and slow.")
-        self.genSpeech("I will guide you and say in when you breathe in and out when you breathe out.")
+        self.genSpeech("I will guide you and say the word.")
+        self.genSpeech("In.")
+        id = self.genSpeech(" when you breathe in. and i will say the word. out. when you breathe out.")
+        self.speechDevice.wait(id, 0)
 
-        self.genSpeech("Lets start. IN")
-        #likely sleep here to make these long, drawn out breaths
-        self.genSpeech("and OUT")
+        id = self.genSpeech("Lets start. breathe.")
+        id = self.genSpeech(" IN.")
+        self.breathe_in_guide()
+        self.speechDevice.wait(id, 0)
+        time.sleep(4.0)
+        id = self.genSpeech(" and. ")
+        id = self.genSpeech(" out.")
+        self.breathe_out_guide()
+        self.speechDevice.wait(id, 0)
 
-        self.genSpeech("IN")
-        self.genSpeech("and out")
+        #second breath
+        time.sleep(3.0)
+        self.breathe_in_guide()
+        id = self.genSpeech("breathe. in. ")
+        self.speechDevice.wait(id, 0)
+        time.sleep(4.0)
+        id = self.genSpeech(" and. out.")
+        self.breathe_out_guide()
+        self.speechDevice.wait(id, 0)
+        
+        #third breath
+        time.sleep(3.0)
+        self.breathe_in_guide()
+        id = self.genSpeech("breathe. in. ")
+        self.speechDevice.wait(id, 0)
+        time.sleep(4.0)
+        id = self.genSpeech(" and. out.")
+        self.breathe_out_guide()
+        self.speechDevice.wait(id, 0)
 
-        self.genSpeech("and IN")
-        self.genSpeech("out")
+        #fourth breath
+        time.sleep(3.0)
+        self.breathe_in_guide()
+        id = self.genSpeech("breathe. in. ")
+        self.speechDevice.wait(id, 0)
+        time.sleep(4.0)
+        id = self.genSpeech(" and. out.")
+        self.breathe_out_guide()
+        self.speechDevice.wait(id, 0)
 
-        self.genSpeech("IN")
-        self.genSpeech("out")
+        #fifth (last) breath
+        time.sleep(3.0)
+        self.breathe_in_guide()
+        id = self.genSpeech("One more breath. breathe. in. ")
+        self.speechDevice.wait(id, 0)
+        time.sleep(4.0)
+        id = self.genSpeech(" and. out.")
+        self.breathe_out_guide()
+        self.speechDevice.wait(id, 0)
 
-        self.genSpeech("One more breath")
-        self.genSpeech("and IN")
-        self.genSpeech("out")
-
+        #raise up elbow to avoid collision
+        self.motion.setAngles("RShoulderPitch", 0.8, 0.1)
+        self.motion.setAngles("RElbowRoll", 0.8, 0.1)
+        self.motion.setAngles("RWristYaw", 1.3, 0.1)
+        self.posture.goToPosture("Sit", 0.1)
+        self.look()
+        
         self.genSpeech("Now as we stay relaxed, notice the sounds you can hear and how you are feeling.")
         self.genSpeech("Focus on what is happening right now. ")
 
-        self.genSpeech("Now slowly open your eyes if you had them closed and relax your body. ")
+        self.genSpeech("Now slowly sit back in your chair and relax your body. ")
 
-        self.genSpeech("You did a great job following along with that relaxation exercise. Why don't we get back "
+        id = self.genSpeech("You did a great job following along with that relaxation exercise. Why don't we get back "
             "to our math activity now. Go ahead and click the button at the bottom of the screen to get back "
             "to the session."
         )
+        self.speechDevice.wait(id, 0)
+        
 

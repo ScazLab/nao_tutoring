@@ -240,6 +240,7 @@ class TutoringSession:
                 while '' in msg:
                     msg.remove('')
 
+                print 'between received msg and msg line is'
                 for line in msg:
                     print "msg line is: ", line
                     #parse message type to know what to do with it
@@ -251,6 +252,7 @@ class TutoringSession:
                     id = -1
                     introFlag = False
                     returnMessage = "DONE"
+                    print 'split line in msg'
 
                     robot_speech = robot_speech.replace("'","").strip()
                     if self.goNao is None:
@@ -273,6 +275,7 @@ class TutoringSession:
                         #do intro depending on the sessionNum
                         if self.goNao is not None and msgType != 'LOAD':
                             introFlag = True
+                            #id = self.goNao.intro() #new intro for breaks study #ADD BACK IN, COMMENTED OUT FOR TESTING
                             # id = self.goNao.session_intro(int(self.sessionNum))  #DANGER 
 
                         #create or load appropriate session object
@@ -288,9 +291,17 @@ class TutoringSession:
                             self.goNao.look()
                             #self.goNao.assessQuestion(questionType)
                             #id = self.goNao.genSpeech(robot_speech)
-                            [id,speech] = self.goNao.introQuestion(robot_speech)
+                            #[id,speech] = self.goNao.introQuestion(robot_speech)
+                            [id,speech] = self.goNao.introQuestionGeneric() #changing for breaks study problems
                             self.log_transaction("RS",questionNum,speech)
-                            self.goNao.assessQuestion(questionType)
+                            rand_choice = random.randint(0,3)
+                            point = "no_point"
+                            if(rand_choice == 1):
+                                id = self.goNao.genSpeech("Here it is.")
+                                self.goNao.point_question()
+                                point = "point_to_question"
+                            self.log_transaction("RA",questionNum,point)
+                            #self.goNao.assessQuestion(questionType) #dont need for break study
                         self.update_session(msgType, questionNum, otherInfo)
                     elif msgType == 'CA': #correct attempt
                         self.numCorrect += 1
@@ -443,6 +454,11 @@ class TutoringSession:
                         id, otherInfo = self.handle_stretch_break_msg(msgType, robot_speech)
                         returnMessage = 'STRETCHBREAK-DONE'
 
+                    elif msgType.startswith('VISUALFOCUS'):
+                        print 'made it into msgType starts with visualfocus'
+                        id, otherInfo = self.handle_visualfocus_msg(msgType, robot_speech)
+                        returnMessage = msgType
+
                     elif msgType.startswith('MINDFULNESSBREAK'):
                         id, otherInfo = self.handle_mindfulness_break_msg(msgType, robot_speech)
                         returnMessage = 'MINDFULNESSBREAK-DONE'    
@@ -509,7 +525,7 @@ class TutoringSession:
             # needs to be modified depending on the reason that the break was triggered, the speech
             # will be constructed here.
             robot_speech_base = (
-                "Let's play a game of tic-tac-toe. You will be exes, and I will be ohs. You can "
+                "Lets play a game of tic-tac-toe. You will be exes, and I will be ohs. You can "
                 "go first. Click any square on the board."
             )
             if int(self.expGroup) == 1:
@@ -587,7 +603,7 @@ class TutoringSession:
             # <robot_speech> won't be sent from the tablet in this case. Because the robot's speech
             # needs to be modified depending on the reason that the break was triggered, the speech
             # will be constructed here.
-            robot_speech_base = "Let's stretch."
+            robot_speech_base = "Lets stretch."
             if int(self.expGroup) == 1:
                 robot_speech = get_break_speech(1, -1, -1) + " " + robot_speech_base
             else:
@@ -607,14 +623,68 @@ class TutoringSession:
 
         return speech_return, robot_speech
 
-    def handle_mindfulness_break_msg():
+    def handle_visualfocus_msg(self, msg_type, robot_speech):
+        speech_return = 0
+        msg_sub_type = msg_type[12:]
+        print 'got into handle_visualfocus_msg'
+
+        if msg_sub_type == 'START':
+            print 'into start block, happens once'
+            #TODO: properly fill out robot speech to start the break here, depending on the expGroup
+            robot_speech_base = "Lets play a. focus game. Press the button that is different from the rest! "
+            if int(self.expGroup) == 1:
+                robot_speech = get_break_speech(1, -1, -1) + " " + robot_speech_base
+            else:
+                robot_speech = get_break_speech(
+                    int(self.expGroup),
+                    self.current_session.breaks[-1].b_super,
+                    self.current_session.breaks[-1].b_type
+                ) + " " + robot_speech_base
+
+            print 'before log_transaction'
+            self.log_transaction('VISUALFOCUS-START', 0, robot_speech)
+            print 'after log_transaction'
+            if self.goNao is None:
+                print 'before os call'
+                os.system('say ' + robot_speech)
+                print 'after os call'
+            else:
+                self.goNao.look()
+                speech_return = self.goNao.genSpeech(robot_speech)
+        
+        elif msg_sub_type == 'ROUNDOVER' or msg_sub_type == 'END':
+            self.log_transaction('VISUALFOCUS-ROUNDOVER', 0, robot_speech)
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                self.goNao.look()
+                speech_return = self.goNao.genSpeech(robot_speech)
+
+        elif msg_sub_type == 'RESTART':
+            self.log_transaction('VISUALFOCUS-ROUNDOVER', 0, robot_speech)
+            if self.goNao is None:
+                os.system('say ' + robot_speech)
+            else:
+                speech_return = self.goNao.genSpeech(robot_speech)                
+
+        return speech_return, robot_speech
+
+    def handle_mindfulness_break_msg(self, msg_type, robot_speech):
         speech_return = 0
         msg_sub_type = msg_type[17:]
 
         if msg_sub_type == 'START':
             #TODO: properly fill out robot speech to start the break here, including "lets relax."
-            robot_speech = "break"
-            self.log.transaction('MINDFULNESSBREAK-START', 0, robot_speech)
+            robot_speech_base = "Lets do a small exercise to relax."
+            if int(self.expGroup) == 1:
+                robot_speech = get_break_speech(1, -1, -1) + " " + robot_speech_base
+            else:
+                robot_speech = get_break_speech(
+                    int(self.expGroup),
+                    self.current_session.breaks[-1].b_super,
+                    self.current_session.breaks[-1].b_type
+                ) + " " + robot_speech_base
+            self.log_transaction('MINDFULNESSBREAK-START', 0, robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
@@ -765,9 +835,6 @@ def main():
         ("g", "Right fist of triumph for correct answer"),
         #("n", "Nod for correct answer"),
         ("a", "Shake for incorrect answer"),
-        #("o", "Head off to the side for thinking"),
-        #("h", "Hands together for thinking"),
-        #("b", "Stand up and try to breathe"),
         ("u", "Scale up"),
         ("d", "Scale down"),
         ("p", "Adding and subtracting problems"),
@@ -777,10 +844,13 @@ def main():
         ("y", "Relaxed idle behavior right"),
         ("n", "Numerator"),
         ("e", "Denominator"),
+        ("bi", "breathe in guide"),
+        ("bo", "breathe out guide"),
         ("o", "And so on"),
         ("c", "Conversion problems"),
         ("z", "Congratulations!"),
         ("b", "Stretch break"),
+        ("mind", "Mindfulness break"),
         ("s", "Start tutoring interaction"),
         ("q", "Quit"),
         ))
@@ -862,6 +932,12 @@ def main():
         elif(choice == "e"):
             goNao.denominator()
 
+        elif(choice == "bi"):
+            goNao.breathe_in_guide()
+
+        elif(choice == "bo"):
+            goNao.breathe_out_guide()    
+
         elif(choice == "o"):
             goNao.etc()
 
@@ -873,6 +949,9 @@ def main():
 
         elif(choice == "b"):
             goNao.stretchBreak()
+
+        elif(choice == "mind"):
+            goNao.mindfulnessBreak()    
 
         #elif(choice == 'o'):
         #   goNao.tilt()

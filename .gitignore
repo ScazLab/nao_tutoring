@@ -4,3 +4,4 @@ out/
 nao_tutoring.iml
 *.pyc
 python_scripts/data/
+python_scripts/nao_libs/*
