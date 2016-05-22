@@ -35,7 +35,9 @@ public class Questions {
     public static final String KEY_SPOKEN_ANSWER = "Spoken Answer";
     public static final String KEY_EXPLANATION = "Written Explanation";
     public static final String KEY_SPOKEN_EXPLANATION = "Spoken Explanation";
+    public static final String KEY_FEEDBACK = "Written General Feedback";
     public static final String KEY_MAX_TIME = "Max Time";
+    public static final String KEY_MISTAKES = "Mistakes";
 
 
     public static final String FORMAT_FRACTION = "fraction";

@@ -569,7 +569,15 @@ public class MathActivity extends Activity implements TCPClientOwner {
                 } else {
 
                     too_many_incorrect_string += " " + TOO_MANY_INCORRECT_POSTFIX;
+
+                    String explanation = "";
+                    if (current_difficulty_level == 1 && questionType == "multiplication"){
+                        explanation = "";
+                    }
+                    too_many_incorrect_message += " " + explanation;
                     too_many_incorrect_message += " " + TOO_MANY_INCORRECT_POSTFIX;
+
+                    too_many_incorrect_string += "\n" + question.feedback.replace(";", "\n");
                     //Send message
                     if (TCPClient.singleton != null)
                         TCPClient.singleton.sendMessage("LIA;" + currentQuestionIndex + ";" + questionType + ";" + too_many_incorrect_message + ";" + attempt + ";" + questionTime);

@@ -24,6 +24,7 @@ public class Question {
     public String spokenAnswer;
     public String spokenExplanation;
     public String explanation;
+    public String feedback;
 
     public int value;
     public int numerator;
@@ -53,6 +54,11 @@ public class Question {
             value = question.getInt(Questions.KEY_ANSWER);
 
 //            JSONObject h = question.getJSONObject(Questions.KEY_HINTS);
+            JSONObject m = question.getJSONObject(Questions.KEY_MISTAKES);
+
+            explanation = m.getString((Questions.KEY_EXPLANATION));
+            feedback = m.getString((Questions.KEY_FEEDBACK));
+
 
 //            hint1 = h.getString(Questions.KEY_HINT1);
 //            hint2 = h.getString(Questions.KEY_HINT2);
