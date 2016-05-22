@@ -363,7 +363,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
         if (extras.getString("startOrLoad").equals("start")) {
             Intent intent = new Intent(this, LessonActivity.class);
-            startActivity(intent); //use NextQuestion() here to skip lesson just for testing breaks!
+            NextQuestion();//startActivity(intent); //use NextQuestion() here to skip lesson just for testing breaks!
         } else {
             NextQuestion();
         }
@@ -707,9 +707,9 @@ public class MathActivity extends Activity implements TCPClientOwner {
                 System.out.println("Break 4");
                 startMindfulnessBreak();
             }
-            if (expGroup ==1){ //took break in fixed condition
-                fixed_break_timewatch.reset();
-            }
+            //if (expGroup ==1){ //took break in fixed condition
+            //    fixed_break_timewatch.reset();
+            //}
             takeBreak = false;
             return;
         }
@@ -843,6 +843,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
             if (TCPClient.singleton != null) {
                 TCPClient.singleton.setSessionOwner(this);
             }
+            fixed_break_timewatch.reset(); //reset when questions resume
             NextQuestion();
         } else {
             firstTimeCallingOnResume = false;
