@@ -571,8 +571,29 @@ public class MathActivity extends Activity implements TCPClientOwner {
                     too_many_incorrect_string += " " + TOO_MANY_INCORRECT_POSTFIX;
 
                     String explanation = "";
-                    if (current_difficulty_level == 1 && questionType == "multiplication"){
-                        explanation = "";
+                    if (current_difficulty_level == 1){
+                        if (questionType == "Multiplication") {
+                            explanation = "";
+                        }
+                        else if (questionType == "Parentheses"){
+                            explanation = "";
+                        }
+                    }
+                    else if (current_difficulty_level == 2){
+                        if (questionType == "Multiplication") {
+                            explanation = "";
+                        }
+                        else if (questionType == "Parentheses"){
+                            explanation = "";
+                        }
+                    }
+                    else if (current_difficulty_level == 3){
+                        if (questionType == "Multiplication") {
+                            explanation = "";
+                        }
+                        else if (questionType == "Parentheses"){
+                            explanation = "";
+                        }
                     }
                     too_many_incorrect_message += " " + explanation;
                     too_many_incorrect_message += " " + TOO_MANY_INCORRECT_POSTFIX;
