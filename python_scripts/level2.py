@@ -69,7 +69,7 @@ for problem in range(100):
 			commonmistake2 = (secondadd * times) + outsideAdd + firstadd
 			spokenexplanation2 = "Remember to do what's inside the parentheses first, by adding %s and %s." %(num2words(firstadd), num2words(secondadd))
 			answer = ((firstadd + secondadd) * times) + outsideAdd
-			generalfeedback = "%d + %d = %d; Now we have: %d X %d + %d; %d X %d = %d; Now we have %d + %d = %d" %(firstadd, secondadd, firstadd+secondadd, firstadd+secondadd, times, outsideAdd, (firstadd+secondadd), times,(firstadd+secondadd)*times, (firstadd+secondadd)*times, outsideAdd, answer)
+			generalfeedback = "%d + %d = %d; Now we have: %d X %d + %d; %d X %d = %d; Now we have: %d + %d = %d" %(firstadd, secondadd, firstadd+secondadd, firstadd+secondadd, times, outsideAdd, (firstadd+secondadd), times,(firstadd+secondadd)*times, (firstadd+secondadd)*times, outsideAdd, answer)
 		# parentheses in middle
 		else:
 			print '	"Question" : "What is %d + (%d + %d) X %d?",' % (outsideAdd, firstadd, secondadd, times)
@@ -79,7 +79,7 @@ for problem in range(100):
 			commonmistake2 = (secondadd * times) + outsideAdd + firstadd
 			spokenexplanation2 = "Remember to do what's inside the parentheses first, by adding %s and %s." %(num2words(firstadd), num2words(secondadd))
 			answer = ((firstadd + secondadd) * times) + outsideAdd
-			generalfeedback = "%d + %d = %d; Now we have:%d + %d X %d; %d X %d = %d; Now we have %d + %d = %d" %(firstadd, secondadd, firstadd+secondadd, outsideAdd, firstadd+secondadd, times, (firstadd+secondadd), times,(firstadd+secondadd)*times, outsideAdd, (firstadd+secondadd)*times,  answer)
+			generalfeedback = "%d + %d = %d; Now we have: %d + %d X %d; %d X %d = %d; Now we have: %d + %d = %d" %(firstadd, secondadd, firstadd+secondadd, outsideAdd, firstadd+secondadd, times, (firstadd+secondadd), times,(firstadd+secondadd)*times, outsideAdd, (firstadd+secondadd)*times,  answer)
 		print '	"Answer" : %d,' % (answer)
 		print '	"Spoken Answer" : "The correct answer is %s.",' %(num2words(answer))
 		print '	"Mistakes" : {'
