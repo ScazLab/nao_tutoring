@@ -319,15 +319,15 @@ class TutoringSession:
                             #self.goNao.juddNelson()
                             [id,speech] = self.goNao.assess("correct")
                             self.log_transaction("RS",questionNum,speech)
-                            pump = "no_pump"
-                            rand_choice = random.randint(0,3)
-                            if(rand_choice == 1):
-                                self.goNao.juddNelson()
-                                pump = "right_pump"
-                            elif(rand_choice == 2):
-                                self.goNao.juddNelson_left()
-                                pump = "left_pump"
-                            self.log_transaction("RA",questionNum,pump) 
+                            #pump = "no_pump"
+                            #rand_choice = random.randint(0,3)
+                            #if(rand_choice == 1):
+                            #    self.goNao.juddNelson()
+                            #    pump = "right_pump"
+                            #elif(rand_choice == 2):
+                            #    self.goNao.juddNelson_left()
+                            #    pump = "left_pump"
+                            #self.log_transaction("RA",questionNum,pump) 
                             #self.goNao.sit()
                         tempMessage = self.update_session(msgType, questionNum, otherInfo)
                         if tempMessage:  # if not empty string, then return message should indicate break

@@ -1,9 +1,9 @@
-right = ['Yay! You got it right!', 
-'Great job! That is the right answer!', 
-'You rock! Keep it up!', 
-'Nice! That is correct!', 
-'Well done! Keep going!',
-'You are awesome!']
+right = ['You got it right!', 
+'That is the right answer!', 
+'That is correct!', 
+'Yup, thats right!', 
+'Thats right',
+'Yes that is correct!']
 
 wrong = ['Sorry, that is not right. Try that again.', 
 'That is not correct. Take another shot.', 

@@ -577,7 +577,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
                     too_many_incorrect_string += " " + TOO_MANY_INCORRECT_POSTFIX;
 
                     String explanation = getRandomMsg(FEEDBACK_INTRO_MSGS);
-                    //TODO: make first part of this explanation randomly choose between those phrases
+                    
                     if (current_difficulty_level == 1){
                         if (questionType.equals("Multiplication")) {
                             explanation += " to do the multiplication first! ";
