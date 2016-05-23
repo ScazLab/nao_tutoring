@@ -158,7 +158,7 @@ def super_rule2(s, refractory_period=4):
     return (num_questions_since_last_break >= refractory_period)
 
 
-def check_consistency(s, reward_break, acc_high, t=4):
+def check_consistency(s, reward_break, acc_high, t=4): #t should be 10
     '''
     Checks consistency condition for session, given the following properties
 

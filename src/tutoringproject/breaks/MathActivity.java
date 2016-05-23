@@ -811,6 +811,16 @@ public class MathActivity extends Activity implements TCPClientOwner {
         String newQuestion = question.question;
         questionType = question.type;
         max_time_per_question = question.maxTime * 1000;
+        //for now, reassign max_time_per_question just based on our best guess per difficulty level
+        if (current_difficulty_level == 1) {
+            max_time_per_question = 60 * 1000; //one minute
+        }
+        else if (current_difficulty_level == 2) {
+            max_time_per_question = 120 * 1000; //two minutes
+        }
+        else if (current_difficulty_level == 3) {
+            max_time_per_question = 180 * 1000; //two minutes
+        }
         //String questionIntro = QUESTION_INTRO_PREFIX + questionType + QUESTION_INTRO_POSTFIX;
         String questionIntro = question.type;//question.spokenType;
         SubmitButton.setText(SUBMIT_STRING);
