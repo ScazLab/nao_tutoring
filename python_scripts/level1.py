@@ -22,8 +22,8 @@ for number in range(20):
 			print '	"Problem Type" : "Multiplication", '
 			print '	"Max Time" : 60,'
 			print '		"Mistakes" : {'
-			print '		"Common Mistake" : %d,' % ((third + number) * multiplier)
-			print '		"Spoken Explanation" : "I think you added %s and %s before you multiplied by %s.",' % (num2words(third), num2words(number), num2words(multiplier))
+			print '		"Common Mistake 1" : %d,' % ((third + number) * multiplier)
+			print '		"Spoken Explanation 1" : "I think you added %s and %s before you multiplied by %s.",' % (num2words(third), num2words(number), num2words(multiplier))
 			print '		"Written Explanation" : "Multiply %d X %d before adding %d to that product",' %(number, multiplier, third)
 			print ' 	"Written General Feedback" : "%d X %d = %d; %d + %d = %d"' %(number, multiplier, number*multiplier, third, number*multiplier, third + (number*multiplier))
 			print '		}'

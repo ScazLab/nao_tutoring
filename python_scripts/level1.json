@@ -1,0 +1,3742 @@
+[
+ {
+	"QuestionID" : 0,
+	"Question" : "What is 8 + 9 X 7?",
+	"Spoken Question" : "What is eight plus nine times seven?", 
+	"Answer" : 71,
+	"Spoken Answer" : "The correct answer is seventy-one.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 119,
+		"Spoken Explanation 1" : "I think you added eight and nine before you multiplied by seven.",
+		"Written Explanation" : "Multiply 9 X 7 before adding 8 to that product",
+ 	"Written General Feedback" : "9 X 7 = 63; 8 + 63 = 71"
+		}
+ },
+
+ {
+	"QuestionID" : 1,
+	"Question" : "What is 7 X (9 + 6)?",
+	"Spoken Question" : "What is seven times (nine plus six?)", 
+	"Answer" : 105,
+	"Spoken Answer" : "The correct answer is ninety-six.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 69,
+		"Spoken Explanation" : "I think you multiplied seven and nine before you added six.",
+		"Written Explanation" : "Add 6 + 9 before multiplying 7 with that sum",
+ 	"Written General Feedback" : "9 + 6 = 15; 15 X 7 = 105"
+		}
+ },
+
+ {
+	"QuestionID" : 2,
+	"Question" : "What is 2 + 0 X 1?",
+	"Spoken Question" : "What is two plus zero times one?", 
+	"Answer" : 2,
+	"Spoken Answer" : "The correct answer is two.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 2,
+		"Spoken Explanation 1" : "I think you added two and zero before you multiplied by one.",
+		"Written Explanation" : "Multiply 0 X 1 before adding 2 to that product",
+ 	"Written General Feedback" : "0 X 1 = 0; 2 + 0 = 2"
+		}
+ },
+
+ {
+	"QuestionID" : 3,
+	"Question" : "What is (4 + 8) X 0?",
+	"Spoken Question" : "What is (four plus eight) times zero?", 
+	"Answer" : 0,
+	"Spoken Answer" : "The correct answer is zero.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 4,
+		"Spoken Explanation" : "I think you multiplied eight and zero before you added four.",
+		"Written Explanation" : "Add 4 + 8 before multiplying 0 with that sum",
+ 	"Written General Feedback" : "4 + 8 = 12; 12 X 0 = 0"
+		}
+ },
+
+ {
+	"QuestionID" : 4,
+	"Question" : "What is 6 + 3 X 3?",
+	"Spoken Question" : "What is six plus three times three?", 
+	"Answer" : 15,
+	"Spoken Answer" : "The correct answer is fifteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 27,
+		"Spoken Explanation 1" : "I think you added six and three before you multiplied by three.",
+		"Written Explanation" : "Multiply 3 X 3 before adding 6 to that product",
+ 	"Written General Feedback" : "3 X 3 = 9; 6 + 9 = 15"
+		}
+ },
+
+ {
+	"QuestionID" : 5,
+	"Question" : "What is (7 + 4) X 6?",
+	"Spoken Question" : "What is (seven plus four) times six?", 
+	"Answer" : 66,
+	"Spoken Answer" : "The correct answer is sixty-six.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 31,
+		"Spoken Explanation" : "I think you multiplied four and six before you added seven.",
+		"Written Explanation" : "Add 7 + 4 before multiplying 6 with that sum",
+ 	"Written General Feedback" : "7 + 4 = 11; 11 X 6 = 66"
+		}
+ },
+
+ {
+	"QuestionID" : 6,
+	"Question" : "What is 5 + 7 X 6?",
+	"Spoken Question" : "What is five plus seven times six?", 
+	"Answer" : 47,
+	"Spoken Answer" : "The correct answer is forty-seven.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 72,
+		"Spoken Explanation 1" : "I think you added five and seven before you multiplied by six.",
+		"Written Explanation" : "Multiply 7 X 6 before adding 5 to that product",
+ 	"Written General Feedback" : "7 X 6 = 42; 5 + 42 = 47"
+		}
+ },
+
+ {
+	"QuestionID" : 7,
+	"Question" : "What is 5 X (7 + 2)?",
+	"Spoken Question" : "What is five times (seven plus two?)", 
+	"Answer" : 45,
+	"Spoken Answer" : "The correct answer is twenty-four.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 37,
+		"Spoken Explanation" : "I think you multiplied five and seven before you added two.",
+		"Written Explanation" : "Add 2 + 7 before multiplying 5 with that sum",
+ 	"Written General Feedback" : "7 + 2 = 9; 9 X 5 = 45"
+		}
+ },
+
+ {
+	"QuestionID" : 8,
+	"Question" : "What is 5 + 6 X 5?",
+	"Spoken Question" : "What is five plus six times five?", 
+	"Answer" : 35,
+	"Spoken Answer" : "The correct answer is thirty-five.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 55,
+		"Spoken Explanation 1" : "I think you added five and six before you multiplied by five.",
+		"Written Explanation" : "Multiply 6 X 5 before adding 5 to that product",
+ 	"Written General Feedback" : "6 X 5 = 30; 5 + 30 = 35"
+		}
+ },
+
+ {
+	"QuestionID" : 9,
+	"Question" : "What is (4 + 6) X 8?",
+	"Spoken Question" : "What is (four plus six) times eight?", 
+	"Answer" : 80,
+	"Spoken Answer" : "The correct answer is eighty.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 52,
+		"Spoken Explanation" : "I think you multiplied six and eight before you added four.",
+		"Written Explanation" : "Add 4 + 6 before multiplying 8 with that sum",
+ 	"Written General Feedback" : "4 + 6 = 10; 10 X 8 = 80"
+		}
+ },
+
+ {
+	"QuestionID" : 10,
+	"Question" : "What is 3 + 4 X 2?",
+	"Spoken Question" : "What is three plus four times two?", 
+	"Answer" : 11,
+	"Spoken Answer" : "The correct answer is eleven.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 14,
+		"Spoken Explanation 1" : "I think you added three and four before you multiplied by two.",
+		"Written Explanation" : "Multiply 4 X 2 before adding 3 to that product",
+ 	"Written General Feedback" : "4 X 2 = 8; 3 + 8 = 11"
+		}
+ },
+
+ {
+	"QuestionID" : 11,
+	"Question" : "What is (2 + 4) X 0?",
+	"Spoken Question" : "What is (two plus four) times zero?", 
+	"Answer" : 0,
+	"Spoken Answer" : "The correct answer is zero.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 2,
+		"Spoken Explanation" : "I think you multiplied four and zero before you added two.",
+		"Written Explanation" : "Add 2 + 4 before multiplying 0 with that sum",
+ 	"Written General Feedback" : "2 + 4 = 6; 6 X 0 = 0"
+		}
+ },
+
+ {
+	"QuestionID" : 12,
+	"Question" : "What is 6 + 9 X 0?",
+	"Spoken Question" : "What is six plus nine times zero?", 
+	"Answer" : 6,
+	"Spoken Answer" : "The correct answer is six.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 0,
+		"Spoken Explanation 1" : "I think you added six and nine before you multiplied by zero.",
+		"Written Explanation" : "Multiply 9 X 0 before adding 6 to that product",
+ 	"Written General Feedback" : "9 X 0 = 0; 6 + 0 = 6"
+		}
+ },
+
+ {
+	"QuestionID" : 13,
+	"Question" : "What is 7 X (1 + 0)?",
+	"Spoken Question" : "What is seven times (one plus zero?)", 
+	"Answer" : 7,
+	"Spoken Answer" : "The correct answer is zero.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 7,
+		"Spoken Explanation" : "I think you multiplied seven and one before you added zero.",
+		"Written Explanation" : "Add 0 + 1 before multiplying 7 with that sum",
+ 	"Written General Feedback" : "1 + 0 = 1; 1 X 7 = 7"
+		}
+ },
+
+ {
+	"QuestionID" : 14,
+	"Question" : "What is 4 + 8 X 5?",
+	"Spoken Question" : "What is four plus eight times five?", 
+	"Answer" : 44,
+	"Spoken Answer" : "The correct answer is forty-four.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 60,
+		"Spoken Explanation 1" : "I think you added four and eight before you multiplied by five.",
+		"Written Explanation" : "Multiply 8 X 5 before adding 4 to that product",
+ 	"Written General Feedback" : "8 X 5 = 40; 4 + 40 = 44"
+		}
+ },
+
+ {
+	"QuestionID" : 15,
+	"Question" : "What is 2 X (7 + 2)?",
+	"Spoken Question" : "What is two times (seven plus two?)", 
+	"Answer" : 18,
+	"Spoken Answer" : "The correct answer is eighteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 16,
+		"Spoken Explanation" : "I think you multiplied two and seven before you added two.",
+		"Written Explanation" : "Add 2 + 7 before multiplying 2 with that sum",
+ 	"Written General Feedback" : "7 + 2 = 9; 9 X 2 = 18"
+		}
+ },
+
+ {
+	"QuestionID" : 16,
+	"Question" : "What is 7 + 3 X 5?",
+	"Spoken Question" : "What is seven plus three times five?", 
+	"Answer" : 22,
+	"Spoken Answer" : "The correct answer is twenty-two.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 50,
+		"Spoken Explanation 1" : "I think you added seven and three before you multiplied by five.",
+		"Written Explanation" : "Multiply 3 X 5 before adding 7 to that product",
+ 	"Written General Feedback" : "3 X 5 = 15; 7 + 15 = 22"
+		}
+ },
+
+ {
+	"QuestionID" : 17,
+	"Question" : "What is 2 X (5 + 2)?",
+	"Spoken Question" : "What is two times (five plus two?)", 
+	"Answer" : 14,
+	"Spoken Answer" : "The correct answer is fourteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 12,
+		"Spoken Explanation" : "I think you multiplied two and five before you added two.",
+		"Written Explanation" : "Add 2 + 5 before multiplying 2 with that sum",
+ 	"Written General Feedback" : "5 + 2 = 7; 7 X 2 = 14"
+		}
+ },
+
+ {
+	"QuestionID" : 18,
+	"Question" : "What is 9 + 0 X 5?",
+	"Spoken Question" : "What is nine plus zero times five?", 
+	"Answer" : 9,
+	"Spoken Answer" : "The correct answer is nine.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 45,
+		"Spoken Explanation 1" : "I think you added nine and zero before you multiplied by five.",
+		"Written Explanation" : "Multiply 0 X 5 before adding 9 to that product",
+ 	"Written General Feedback" : "0 X 5 = 0; 9 + 0 = 9"
+		}
+ },
+
+ {
+	"QuestionID" : 19,
+	"Question" : "What is (9 + 8) X 9?",
+	"Spoken Question" : "What is (nine plus eight) times nine?", 
+	"Answer" : 153,
+	"Spoken Answer" : "The correct answer is one hundred and fifty-three.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 81,
+		"Spoken Explanation" : "I think you multiplied eight and nine before you added nine.",
+		"Written Explanation" : "Add 9 + 8 before multiplying 9 with that sum",
+ 	"Written General Feedback" : "9 + 8 = 17; 17 X 9 = 153"
+		}
+ },
+
+ {
+	"QuestionID" : 20,
+	"Question" : "What is 2 + 5 X 1?",
+	"Spoken Question" : "What is two plus five times one?", 
+	"Answer" : 7,
+	"Spoken Answer" : "The correct answer is seven.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 7,
+		"Spoken Explanation 1" : "I think you added two and five before you multiplied by one.",
+		"Written Explanation" : "Multiply 5 X 1 before adding 2 to that product",
+ 	"Written General Feedback" : "5 X 1 = 5; 2 + 5 = 7"
+		}
+ },
+
+ {
+	"QuestionID" : 21,
+	"Question" : "What is 9 X (1 + 9)?",
+	"Spoken Question" : "What is nine times (one plus nine?)", 
+	"Answer" : 90,
+	"Spoken Answer" : "The correct answer is ninety.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 18,
+		"Spoken Explanation" : "I think you multiplied nine and one before you added nine.",
+		"Written Explanation" : "Add 9 + 1 before multiplying 9 with that sum",
+ 	"Written General Feedback" : "1 + 9 = 10; 10 X 9 = 90"
+		}
+ },
+
+ {
+	"QuestionID" : 22,
+	"Question" : "What is 1 + 1 X 3?",
+	"Spoken Question" : "What is one plus one times three?", 
+	"Answer" : 4,
+	"Spoken Answer" : "The correct answer is four.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 6,
+		"Spoken Explanation 1" : "I think you added one and one before you multiplied by three.",
+		"Written Explanation" : "Multiply 1 X 3 before adding 1 to that product",
+ 	"Written General Feedback" : "1 X 3 = 3; 1 + 3 = 4"
+		}
+ },
+
+ {
+	"QuestionID" : 23,
+	"Question" : "What is 7 X (9 + 4)?",
+	"Spoken Question" : "What is seven times (nine plus four?)", 
+	"Answer" : 91,
+	"Spoken Answer" : "The correct answer is sixty-four.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 67,
+		"Spoken Explanation" : "I think you multiplied seven and nine before you added four.",
+		"Written Explanation" : "Add 4 + 9 before multiplying 7 with that sum",
+ 	"Written General Feedback" : "9 + 4 = 13; 13 X 7 = 91"
+		}
+ },
+
+ {
+	"QuestionID" : 24,
+	"Question" : "What is 7 + 6 X 1?",
+	"Spoken Question" : "What is seven plus six times one?", 
+	"Answer" : 13,
+	"Spoken Answer" : "The correct answer is thirteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 13,
+		"Spoken Explanation 1" : "I think you added seven and six before you multiplied by one.",
+		"Written Explanation" : "Multiply 6 X 1 before adding 7 to that product",
+ 	"Written General Feedback" : "6 X 1 = 6; 7 + 6 = 13"
+		}
+ },
+
+ {
+	"QuestionID" : 25,
+	"Question" : "What is 5 X (7 + 9)?",
+	"Spoken Question" : "What is five times (seven plus nine?)", 
+	"Answer" : 80,
+	"Spoken Answer" : "The correct answer is one hundred and eight.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 44,
+		"Spoken Explanation" : "I think you multiplied five and seven before you added nine.",
+		"Written Explanation" : "Add 9 + 7 before multiplying 5 with that sum",
+ 	"Written General Feedback" : "7 + 9 = 16; 16 X 5 = 80"
+		}
+ },
+
+ {
+	"QuestionID" : 26,
+	"Question" : "What is 4 + 6 X 4?",
+	"Spoken Question" : "What is four plus six times four?", 
+	"Answer" : 28,
+	"Spoken Answer" : "The correct answer is twenty-eight.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 40,
+		"Spoken Explanation 1" : "I think you added four and six before you multiplied by four.",
+		"Written Explanation" : "Multiply 6 X 4 before adding 4 to that product",
+ 	"Written General Feedback" : "6 X 4 = 24; 4 + 24 = 28"
+		}
+ },
+
+ {
+	"QuestionID" : 27,
+	"Question" : "What is 1 X (1 + 7)?",
+	"Spoken Question" : "What is one times (one plus seven?)", 
+	"Answer" : 8,
+	"Spoken Answer" : "The correct answer is fourteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 8,
+		"Spoken Explanation" : "I think you multiplied one and one before you added seven.",
+		"Written Explanation" : "Add 7 + 1 before multiplying 1 with that sum",
+ 	"Written General Feedback" : "1 + 7 = 8; 8 X 1 = 8"
+		}
+ },
+
+ {
+	"QuestionID" : 28,
+	"Question" : "What is 6 + 4 X 8?",
+	"Spoken Question" : "What is six plus four times eight?", 
+	"Answer" : 38,
+	"Spoken Answer" : "The correct answer is thirty-eight.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 80,
+		"Spoken Explanation 1" : "I think you added six and four before you multiplied by eight.",
+		"Written Explanation" : "Multiply 4 X 8 before adding 6 to that product",
+ 	"Written General Feedback" : "4 X 8 = 32; 6 + 32 = 38"
+		}
+ },
+
+ {
+	"QuestionID" : 29,
+	"Question" : "What is (6 + 2) X 0?",
+	"Spoken Question" : "What is (six plus two) times zero?", 
+	"Answer" : 0,
+	"Spoken Answer" : "The correct answer is zero.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 6,
+		"Spoken Explanation" : "I think you multiplied two and zero before you added six.",
+		"Written Explanation" : "Add 6 + 2 before multiplying 0 with that sum",
+ 	"Written General Feedback" : "6 + 2 = 8; 8 X 0 = 0"
+		}
+ },
+
+ {
+	"QuestionID" : 30,
+	"Question" : "What is 2 + 2 X 9?",
+	"Spoken Question" : "What is two plus two times nine?", 
+	"Answer" : 20,
+	"Spoken Answer" : "The correct answer is twenty.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 36,
+		"Spoken Explanation 1" : "I think you added two and two before you multiplied by nine.",
+		"Written Explanation" : "Multiply 2 X 9 before adding 2 to that product",
+ 	"Written General Feedback" : "2 X 9 = 18; 2 + 18 = 20"
+		}
+ },
+
+ {
+	"QuestionID" : 31,
+	"Question" : "What is (9 + 8) X 6?",
+	"Spoken Question" : "What is (nine plus eight) times six?", 
+	"Answer" : 102,
+	"Spoken Answer" : "The correct answer is one hundred and two.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 57,
+		"Spoken Explanation" : "I think you multiplied eight and six before you added nine.",
+		"Written Explanation" : "Add 9 + 8 before multiplying 6 with that sum",
+ 	"Written General Feedback" : "9 + 8 = 17; 17 X 6 = 102"
+		}
+ },
+
+ {
+	"QuestionID" : 32,
+	"Question" : "What is 1 + 0 X 0?",
+	"Spoken Question" : "What is one plus zero times zero?", 
+	"Answer" : 1,
+	"Spoken Answer" : "The correct answer is one.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 0,
+		"Spoken Explanation 1" : "I think you added one and zero before you multiplied by zero.",
+		"Written Explanation" : "Multiply 0 X 0 before adding 1 to that product",
+ 	"Written General Feedback" : "0 X 0 = 0; 1 + 0 = 1"
+		}
+ },
+
+ {
+	"QuestionID" : 33,
+	"Question" : "What is (3 + 8) X 0?",
+	"Spoken Question" : "What is (three plus eight) times zero?", 
+	"Answer" : 0,
+	"Spoken Answer" : "The correct answer is zero.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 3,
+		"Spoken Explanation" : "I think you multiplied eight and zero before you added three.",
+		"Written Explanation" : "Add 3 + 8 before multiplying 0 with that sum",
+ 	"Written General Feedback" : "3 + 8 = 11; 11 X 0 = 0"
+		}
+ },
+
+ {
+	"QuestionID" : 34,
+	"Question" : "What is 1 + 8 X 8?",
+	"Spoken Question" : "What is one plus eight times eight?", 
+	"Answer" : 65,
+	"Spoken Answer" : "The correct answer is sixty-five.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 72,
+		"Spoken Explanation 1" : "I think you added one and eight before you multiplied by eight.",
+		"Written Explanation" : "Multiply 8 X 8 before adding 1 to that product",
+ 	"Written General Feedback" : "8 X 8 = 64; 1 + 64 = 65"
+		}
+ },
+
+ {
+	"QuestionID" : 35,
+	"Question" : "What is (2 + 8) X 1?",
+	"Spoken Question" : "What is (two plus eight) times one?", 
+	"Answer" : 10,
+	"Spoken Answer" : "The correct answer is ten.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 10,
+		"Spoken Explanation" : "I think you multiplied eight and one before you added two.",
+		"Written Explanation" : "Add 2 + 8 before multiplying 1 with that sum",
+ 	"Written General Feedback" : "2 + 8 = 10; 10 X 1 = 10"
+		}
+ },
+
+ {
+	"QuestionID" : 36,
+	"Question" : "What is 8 + 3 X 4?",
+	"Spoken Question" : "What is eight plus three times four?", 
+	"Answer" : 20,
+	"Spoken Answer" : "The correct answer is twenty.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 44,
+		"Spoken Explanation 1" : "I think you added eight and three before you multiplied by four.",
+		"Written Explanation" : "Multiply 3 X 4 before adding 8 to that product",
+ 	"Written General Feedback" : "3 X 4 = 12; 8 + 12 = 20"
+		}
+ },
+
+ {
+	"QuestionID" : 37,
+	"Question" : "What is (3 + 2) X 2?",
+	"Spoken Question" : "What is (three plus two) times two?", 
+	"Answer" : 10,
+	"Spoken Answer" : "The correct answer is ten.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 7,
+		"Spoken Explanation" : "I think you multiplied two and two before you added three.",
+		"Written Explanation" : "Add 3 + 2 before multiplying 2 with that sum",
+ 	"Written General Feedback" : "3 + 2 = 5; 5 X 2 = 10"
+		}
+ },
+
+ {
+	"QuestionID" : 38,
+	"Question" : "What is 2 + 1 X 1?",
+	"Spoken Question" : "What is two plus one times one?", 
+	"Answer" : 3,
+	"Spoken Answer" : "The correct answer is three.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 3,
+		"Spoken Explanation 1" : "I think you added two and one before you multiplied by one.",
+		"Written Explanation" : "Multiply 1 X 1 before adding 2 to that product",
+ 	"Written General Feedback" : "1 X 1 = 1; 2 + 1 = 3"
+		}
+ },
+
+ {
+	"QuestionID" : 39,
+	"Question" : "What is (1 + 2) X 2?",
+	"Spoken Question" : "What is (one plus two) times two?", 
+	"Answer" : 6,
+	"Spoken Answer" : "The correct answer is six.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 5,
+		"Spoken Explanation" : "I think you multiplied two and two before you added one.",
+		"Written Explanation" : "Add 1 + 2 before multiplying 2 with that sum",
+ 	"Written General Feedback" : "1 + 2 = 3; 3 X 2 = 6"
+		}
+ },
+
+ {
+	"QuestionID" : 40,
+	"Question" : "What is 4 + 1 X 6?",
+	"Spoken Question" : "What is four plus one times six?", 
+	"Answer" : 10,
+	"Spoken Answer" : "The correct answer is ten.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 30,
+		"Spoken Explanation 1" : "I think you added four and one before you multiplied by six.",
+		"Written Explanation" : "Multiply 1 X 6 before adding 4 to that product",
+ 	"Written General Feedback" : "1 X 6 = 6; 4 + 6 = 10"
+		}
+ },
+
+ {
+	"QuestionID" : 41,
+	"Question" : "What is 9 X (3 + 7)?",
+	"Spoken Question" : "What is nine times (three plus seven?)", 
+	"Answer" : 90,
+	"Spoken Answer" : "The correct answer is eighty-four.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 34,
+		"Spoken Explanation" : "I think you multiplied nine and three before you added seven.",
+		"Written Explanation" : "Add 7 + 3 before multiplying 9 with that sum",
+ 	"Written General Feedback" : "3 + 7 = 10; 10 X 9 = 90"
+		}
+ },
+
+ {
+	"QuestionID" : 42,
+	"Question" : "What is 3 + 9 X 4?",
+	"Spoken Question" : "What is three plus nine times four?", 
+	"Answer" : 39,
+	"Spoken Answer" : "The correct answer is thirty-nine.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 48,
+		"Spoken Explanation 1" : "I think you added three and nine before you multiplied by four.",
+		"Written Explanation" : "Multiply 9 X 4 before adding 3 to that product",
+ 	"Written General Feedback" : "9 X 4 = 36; 3 + 36 = 39"
+		}
+ },
+
+ {
+	"QuestionID" : 43,
+	"Question" : "What is (4 + 2) X 7?",
+	"Spoken Question" : "What is (four plus two) times seven?", 
+	"Answer" : 42,
+	"Spoken Answer" : "The correct answer is forty-two.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 18,
+		"Spoken Explanation" : "I think you multiplied two and seven before you added four.",
+		"Written Explanation" : "Add 4 + 2 before multiplying 7 with that sum",
+ 	"Written General Feedback" : "4 + 2 = 6; 6 X 7 = 42"
+		}
+ },
+
+ {
+	"QuestionID" : 44,
+	"Question" : "What is 1 + 7 X 0?",
+	"Spoken Question" : "What is one plus seven times zero?", 
+	"Answer" : 1,
+	"Spoken Answer" : "The correct answer is one.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 0,
+		"Spoken Explanation 1" : "I think you added one and seven before you multiplied by zero.",
+		"Written Explanation" : "Multiply 7 X 0 before adding 1 to that product",
+ 	"Written General Feedback" : "7 X 0 = 0; 1 + 0 = 1"
+		}
+ },
+
+ {
+	"QuestionID" : 45,
+	"Question" : "What is 5 X (5 + 1)?",
+	"Spoken Question" : "What is five times (five plus one?)", 
+	"Answer" : 30,
+	"Spoken Answer" : "The correct answer is ten.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 26,
+		"Spoken Explanation" : "I think you multiplied five and five before you added one.",
+		"Written Explanation" : "Add 1 + 5 before multiplying 5 with that sum",
+ 	"Written General Feedback" : "5 + 1 = 6; 6 X 5 = 30"
+		}
+ },
+
+ {
+	"QuestionID" : 46,
+	"Question" : "What is 7 + 5 X 6?",
+	"Spoken Question" : "What is seven plus five times six?", 
+	"Answer" : 37,
+	"Spoken Answer" : "The correct answer is thirty-seven.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 72,
+		"Spoken Explanation 1" : "I think you added seven and five before you multiplied by six.",
+		"Written Explanation" : "Multiply 5 X 6 before adding 7 to that product",
+ 	"Written General Feedback" : "5 X 6 = 30; 7 + 30 = 37"
+		}
+ },
+
+ {
+	"QuestionID" : 47,
+	"Question" : "What is (5 + 8) X 1?",
+	"Spoken Question" : "What is (five plus eight) times one?", 
+	"Answer" : 13,
+	"Spoken Answer" : "The correct answer is thirteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 13,
+		"Spoken Explanation" : "I think you multiplied eight and one before you added five.",
+		"Written Explanation" : "Add 5 + 8 before multiplying 1 with that sum",
+ 	"Written General Feedback" : "5 + 8 = 13; 13 X 1 = 13"
+		}
+ },
+
+ {
+	"QuestionID" : 48,
+	"Question" : "What is 5 + 1 X 0?",
+	"Spoken Question" : "What is five plus one times zero?", 
+	"Answer" : 5,
+	"Spoken Answer" : "The correct answer is five.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 0,
+		"Spoken Explanation 1" : "I think you added five and one before you multiplied by zero.",
+		"Written Explanation" : "Multiply 1 X 0 before adding 5 to that product",
+ 	"Written General Feedback" : "1 X 0 = 0; 5 + 0 = 5"
+		}
+ },
+
+ {
+	"QuestionID" : 49,
+	"Question" : "What is (1 + 2) X 3?",
+	"Spoken Question" : "What is (one plus two) times three?", 
+	"Answer" : 9,
+	"Spoken Answer" : "The correct answer is nine.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 7,
+		"Spoken Explanation" : "I think you multiplied two and three before you added one.",
+		"Written Explanation" : "Add 1 + 2 before multiplying 3 with that sum",
+ 	"Written General Feedback" : "1 + 2 = 3; 3 X 3 = 9"
+		}
+ },
+
+ {
+	"QuestionID" : 50,
+	"Question" : "What is 9 + 7 X 1?",
+	"Spoken Question" : "What is nine plus seven times one?", 
+	"Answer" : 16,
+	"Spoken Answer" : "The correct answer is sixteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 16,
+		"Spoken Explanation 1" : "I think you added nine and seven before you multiplied by one.",
+		"Written Explanation" : "Multiply 7 X 1 before adding 9 to that product",
+ 	"Written General Feedback" : "7 X 1 = 7; 9 + 7 = 16"
+		}
+ },
+
+ {
+	"QuestionID" : 51,
+	"Question" : "What is (7 + 6) X 1?",
+	"Spoken Question" : "What is (seven plus six) times one?", 
+	"Answer" : 13,
+	"Spoken Answer" : "The correct answer is thirteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 13,
+		"Spoken Explanation" : "I think you multiplied six and one before you added seven.",
+		"Written Explanation" : "Add 7 + 6 before multiplying 1 with that sum",
+ 	"Written General Feedback" : "7 + 6 = 13; 13 X 1 = 13"
+		}
+ },
+
+ {
+	"QuestionID" : 52,
+	"Question" : "What is 5 + 5 X 9?",
+	"Spoken Question" : "What is five plus five times nine?", 
+	"Answer" : 50,
+	"Spoken Answer" : "The correct answer is fifty.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 90,
+		"Spoken Explanation 1" : "I think you added five and five before you multiplied by nine.",
+		"Written Explanation" : "Multiply 5 X 9 before adding 5 to that product",
+ 	"Written General Feedback" : "5 X 9 = 45; 5 + 45 = 50"
+		}
+ },
+
+ {
+	"QuestionID" : 53,
+	"Question" : "What is 9 X (1 + 2)?",
+	"Spoken Question" : "What is nine times (one plus two?)", 
+	"Answer" : 27,
+	"Spoken Answer" : "The correct answer is twenty.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 11,
+		"Spoken Explanation" : "I think you multiplied nine and one before you added two.",
+		"Written Explanation" : "Add 2 + 1 before multiplying 9 with that sum",
+ 	"Written General Feedback" : "1 + 2 = 3; 3 X 9 = 27"
+		}
+ },
+
+ {
+	"QuestionID" : 54,
+	"Question" : "What is 6 + 6 X 0?",
+	"Spoken Question" : "What is six plus six times zero?", 
+	"Answer" : 6,
+	"Spoken Answer" : "The correct answer is six.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 0,
+		"Spoken Explanation 1" : "I think you added six and six before you multiplied by zero.",
+		"Written Explanation" : "Multiply 6 X 0 before adding 6 to that product",
+ 	"Written General Feedback" : "6 X 0 = 0; 6 + 0 = 6"
+		}
+ },
+
+ {
+	"QuestionID" : 55,
+	"Question" : "What is (9 + 4) X 2?",
+	"Spoken Question" : "What is (nine plus four) times two?", 
+	"Answer" : 26,
+	"Spoken Answer" : "The correct answer is twenty-six.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 17,
+		"Spoken Explanation" : "I think you multiplied four and two before you added nine.",
+		"Written Explanation" : "Add 9 + 4 before multiplying 2 with that sum",
+ 	"Written General Feedback" : "9 + 4 = 13; 13 X 2 = 26"
+		}
+ },
+
+ {
+	"QuestionID" : 56,
+	"Question" : "What is 8 + 9 X 0?",
+	"Spoken Question" : "What is eight plus nine times zero?", 
+	"Answer" : 8,
+	"Spoken Answer" : "The correct answer is eight.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 0,
+		"Spoken Explanation 1" : "I think you added eight and nine before you multiplied by zero.",
+		"Written Explanation" : "Multiply 9 X 0 before adding 8 to that product",
+ 	"Written General Feedback" : "9 X 0 = 0; 8 + 0 = 8"
+		}
+ },
+
+ {
+	"QuestionID" : 57,
+	"Question" : "What is (6 + 4) X 0?",
+	"Spoken Question" : "What is (six plus four) times zero?", 
+	"Answer" : 0,
+	"Spoken Answer" : "The correct answer is zero.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 6,
+		"Spoken Explanation" : "I think you multiplied four and zero before you added six.",
+		"Written Explanation" : "Add 6 + 4 before multiplying 0 with that sum",
+ 	"Written General Feedback" : "6 + 4 = 10; 10 X 0 = 0"
+		}
+ },
+
+ {
+	"QuestionID" : 58,
+	"Question" : "What is 9 + 0 X 0?",
+	"Spoken Question" : "What is nine plus zero times zero?", 
+	"Answer" : 9,
+	"Spoken Answer" : "The correct answer is nine.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 0,
+		"Spoken Explanation 1" : "I think you added nine and zero before you multiplied by zero.",
+		"Written Explanation" : "Multiply 0 X 0 before adding 9 to that product",
+ 	"Written General Feedback" : "0 X 0 = 0; 9 + 0 = 9"
+		}
+ },
+
+ {
+	"QuestionID" : 59,
+	"Question" : "What is (2 + 6) X 0?",
+	"Spoken Question" : "What is (two plus six) times zero?", 
+	"Answer" : 0,
+	"Spoken Answer" : "The correct answer is zero.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 2,
+		"Spoken Explanation" : "I think you multiplied six and zero before you added two.",
+		"Written Explanation" : "Add 2 + 6 before multiplying 0 with that sum",
+ 	"Written General Feedback" : "2 + 6 = 8; 8 X 0 = 0"
+		}
+ },
+
+ {
+	"QuestionID" : 60,
+	"Question" : "What is 8 + 0 X 8?",
+	"Spoken Question" : "What is eight plus zero times eight?", 
+	"Answer" : 8,
+	"Spoken Answer" : "The correct answer is eight.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 64,
+		"Spoken Explanation 1" : "I think you added eight and zero before you multiplied by eight.",
+		"Written Explanation" : "Multiply 0 X 8 before adding 8 to that product",
+ 	"Written General Feedback" : "0 X 8 = 0; 8 + 0 = 8"
+		}
+ },
+
+ {
+	"QuestionID" : 61,
+	"Question" : "What is (2 + 4) X 9?",
+	"Spoken Question" : "What is (two plus four) times nine?", 
+	"Answer" : 54,
+	"Spoken Answer" : "The correct answer is fifty-four.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 38,
+		"Spoken Explanation" : "I think you multiplied four and nine before you added two.",
+		"Written Explanation" : "Add 2 + 4 before multiplying 9 with that sum",
+ 	"Written General Feedback" : "2 + 4 = 6; 6 X 9 = 54"
+		}
+ },
+
+ {
+	"QuestionID" : 62,
+	"Question" : "What is 2 + 4 X 8?",
+	"Spoken Question" : "What is two plus four times eight?", 
+	"Answer" : 34,
+	"Spoken Answer" : "The correct answer is thirty-four.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 48,
+		"Spoken Explanation 1" : "I think you added two and four before you multiplied by eight.",
+		"Written Explanation" : "Multiply 4 X 8 before adding 2 to that product",
+ 	"Written General Feedback" : "4 X 8 = 32; 2 + 32 = 34"
+		}
+ },
+
+ {
+	"QuestionID" : 63,
+	"Question" : "What is 6 X (9 + 8)?",
+	"Spoken Question" : "What is six times (nine plus eight?)", 
+	"Answer" : 102,
+	"Spoken Answer" : "The correct answer is one hundred and twenty.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 62,
+		"Spoken Explanation" : "I think you multiplied six and nine before you added eight.",
+		"Written Explanation" : "Add 8 + 9 before multiplying 6 with that sum",
+ 	"Written General Feedback" : "9 + 8 = 17; 17 X 6 = 102"
+		}
+ },
+
+ {
+	"QuestionID" : 64,
+	"Question" : "What is 3 + 7 X 7?",
+	"Spoken Question" : "What is three plus seven times seven?", 
+	"Answer" : 52,
+	"Spoken Answer" : "The correct answer is fifty-two.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 70,
+		"Spoken Explanation 1" : "I think you added three and seven before you multiplied by seven.",
+		"Written Explanation" : "Multiply 7 X 7 before adding 3 to that product",
+ 	"Written General Feedback" : "7 X 7 = 49; 3 + 49 = 52"
+		}
+ },
+
+ {
+	"QuestionID" : 65,
+	"Question" : "What is (3 + 6) X 0?",
+	"Spoken Question" : "What is (three plus six) times zero?", 
+	"Answer" : 0,
+	"Spoken Answer" : "The correct answer is zero.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 3,
+		"Spoken Explanation" : "I think you multiplied six and zero before you added three.",
+		"Written Explanation" : "Add 3 + 6 before multiplying 0 with that sum",
+ 	"Written General Feedback" : "3 + 6 = 9; 9 X 0 = 0"
+		}
+ },
+
+ {
+	"QuestionID" : 66,
+	"Question" : "What is 2 + 0 X 4?",
+	"Spoken Question" : "What is two plus zero times four?", 
+	"Answer" : 2,
+	"Spoken Answer" : "The correct answer is two.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 8,
+		"Spoken Explanation 1" : "I think you added two and zero before you multiplied by four.",
+		"Written Explanation" : "Multiply 0 X 4 before adding 2 to that product",
+ 	"Written General Feedback" : "0 X 4 = 0; 2 + 0 = 2"
+		}
+ },
+
+ {
+	"QuestionID" : 67,
+	"Question" : "What is 3 X (7 + 6)?",
+	"Spoken Question" : "What is three times (seven plus six?)", 
+	"Answer" : 39,
+	"Spoken Answer" : "The correct answer is sixty.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 27,
+		"Spoken Explanation" : "I think you multiplied three and seven before you added six.",
+		"Written Explanation" : "Add 6 + 7 before multiplying 3 with that sum",
+ 	"Written General Feedback" : "7 + 6 = 13; 13 X 3 = 39"
+		}
+ },
+
+ {
+	"QuestionID" : 68,
+	"Question" : "What is 7 + 6 X 8?",
+	"Spoken Question" : "What is seven plus six times eight?", 
+	"Answer" : 55,
+	"Spoken Answer" : "The correct answer is fifty-five.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 104,
+		"Spoken Explanation 1" : "I think you added seven and six before you multiplied by eight.",
+		"Written Explanation" : "Multiply 6 X 8 before adding 7 to that product",
+ 	"Written General Feedback" : "6 X 8 = 48; 7 + 48 = 55"
+		}
+ },
+
+ {
+	"QuestionID" : 69,
+	"Question" : "What is (1 + 8) X 1?",
+	"Spoken Question" : "What is (one plus eight) times one?", 
+	"Answer" : 9,
+	"Spoken Answer" : "The correct answer is nine.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 9,
+		"Spoken Explanation" : "I think you multiplied eight and one before you added one.",
+		"Written Explanation" : "Add 1 + 8 before multiplying 1 with that sum",
+ 	"Written General Feedback" : "1 + 8 = 9; 9 X 1 = 9"
+		}
+ },
+
+ {
+	"QuestionID" : 70,
+	"Question" : "What is 9 + 0 X 3?",
+	"Spoken Question" : "What is nine plus zero times three?", 
+	"Answer" : 9,
+	"Spoken Answer" : "The correct answer is nine.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 27,
+		"Spoken Explanation 1" : "I think you added nine and zero before you multiplied by three.",
+		"Written Explanation" : "Multiply 0 X 3 before adding 9 to that product",
+ 	"Written General Feedback" : "0 X 3 = 0; 9 + 0 = 9"
+		}
+ },
+
+ {
+	"QuestionID" : 71,
+	"Question" : "What is (5 + 8) X 8?",
+	"Spoken Question" : "What is (five plus eight) times eight?", 
+	"Answer" : 104,
+	"Spoken Answer" : "The correct answer is one hundred and four.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 69,
+		"Spoken Explanation" : "I think you multiplied eight and eight before you added five.",
+		"Written Explanation" : "Add 5 + 8 before multiplying 8 with that sum",
+ 	"Written General Feedback" : "5 + 8 = 13; 13 X 8 = 104"
+		}
+ },
+
+ {
+	"QuestionID" : 72,
+	"Question" : "What is 7 + 6 X 9?",
+	"Spoken Question" : "What is seven plus six times nine?", 
+	"Answer" : 61,
+	"Spoken Answer" : "The correct answer is sixty-one.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 117,
+		"Spoken Explanation 1" : "I think you added seven and six before you multiplied by nine.",
+		"Written Explanation" : "Multiply 6 X 9 before adding 7 to that product",
+ 	"Written General Feedback" : "6 X 9 = 54; 7 + 54 = 61"
+		}
+ },
+
+ {
+	"QuestionID" : 73,
+	"Question" : "What is (3 + 2) X 0?",
+	"Spoken Question" : "What is (three plus two) times zero?", 
+	"Answer" : 0,
+	"Spoken Answer" : "The correct answer is zero.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 3,
+		"Spoken Explanation" : "I think you multiplied two and zero before you added three.",
+		"Written Explanation" : "Add 3 + 2 before multiplying 0 with that sum",
+ 	"Written General Feedback" : "3 + 2 = 5; 5 X 0 = 0"
+		}
+ },
+
+ {
+	"QuestionID" : 74,
+	"Question" : "What is 6 + 1 X 9?",
+	"Spoken Question" : "What is six plus one times nine?", 
+	"Answer" : 15,
+	"Spoken Answer" : "The correct answer is fifteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 63,
+		"Spoken Explanation 1" : "I think you added six and one before you multiplied by nine.",
+		"Written Explanation" : "Multiply 1 X 9 before adding 6 to that product",
+ 	"Written General Feedback" : "1 X 9 = 9; 6 + 9 = 15"
+		}
+ },
+
+ {
+	"QuestionID" : 75,
+	"Question" : "What is 9 X (7 + 1)?",
+	"Spoken Question" : "What is nine times (seven plus one?)", 
+	"Answer" : 72,
+	"Spoken Answer" : "The correct answer is sixteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 64,
+		"Spoken Explanation" : "I think you multiplied nine and seven before you added one.",
+		"Written Explanation" : "Add 1 + 7 before multiplying 9 with that sum",
+ 	"Written General Feedback" : "7 + 1 = 8; 8 X 9 = 72"
+		}
+ },
+
+ {
+	"QuestionID" : 76,
+	"Question" : "What is 2 + 5 X 2?",
+	"Spoken Question" : "What is two plus five times two?", 
+	"Answer" : 12,
+	"Spoken Answer" : "The correct answer is twelve.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 14,
+		"Spoken Explanation 1" : "I think you added two and five before you multiplied by two.",
+		"Written Explanation" : "Multiply 5 X 2 before adding 2 to that product",
+ 	"Written General Feedback" : "5 X 2 = 10; 2 + 10 = 12"
+		}
+ },
+
+ {
+	"QuestionID" : 77,
+	"Question" : "What is 1 X (5 + 7)?",
+	"Spoken Question" : "What is one times (five plus seven?)", 
+	"Answer" : 12,
+	"Spoken Answer" : "The correct answer is forty-two.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 12,
+		"Spoken Explanation" : "I think you multiplied one and five before you added seven.",
+		"Written Explanation" : "Add 7 + 5 before multiplying 1 with that sum",
+ 	"Written General Feedback" : "5 + 7 = 12; 12 X 1 = 12"
+		}
+ },
+
+ {
+	"QuestionID" : 78,
+	"Question" : "What is 6 + 0 X 8?",
+	"Spoken Question" : "What is six plus zero times eight?", 
+	"Answer" : 6,
+	"Spoken Answer" : "The correct answer is six.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 48,
+		"Spoken Explanation 1" : "I think you added six and zero before you multiplied by eight.",
+		"Written Explanation" : "Multiply 0 X 8 before adding 6 to that product",
+ 	"Written General Feedback" : "0 X 8 = 0; 6 + 0 = 6"
+		}
+ },
+
+ {
+	"QuestionID" : 79,
+	"Question" : "What is 3 X (5 + 3)?",
+	"Spoken Question" : "What is three times (five plus three?)", 
+	"Answer" : 24,
+	"Spoken Answer" : "The correct answer is twenty-four.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 18,
+		"Spoken Explanation" : "I think you multiplied three and five before you added three.",
+		"Written Explanation" : "Add 3 + 5 before multiplying 3 with that sum",
+ 	"Written General Feedback" : "5 + 3 = 8; 8 X 3 = 24"
+		}
+ },
+
+ {
+	"QuestionID" : 80,
+	"Question" : "What is 4 + 4 X 5?",
+	"Spoken Question" : "What is four plus four times five?", 
+	"Answer" : 24,
+	"Spoken Answer" : "The correct answer is twenty-four.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 40,
+		"Spoken Explanation 1" : "I think you added four and four before you multiplied by five.",
+		"Written Explanation" : "Multiply 4 X 5 before adding 4 to that product",
+ 	"Written General Feedback" : "4 X 5 = 20; 4 + 20 = 24"
+		}
+ },
+
+ {
+	"QuestionID" : 81,
+	"Question" : "What is (2 + 0) X 8?",
+	"Spoken Question" : "What is (two plus zero) times eight?", 
+	"Answer" : 16,
+	"Spoken Answer" : "The correct answer is sixteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 2,
+		"Spoken Explanation" : "I think you multiplied zero and eight before you added two.",
+		"Written Explanation" : "Add 2 + 0 before multiplying 8 with that sum",
+ 	"Written General Feedback" : "2 + 0 = 2; 2 X 8 = 16"
+		}
+ },
+
+ {
+	"QuestionID" : 82,
+	"Question" : "What is 8 + 6 X 9?",
+	"Spoken Question" : "What is eight plus six times nine?", 
+	"Answer" : 62,
+	"Spoken Answer" : "The correct answer is sixty-two.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 126,
+		"Spoken Explanation 1" : "I think you added eight and six before you multiplied by nine.",
+		"Written Explanation" : "Multiply 6 X 9 before adding 8 to that product",
+ 	"Written General Feedback" : "6 X 9 = 54; 8 + 54 = 62"
+		}
+ },
+
+ {
+	"QuestionID" : 83,
+	"Question" : "What is 3 X (3 + 0)?",
+	"Spoken Question" : "What is three times (three plus zero?)", 
+	"Answer" : 9,
+	"Spoken Answer" : "The correct answer is zero.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 9,
+		"Spoken Explanation" : "I think you multiplied three and three before you added zero.",
+		"Written Explanation" : "Add 0 + 3 before multiplying 3 with that sum",
+ 	"Written General Feedback" : "3 + 0 = 3; 3 X 3 = 9"
+		}
+ },
+
+ {
+	"QuestionID" : 84,
+	"Question" : "What is 2 + 2 X 5?",
+	"Spoken Question" : "What is two plus two times five?", 
+	"Answer" : 12,
+	"Spoken Answer" : "The correct answer is twelve.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 20,
+		"Spoken Explanation 1" : "I think you added two and two before you multiplied by five.",
+		"Written Explanation" : "Multiply 2 X 5 before adding 2 to that product",
+ 	"Written General Feedback" : "2 X 5 = 10; 2 + 10 = 12"
+		}
+ },
+
+ {
+	"QuestionID" : 85,
+	"Question" : "What is 1 X (5 + 8)?",
+	"Spoken Question" : "What is one times (five plus eight?)", 
+	"Answer" : 13,
+	"Spoken Answer" : "The correct answer is forty-eight.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 13,
+		"Spoken Explanation" : "I think you multiplied one and five before you added eight.",
+		"Written Explanation" : "Add 8 + 5 before multiplying 1 with that sum",
+ 	"Written General Feedback" : "5 + 8 = 13; 13 X 1 = 13"
+		}
+ },
+
+ {
+	"QuestionID" : 86,
+	"Question" : "What is 8 + 4 X 3?",
+	"Spoken Question" : "What is eight plus four times three?", 
+	"Answer" : 20,
+	"Spoken Answer" : "The correct answer is twenty.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 36,
+		"Spoken Explanation 1" : "I think you added eight and four before you multiplied by three.",
+		"Written Explanation" : "Multiply 4 X 3 before adding 8 to that product",
+ 	"Written General Feedback" : "4 X 3 = 12; 8 + 12 = 20"
+		}
+ },
+
+ {
+	"QuestionID" : 87,
+	"Question" : "What is (9 + 2) X 3?",
+	"Spoken Question" : "What is (nine plus two) times three?", 
+	"Answer" : 33,
+	"Spoken Answer" : "The correct answer is thirty-three.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 15,
+		"Spoken Explanation" : "I think you multiplied two and three before you added nine.",
+		"Written Explanation" : "Add 9 + 2 before multiplying 3 with that sum",
+ 	"Written General Feedback" : "9 + 2 = 11; 11 X 3 = 33"
+		}
+ },
+
+ {
+	"QuestionID" : 88,
+	"Question" : "What is 3 + 0 X 0?",
+	"Spoken Question" : "What is three plus zero times zero?", 
+	"Answer" : 3,
+	"Spoken Answer" : "The correct answer is three.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 0,
+		"Spoken Explanation 1" : "I think you added three and zero before you multiplied by zero.",
+		"Written Explanation" : "Multiply 0 X 0 before adding 3 to that product",
+ 	"Written General Feedback" : "0 X 0 = 0; 3 + 0 = 3"
+		}
+ },
+
+ {
+	"QuestionID" : 89,
+	"Question" : "What is 2 X (7 + 2)?",
+	"Spoken Question" : "What is two times (seven plus two?)", 
+	"Answer" : 18,
+	"Spoken Answer" : "The correct answer is eighteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 16,
+		"Spoken Explanation" : "I think you multiplied two and seven before you added two.",
+		"Written Explanation" : "Add 2 + 7 before multiplying 2 with that sum",
+ 	"Written General Feedback" : "7 + 2 = 9; 9 X 2 = 18"
+		}
+ },
+
+ {
+	"QuestionID" : 90,
+	"Question" : "What is 5 + 8 X 7?",
+	"Spoken Question" : "What is five plus eight times seven?", 
+	"Answer" : 61,
+	"Spoken Answer" : "The correct answer is sixty-one.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 91,
+		"Spoken Explanation 1" : "I think you added five and eight before you multiplied by seven.",
+		"Written Explanation" : "Multiply 8 X 7 before adding 5 to that product",
+ 	"Written General Feedback" : "8 X 7 = 56; 5 + 56 = 61"
+		}
+ },
+
+ {
+	"QuestionID" : 91,
+	"Question" : "What is 3 X (1 + 4)?",
+	"Spoken Question" : "What is three times (one plus four?)", 
+	"Answer" : 15,
+	"Spoken Answer" : "The correct answer is sixteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 7,
+		"Spoken Explanation" : "I think you multiplied three and one before you added four.",
+		"Written Explanation" : "Add 4 + 1 before multiplying 3 with that sum",
+ 	"Written General Feedback" : "1 + 4 = 5; 5 X 3 = 15"
+		}
+ },
+
+ {
+	"QuestionID" : 92,
+	"Question" : "What is 4 + 8 X 5?",
+	"Spoken Question" : "What is four plus eight times five?", 
+	"Answer" : 44,
+	"Spoken Answer" : "The correct answer is forty-four.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 60,
+		"Spoken Explanation 1" : "I think you added four and eight before you multiplied by five.",
+		"Written Explanation" : "Multiply 8 X 5 before adding 4 to that product",
+ 	"Written General Feedback" : "8 X 5 = 40; 4 + 40 = 44"
+		}
+ },
+
+ {
+	"QuestionID" : 93,
+	"Question" : "What is (5 + 0) X 1?",
+	"Spoken Question" : "What is (five plus zero) times one?", 
+	"Answer" : 5,
+	"Spoken Answer" : "The correct answer is five.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 5,
+		"Spoken Explanation" : "I think you multiplied zero and one before you added five.",
+		"Written Explanation" : "Add 5 + 0 before multiplying 1 with that sum",
+ 	"Written General Feedback" : "5 + 0 = 5; 5 X 1 = 5"
+		}
+ },
+
+ {
+	"QuestionID" : 94,
+	"Question" : "What is 6 + 0 X 5?",
+	"Spoken Question" : "What is six plus zero times five?", 
+	"Answer" : 6,
+	"Spoken Answer" : "The correct answer is six.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 30,
+		"Spoken Explanation 1" : "I think you added six and zero before you multiplied by five.",
+		"Written Explanation" : "Multiply 0 X 5 before adding 6 to that product",
+ 	"Written General Feedback" : "0 X 5 = 0; 6 + 0 = 6"
+		}
+ },
+
+ {
+	"QuestionID" : 95,
+	"Question" : "What is (7 + 0) X 6?",
+	"Spoken Question" : "What is (seven plus zero) times six?", 
+	"Answer" : 42,
+	"Spoken Answer" : "The correct answer is forty-two.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 7,
+		"Spoken Explanation" : "I think you multiplied zero and six before you added seven.",
+		"Written Explanation" : "Add 7 + 0 before multiplying 6 with that sum",
+ 	"Written General Feedback" : "7 + 0 = 7; 7 X 6 = 42"
+		}
+ },
+
+ {
+	"QuestionID" : 96,
+	"Question" : "What is 6 + 0 X 9?",
+	"Spoken Question" : "What is six plus zero times nine?", 
+	"Answer" : 6,
+	"Spoken Answer" : "The correct answer is six.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 54,
+		"Spoken Explanation 1" : "I think you added six and zero before you multiplied by nine.",
+		"Written Explanation" : "Multiply 0 X 9 before adding 6 to that product",
+ 	"Written General Feedback" : "0 X 9 = 0; 6 + 0 = 6"
+		}
+ },
+
+ {
+	"QuestionID" : 97,
+	"Question" : "What is (3 + 8) X 1?",
+	"Spoken Question" : "What is (three plus eight) times one?", 
+	"Answer" : 11,
+	"Spoken Answer" : "The correct answer is eleven.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 11,
+		"Spoken Explanation" : "I think you multiplied eight and one before you added three.",
+		"Written Explanation" : "Add 3 + 8 before multiplying 1 with that sum",
+ 	"Written General Feedback" : "3 + 8 = 11; 11 X 1 = 11"
+		}
+ },
+
+ {
+	"QuestionID" : 98,
+	"Question" : "What is 3 + 2 X 8?",
+	"Spoken Question" : "What is three plus two times eight?", 
+	"Answer" : 19,
+	"Spoken Answer" : "The correct answer is nineteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 40,
+		"Spoken Explanation 1" : "I think you added three and two before you multiplied by eight.",
+		"Written Explanation" : "Multiply 2 X 8 before adding 3 to that product",
+ 	"Written General Feedback" : "2 X 8 = 16; 3 + 16 = 19"
+		}
+ },
+
+ {
+	"QuestionID" : 99,
+	"Question" : "What is 5 X (9 + 9)?",
+	"Spoken Question" : "What is five times (nine plus nine?)", 
+	"Answer" : 90,
+	"Spoken Answer" : "The correct answer is one hundred and twenty-six.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 54,
+		"Spoken Explanation" : "I think you multiplied five and nine before you added nine.",
+		"Written Explanation" : "Add 9 + 9 before multiplying 5 with that sum",
+ 	"Written General Feedback" : "9 + 9 = 18; 18 X 5 = 90"
+		}
+ },
+
+ {
+	"QuestionID" : 100,
+	"Question" : "What is 9 + 1 X 7?",
+	"Spoken Question" : "What is nine plus one times seven?", 
+	"Answer" : 16,
+	"Spoken Answer" : "The correct answer is sixteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 70,
+		"Spoken Explanation 1" : "I think you added nine and one before you multiplied by seven.",
+		"Written Explanation" : "Multiply 1 X 7 before adding 9 to that product",
+ 	"Written General Feedback" : "1 X 7 = 7; 9 + 7 = 16"
+		}
+ },
+
+ {
+	"QuestionID" : 101,
+	"Question" : "What is (6 + 0) X 0?",
+	"Spoken Question" : "What is (six plus zero) times zero?", 
+	"Answer" : 0,
+	"Spoken Answer" : "The correct answer is zero.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 6,
+		"Spoken Explanation" : "I think you multiplied zero and zero before you added six.",
+		"Written Explanation" : "Add 6 + 0 before multiplying 0 with that sum",
+ 	"Written General Feedback" : "6 + 0 = 6; 6 X 0 = 0"
+		}
+ },
+
+ {
+	"QuestionID" : 102,
+	"Question" : "What is 6 + 3 X 7?",
+	"Spoken Question" : "What is six plus three times seven?", 
+	"Answer" : 27,
+	"Spoken Answer" : "The correct answer is twenty-seven.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 63,
+		"Spoken Explanation 1" : "I think you added six and three before you multiplied by seven.",
+		"Written Explanation" : "Multiply 3 X 7 before adding 6 to that product",
+ 	"Written General Feedback" : "3 X 7 = 21; 6 + 21 = 27"
+		}
+ },
+
+ {
+	"QuestionID" : 103,
+	"Question" : "What is (7 + 4) X 9?",
+	"Spoken Question" : "What is (seven plus four) times nine?", 
+	"Answer" : 99,
+	"Spoken Answer" : "The correct answer is ninety-nine.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 43,
+		"Spoken Explanation" : "I think you multiplied four and nine before you added seven.",
+		"Written Explanation" : "Add 7 + 4 before multiplying 9 with that sum",
+ 	"Written General Feedback" : "7 + 4 = 11; 11 X 9 = 99"
+		}
+ },
+
+ {
+	"QuestionID" : 104,
+	"Question" : "What is 4 + 4 X 7?",
+	"Spoken Question" : "What is four plus four times seven?", 
+	"Answer" : 32,
+	"Spoken Answer" : "The correct answer is thirty-two.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 56,
+		"Spoken Explanation 1" : "I think you added four and four before you multiplied by seven.",
+		"Written Explanation" : "Multiply 4 X 7 before adding 4 to that product",
+ 	"Written General Feedback" : "4 X 7 = 28; 4 + 28 = 32"
+		}
+ },
+
+ {
+	"QuestionID" : 105,
+	"Question" : "What is 4 X (7 + 0)?",
+	"Spoken Question" : "What is four times (seven plus zero?)", 
+	"Answer" : 28,
+	"Spoken Answer" : "The correct answer is zero.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 28,
+		"Spoken Explanation" : "I think you multiplied four and seven before you added zero.",
+		"Written Explanation" : "Add 0 + 7 before multiplying 4 with that sum",
+ 	"Written General Feedback" : "7 + 0 = 7; 7 X 4 = 28"
+		}
+ },
+
+ {
+	"QuestionID" : 106,
+	"Question" : "What is 8 + 0 X 5?",
+	"Spoken Question" : "What is eight plus zero times five?", 
+	"Answer" : 8,
+	"Spoken Answer" : "The correct answer is eight.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 40,
+		"Spoken Explanation 1" : "I think you added eight and zero before you multiplied by five.",
+		"Written Explanation" : "Multiply 0 X 5 before adding 8 to that product",
+ 	"Written General Feedback" : "0 X 5 = 0; 8 + 0 = 8"
+		}
+ },
+
+ {
+	"QuestionID" : 107,
+	"Question" : "What is (5 + 6) X 4?",
+	"Spoken Question" : "What is (five plus six) times four?", 
+	"Answer" : 44,
+	"Spoken Answer" : "The correct answer is forty-four.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 29,
+		"Spoken Explanation" : "I think you multiplied six and four before you added five.",
+		"Written Explanation" : "Add 5 + 6 before multiplying 4 with that sum",
+ 	"Written General Feedback" : "5 + 6 = 11; 11 X 4 = 44"
+		}
+ },
+
+ {
+	"QuestionID" : 108,
+	"Question" : "What is 1 + 3 X 1?",
+	"Spoken Question" : "What is one plus three times one?", 
+	"Answer" : 4,
+	"Spoken Answer" : "The correct answer is four.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 4,
+		"Spoken Explanation 1" : "I think you added one and three before you multiplied by one.",
+		"Written Explanation" : "Multiply 3 X 1 before adding 1 to that product",
+ 	"Written General Feedback" : "3 X 1 = 3; 1 + 3 = 4"
+		}
+ },
+
+ {
+	"QuestionID" : 109,
+	"Question" : "What is 9 X (9 + 6)?",
+	"Spoken Question" : "What is nine times (nine plus six?)", 
+	"Answer" : 135,
+	"Spoken Answer" : "The correct answer is one hundred and eight.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 87,
+		"Spoken Explanation" : "I think you multiplied nine and nine before you added six.",
+		"Written Explanation" : "Add 6 + 9 before multiplying 9 with that sum",
+ 	"Written General Feedback" : "9 + 6 = 15; 15 X 9 = 135"
+		}
+ },
+
+ {
+	"QuestionID" : 110,
+	"Question" : "What is 5 + 7 X 1?",
+	"Spoken Question" : "What is five plus seven times one?", 
+	"Answer" : 12,
+	"Spoken Answer" : "The correct answer is twelve.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 12,
+		"Spoken Explanation 1" : "I think you added five and seven before you multiplied by one.",
+		"Written Explanation" : "Multiply 7 X 1 before adding 5 to that product",
+ 	"Written General Feedback" : "7 X 1 = 7; 5 + 7 = 12"
+		}
+ },
+
+ {
+	"QuestionID" : 111,
+	"Question" : "What is 1 X (5 + 0)?",
+	"Spoken Question" : "What is one times (five plus zero?)", 
+	"Answer" : 5,
+	"Spoken Answer" : "The correct answer is zero.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 5,
+		"Spoken Explanation" : "I think you multiplied one and five before you added zero.",
+		"Written Explanation" : "Add 0 + 5 before multiplying 1 with that sum",
+ 	"Written General Feedback" : "5 + 0 = 5; 5 X 1 = 5"
+		}
+ },
+
+ {
+	"QuestionID" : 112,
+	"Question" : "What is 9 + 9 X 8?",
+	"Spoken Question" : "What is nine plus nine times eight?", 
+	"Answer" : 81,
+	"Spoken Answer" : "The correct answer is eighty-one.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 144,
+		"Spoken Explanation 1" : "I think you added nine and nine before you multiplied by eight.",
+		"Written Explanation" : "Multiply 9 X 8 before adding 9 to that product",
+ 	"Written General Feedback" : "9 X 8 = 72; 9 + 72 = 81"
+		}
+ },
+
+ {
+	"QuestionID" : 113,
+	"Question" : "What is (4 + 4) X 3?",
+	"Spoken Question" : "What is (four plus four) times three?", 
+	"Answer" : 24,
+	"Spoken Answer" : "The correct answer is twenty-four.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 16,
+		"Spoken Explanation" : "I think you multiplied four and three before you added four.",
+		"Written Explanation" : "Add 4 + 4 before multiplying 3 with that sum",
+ 	"Written General Feedback" : "4 + 4 = 8; 8 X 3 = 24"
+		}
+ },
+
+ {
+	"QuestionID" : 114,
+	"Question" : "What is 3 + 1 X 2?",
+	"Spoken Question" : "What is three plus one times two?", 
+	"Answer" : 5,
+	"Spoken Answer" : "The correct answer is five.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 8,
+		"Spoken Explanation 1" : "I think you added three and one before you multiplied by two.",
+		"Written Explanation" : "Multiply 1 X 2 before adding 3 to that product",
+ 	"Written General Feedback" : "1 X 2 = 2; 3 + 2 = 5"
+		}
+ },
+
+ {
+	"QuestionID" : 115,
+	"Question" : "What is (4 + 0) X 2?",
+	"Spoken Question" : "What is (four plus zero) times two?", 
+	"Answer" : 8,
+	"Spoken Answer" : "The correct answer is eight.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 4,
+		"Spoken Explanation" : "I think you multiplied zero and two before you added four.",
+		"Written Explanation" : "Add 4 + 0 before multiplying 2 with that sum",
+ 	"Written General Feedback" : "4 + 0 = 4; 4 X 2 = 8"
+		}
+ },
+
+ {
+	"QuestionID" : 116,
+	"Question" : "What is 2 + 2 X 8?",
+	"Spoken Question" : "What is two plus two times eight?", 
+	"Answer" : 18,
+	"Spoken Answer" : "The correct answer is eighteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 32,
+		"Spoken Explanation 1" : "I think you added two and two before you multiplied by eight.",
+		"Written Explanation" : "Multiply 2 X 8 before adding 2 to that product",
+ 	"Written General Feedback" : "2 X 8 = 16; 2 + 16 = 18"
+		}
+ },
+
+ {
+	"QuestionID" : 117,
+	"Question" : "What is 5 X (9 + 8)?",
+	"Spoken Question" : "What is five times (nine plus eight?)", 
+	"Answer" : 85,
+	"Spoken Answer" : "The correct answer is one hundred and twelve.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 53,
+		"Spoken Explanation" : "I think you multiplied five and nine before you added eight.",
+		"Written Explanation" : "Add 8 + 9 before multiplying 5 with that sum",
+ 	"Written General Feedback" : "9 + 8 = 17; 17 X 5 = 85"
+		}
+ },
+
+ {
+	"QuestionID" : 118,
+	"Question" : "What is 1 + 3 X 3?",
+	"Spoken Question" : "What is one plus three times three?", 
+	"Answer" : 10,
+	"Spoken Answer" : "The correct answer is ten.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 12,
+		"Spoken Explanation 1" : "I think you added one and three before you multiplied by three.",
+		"Written Explanation" : "Multiply 3 X 3 before adding 1 to that product",
+ 	"Written General Feedback" : "3 X 3 = 9; 1 + 9 = 10"
+		}
+ },
+
+ {
+	"QuestionID" : 119,
+	"Question" : "What is (5 + 8) X 7?",
+	"Spoken Question" : "What is (five plus eight) times seven?", 
+	"Answer" : 91,
+	"Spoken Answer" : "The correct answer is ninety-one.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 61,
+		"Spoken Explanation" : "I think you multiplied eight and seven before you added five.",
+		"Written Explanation" : "Add 5 + 8 before multiplying 7 with that sum",
+ 	"Written General Feedback" : "5 + 8 = 13; 13 X 7 = 91"
+		}
+ },
+
+ {
+	"QuestionID" : 120,
+	"Question" : "What is 9 + 1 X 9?",
+	"Spoken Question" : "What is nine plus one times nine?", 
+	"Answer" : 18,
+	"Spoken Answer" : "The correct answer is eighteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 90,
+		"Spoken Explanation 1" : "I think you added nine and one before you multiplied by nine.",
+		"Written Explanation" : "Multiply 1 X 9 before adding 9 to that product",
+ 	"Written General Feedback" : "1 X 9 = 9; 9 + 9 = 18"
+		}
+ },
+
+ {
+	"QuestionID" : 121,
+	"Question" : "What is (7 + 8) X 3?",
+	"Spoken Question" : "What is (seven plus eight) times three?", 
+	"Answer" : 45,
+	"Spoken Answer" : "The correct answer is forty-five.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 31,
+		"Spoken Explanation" : "I think you multiplied eight and three before you added seven.",
+		"Written Explanation" : "Add 7 + 8 before multiplying 3 with that sum",
+ 	"Written General Feedback" : "7 + 8 = 15; 15 X 3 = 45"
+		}
+ },
+
+ {
+	"QuestionID" : 122,
+	"Question" : "What is 4 + 0 X 5?",
+	"Spoken Question" : "What is four plus zero times five?", 
+	"Answer" : 4,
+	"Spoken Answer" : "The correct answer is four.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 20,
+		"Spoken Explanation 1" : "I think you added four and zero before you multiplied by five.",
+		"Written Explanation" : "Multiply 0 X 5 before adding 4 to that product",
+ 	"Written General Feedback" : "0 X 5 = 0; 4 + 0 = 4"
+		}
+ },
+
+ {
+	"QuestionID" : 123,
+	"Question" : "What is 5 X (5 + 3)?",
+	"Spoken Question" : "What is five times (five plus three?)", 
+	"Answer" : 40,
+	"Spoken Answer" : "The correct answer is thirty.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 28,
+		"Spoken Explanation" : "I think you multiplied five and five before you added three.",
+		"Written Explanation" : "Add 3 + 5 before multiplying 5 with that sum",
+ 	"Written General Feedback" : "5 + 3 = 8; 8 X 5 = 40"
+		}
+ },
+
+ {
+	"QuestionID" : 124,
+	"Question" : "What is 6 + 2 X 6?",
+	"Spoken Question" : "What is six plus two times six?", 
+	"Answer" : 18,
+	"Spoken Answer" : "The correct answer is eighteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 48,
+		"Spoken Explanation 1" : "I think you added six and two before you multiplied by six.",
+		"Written Explanation" : "Multiply 2 X 6 before adding 6 to that product",
+ 	"Written General Feedback" : "2 X 6 = 12; 6 + 12 = 18"
+		}
+ },
+
+ {
+	"QuestionID" : 125,
+	"Question" : "What is (6 + 2) X 3?",
+	"Spoken Question" : "What is (six plus two) times three?", 
+	"Answer" : 24,
+	"Spoken Answer" : "The correct answer is twenty-four.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 12,
+		"Spoken Explanation" : "I think you multiplied two and three before you added six.",
+		"Written Explanation" : "Add 6 + 2 before multiplying 3 with that sum",
+ 	"Written General Feedback" : "6 + 2 = 8; 8 X 3 = 24"
+		}
+ },
+
+ {
+	"QuestionID" : 126,
+	"Question" : "What is 2 + 6 X 5?",
+	"Spoken Question" : "What is two plus six times five?", 
+	"Answer" : 32,
+	"Spoken Answer" : "The correct answer is thirty-two.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 40,
+		"Spoken Explanation 1" : "I think you added two and six before you multiplied by five.",
+		"Written Explanation" : "Multiply 6 X 5 before adding 2 to that product",
+ 	"Written General Feedback" : "6 X 5 = 30; 2 + 30 = 32"
+		}
+ },
+
+ {
+	"QuestionID" : 127,
+	"Question" : "What is 3 X (9 + 5)?",
+	"Spoken Question" : "What is three times (nine plus five?)", 
+	"Answer" : 42,
+	"Spoken Answer" : "The correct answer is sixty.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 32,
+		"Spoken Explanation" : "I think you multiplied three and nine before you added five.",
+		"Written Explanation" : "Add 5 + 9 before multiplying 3 with that sum",
+ 	"Written General Feedback" : "9 + 5 = 14; 14 X 3 = 42"
+		}
+ },
+
+ {
+	"QuestionID" : 128,
+	"Question" : "What is 5 + 3 X 7?",
+	"Spoken Question" : "What is five plus three times seven?", 
+	"Answer" : 26,
+	"Spoken Answer" : "The correct answer is twenty-six.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 56,
+		"Spoken Explanation 1" : "I think you added five and three before you multiplied by seven.",
+		"Written Explanation" : "Multiply 3 X 7 before adding 5 to that product",
+ 	"Written General Feedback" : "3 X 7 = 21; 5 + 21 = 26"
+		}
+ },
+
+ {
+	"QuestionID" : 129,
+	"Question" : "What is 8 X (5 + 9)?",
+	"Spoken Question" : "What is eight times (five plus nine?)", 
+	"Answer" : 112,
+	"Spoken Answer" : "The correct answer is one hundred and seventeen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 49,
+		"Spoken Explanation" : "I think you multiplied eight and five before you added nine.",
+		"Written Explanation" : "Add 9 + 5 before multiplying 8 with that sum",
+ 	"Written General Feedback" : "5 + 9 = 14; 14 X 8 = 112"
+		}
+ },
+
+ {
+	"QuestionID" : 130,
+	"Question" : "What is 2 + 5 X 2?",
+	"Spoken Question" : "What is two plus five times two?", 
+	"Answer" : 12,
+	"Spoken Answer" : "The correct answer is twelve.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 14,
+		"Spoken Explanation 1" : "I think you added two and five before you multiplied by two.",
+		"Written Explanation" : "Multiply 5 X 2 before adding 2 to that product",
+ 	"Written General Feedback" : "5 X 2 = 10; 2 + 10 = 12"
+		}
+ },
+
+ {
+	"QuestionID" : 131,
+	"Question" : "What is (7 + 0) X 2?",
+	"Spoken Question" : "What is (seven plus zero) times two?", 
+	"Answer" : 14,
+	"Spoken Answer" : "The correct answer is fourteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 7,
+		"Spoken Explanation" : "I think you multiplied zero and two before you added seven.",
+		"Written Explanation" : "Add 7 + 0 before multiplying 2 with that sum",
+ 	"Written General Feedback" : "7 + 0 = 7; 7 X 2 = 14"
+		}
+ },
+
+ {
+	"QuestionID" : 132,
+	"Question" : "What is 5 + 4 X 3?",
+	"Spoken Question" : "What is five plus four times three?", 
+	"Answer" : 17,
+	"Spoken Answer" : "The correct answer is seventeen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 27,
+		"Spoken Explanation 1" : "I think you added five and four before you multiplied by three.",
+		"Written Explanation" : "Multiply 4 X 3 before adding 5 to that product",
+ 	"Written General Feedback" : "4 X 3 = 12; 5 + 12 = 17"
+		}
+ },
+
+ {
+	"QuestionID" : 133,
+	"Question" : "What is 4 X (7 + 0)?",
+	"Spoken Question" : "What is four times (seven plus zero?)", 
+	"Answer" : 28,
+	"Spoken Answer" : "The correct answer is zero.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 28,
+		"Spoken Explanation" : "I think you multiplied four and seven before you added zero.",
+		"Written Explanation" : "Add 0 + 7 before multiplying 4 with that sum",
+ 	"Written General Feedback" : "7 + 0 = 7; 7 X 4 = 28"
+		}
+ },
+
+ {
+	"QuestionID" : 134,
+	"Question" : "What is 9 + 4 X 0?",
+	"Spoken Question" : "What is nine plus four times zero?", 
+	"Answer" : 9,
+	"Spoken Answer" : "The correct answer is nine.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 0,
+		"Spoken Explanation 1" : "I think you added nine and four before you multiplied by zero.",
+		"Written Explanation" : "Multiply 4 X 0 before adding 9 to that product",
+ 	"Written General Feedback" : "4 X 0 = 0; 9 + 0 = 9"
+		}
+ },
+
+ {
+	"QuestionID" : 135,
+	"Question" : "What is (7 + 4) X 9?",
+	"Spoken Question" : "What is (seven plus four) times nine?", 
+	"Answer" : 99,
+	"Spoken Answer" : "The correct answer is ninety-nine.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 43,
+		"Spoken Explanation" : "I think you multiplied four and nine before you added seven.",
+		"Written Explanation" : "Add 7 + 4 before multiplying 9 with that sum",
+ 	"Written General Feedback" : "7 + 4 = 11; 11 X 9 = 99"
+		}
+ },
+
+ {
+	"QuestionID" : 136,
+	"Question" : "What is 7 + 5 X 4?",
+	"Spoken Question" : "What is seven plus five times four?", 
+	"Answer" : 27,
+	"Spoken Answer" : "The correct answer is twenty-seven.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 48,
+		"Spoken Explanation 1" : "I think you added seven and five before you multiplied by four.",
+		"Written Explanation" : "Multiply 5 X 4 before adding 7 to that product",
+ 	"Written General Feedback" : "5 X 4 = 20; 7 + 20 = 27"
+		}
+ },
+
+ {
+	"QuestionID" : 137,
+	"Question" : "What is (1 + 2) X 8?",
+	"Spoken Question" : "What is (one plus two) times eight?", 
+	"Answer" : 24,
+	"Spoken Answer" : "The correct answer is twenty-four.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 17,
+		"Spoken Explanation" : "I think you multiplied two and eight before you added one.",
+		"Written Explanation" : "Add 1 + 2 before multiplying 8 with that sum",
+ 	"Written General Feedback" : "1 + 2 = 3; 3 X 8 = 24"
+		}
+ },
+
+ {
+	"QuestionID" : 138,
+	"Question" : "What is 3 + 1 X 9?",
+	"Spoken Question" : "What is three plus one times nine?", 
+	"Answer" : 12,
+	"Spoken Answer" : "The correct answer is twelve.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 36,
+		"Spoken Explanation 1" : "I think you added three and one before you multiplied by nine.",
+		"Written Explanation" : "Multiply 1 X 9 before adding 3 to that product",
+ 	"Written General Feedback" : "1 X 9 = 9; 3 + 9 = 12"
+		}
+ },
+
+ {
+	"QuestionID" : 139,
+	"Question" : "What is 4 X (7 + 4)?",
+	"Spoken Question" : "What is four times (seven plus four?)", 
+	"Answer" : 44,
+	"Spoken Answer" : "The correct answer is forty-four.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 32,
+		"Spoken Explanation" : "I think you multiplied four and seven before you added four.",
+		"Written Explanation" : "Add 4 + 7 before multiplying 4 with that sum",
+ 	"Written General Feedback" : "7 + 4 = 11; 11 X 4 = 44"
+		}
+ },
+
+ {
+	"QuestionID" : 140,
+	"Question" : "What is 6 + 2 X 1?",
+	"Spoken Question" : "What is six plus two times one?", 
+	"Answer" : 8,
+	"Spoken Answer" : "The correct answer is eight.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 8,
+		"Spoken Explanation 1" : "I think you added six and two before you multiplied by one.",
+		"Written Explanation" : "Multiply 2 X 1 before adding 6 to that product",
+ 	"Written General Feedback" : "2 X 1 = 2; 6 + 2 = 8"
+		}
+ },
+
+ {
+	"QuestionID" : 141,
+	"Question" : "What is (7 + 0) X 2?",
+	"Spoken Question" : "What is (seven plus zero) times two?", 
+	"Answer" : 14,
+	"Spoken Answer" : "The correct answer is fourteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 7,
+		"Spoken Explanation" : "I think you multiplied zero and two before you added seven.",
+		"Written Explanation" : "Add 7 + 0 before multiplying 2 with that sum",
+ 	"Written General Feedback" : "7 + 0 = 7; 7 X 2 = 14"
+		}
+ },
+
+ {
+	"QuestionID" : 142,
+	"Question" : "What is 3 + 7 X 7?",
+	"Spoken Question" : "What is three plus seven times seven?", 
+	"Answer" : 52,
+	"Spoken Answer" : "The correct answer is fifty-two.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 70,
+		"Spoken Explanation 1" : "I think you added three and seven before you multiplied by seven.",
+		"Written Explanation" : "Multiply 7 X 7 before adding 3 to that product",
+ 	"Written General Feedback" : "7 X 7 = 49; 3 + 49 = 52"
+		}
+ },
+
+ {
+	"QuestionID" : 143,
+	"Question" : "What is (4 + 6) X 0?",
+	"Spoken Question" : "What is (four plus six) times zero?", 
+	"Answer" : 0,
+	"Spoken Answer" : "The correct answer is zero.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 4,
+		"Spoken Explanation" : "I think you multiplied six and zero before you added four.",
+		"Written Explanation" : "Add 4 + 6 before multiplying 0 with that sum",
+ 	"Written General Feedback" : "4 + 6 = 10; 10 X 0 = 0"
+		}
+ },
+
+ {
+	"QuestionID" : 144,
+	"Question" : "What is 5 + 1 X 6?",
+	"Spoken Question" : "What is five plus one times six?", 
+	"Answer" : 11,
+	"Spoken Answer" : "The correct answer is eleven.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 36,
+		"Spoken Explanation 1" : "I think you added five and one before you multiplied by six.",
+		"Written Explanation" : "Multiply 1 X 6 before adding 5 to that product",
+ 	"Written General Feedback" : "1 X 6 = 6; 5 + 6 = 11"
+		}
+ },
+
+ {
+	"QuestionID" : 145,
+	"Question" : "What is 6 X (9 + 7)?",
+	"Spoken Question" : "What is six times (nine plus seven?)", 
+	"Answer" : 96,
+	"Spoken Answer" : "The correct answer is one hundred and five.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 61,
+		"Spoken Explanation" : "I think you multiplied six and nine before you added seven.",
+		"Written Explanation" : "Add 7 + 9 before multiplying 6 with that sum",
+ 	"Written General Feedback" : "9 + 7 = 16; 16 X 6 = 96"
+		}
+ },
+
+ {
+	"QuestionID" : 146,
+	"Question" : "What is 9 + 8 X 8?",
+	"Spoken Question" : "What is nine plus eight times eight?", 
+	"Answer" : 73,
+	"Spoken Answer" : "The correct answer is seventy-three.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 136,
+		"Spoken Explanation 1" : "I think you added nine and eight before you multiplied by eight.",
+		"Written Explanation" : "Multiply 8 X 8 before adding 9 to that product",
+ 	"Written General Feedback" : "8 X 8 = 64; 9 + 64 = 73"
+		}
+ },
+
+ {
+	"QuestionID" : 147,
+	"Question" : "What is (6 + 8) X 1?",
+	"Spoken Question" : "What is (six plus eight) times one?", 
+	"Answer" : 14,
+	"Spoken Answer" : "The correct answer is fourteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 14,
+		"Spoken Explanation" : "I think you multiplied eight and one before you added six.",
+		"Written Explanation" : "Add 6 + 8 before multiplying 1 with that sum",
+ 	"Written General Feedback" : "6 + 8 = 14; 14 X 1 = 14"
+		}
+ },
+
+ {
+	"QuestionID" : 148,
+	"Question" : "What is 4 + 4 X 6?",
+	"Spoken Question" : "What is four plus four times six?", 
+	"Answer" : 28,
+	"Spoken Answer" : "The correct answer is twenty-eight.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 48,
+		"Spoken Explanation 1" : "I think you added four and four before you multiplied by six.",
+		"Written Explanation" : "Multiply 4 X 6 before adding 4 to that product",
+ 	"Written General Feedback" : "4 X 6 = 24; 4 + 24 = 28"
+		}
+ },
+
+ {
+	"QuestionID" : 149,
+	"Question" : "What is 6 X (9 + 3)?",
+	"Spoken Question" : "What is six times (nine plus three?)", 
+	"Answer" : 72,
+	"Spoken Answer" : "The correct answer is forty-five.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 57,
+		"Spoken Explanation" : "I think you multiplied six and nine before you added three.",
+		"Written Explanation" : "Add 3 + 9 before multiplying 6 with that sum",
+ 	"Written General Feedback" : "9 + 3 = 12; 12 X 6 = 72"
+		}
+ },
+
+ {
+	"QuestionID" : 150,
+	"Question" : "What is 8 + 0 X 3?",
+	"Spoken Question" : "What is eight plus zero times three?", 
+	"Answer" : 8,
+	"Spoken Answer" : "The correct answer is eight.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 24,
+		"Spoken Explanation 1" : "I think you added eight and zero before you multiplied by three.",
+		"Written Explanation" : "Multiply 0 X 3 before adding 8 to that product",
+ 	"Written General Feedback" : "0 X 3 = 0; 8 + 0 = 8"
+		}
+ },
+
+ {
+	"QuestionID" : 151,
+	"Question" : "What is 2 X (5 + 9)?",
+	"Spoken Question" : "What is two times (five plus nine?)", 
+	"Answer" : 28,
+	"Spoken Answer" : "The correct answer is sixty-three.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 19,
+		"Spoken Explanation" : "I think you multiplied two and five before you added nine.",
+		"Written Explanation" : "Add 9 + 5 before multiplying 2 with that sum",
+ 	"Written General Feedback" : "5 + 9 = 14; 14 X 2 = 28"
+		}
+ },
+
+ {
+	"QuestionID" : 152,
+	"Question" : "What is 2 + 3 X 0?",
+	"Spoken Question" : "What is two plus three times zero?", 
+	"Answer" : 2,
+	"Spoken Answer" : "The correct answer is two.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 0,
+		"Spoken Explanation 1" : "I think you added two and three before you multiplied by zero.",
+		"Written Explanation" : "Multiply 3 X 0 before adding 2 to that product",
+ 	"Written General Feedback" : "3 X 0 = 0; 2 + 0 = 2"
+		}
+ },
+
+ {
+	"QuestionID" : 153,
+	"Question" : "What is 2 X (3 + 6)?",
+	"Spoken Question" : "What is two times (three plus six?)", 
+	"Answer" : 18,
+	"Spoken Answer" : "The correct answer is thirty.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 12,
+		"Spoken Explanation" : "I think you multiplied two and three before you added six.",
+		"Written Explanation" : "Add 6 + 3 before multiplying 2 with that sum",
+ 	"Written General Feedback" : "3 + 6 = 9; 9 X 2 = 18"
+		}
+ },
+
+ {
+	"QuestionID" : 154,
+	"Question" : "What is 4 + 8 X 7?",
+	"Spoken Question" : "What is four plus eight times seven?", 
+	"Answer" : 60,
+	"Spoken Answer" : "The correct answer is sixty.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 84,
+		"Spoken Explanation 1" : "I think you added four and eight before you multiplied by seven.",
+		"Written Explanation" : "Multiply 8 X 7 before adding 4 to that product",
+ 	"Written General Feedback" : "8 X 7 = 56; 4 + 56 = 60"
+		}
+ },
+
+ {
+	"QuestionID" : 155,
+	"Question" : "What is 1 X (5 + 2)?",
+	"Spoken Question" : "What is one times (five plus two?)", 
+	"Answer" : 7,
+	"Spoken Answer" : "The correct answer is twelve.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 7,
+		"Spoken Explanation" : "I think you multiplied one and five before you added two.",
+		"Written Explanation" : "Add 2 + 5 before multiplying 1 with that sum",
+ 	"Written General Feedback" : "5 + 2 = 7; 7 X 1 = 7"
+		}
+ },
+
+ {
+	"QuestionID" : 156,
+	"Question" : "What is 4 + 0 X 2?",
+	"Spoken Question" : "What is four plus zero times two?", 
+	"Answer" : 4,
+	"Spoken Answer" : "The correct answer is four.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 8,
+		"Spoken Explanation 1" : "I think you added four and zero before you multiplied by two.",
+		"Written Explanation" : "Multiply 0 X 2 before adding 4 to that product",
+ 	"Written General Feedback" : "0 X 2 = 0; 4 + 0 = 4"
+		}
+ },
+
+ {
+	"QuestionID" : 157,
+	"Question" : "What is (6 + 8) X 4?",
+	"Spoken Question" : "What is (six plus eight) times four?", 
+	"Answer" : 56,
+	"Spoken Answer" : "The correct answer is fifty-six.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 38,
+		"Spoken Explanation" : "I think you multiplied eight and four before you added six.",
+		"Written Explanation" : "Add 6 + 8 before multiplying 4 with that sum",
+ 	"Written General Feedback" : "6 + 8 = 14; 14 X 4 = 56"
+		}
+ },
+
+ {
+	"QuestionID" : 158,
+	"Question" : "What is 9 + 2 X 5?",
+	"Spoken Question" : "What is nine plus two times five?", 
+	"Answer" : 19,
+	"Spoken Answer" : "The correct answer is nineteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 55,
+		"Spoken Explanation 1" : "I think you added nine and two before you multiplied by five.",
+		"Written Explanation" : "Multiply 2 X 5 before adding 9 to that product",
+ 	"Written General Feedback" : "2 X 5 = 10; 9 + 10 = 19"
+		}
+ },
+
+ {
+	"QuestionID" : 159,
+	"Question" : "What is (5 + 2) X 4?",
+	"Spoken Question" : "What is (five plus two) times four?", 
+	"Answer" : 28,
+	"Spoken Answer" : "The correct answer is twenty-eight.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 13,
+		"Spoken Explanation" : "I think you multiplied two and four before you added five.",
+		"Written Explanation" : "Add 5 + 2 before multiplying 4 with that sum",
+ 	"Written General Feedback" : "5 + 2 = 7; 7 X 4 = 28"
+		}
+ },
+
+ {
+	"QuestionID" : 160,
+	"Question" : "What is 5 + 2 X 1?",
+	"Spoken Question" : "What is five plus two times one?", 
+	"Answer" : 7,
+	"Spoken Answer" : "The correct answer is seven.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 7,
+		"Spoken Explanation 1" : "I think you added five and two before you multiplied by one.",
+		"Written Explanation" : "Multiply 2 X 1 before adding 5 to that product",
+ 	"Written General Feedback" : "2 X 1 = 2; 5 + 2 = 7"
+		}
+ },
+
+ {
+	"QuestionID" : 161,
+	"Question" : "What is 6 X (1 + 4)?",
+	"Spoken Question" : "What is six times (one plus four?)", 
+	"Answer" : 30,
+	"Spoken Answer" : "The correct answer is twenty-eight.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 10,
+		"Spoken Explanation" : "I think you multiplied six and one before you added four.",
+		"Written Explanation" : "Add 4 + 1 before multiplying 6 with that sum",
+ 	"Written General Feedback" : "1 + 4 = 5; 5 X 6 = 30"
+		}
+ },
+
+ {
+	"QuestionID" : 162,
+	"Question" : "What is 1 + 1 X 1?",
+	"Spoken Question" : "What is one plus one times one?", 
+	"Answer" : 2,
+	"Spoken Answer" : "The correct answer is two.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 2,
+		"Spoken Explanation 1" : "I think you added one and one before you multiplied by one.",
+		"Written Explanation" : "Multiply 1 X 1 before adding 1 to that product",
+ 	"Written General Feedback" : "1 X 1 = 1; 1 + 1 = 2"
+		}
+ },
+
+ {
+	"QuestionID" : 163,
+	"Question" : "What is (3 + 8) X 7?",
+	"Spoken Question" : "What is (three plus eight) times seven?", 
+	"Answer" : 77,
+	"Spoken Answer" : "The correct answer is seventy-seven.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 59,
+		"Spoken Explanation" : "I think you multiplied eight and seven before you added three.",
+		"Written Explanation" : "Add 3 + 8 before multiplying 7 with that sum",
+ 	"Written General Feedback" : "3 + 8 = 11; 11 X 7 = 77"
+		}
+ },
+
+ {
+	"QuestionID" : 164,
+	"Question" : "What is 6 + 3 X 7?",
+	"Spoken Question" : "What is six plus three times seven?", 
+	"Answer" : 27,
+	"Spoken Answer" : "The correct answer is twenty-seven.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 63,
+		"Spoken Explanation 1" : "I think you added six and three before you multiplied by seven.",
+		"Written Explanation" : "Multiply 3 X 7 before adding 6 to that product",
+ 	"Written General Feedback" : "3 X 7 = 21; 6 + 21 = 27"
+		}
+ },
+
+ {
+	"QuestionID" : 165,
+	"Question" : "What is 1 X (1 + 7)?",
+	"Spoken Question" : "What is one times (one plus seven?)", 
+	"Answer" : 8,
+	"Spoken Answer" : "The correct answer is fourteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 8,
+		"Spoken Explanation" : "I think you multiplied one and one before you added seven.",
+		"Written Explanation" : "Add 7 + 1 before multiplying 1 with that sum",
+ 	"Written General Feedback" : "1 + 7 = 8; 8 X 1 = 8"
+		}
+ },
+
+ {
+	"QuestionID" : 166,
+	"Question" : "What is 1 + 7 X 4?",
+	"Spoken Question" : "What is one plus seven times four?", 
+	"Answer" : 29,
+	"Spoken Answer" : "The correct answer is twenty-nine.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 32,
+		"Spoken Explanation 1" : "I think you added one and seven before you multiplied by four.",
+		"Written Explanation" : "Multiply 7 X 4 before adding 1 to that product",
+ 	"Written General Feedback" : "7 X 4 = 28; 1 + 28 = 29"
+		}
+ },
+
+ {
+	"QuestionID" : 167,
+	"Question" : "What is (2 + 2) X 3?",
+	"Spoken Question" : "What is (two plus two) times three?", 
+	"Answer" : 12,
+	"Spoken Answer" : "The correct answer is twelve.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 8,
+		"Spoken Explanation" : "I think you multiplied two and three before you added two.",
+		"Written Explanation" : "Add 2 + 2 before multiplying 3 with that sum",
+ 	"Written General Feedback" : "2 + 2 = 4; 4 X 3 = 12"
+		}
+ },
+
+ {
+	"QuestionID" : 168,
+	"Question" : "What is 4 + 3 X 7?",
+	"Spoken Question" : "What is four plus three times seven?", 
+	"Answer" : 25,
+	"Spoken Answer" : "The correct answer is twenty-five.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 49,
+		"Spoken Explanation 1" : "I think you added four and three before you multiplied by seven.",
+		"Written Explanation" : "Multiply 3 X 7 before adding 4 to that product",
+ 	"Written General Feedback" : "3 X 7 = 21; 4 + 21 = 25"
+		}
+ },
+
+ {
+	"QuestionID" : 169,
+	"Question" : "What is (7 + 2) X 7?",
+	"Spoken Question" : "What is (seven plus two) times seven?", 
+	"Answer" : 63,
+	"Spoken Answer" : "The correct answer is sixty-three.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 21,
+		"Spoken Explanation" : "I think you multiplied two and seven before you added seven.",
+		"Written Explanation" : "Add 7 + 2 before multiplying 7 with that sum",
+ 	"Written General Feedback" : "7 + 2 = 9; 9 X 7 = 63"
+		}
+ },
+
+ {
+	"QuestionID" : 170,
+	"Question" : "What is 1 + 0 X 9?",
+	"Spoken Question" : "What is one plus zero times nine?", 
+	"Answer" : 1,
+	"Spoken Answer" : "The correct answer is one.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 9,
+		"Spoken Explanation 1" : "I think you added one and zero before you multiplied by nine.",
+		"Written Explanation" : "Multiply 0 X 9 before adding 1 to that product",
+ 	"Written General Feedback" : "0 X 9 = 0; 1 + 0 = 1"
+		}
+ },
+
+ {
+	"QuestionID" : 171,
+	"Question" : "What is 7 X (5 + 9)?",
+	"Spoken Question" : "What is seven times (five plus nine?)", 
+	"Answer" : 98,
+	"Spoken Answer" : "The correct answer is one hundred and eight.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 44,
+		"Spoken Explanation" : "I think you multiplied seven and five before you added nine.",
+		"Written Explanation" : "Add 9 + 5 before multiplying 7 with that sum",
+ 	"Written General Feedback" : "5 + 9 = 14; 14 X 7 = 98"
+		}
+ },
+
+ {
+	"QuestionID" : 172,
+	"Question" : "What is 3 + 2 X 4?",
+	"Spoken Question" : "What is three plus two times four?", 
+	"Answer" : 11,
+	"Spoken Answer" : "The correct answer is eleven.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 20,
+		"Spoken Explanation 1" : "I think you added three and two before you multiplied by four.",
+		"Written Explanation" : "Multiply 2 X 4 before adding 3 to that product",
+ 	"Written General Feedback" : "2 X 4 = 8; 3 + 8 = 11"
+		}
+ },
+
+ {
+	"QuestionID" : 173,
+	"Question" : "What is (7 + 6) X 2?",
+	"Spoken Question" : "What is (seven plus six) times two?", 
+	"Answer" : 26,
+	"Spoken Answer" : "The correct answer is twenty-six.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 19,
+		"Spoken Explanation" : "I think you multiplied six and two before you added seven.",
+		"Written Explanation" : "Add 7 + 6 before multiplying 2 with that sum",
+ 	"Written General Feedback" : "7 + 6 = 13; 13 X 2 = 26"
+		}
+ },
+
+ {
+	"QuestionID" : 174,
+	"Question" : "What is 9 + 3 X 2?",
+	"Spoken Question" : "What is nine plus three times two?", 
+	"Answer" : 15,
+	"Spoken Answer" : "The correct answer is fifteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 24,
+		"Spoken Explanation 1" : "I think you added nine and three before you multiplied by two.",
+		"Written Explanation" : "Multiply 3 X 2 before adding 9 to that product",
+ 	"Written General Feedback" : "3 X 2 = 6; 9 + 6 = 15"
+		}
+ },
+
+ {
+	"QuestionID" : 175,
+	"Question" : "What is (1 + 4) X 8?",
+	"Spoken Question" : "What is (one plus four) times eight?", 
+	"Answer" : 40,
+	"Spoken Answer" : "The correct answer is forty.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 33,
+		"Spoken Explanation" : "I think you multiplied four and eight before you added one.",
+		"Written Explanation" : "Add 1 + 4 before multiplying 8 with that sum",
+ 	"Written General Feedback" : "1 + 4 = 5; 5 X 8 = 40"
+		}
+ },
+
+ {
+	"QuestionID" : 176,
+	"Question" : "What is 8 + 9 X 3?",
+	"Spoken Question" : "What is eight plus nine times three?", 
+	"Answer" : 35,
+	"Spoken Answer" : "The correct answer is thirty-five.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 51,
+		"Spoken Explanation 1" : "I think you added eight and nine before you multiplied by three.",
+		"Written Explanation" : "Multiply 9 X 3 before adding 8 to that product",
+ 	"Written General Feedback" : "9 X 3 = 27; 8 + 27 = 35"
+		}
+ },
+
+ {
+	"QuestionID" : 177,
+	"Question" : "What is 6 X (5 + 3)?",
+	"Spoken Question" : "What is six times (five plus three?)", 
+	"Answer" : 48,
+	"Spoken Answer" : "The correct answer is thirty-three.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 33,
+		"Spoken Explanation" : "I think you multiplied six and five before you added three.",
+		"Written Explanation" : "Add 3 + 5 before multiplying 6 with that sum",
+ 	"Written General Feedback" : "5 + 3 = 8; 8 X 6 = 48"
+		}
+ },
+
+ {
+	"QuestionID" : 178,
+	"Question" : "What is 8 + 9 X 9?",
+	"Spoken Question" : "What is eight plus nine times nine?", 
+	"Answer" : 89,
+	"Spoken Answer" : "The correct answer is eighty-nine.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 153,
+		"Spoken Explanation 1" : "I think you added eight and nine before you multiplied by nine.",
+		"Written Explanation" : "Multiply 9 X 9 before adding 8 to that product",
+ 	"Written General Feedback" : "9 X 9 = 81; 8 + 81 = 89"
+		}
+ },
+
+ {
+	"QuestionID" : 179,
+	"Question" : "What is 4 X (7 + 4)?",
+	"Spoken Question" : "What is four times (seven plus four?)", 
+	"Answer" : 44,
+	"Spoken Answer" : "The correct answer is forty-four.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 32,
+		"Spoken Explanation" : "I think you multiplied four and seven before you added four.",
+		"Written Explanation" : "Add 4 + 7 before multiplying 4 with that sum",
+ 	"Written General Feedback" : "7 + 4 = 11; 11 X 4 = 44"
+		}
+ },
+
+ {
+	"QuestionID" : 180,
+	"Question" : "What is 3 + 4 X 6?",
+	"Spoken Question" : "What is three plus four times six?", 
+	"Answer" : 27,
+	"Spoken Answer" : "The correct answer is twenty-seven.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 42,
+		"Spoken Explanation 1" : "I think you added three and four before you multiplied by six.",
+		"Written Explanation" : "Multiply 4 X 6 before adding 3 to that product",
+ 	"Written General Feedback" : "4 X 6 = 24; 3 + 24 = 27"
+		}
+ },
+
+ {
+	"QuestionID" : 181,
+	"Question" : "What is (6 + 4) X 6?",
+	"Spoken Question" : "What is (six plus four) times six?", 
+	"Answer" : 60,
+	"Spoken Answer" : "The correct answer is sixty.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 30,
+		"Spoken Explanation" : "I think you multiplied four and six before you added six.",
+		"Written Explanation" : "Add 6 + 4 before multiplying 6 with that sum",
+ 	"Written General Feedback" : "6 + 4 = 10; 10 X 6 = 60"
+		}
+ },
+
+ {
+	"QuestionID" : 182,
+	"Question" : "What is 8 + 5 X 9?",
+	"Spoken Question" : "What is eight plus five times nine?", 
+	"Answer" : 53,
+	"Spoken Answer" : "The correct answer is fifty-three.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 117,
+		"Spoken Explanation 1" : "I think you added eight and five before you multiplied by nine.",
+		"Written Explanation" : "Multiply 5 X 9 before adding 8 to that product",
+ 	"Written General Feedback" : "5 X 9 = 45; 8 + 45 = 53"
+		}
+ },
+
+ {
+	"QuestionID" : 183,
+	"Question" : "What is 1 X (9 + 1)?",
+	"Spoken Question" : "What is one times (nine plus one?)", 
+	"Answer" : 10,
+	"Spoken Answer" : "The correct answer is ten.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 10,
+		"Spoken Explanation" : "I think you multiplied one and nine before you added one.",
+		"Written Explanation" : "Add 1 + 9 before multiplying 1 with that sum",
+ 	"Written General Feedback" : "9 + 1 = 10; 10 X 1 = 10"
+		}
+ },
+
+ {
+	"QuestionID" : 184,
+	"Question" : "What is 1 + 6 X 5?",
+	"Spoken Question" : "What is one plus six times five?", 
+	"Answer" : 31,
+	"Spoken Answer" : "The correct answer is thirty-one.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 35,
+		"Spoken Explanation 1" : "I think you added one and six before you multiplied by five.",
+		"Written Explanation" : "Multiply 6 X 5 before adding 1 to that product",
+ 	"Written General Feedback" : "6 X 5 = 30; 1 + 30 = 31"
+		}
+ },
+
+ {
+	"QuestionID" : 185,
+	"Question" : "What is (9 + 8) X 9?",
+	"Spoken Question" : "What is (nine plus eight) times nine?", 
+	"Answer" : 153,
+	"Spoken Answer" : "The correct answer is one hundred and fifty-three.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 81,
+		"Spoken Explanation" : "I think you multiplied eight and nine before you added nine.",
+		"Written Explanation" : "Add 9 + 8 before multiplying 9 with that sum",
+ 	"Written General Feedback" : "9 + 8 = 17; 17 X 9 = 153"
+		}
+ },
+
+ {
+	"QuestionID" : 186,
+	"Question" : "What is 3 + 9 X 2?",
+	"Spoken Question" : "What is three plus nine times two?", 
+	"Answer" : 21,
+	"Spoken Answer" : "The correct answer is twenty-one.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 24,
+		"Spoken Explanation 1" : "I think you added three and nine before you multiplied by two.",
+		"Written Explanation" : "Multiply 9 X 2 before adding 3 to that product",
+ 	"Written General Feedback" : "9 X 2 = 18; 3 + 18 = 21"
+		}
+ },
+
+ {
+	"QuestionID" : 187,
+	"Question" : "What is (8 + 0) X 1?",
+	"Spoken Question" : "What is (eight plus zero) times one?", 
+	"Answer" : 8,
+	"Spoken Answer" : "The correct answer is eight.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 8,
+		"Spoken Explanation" : "I think you multiplied zero and one before you added eight.",
+		"Written Explanation" : "Add 8 + 0 before multiplying 1 with that sum",
+ 	"Written General Feedback" : "8 + 0 = 8; 8 X 1 = 8"
+		}
+ },
+
+ {
+	"QuestionID" : 188,
+	"Question" : "What is 4 + 3 X 8?",
+	"Spoken Question" : "What is four plus three times eight?", 
+	"Answer" : 28,
+	"Spoken Answer" : "The correct answer is twenty-eight.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 56,
+		"Spoken Explanation 1" : "I think you added four and three before you multiplied by eight.",
+		"Written Explanation" : "Multiply 3 X 8 before adding 4 to that product",
+ 	"Written General Feedback" : "3 X 8 = 24; 4 + 24 = 28"
+		}
+ },
+
+ {
+	"QuestionID" : 189,
+	"Question" : "What is (9 + 6) X 2?",
+	"Spoken Question" : "What is (nine plus six) times two?", 
+	"Answer" : 30,
+	"Spoken Answer" : "The correct answer is thirty.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 21,
+		"Spoken Explanation" : "I think you multiplied six and two before you added nine.",
+		"Written Explanation" : "Add 9 + 6 before multiplying 2 with that sum",
+ 	"Written General Feedback" : "9 + 6 = 15; 15 X 2 = 30"
+		}
+ },
+
+ {
+	"QuestionID" : 190,
+	"Question" : "What is 8 + 1 X 6?",
+	"Spoken Question" : "What is eight plus one times six?", 
+	"Answer" : 14,
+	"Spoken Answer" : "The correct answer is fourteen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 54,
+		"Spoken Explanation 1" : "I think you added eight and one before you multiplied by six.",
+		"Written Explanation" : "Multiply 1 X 6 before adding 8 to that product",
+ 	"Written General Feedback" : "1 X 6 = 6; 8 + 6 = 14"
+		}
+ },
+
+ {
+	"QuestionID" : 191,
+	"Question" : "What is 3 X (9 + 3)?",
+	"Spoken Question" : "What is three times (nine plus three?)", 
+	"Answer" : 36,
+	"Spoken Answer" : "The correct answer is thirty-six.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 30,
+		"Spoken Explanation" : "I think you multiplied three and nine before you added three.",
+		"Written Explanation" : "Add 3 + 9 before multiplying 3 with that sum",
+ 	"Written General Feedback" : "9 + 3 = 12; 12 X 3 = 36"
+		}
+ },
+
+ {
+	"QuestionID" : 192,
+	"Question" : "What is 3 + 0 X 2?",
+	"Spoken Question" : "What is three plus zero times two?", 
+	"Answer" : 3,
+	"Spoken Answer" : "The correct answer is three.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 6,
+		"Spoken Explanation 1" : "I think you added three and zero before you multiplied by two.",
+		"Written Explanation" : "Multiply 0 X 2 before adding 3 to that product",
+ 	"Written General Feedback" : "0 X 2 = 0; 3 + 0 = 3"
+		}
+ },
+
+ {
+	"QuestionID" : 193,
+	"Question" : "What is (2 + 0) X 0?",
+	"Spoken Question" : "What is (two plus zero) times zero?", 
+	"Answer" : 0,
+	"Spoken Answer" : "The correct answer is zero.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 2,
+		"Spoken Explanation" : "I think you multiplied zero and zero before you added two.",
+		"Written Explanation" : "Add 2 + 0 before multiplying 0 with that sum",
+ 	"Written General Feedback" : "2 + 0 = 2; 2 X 0 = 0"
+		}
+ },
+
+ {
+	"QuestionID" : 194,
+	"Question" : "What is 1 + 1 X 9?",
+	"Spoken Question" : "What is one plus one times nine?", 
+	"Answer" : 10,
+	"Spoken Answer" : "The correct answer is ten.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 18,
+		"Spoken Explanation 1" : "I think you added one and one before you multiplied by nine.",
+		"Written Explanation" : "Multiply 1 X 9 before adding 1 to that product",
+ 	"Written General Feedback" : "1 X 9 = 9; 1 + 9 = 10"
+		}
+ },
+
+ {
+	"QuestionID" : 195,
+	"Question" : "What is (7 + 6) X 9?",
+	"Spoken Question" : "What is (seven plus six) times nine?", 
+	"Answer" : 117,
+	"Spoken Answer" : "The correct answer is one hundred and seventeen.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 61,
+		"Spoken Explanation" : "I think you multiplied six and nine before you added seven.",
+		"Written Explanation" : "Add 7 + 6 before multiplying 9 with that sum",
+ 	"Written General Feedback" : "7 + 6 = 13; 13 X 9 = 117"
+		}
+ },
+
+ {
+	"QuestionID" : 196,
+	"Question" : "What is 9 + 7 X 4?",
+	"Spoken Question" : "What is nine plus seven times four?", 
+	"Answer" : 37,
+	"Spoken Answer" : "The correct answer is thirty-seven.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 64,
+		"Spoken Explanation 1" : "I think you added nine and seven before you multiplied by four.",
+		"Written Explanation" : "Multiply 7 X 4 before adding 9 to that product",
+ 	"Written General Feedback" : "7 X 4 = 28; 9 + 28 = 37"
+		}
+ },
+
+ {
+	"QuestionID" : 197,
+	"Question" : "What is 7 X (7 + 5)?",
+	"Spoken Question" : "What is seven times (seven plus five?)", 
+	"Answer" : 84,
+	"Spoken Answer" : "The correct answer is seventy.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 54,
+		"Spoken Explanation" : "I think you multiplied seven and seven before you added five.",
+		"Written Explanation" : "Add 5 + 7 before multiplying 7 with that sum",
+ 	"Written General Feedback" : "7 + 5 = 12; 12 X 7 = 84"
+		}
+ },
+
+ {
+	"QuestionID" : 198,
+	"Question" : "What is 7 + 2 X 2?",
+	"Spoken Question" : "What is seven plus two times two?", 
+	"Answer" : 11,
+	"Spoken Answer" : "The correct answer is eleven.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 18,
+		"Spoken Explanation 1" : "I think you added seven and two before you multiplied by two.",
+		"Written Explanation" : "Multiply 2 X 2 before adding 7 to that product",
+ 	"Written General Feedback" : "2 X 2 = 4; 7 + 4 = 11"
+		}
+ },
+
+ {
+	"QuestionID" : 199,
+	"Question" : "What is 6 X (3 + 7)?",
+	"Spoken Question" : "What is six times (three plus seven?)", 
+	"Answer" : 60,
+	"Spoken Answer" : "The correct answer is sixty-three.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 25,
+		"Spoken Explanation" : "I think you multiplied six and three before you added seven.",
+		"Written Explanation" : "Add 7 + 3 before multiplying 6 with that sum",
+ 	"Written General Feedback" : "3 + 7 = 10; 10 X 6 = 60"
+		}
+ },
+
+ {
+	"QuestionID" : 200,
+	"Question" : "What is 6 + 9 X 2?",
+	"Spoken Question" : "What is six plus nine times two?", 
+	"Answer" : 24,
+	"Spoken Answer" : "The correct answer is twenty-four.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 30,
+		"Spoken Explanation 1" : "I think you added six and nine before you multiplied by two.",
+		"Written Explanation" : "Multiply 9 X 2 before adding 6 to that product",
+ 	"Written General Feedback" : "9 X 2 = 18; 6 + 18 = 24"
+		}
+ },
+
+ {
+	"QuestionID" : 201,
+	"Question" : "What is 5 X (9 + 0)?",
+	"Spoken Question" : "What is five times (nine plus zero?)", 
+	"Answer" : 45,
+	"Spoken Answer" : "The correct answer is zero.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 45,
+		"Spoken Explanation" : "I think you multiplied five and nine before you added zero.",
+		"Written Explanation" : "Add 0 + 9 before multiplying 5 with that sum",
+ 	"Written General Feedback" : "9 + 0 = 9; 9 X 5 = 45"
+		}
+ },
+
+ {
+	"QuestionID" : 202,
+	"Question" : "What is 2 + 9 X 0?",
+	"Spoken Question" : "What is two plus nine times zero?", 
+	"Answer" : 2,
+	"Spoken Answer" : "The correct answer is two.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 0,
+		"Spoken Explanation 1" : "I think you added two and nine before you multiplied by zero.",
+		"Written Explanation" : "Multiply 9 X 0 before adding 2 to that product",
+ 	"Written General Feedback" : "9 X 0 = 0; 2 + 0 = 2"
+		}
+ },
+
+ {
+	"QuestionID" : 203,
+	"Question" : "What is 8 X (7 + 2)?",
+	"Spoken Question" : "What is eight times (seven plus two?)", 
+	"Answer" : 72,
+	"Spoken Answer" : "The correct answer is thirty.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 58,
+		"Spoken Explanation" : "I think you multiplied eight and seven before you added two.",
+		"Written Explanation" : "Add 2 + 7 before multiplying 8 with that sum",
+ 	"Written General Feedback" : "7 + 2 = 9; 9 X 8 = 72"
+		}
+ },
+
+ {
+	"QuestionID" : 204,
+	"Question" : "What is 2 + 2 X 5?",
+	"Spoken Question" : "What is two plus two times five?", 
+	"Answer" : 12,
+	"Spoken Answer" : "The correct answer is twelve.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 20,
+		"Spoken Explanation 1" : "I think you added two and two before you multiplied by five.",
+		"Written Explanation" : "Multiply 2 X 5 before adding 2 to that product",
+ 	"Written General Feedback" : "2 X 5 = 10; 2 + 10 = 12"
+		}
+ },
+
+ {
+	"QuestionID" : 205,
+	"Question" : "What is 5 X (1 + 0)?",
+	"Spoken Question" : "What is five times (one plus zero?)", 
+	"Answer" : 5,
+	"Spoken Answer" : "The correct answer is zero.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 5,
+		"Spoken Explanation" : "I think you multiplied five and one before you added zero.",
+		"Written Explanation" : "Add 0 + 1 before multiplying 5 with that sum",
+ 	"Written General Feedback" : "1 + 0 = 1; 1 X 5 = 5"
+		}
+ },
+
+ {
+	"QuestionID" : 206,
+	"Question" : "What is 2 + 3 X 1?",
+	"Spoken Question" : "What is two plus three times one?", 
+	"Answer" : 5,
+	"Spoken Answer" : "The correct answer is five.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 5,
+		"Spoken Explanation 1" : "I think you added two and three before you multiplied by one.",
+		"Written Explanation" : "Multiply 3 X 1 before adding 2 to that product",
+ 	"Written General Feedback" : "3 X 1 = 3; 2 + 3 = 5"
+		}
+ },
+
+ {
+	"QuestionID" : 207,
+	"Question" : "What is (7 + 0) X 1?",
+	"Spoken Question" : "What is (seven plus zero) times one?", 
+	"Answer" : 7,
+	"Spoken Answer" : "The correct answer is seven.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 7,
+		"Spoken Explanation" : "I think you multiplied zero and one before you added seven.",
+		"Written Explanation" : "Add 7 + 0 before multiplying 1 with that sum",
+ 	"Written General Feedback" : "7 + 0 = 7; 7 X 1 = 7"
+		}
+ },
+
+ {
+	"QuestionID" : 208,
+	"Question" : "What is 6 + 5 X 6?",
+	"Spoken Question" : "What is six plus five times six?", 
+	"Answer" : 36,
+	"Spoken Answer" : "The correct answer is thirty-six.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 66,
+		"Spoken Explanation 1" : "I think you added six and five before you multiplied by six.",
+		"Written Explanation" : "Multiply 5 X 6 before adding 6 to that product",
+ 	"Written General Feedback" : "5 X 6 = 30; 6 + 30 = 36"
+		}
+ },
+
+ {
+	"QuestionID" : 209,
+	"Question" : "What is (9 + 2) X 2?",
+	"Spoken Question" : "What is (nine plus two) times two?", 
+	"Answer" : 22,
+	"Spoken Answer" : "The correct answer is twenty-two.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 13,
+		"Spoken Explanation" : "I think you multiplied two and two before you added nine.",
+		"Written Explanation" : "Add 9 + 2 before multiplying 2 with that sum",
+ 	"Written General Feedback" : "9 + 2 = 11; 11 X 2 = 22"
+		}
+ },
+
+ {
+	"QuestionID" : 210,
+	"Question" : "What is 8 + 5 X 4?",
+	"Spoken Question" : "What is eight plus five times four?", 
+	"Answer" : 28,
+	"Spoken Answer" : "The correct answer is twenty-eight.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 52,
+		"Spoken Explanation 1" : "I think you added eight and five before you multiplied by four.",
+		"Written Explanation" : "Multiply 5 X 4 before adding 8 to that product",
+ 	"Written General Feedback" : "5 X 4 = 20; 8 + 20 = 28"
+		}
+ },
+
+ {
+	"QuestionID" : 211,
+	"Question" : "What is 8 X (1 + 5)?",
+	"Spoken Question" : "What is eight times (one plus five?)", 
+	"Answer" : 48,
+	"Spoken Answer" : "The correct answer is forty-five.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 13,
+		"Spoken Explanation" : "I think you multiplied eight and one before you added five.",
+		"Written Explanation" : "Add 5 + 1 before multiplying 8 with that sum",
+ 	"Written General Feedback" : "1 + 5 = 6; 6 X 8 = 48"
+		}
+ },
+
+ {
+	"QuestionID" : 212,
+	"Question" : "What is 7 + 3 X 8?",
+	"Spoken Question" : "What is seven plus three times eight?", 
+	"Answer" : 31,
+	"Spoken Answer" : "The correct answer is thirty-one.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 80,
+		"Spoken Explanation 1" : "I think you added seven and three before you multiplied by eight.",
+		"Written Explanation" : "Multiply 3 X 8 before adding 7 to that product",
+ 	"Written General Feedback" : "3 X 8 = 24; 7 + 24 = 31"
+		}
+ },
+
+ {
+	"QuestionID" : 213,
+	"Question" : "What is (3 + 4) X 0?",
+	"Spoken Question" : "What is (three plus four) times zero?", 
+	"Answer" : 0,
+	"Spoken Answer" : "The correct answer is zero.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 3,
+		"Spoken Explanation" : "I think you multiplied four and zero before you added three.",
+		"Written Explanation" : "Add 3 + 4 before multiplying 0 with that sum",
+ 	"Written General Feedback" : "3 + 4 = 7; 7 X 0 = 0"
+		}
+ },
+
+ {
+	"QuestionID" : 214,
+	"Question" : "What is 7 + 0 X 7?",
+	"Spoken Question" : "What is seven plus zero times seven?", 
+	"Answer" : 7,
+	"Spoken Answer" : "The correct answer is seven.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 49,
+		"Spoken Explanation 1" : "I think you added seven and zero before you multiplied by seven.",
+		"Written Explanation" : "Multiply 0 X 7 before adding 7 to that product",
+ 	"Written General Feedback" : "0 X 7 = 0; 7 + 0 = 7"
+		}
+ },
+
+ {
+	"QuestionID" : 215,
+	"Question" : "What is (9 + 2) X 6?",
+	"Spoken Question" : "What is (nine plus two) times six?", 
+	"Answer" : 66,
+	"Spoken Answer" : "The correct answer is sixty-six.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 21,
+		"Spoken Explanation" : "I think you multiplied two and six before you added nine.",
+		"Written Explanation" : "Add 9 + 2 before multiplying 6 with that sum",
+ 	"Written General Feedback" : "9 + 2 = 11; 11 X 6 = 66"
+		}
+ },
+
+ {
+	"QuestionID" : 216,
+	"Question" : "What is 2 + 1 X 8?",
+	"Spoken Question" : "What is two plus one times eight?", 
+	"Answer" : 10,
+	"Spoken Answer" : "The correct answer is ten.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 24,
+		"Spoken Explanation 1" : "I think you added two and one before you multiplied by eight.",
+		"Written Explanation" : "Multiply 1 X 8 before adding 2 to that product",
+ 	"Written General Feedback" : "1 X 8 = 8; 2 + 8 = 10"
+		}
+ },
+
+ {
+	"QuestionID" : 217,
+	"Question" : "What is 6 X (9 + 3)?",
+	"Spoken Question" : "What is six times (nine plus three?)", 
+	"Answer" : 72,
+	"Spoken Answer" : "The correct answer is forty-five.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 57,
+		"Spoken Explanation" : "I think you multiplied six and nine before you added three.",
+		"Written Explanation" : "Add 3 + 9 before multiplying 6 with that sum",
+ 	"Written General Feedback" : "9 + 3 = 12; 12 X 6 = 72"
+		}
+ },
+
+ {
+	"QuestionID" : 218,
+	"Question" : "What is 1 + 2 X 4?",
+	"Spoken Question" : "What is one plus two times four?", 
+	"Answer" : 9,
+	"Spoken Answer" : "The correct answer is nine.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake 1" : 12,
+		"Spoken Explanation 1" : "I think you added one and two before you multiplied by four.",
+		"Written Explanation" : "Multiply 2 X 4 before adding 1 to that product",
+ 	"Written General Feedback" : "2 X 4 = 8; 1 + 8 = 9"
+		}
+ },
+
+ {
+	"QuestionID" : 219,
+	"Question" : "What is (7 + 6) X 7?",
+	"Spoken Question" : "What is (seven plus six) times seven?", 
+	"Answer" : 91,
+	"Spoken Answer" : "The correct answer is ninety-one.",
+	"Difficulty Level" : 1,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60,
+		"Mistakes" : {
+		"Common Mistake" : 49,
+		"Spoken Explanation" : "I think you multiplied six and seven before you added seven.",
+		"Written Explanation" : "Add 7 + 6 before multiplying 7 with that sum",
+ 	"Written General Feedback" : "7 + 6 = 13; 13 X 7 = 91"
+		}
+ },
+
+]
