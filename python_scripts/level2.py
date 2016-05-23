@@ -26,8 +26,7 @@ for problem in range(100):
 			print '		"Common Mistake 1" : %d,'% commonmistake1
 			print '		"Spoken Explanation 1" : " %s",' % (spokenexplanation1)
 			print '		"Written Explanation" : "Multiply %s by %s and %s by %s, and subtract the second product from the first. Then, add %s to that difference",' % ((a1), (b1), (a2), (b2), (s1))
-			print ' 	"Written General Feedback" : "%d X %d = %d; %d X %d = %d; Now we have %s + %d - %d = %d; %d + %d = %d; Now we have %d + %d = %d"' %
-			(a1,b1, a1*b1, a2, b2, a2*b2, a1*b1, a2*b2,a1*b1- a2*b2, s1, a1*b1- a2*b2, answer)
+			print ' 	"Written General Feedback" : "%d X %d = %d; %d X %d = %d; Now we have %d + %d - %d; %d + %d = %d; Now we have %d - %d = %d"' %(a1,b1, a1*b1, a2, b2, a2*b2, s1, a1*b1, a2*b2, s1, a1*b1, s1 + a1*b1, s1 + a1*b1, a2*b2, answer)
 			print '	},'
 
 		# want addition
@@ -43,7 +42,7 @@ for problem in range(100):
 			print '		"Common Mistake 1" : %d,'% commonmistake1
 			print '		"Spoken Explanation 1" : " %s",' % (spokenexplanation1)
 			print '		"Written Explanation" : "Multiply %s by %s and %s by %s, and add the second product to the first. Then, add %s to that sum",' % ((a1), (b1), (a2), (b2), (s1))
-			print ' 	"Written General Feedback" : "%d X %d = %d; %d X %d = %d; %d + %d = %d; %d + %d = %d"' %(a1,b1, a1*b1, a2, b2, a2*b2, a1*b1, a2*b2,a1*b1 + a2*b2, s1, a1*b1 + a2*b2, answer)
+			print ' 	"Written General Feedback" : "%d X %d = %d; %d X %d = %d; Now we have %d + %d + %d; %d + %d = %d; Now we have %d + %d = %d"' %(a1,b1, a1*b1, a2, b2, a2*b2, s1, a1*b1, a2*b2, s1, a1*b1, s1 + a1*b1, s1 + a1*b1, a2*b2, answer)
 			print '	},'
 		print '	"Difficulty Level" : 2,'
 		print '	"Problem Type" : "Multiplication", '
@@ -69,6 +68,8 @@ for problem in range(100):
 			spokenexplanation1 = "Remember that once you've done what's inside the parentheses, multiply by %s next." % (num2words(times))
 			commonmistake2 = (secondadd * times) + outsideAdd + firstadd
 			spokenexplanation2 = "Remember to do what's inside the parentheses first, by adding %s and %s." %(num2words(firstadd), num2words(secondadd))
+			answer = ((firstadd + secondadd) * times) + outsideAdd
+			generalfeedback = "%d + %d = %d; Now we have: %d X %d + %d; %d X %d = %d; Now we have %d + %d = %d" %(firstadd, secondadd, firstadd+secondadd, firstadd+secondadd, times, outsideAdd, (firstadd+secondadd), times,(firstadd+secondadd)*times, (firstadd+secondadd)*times, outsideAdd, answer)
 		# parentheses in middle
 		else:
 			print '	"Question" : "What is %d + (%d + %d) X %d?",' % (outsideAdd, firstadd, secondadd, times)
@@ -77,7 +78,8 @@ for problem in range(100):
 			spokenexplanation1 = "Remember that once you've done what's inside the parentheses, multiply by %s next." %num2words(times)
 			commonmistake2 = (secondadd * times) + outsideAdd + firstadd
 			spokenexplanation2 = "Remember to do what's inside the parentheses first, by adding %s and %s." %(num2words(firstadd), num2words(secondadd))
-		answer = ((firstadd + secondadd) * times) + outsideAdd
+			answer = ((firstadd + secondadd) * times) + outsideAdd
+			generalfeedback = "%d + %d = %d; Now we have:%d + %d X %d; %d X %d = %d; Now we have %d + %d = %d" %(firstadd, secondadd, firstadd+secondadd, outsideAdd, firstadd+secondadd, times, (firstadd+secondadd), times,(firstadd+secondadd)*times, outsideAdd, (firstadd+secondadd)*times,  answer)
 		print '	"Answer" : %d,' % (answer)
 		print '	"Spoken Answer" : "The correct answer is %s.",' %(num2words(answer))
 		print '	"Mistakes" : {'
@@ -87,7 +89,7 @@ for problem in range(100):
 		print '		"Spoken Explanation 2" : " %s",' % (spokenexplanation2)
 
 		print '		"Written Explanation" : "Add %s to %s before multiplying %s with that sum, and then add %s to that product.",' % ((firstadd), (secondadd), (times), (outsideAdd))
-		print ' 	"Written General Feedback" : "%d + %d = %d; %d X %d = %d; %d + %d = %d"' %(firstadd, secondadd, firstadd+secondadd, firstadd+secondadd, times, (firstadd+secondadd)*times,(firstadd+secondadd)*times, outsideAdd, answer)
+		print ' 	"Written General Feedback" : %s' % generalfeedback
 		print '	},'
 		print '	"Difficulty Level" : 2,'
 		print '	"Problem Type" : "Parentheses", '

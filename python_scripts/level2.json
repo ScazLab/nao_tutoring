@@ -1,0 +1,1802 @@
+[
+ {
+	"QuestionID" : 220,
+	"Question" : "What is 4 + (0 + 7) X 7?",
+	"Spoken Question" : "What is four plus (zero plus seven) times seven?", 
+	"Answer" : 53,
+	"Spoken Answer" : "The correct answer is fifty-three.",
+	"Mistakes" : {
+		"Common Mistake 1" : 77,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by seven next.",
+		"Common Mistake 2" : 53,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding zero and seven.",
+		"Written Explanation" : "Add 0 to 7 before multiplying 7 with that sum, and then add 4 to that product.",
+ 	"Written General Feedback" : 0 + 7 = 7; Now we have:4 + 7 X 7; 7 X 7 = 49; Now we have 4 + 49 = 53
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 221,
+	"Question" : "What is 7 + 5 X 4 - 8 X 0?",
+	"Spoken Question" : "What is seven plus five times four minus eight times zero?", 
+	"Answer" : 27,
+	"Spoken Answer" : "The correct answer is twenty-seven.",
+	"Mistakes" : {
+		"Common Mistake 1" : 48,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply five by four and eight by zero",
+		"Written Explanation" : "Multiply 5 by 4 and 8 by 0, and subtract the second product from the first. Then, add 7 to that difference",
+ 	"Written General Feedback" : "5 X 4 = 20; 8 X 0 = 0; Now we have 7 + 20 - 0; 7 + 20 = 27; Now we have 27 - 0 = 27"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 222,
+	"Question" : "What is (4 + 5) X 6 + 2?",
+	"Spoken Question" : "What is (four plus five) times six plus two?",
+	"Answer" : 56,
+	"Spoken Answer" : "The correct answer is fifty-six.",
+	"Mistakes" : {
+		"Common Mistake 1" : 72,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by six next.",
+		"Common Mistake 2" : 36,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding four and five.",
+		"Written Explanation" : "Add 4 to 5 before multiplying 6 with that sum, and then add 2 to that product.",
+ 	"Written General Feedback" : 4 + 5 = 9; Now we have: 9 X 6 + 2; 9 X 6 = 54; Now we have 54 + 2 = 56
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 223,
+	"Question" : "What is 4 + 9 X 3 - 5 X 0?",
+	"Spoken Question" : "What is four plus nine times three minus five times zero?", 
+	"Answer" : 31,
+	"Spoken Answer" : "The correct answer is thirty-one.",
+	"Mistakes" : {
+		"Common Mistake 1" : 39,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply nine by three and five by zero",
+		"Written Explanation" : "Multiply 9 by 3 and 5 by 0, and subtract the second product from the first. Then, add 4 to that difference",
+ 	"Written General Feedback" : "9 X 3 = 27; 5 X 0 = 0; Now we have 4 + 27 - 0; 4 + 27 = 31; Now we have 31 - 0 = 31"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 224,
+	"Question" : "What is (1 + 6) X 4 + 1?",
+	"Spoken Question" : "What is (one plus six) times four plus one?",
+	"Answer" : 29,
+	"Spoken Answer" : "The correct answer is twenty-nine.",
+	"Mistakes" : {
+		"Common Mistake 1" : 35,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by four next.",
+		"Common Mistake 2" : 26,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding one and six.",
+		"Written Explanation" : "Add 1 to 6 before multiplying 4 with that sum, and then add 1 to that product.",
+ 	"Written General Feedback" : 1 + 6 = 7; Now we have: 7 X 4 + 1; 7 X 4 = 28; Now we have 28 + 1 = 29
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 225,
+	"Question" : "What is 4 + 5 X 2 + 9 X 4?",
+	"Spoken Question" : "What is four plus five times two plus nine times four?", 
+	"Answer" : 50,
+	"Spoken Answer" : "The correct answer is fifty.",
+	"Mistakes" : {
+		"Common Mistake 1" : 54,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply five by two and nine by four",
+		"Written Explanation" : "Multiply 5 by 2 and 9 by 4, and add the second product to the first. Then, add 4 to that sum",
+ 	"Written General Feedback" : "5 X 2 = 10; 9 X 4 = 36; Now we have 4 + 10 + 36; 4 + 10 = 14; Now we have 14 + 36 = 50"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 226,
+	"Question" : "What is 3 + (2 + 6) X 3?",
+	"Spoken Question" : "What is three plus (two plus six) times three?", 
+	"Answer" : 27,
+	"Spoken Answer" : "The correct answer is twenty-seven.",
+	"Mistakes" : {
+		"Common Mistake 1" : 33,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by three next.",
+		"Common Mistake 2" : 23,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding two and six.",
+		"Written Explanation" : "Add 2 to 6 before multiplying 3 with that sum, and then add 3 to that product.",
+ 	"Written General Feedback" : 2 + 6 = 8; Now we have:3 + 8 X 3; 8 X 3 = 24; Now we have 3 + 24 = 27
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 227,
+	"Question" : "What is 2 + 7 X 1 + 8 X 3?",
+	"Spoken Question" : "What is two plus seven times one plus eight times three?", 
+	"Answer" : 33,
+	"Spoken Answer" : "The correct answer is thirty-three.",
+	"Mistakes" : {
+		"Common Mistake 1" : 33,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply seven by one and eight by three",
+		"Written Explanation" : "Multiply 7 by 1 and 8 by 3, and add the second product to the first. Then, add 2 to that sum",
+ 	"Written General Feedback" : "7 X 1 = 7; 8 X 3 = 24; Now we have 2 + 7 + 24; 2 + 7 = 9; Now we have 9 + 24 = 33"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 228,
+	"Question" : "What is 3 + (2 + 6) X 5?",
+	"Spoken Question" : "What is three plus (two plus six) times five?", 
+	"Answer" : 43,
+	"Spoken Answer" : "The correct answer is forty-three.",
+	"Mistakes" : {
+		"Common Mistake 1" : 55,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by five next.",
+		"Common Mistake 2" : 35,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding two and six.",
+		"Written Explanation" : "Add 2 to 6 before multiplying 5 with that sum, and then add 3 to that product.",
+ 	"Written General Feedback" : 2 + 6 = 8; Now we have:3 + 8 X 5; 8 X 5 = 40; Now we have 3 + 40 = 43
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 229,
+	"Question" : "What is 8 + 8 X 3 - 9 X 2?",
+	"Spoken Question" : "What is eight plus eight times three minus nine times two?", 
+	"Answer" : 14,
+	"Spoken Answer" : "The correct answer is fourteen.",
+	"Mistakes" : {
+		"Common Mistake 1" : 30,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply eight by three and nine by two",
+		"Written Explanation" : "Multiply 8 by 3 and 9 by 2, and subtract the second product from the first. Then, add 8 to that difference",
+ 	"Written General Feedback" : "8 X 3 = 24; 9 X 2 = 18; Now we have 8 + 24 - 18; 8 + 24 = 32; Now we have 32 - 18 = 14"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 230,
+	"Question" : "What is (0 + 9) X 2 + 3?",
+	"Spoken Question" : "What is (zero plus nine) times two plus three?",
+	"Answer" : 21,
+	"Spoken Answer" : "The correct answer is twenty-one.",
+	"Mistakes" : {
+		"Common Mistake 1" : 45,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by two next.",
+		"Common Mistake 2" : 21,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding zero and nine.",
+		"Written Explanation" : "Add 0 to 9 before multiplying 2 with that sum, and then add 3 to that product.",
+ 	"Written General Feedback" : 0 + 9 = 9; Now we have: 9 X 2 + 3; 9 X 2 = 18; Now we have 18 + 3 = 21
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 231,
+	"Question" : "What is 3 + 5 X 4 + 9 X 3?",
+	"Spoken Question" : "What is three plus five times four plus nine times three?", 
+	"Answer" : 50,
+	"Spoken Answer" : "The correct answer is fifty.",
+	"Mistakes" : {
+		"Common Mistake 1" : 59,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply five by four and nine by three",
+		"Written Explanation" : "Multiply 5 by 4 and 9 by 3, and add the second product to the first. Then, add 3 to that sum",
+ 	"Written General Feedback" : "5 X 4 = 20; 9 X 3 = 27; Now we have 3 + 20 + 27; 3 + 20 = 23; Now we have 23 + 27 = 50"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 232,
+	"Question" : "What is (3 + 5) X 0 + 0?",
+	"Spoken Question" : "What is (three plus five) times zero plus zero?",
+	"Answer" : 0,
+	"Spoken Answer" : "The correct answer is zero.",
+	"Mistakes" : {
+		"Common Mistake 1" : 0,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by zero next.",
+		"Common Mistake 2" : 3,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding three and five.",
+		"Written Explanation" : "Add 3 to 5 before multiplying 0 with that sum, and then add 0 to that product.",
+ 	"Written General Feedback" : 3 + 5 = 8; Now we have: 8 X 0 + 0; 8 X 0 = 0; Now we have 0 + 0 = 0
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 233,
+	"Question" : "What is 9 + 7 X 2 + 7 X 2?",
+	"Spoken Question" : "What is nine plus seven times two plus seven times two?", 
+	"Answer" : 37,
+	"Spoken Answer" : "The correct answer is thirty-seven.",
+	"Mistakes" : {
+		"Common Mistake 1" : 46,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply seven by two and seven by two",
+		"Written Explanation" : "Multiply 7 by 2 and 7 by 2, and add the second product to the first. Then, add 9 to that sum",
+ 	"Written General Feedback" : "7 X 2 = 14; 7 X 2 = 14; Now we have 9 + 14 + 14; 9 + 14 = 23; Now we have 23 + 14 = 37"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 234,
+	"Question" : "What is 3 + (3 + 6) X 9?",
+	"Spoken Question" : "What is three plus (three plus six) times nine?", 
+	"Answer" : 84,
+	"Spoken Answer" : "The correct answer is eighty-four.",
+	"Mistakes" : {
+		"Common Mistake 1" : 108,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by nine next.",
+		"Common Mistake 2" : 60,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding three and six.",
+		"Written Explanation" : "Add 3 to 6 before multiplying 9 with that sum, and then add 3 to that product.",
+ 	"Written General Feedback" : 3 + 6 = 9; Now we have:3 + 9 X 9; 9 X 9 = 81; Now we have 3 + 81 = 84
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 235,
+	"Question" : "What is 2 + 5 X 0 + 8 X 3?",
+	"Spoken Question" : "What is two plus five times zero plus eight times three?", 
+	"Answer" : 26,
+	"Spoken Answer" : "The correct answer is twenty-six.",
+	"Mistakes" : {
+		"Common Mistake 1" : 24,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply five by zero and eight by three",
+		"Written Explanation" : "Multiply 5 by 0 and 8 by 3, and add the second product to the first. Then, add 2 to that sum",
+ 	"Written General Feedback" : "5 X 0 = 0; 8 X 3 = 24; Now we have 2 + 0 + 24; 2 + 0 = 2; Now we have 2 + 24 = 26"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 236,
+	"Question" : "What is (0 + 9) X 6 + 9?",
+	"Spoken Question" : "What is (zero plus nine) times six plus nine?",
+	"Answer" : 63,
+	"Spoken Answer" : "The correct answer is sixty-three.",
+	"Mistakes" : {
+		"Common Mistake 1" : 135,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by six next.",
+		"Common Mistake 2" : 63,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding zero and nine.",
+		"Written Explanation" : "Add 0 to 9 before multiplying 6 with that sum, and then add 9 to that product.",
+ 	"Written General Feedback" : 0 + 9 = 9; Now we have: 9 X 6 + 9; 9 X 6 = 54; Now we have 54 + 9 = 63
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 237,
+	"Question" : "What is 5 + 9 X 4 - 8 X 1?",
+	"Spoken Question" : "What is five plus nine times four minus eight times one?", 
+	"Answer" : 33,
+	"Spoken Answer" : "The correct answer is thirty-three.",
+	"Mistakes" : {
+		"Common Mistake 1" : 48,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply nine by four and eight by one",
+		"Written Explanation" : "Multiply 9 by 4 and 8 by 1, and subtract the second product from the first. Then, add 5 to that difference",
+ 	"Written General Feedback" : "9 X 4 = 36; 8 X 1 = 8; Now we have 5 + 36 - 8; 5 + 36 = 41; Now we have 41 - 8 = 33"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 238,
+	"Question" : "What is 2 + (2 + 5) X 1?",
+	"Spoken Question" : "What is two plus (two plus five) times one?", 
+	"Answer" : 9,
+	"Spoken Answer" : "The correct answer is nine.",
+	"Mistakes" : {
+		"Common Mistake 1" : 9,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by one next.",
+		"Common Mistake 2" : 9,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding two and five.",
+		"Written Explanation" : "Add 2 to 5 before multiplying 1 with that sum, and then add 2 to that product.",
+ 	"Written General Feedback" : 2 + 5 = 7; Now we have:2 + 7 X 1; 7 X 1 = 7; Now we have 2 + 7 = 9
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 239,
+	"Question" : "What is 0 + 9 X 0 + 8 X 4?",
+	"Spoken Question" : "What is zero plus nine times zero plus eight times four?", 
+	"Answer" : 32,
+	"Spoken Answer" : "The correct answer is thirty-two.",
+	"Mistakes" : {
+		"Common Mistake 1" : 32,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply nine by zero and eight by four",
+		"Written Explanation" : "Multiply 9 by 0 and 8 by 4, and add the second product to the first. Then, add 0 to that sum",
+ 	"Written General Feedback" : "9 X 0 = 0; 8 X 4 = 32; Now we have 0 + 0 + 32; 0 + 0 = 0; Now we have 0 + 32 = 32"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 240,
+	"Question" : "What is 9 + (0 + 5) X 5?",
+	"Spoken Question" : "What is nine plus (zero plus five) times five?", 
+	"Answer" : 34,
+	"Spoken Answer" : "The correct answer is thirty-four.",
+	"Mistakes" : {
+		"Common Mistake 1" : 70,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by five next.",
+		"Common Mistake 2" : 34,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding zero and five.",
+		"Written Explanation" : "Add 0 to 5 before multiplying 5 with that sum, and then add 9 to that product.",
+ 	"Written General Feedback" : 0 + 5 = 5; Now we have:9 + 5 X 5; 5 X 5 = 25; Now we have 9 + 25 = 34
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 241,
+	"Question" : "What is 3 + 6 X 1 + 7 X 2?",
+	"Spoken Question" : "What is three plus six times one plus seven times two?", 
+	"Answer" : 23,
+	"Spoken Answer" : "The correct answer is twenty-three.",
+	"Mistakes" : {
+		"Common Mistake 1" : 23,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply six by one and seven by two",
+		"Written Explanation" : "Multiply 6 by 1 and 7 by 2, and add the second product to the first. Then, add 3 to that sum",
+ 	"Written General Feedback" : "6 X 1 = 6; 7 X 2 = 14; Now we have 3 + 6 + 14; 3 + 6 = 9; Now we have 9 + 14 = 23"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 242,
+	"Question" : "What is (2 + 7) X 0 + 2?",
+	"Spoken Question" : "What is (two plus seven) times zero plus two?",
+	"Answer" : 2,
+	"Spoken Answer" : "The correct answer is two.",
+	"Mistakes" : {
+		"Common Mistake 1" : 18,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by zero next.",
+		"Common Mistake 2" : 4,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding two and seven.",
+		"Written Explanation" : "Add 2 to 7 before multiplying 0 with that sum, and then add 2 to that product.",
+ 	"Written General Feedback" : 2 + 7 = 9; Now we have: 9 X 0 + 2; 9 X 0 = 0; Now we have 0 + 2 = 2
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 243,
+	"Question" : "What is 1 + 8 X 2 + 9 X 2?",
+	"Spoken Question" : "What is one plus eight times two plus nine times two?", 
+	"Answer" : 35,
+	"Spoken Answer" : "The correct answer is thirty-five.",
+	"Mistakes" : {
+		"Common Mistake 1" : 36,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply eight by two and nine by two",
+		"Written Explanation" : "Multiply 8 by 2 and 9 by 2, and add the second product to the first. Then, add 1 to that sum",
+ 	"Written General Feedback" : "8 X 2 = 16; 9 X 2 = 18; Now we have 1 + 16 + 18; 1 + 16 = 17; Now we have 17 + 18 = 35"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 244,
+	"Question" : "What is 6 + (1 + 6) X 9?",
+	"Spoken Question" : "What is six plus (one plus six) times nine?", 
+	"Answer" : 69,
+	"Spoken Answer" : "The correct answer is sixty-nine.",
+	"Mistakes" : {
+		"Common Mistake 1" : 117,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by nine next.",
+		"Common Mistake 2" : 61,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding one and six.",
+		"Written Explanation" : "Add 1 to 6 before multiplying 9 with that sum, and then add 6 to that product.",
+ 	"Written General Feedback" : 1 + 6 = 7; Now we have:6 + 7 X 9; 7 X 9 = 63; Now we have 6 + 63 = 69
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 245,
+	"Question" : "What is 5 + 9 X 0 + 7 X 4?",
+	"Spoken Question" : "What is five plus nine times zero plus seven times four?", 
+	"Answer" : 33,
+	"Spoken Answer" : "The correct answer is thirty-three.",
+	"Mistakes" : {
+		"Common Mistake 1" : 28,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply nine by zero and seven by four",
+		"Written Explanation" : "Multiply 9 by 0 and 7 by 4, and add the second product to the first. Then, add 5 to that sum",
+ 	"Written General Feedback" : "9 X 0 = 0; 7 X 4 = 28; Now we have 5 + 0 + 28; 5 + 0 = 5; Now we have 5 + 28 = 33"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 246,
+	"Question" : "What is (1 + 6) X 0 + 7?",
+	"Spoken Question" : "What is (one plus six) times zero plus seven?",
+	"Answer" : 7,
+	"Spoken Answer" : "The correct answer is seven.",
+	"Mistakes" : {
+		"Common Mistake 1" : 49,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by zero next.",
+		"Common Mistake 2" : 8,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding one and six.",
+		"Written Explanation" : "Add 1 to 6 before multiplying 0 with that sum, and then add 7 to that product.",
+ 	"Written General Feedback" : 1 + 6 = 7; Now we have: 7 X 0 + 7; 7 X 0 = 0; Now we have 0 + 7 = 7
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 247,
+	"Question" : "What is 3 + 8 X 3 + 6 X 4?",
+	"Spoken Question" : "What is three plus eight times three plus six times four?", 
+	"Answer" : 51,
+	"Spoken Answer" : "The correct answer is fifty-one.",
+	"Mistakes" : {
+		"Common Mistake 1" : 57,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply eight by three and six by four",
+		"Written Explanation" : "Multiply 8 by 3 and 6 by 4, and add the second product to the first. Then, add 3 to that sum",
+ 	"Written General Feedback" : "8 X 3 = 24; 6 X 4 = 24; Now we have 3 + 24 + 24; 3 + 24 = 27; Now we have 27 + 24 = 51"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 248,
+	"Question" : "What is 5 + (2 + 6) X 5?",
+	"Spoken Question" : "What is five plus (two plus six) times five?", 
+	"Answer" : 45,
+	"Spoken Answer" : "The correct answer is forty-five.",
+	"Mistakes" : {
+		"Common Mistake 1" : 65,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by five next.",
+		"Common Mistake 2" : 37,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding two and six.",
+		"Written Explanation" : "Add 2 to 6 before multiplying 5 with that sum, and then add 5 to that product.",
+ 	"Written General Feedback" : 2 + 6 = 8; Now we have:5 + 8 X 5; 8 X 5 = 40; Now we have 5 + 40 = 45
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 249,
+	"Question" : "What is 1 + 6 X 2 + 5 X 4?",
+	"Spoken Question" : "What is one plus six times two plus five times four?", 
+	"Answer" : 33,
+	"Spoken Answer" : "The correct answer is thirty-three.",
+	"Mistakes" : {
+		"Common Mistake 1" : 34,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply six by two and five by four",
+		"Written Explanation" : "Multiply 6 by 2 and 5 by 4, and add the second product to the first. Then, add 1 to that sum",
+ 	"Written General Feedback" : "6 X 2 = 12; 5 X 4 = 20; Now we have 1 + 12 + 20; 1 + 12 = 13; Now we have 13 + 20 = 33"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 250,
+	"Question" : "What is (3 + 6) X 2 + 7?",
+	"Spoken Question" : "What is (three plus six) times two plus seven?",
+	"Answer" : 25,
+	"Spoken Answer" : "The correct answer is twenty-five.",
+	"Mistakes" : {
+		"Common Mistake 1" : 81,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by two next.",
+		"Common Mistake 2" : 22,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding three and six.",
+		"Written Explanation" : "Add 3 to 6 before multiplying 2 with that sum, and then add 7 to that product.",
+ 	"Written General Feedback" : 3 + 6 = 9; Now we have: 9 X 2 + 7; 9 X 2 = 18; Now we have 18 + 7 = 25
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 251,
+	"Question" : "What is 7 + 7 X 0 + 6 X 2?",
+	"Spoken Question" : "What is seven plus seven times zero plus six times two?", 
+	"Answer" : 19,
+	"Spoken Answer" : "The correct answer is nineteen.",
+	"Mistakes" : {
+		"Common Mistake 1" : 12,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply seven by zero and six by two",
+		"Written Explanation" : "Multiply 7 by 0 and 6 by 2, and add the second product to the first. Then, add 7 to that sum",
+ 	"Written General Feedback" : "7 X 0 = 0; 6 X 2 = 12; Now we have 7 + 0 + 12; 7 + 0 = 7; Now we have 7 + 12 = 19"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 252,
+	"Question" : "What is (2 + 7) X 8 + 9?",
+	"Spoken Question" : "What is (two plus seven) times eight plus nine?",
+	"Answer" : 81,
+	"Spoken Answer" : "The correct answer is eighty-one.",
+	"Mistakes" : {
+		"Common Mistake 1" : 153,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by eight next.",
+		"Common Mistake 2" : 67,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding two and seven.",
+		"Written Explanation" : "Add 2 to 7 before multiplying 8 with that sum, and then add 9 to that product.",
+ 	"Written General Feedback" : 2 + 7 = 9; Now we have: 9 X 8 + 9; 9 X 8 = 72; Now we have 72 + 9 = 81
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 253,
+	"Question" : "What is 5 + 7 X 0 + 5 X 0?",
+	"Spoken Question" : "What is five plus seven times zero plus five times zero?", 
+	"Answer" : 5,
+	"Spoken Answer" : "The correct answer is five.",
+	"Mistakes" : {
+		"Common Mistake 1" : 0,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply seven by zero and five by zero",
+		"Written Explanation" : "Multiply 7 by 0 and 5 by 0, and add the second product to the first. Then, add 5 to that sum",
+ 	"Written General Feedback" : "7 X 0 = 0; 5 X 0 = 0; Now we have 5 + 0 + 0; 5 + 0 = 5; Now we have 5 + 0 = 5"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 254,
+	"Question" : "What is 4 + (2 + 7) X 7?",
+	"Spoken Question" : "What is four plus (two plus seven) times seven?", 
+	"Answer" : 67,
+	"Spoken Answer" : "The correct answer is sixty-seven.",
+	"Mistakes" : {
+		"Common Mistake 1" : 91,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by seven next.",
+		"Common Mistake 2" : 55,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding two and seven.",
+		"Written Explanation" : "Add 2 to 7 before multiplying 7 with that sum, and then add 4 to that product.",
+ 	"Written General Feedback" : 2 + 7 = 9; Now we have:4 + 9 X 7; 9 X 7 = 63; Now we have 4 + 63 = 67
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 255,
+	"Question" : "What is 1 + 7 X 1 - 6 X 0?",
+	"Spoken Question" : "What is one plus seven times one minus six times zero?", 
+	"Answer" : 8,
+	"Spoken Answer" : "The correct answer is eight.",
+	"Mistakes" : {
+		"Common Mistake 1" : 8,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply seven by one and six by zero",
+		"Written Explanation" : "Multiply 7 by 1 and 6 by 0, and subtract the second product from the first. Then, add 1 to that difference",
+ 	"Written General Feedback" : "7 X 1 = 7; 6 X 0 = 0; Now we have 1 + 7 - 0; 1 + 7 = 8; Now we have 8 - 0 = 8"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 256,
+	"Question" : "What is (2 + 7) X 6 + 8?",
+	"Spoken Question" : "What is (two plus seven) times six plus eight?",
+	"Answer" : 62,
+	"Spoken Answer" : "The correct answer is sixty-two.",
+	"Mistakes" : {
+		"Common Mistake 1" : 126,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by six next.",
+		"Common Mistake 2" : 52,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding two and seven.",
+		"Written Explanation" : "Add 2 to 7 before multiplying 6 with that sum, and then add 8 to that product.",
+ 	"Written General Feedback" : 2 + 7 = 9; Now we have: 9 X 6 + 8; 9 X 6 = 54; Now we have 54 + 8 = 62
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 257,
+	"Question" : "What is 1 + 9 X 3 + 8 X 4?",
+	"Spoken Question" : "What is one plus nine times three plus eight times four?", 
+	"Answer" : 60,
+	"Spoken Answer" : "The correct answer is sixty.",
+	"Mistakes" : {
+		"Common Mistake 1" : 62,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply nine by three and eight by four",
+		"Written Explanation" : "Multiply 9 by 3 and 8 by 4, and add the second product to the first. Then, add 1 to that sum",
+ 	"Written General Feedback" : "9 X 3 = 27; 8 X 4 = 32; Now we have 1 + 27 + 32; 1 + 27 = 28; Now we have 28 + 32 = 60"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 258,
+	"Question" : "What is (0 + 6) X 8 + 0?",
+	"Spoken Question" : "What is (zero plus six) times eight plus zero?",
+	"Answer" : 48,
+	"Spoken Answer" : "The correct answer is forty-eight.",
+	"Mistakes" : {
+		"Common Mistake 1" : 48,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by eight next.",
+		"Common Mistake 2" : 48,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding zero and six.",
+		"Written Explanation" : "Add 0 to 6 before multiplying 8 with that sum, and then add 0 to that product.",
+ 	"Written General Feedback" : 0 + 6 = 6; Now we have: 6 X 8 + 0; 6 X 8 = 48; Now we have 48 + 0 = 48
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 259,
+	"Question" : "What is 1 + 6 X 0 + 7 X 0?",
+	"Spoken Question" : "What is one plus six times zero plus seven times zero?", 
+	"Answer" : 1,
+	"Spoken Answer" : "The correct answer is one.",
+	"Mistakes" : {
+		"Common Mistake 1" : 0,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply six by zero and seven by zero",
+		"Written Explanation" : "Multiply 6 by 0 and 7 by 0, and add the second product to the first. Then, add 1 to that sum",
+ 	"Written General Feedback" : "6 X 0 = 0; 7 X 0 = 0; Now we have 1 + 0 + 0; 1 + 0 = 1; Now we have 1 + 0 = 1"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 260,
+	"Question" : "What is 3 + (2 + 6) X 5?",
+	"Spoken Question" : "What is three plus (two plus six) times five?", 
+	"Answer" : 43,
+	"Spoken Answer" : "The correct answer is forty-three.",
+	"Mistakes" : {
+		"Common Mistake 1" : 55,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by five next.",
+		"Common Mistake 2" : 35,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding two and six.",
+		"Written Explanation" : "Add 2 to 6 before multiplying 5 with that sum, and then add 3 to that product.",
+ 	"Written General Feedback" : 2 + 6 = 8; Now we have:3 + 8 X 5; 8 X 5 = 40; Now we have 3 + 40 = 43
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 261,
+	"Question" : "What is 2 + 9 X 0 + 8 X 1?",
+	"Spoken Question" : "What is two plus nine times zero plus eight times one?", 
+	"Answer" : 10,
+	"Spoken Answer" : "The correct answer is ten.",
+	"Mistakes" : {
+		"Common Mistake 1" : 8,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply nine by zero and eight by one",
+		"Written Explanation" : "Multiply 9 by 0 and 8 by 1, and add the second product to the first. Then, add 2 to that sum",
+ 	"Written General Feedback" : "9 X 0 = 0; 8 X 1 = 8; Now we have 2 + 0 + 8; 2 + 0 = 2; Now we have 2 + 8 = 10"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 262,
+	"Question" : "What is 7 + (1 + 5) X 1?",
+	"Spoken Question" : "What is seven plus (one plus five) times one?", 
+	"Answer" : 13,
+	"Spoken Answer" : "The correct answer is thirteen.",
+	"Mistakes" : {
+		"Common Mistake 1" : 13,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by one next.",
+		"Common Mistake 2" : 13,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding one and five.",
+		"Written Explanation" : "Add 1 to 5 before multiplying 1 with that sum, and then add 7 to that product.",
+ 	"Written General Feedback" : 1 + 5 = 6; Now we have:7 + 6 X 1; 6 X 1 = 6; Now we have 7 + 6 = 13
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 263,
+	"Question" : "What is 7 + 8 X 2 - 5 X 0?",
+	"Spoken Question" : "What is seven plus eight times two minus five times zero?", 
+	"Answer" : 23,
+	"Spoken Answer" : "The correct answer is twenty-three.",
+	"Mistakes" : {
+		"Common Mistake 1" : 30,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply eight by two and five by zero",
+		"Written Explanation" : "Multiply 8 by 2 and 5 by 0, and subtract the second product from the first. Then, add 7 to that difference",
+ 	"Written General Feedback" : "8 X 2 = 16; 5 X 0 = 0; Now we have 7 + 16 - 0; 7 + 16 = 23; Now we have 23 - 0 = 23"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 264,
+	"Question" : "What is (1 + 5) X 6 + 5?",
+	"Spoken Question" : "What is (one plus five) times six plus five?",
+	"Answer" : 41,
+	"Spoken Answer" : "The correct answer is forty-one.",
+	"Mistakes" : {
+		"Common Mistake 1" : 66,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by six next.",
+		"Common Mistake 2" : 36,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding one and five.",
+		"Written Explanation" : "Add 1 to 5 before multiplying 6 with that sum, and then add 5 to that product.",
+ 	"Written General Feedback" : 1 + 5 = 6; Now we have: 6 X 6 + 5; 6 X 6 = 36; Now we have 36 + 5 = 41
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 265,
+	"Question" : "What is 0 + 8 X 0 + 7 X 0?",
+	"Spoken Question" : "What is zero plus eight times zero plus seven times zero?", 
+	"Answer" : 0,
+	"Spoken Answer" : "The correct answer is zero.",
+	"Mistakes" : {
+		"Common Mistake 1" : 0,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply eight by zero and seven by zero",
+		"Written Explanation" : "Multiply 8 by 0 and 7 by 0, and add the second product to the first. Then, add 0 to that sum",
+ 	"Written General Feedback" : "8 X 0 = 0; 7 X 0 = 0; Now we have 0 + 0 + 0; 0 + 0 = 0; Now we have 0 + 0 = 0"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 266,
+	"Question" : "What is (1 + 7) X 2 + 4?",
+	"Spoken Question" : "What is (one plus seven) times two plus four?",
+	"Answer" : 20,
+	"Spoken Answer" : "The correct answer is twenty.",
+	"Mistakes" : {
+		"Common Mistake 1" : 48,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by two next.",
+		"Common Mistake 2" : 19,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding one and seven.",
+		"Written Explanation" : "Add 1 to 7 before multiplying 2 with that sum, and then add 4 to that product.",
+ 	"Written General Feedback" : 1 + 7 = 8; Now we have: 8 X 2 + 4; 8 X 2 = 16; Now we have 16 + 4 = 20
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 267,
+	"Question" : "What is 6 + 8 X 3 - 5 X 1?",
+	"Spoken Question" : "What is six plus eight times three minus five times one?", 
+	"Answer" : 25,
+	"Spoken Answer" : "The correct answer is twenty-five.",
+	"Mistakes" : {
+		"Common Mistake 1" : 37,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply eight by three and five by one",
+		"Written Explanation" : "Multiply 8 by 3 and 5 by 1, and subtract the second product from the first. Then, add 6 to that difference",
+ 	"Written General Feedback" : "8 X 3 = 24; 5 X 1 = 5; Now we have 6 + 24 - 5; 6 + 24 = 30; Now we have 30 - 5 = 25"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 268,
+	"Question" : "What is (3 + 5) X 8 + 7?",
+	"Spoken Question" : "What is (three plus five) times eight plus seven?",
+	"Answer" : 71,
+	"Spoken Answer" : "The correct answer is seventy-one.",
+	"Mistakes" : {
+		"Common Mistake 1" : 120,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by eight next.",
+		"Common Mistake 2" : 50,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding three and five.",
+		"Written Explanation" : "Add 3 to 5 before multiplying 8 with that sum, and then add 7 to that product.",
+ 	"Written General Feedback" : 3 + 5 = 8; Now we have: 8 X 8 + 7; 8 X 8 = 64; Now we have 64 + 7 = 71
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 269,
+	"Question" : "What is 9 + 8 X 4 - 9 X 3?",
+	"Spoken Question" : "What is nine plus eight times four minus nine times three?", 
+	"Answer" : 14,
+	"Spoken Answer" : "The correct answer is fourteen.",
+	"Mistakes" : {
+		"Common Mistake 1" : 41,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply eight by four and nine by three",
+		"Written Explanation" : "Multiply 8 by 4 and 9 by 3, and subtract the second product from the first. Then, add 9 to that difference",
+ 	"Written General Feedback" : "8 X 4 = 32; 9 X 3 = 27; Now we have 9 + 32 - 27; 9 + 32 = 41; Now we have 41 - 27 = 14"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 270,
+	"Question" : "What is 5 + (0 + 6) X 1?",
+	"Spoken Question" : "What is five plus (zero plus six) times one?", 
+	"Answer" : 11,
+	"Spoken Answer" : "The correct answer is eleven.",
+	"Mistakes" : {
+		"Common Mistake 1" : 11,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by one next.",
+		"Common Mistake 2" : 11,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding zero and six.",
+		"Written Explanation" : "Add 0 to 6 before multiplying 1 with that sum, and then add 5 to that product.",
+ 	"Written General Feedback" : 0 + 6 = 6; Now we have:5 + 6 X 1; 6 X 1 = 6; Now we have 5 + 6 = 11
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 271,
+	"Question" : "What is 4 + 6 X 3 - 7 X 1?",
+	"Spoken Question" : "What is four plus six times three minus seven times one?", 
+	"Answer" : 15,
+	"Spoken Answer" : "The correct answer is fifteen.",
+	"Mistakes" : {
+		"Common Mistake 1" : 23,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply six by three and seven by one",
+		"Written Explanation" : "Multiply 6 by 3 and 7 by 1, and subtract the second product from the first. Then, add 4 to that difference",
+ 	"Written General Feedback" : "6 X 3 = 18; 7 X 1 = 7; Now we have 4 + 18 - 7; 4 + 18 = 22; Now we have 22 - 7 = 15"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 272,
+	"Question" : "What is (0 + 5) X 6 + 3?",
+	"Spoken Question" : "What is (zero plus five) times six plus three?",
+	"Answer" : 33,
+	"Spoken Answer" : "The correct answer is thirty-three.",
+	"Mistakes" : {
+		"Common Mistake 1" : 45,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by six next.",
+		"Common Mistake 2" : 33,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding zero and five.",
+		"Written Explanation" : "Add 0 to 5 before multiplying 6 with that sum, and then add 3 to that product.",
+ 	"Written General Feedback" : 0 + 5 = 5; Now we have: 5 X 6 + 3; 5 X 6 = 30; Now we have 30 + 3 = 33
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 273,
+	"Question" : "What is 8 + 8 X 1 - 7 X 0?",
+	"Spoken Question" : "What is eight plus eight times one minus seven times zero?", 
+	"Answer" : 16,
+	"Spoken Answer" : "The correct answer is sixteen.",
+	"Mistakes" : {
+		"Common Mistake 1" : 16,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply eight by one and seven by zero",
+		"Written Explanation" : "Multiply 8 by 1 and 7 by 0, and subtract the second product from the first. Then, add 8 to that difference",
+ 	"Written General Feedback" : "8 X 1 = 8; 7 X 0 = 0; Now we have 8 + 8 - 0; 8 + 8 = 16; Now we have 16 - 0 = 16"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 274,
+	"Question" : "What is (3 + 6) X 6 + 7?",
+	"Spoken Question" : "What is (three plus six) times six plus seven?",
+	"Answer" : 61,
+	"Spoken Answer" : "The correct answer is sixty-one.",
+	"Mistakes" : {
+		"Common Mistake 1" : 117,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by six next.",
+		"Common Mistake 2" : 46,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding three and six.",
+		"Written Explanation" : "Add 3 to 6 before multiplying 6 with that sum, and then add 7 to that product.",
+ 	"Written General Feedback" : 3 + 6 = 9; Now we have: 9 X 6 + 7; 9 X 6 = 54; Now we have 54 + 7 = 61
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 275,
+	"Question" : "What is 5 + 5 X 2 - 5 X 1?",
+	"Spoken Question" : "What is five plus five times two minus five times one?", 
+	"Answer" : 10,
+	"Spoken Answer" : "The correct answer is ten.",
+	"Mistakes" : {
+		"Common Mistake 1" : 15,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply five by two and five by one",
+		"Written Explanation" : "Multiply 5 by 2 and 5 by 1, and subtract the second product from the first. Then, add 5 to that difference",
+ 	"Written General Feedback" : "5 X 2 = 10; 5 X 1 = 5; Now we have 5 + 10 - 5; 5 + 10 = 15; Now we have 15 - 5 = 10"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 276,
+	"Question" : "What is (0 + 9) X 0 + 0?",
+	"Spoken Question" : "What is (zero plus nine) times zero plus zero?",
+	"Answer" : 0,
+	"Spoken Answer" : "The correct answer is zero.",
+	"Mistakes" : {
+		"Common Mistake 1" : 0,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by zero next.",
+		"Common Mistake 2" : 0,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding zero and nine.",
+		"Written Explanation" : "Add 0 to 9 before multiplying 0 with that sum, and then add 0 to that product.",
+ 	"Written General Feedback" : 0 + 9 = 9; Now we have: 9 X 0 + 0; 9 X 0 = 0; Now we have 0 + 0 = 0
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 277,
+	"Question" : "What is 1 + 8 X 1 + 5 X 3?",
+	"Spoken Question" : "What is one plus eight times one plus five times three?", 
+	"Answer" : 24,
+	"Spoken Answer" : "The correct answer is twenty-four.",
+	"Mistakes" : {
+		"Common Mistake 1" : 24,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply eight by one and five by three",
+		"Written Explanation" : "Multiply 8 by 1 and 5 by 3, and add the second product to the first. Then, add 1 to that sum",
+ 	"Written General Feedback" : "8 X 1 = 8; 5 X 3 = 15; Now we have 1 + 8 + 15; 1 + 8 = 9; Now we have 9 + 15 = 24"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 278,
+	"Question" : "What is 5 + (0 + 6) X 3?",
+	"Spoken Question" : "What is five plus (zero plus six) times three?", 
+	"Answer" : 23,
+	"Spoken Answer" : "The correct answer is twenty-three.",
+	"Mistakes" : {
+		"Common Mistake 1" : 33,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by three next.",
+		"Common Mistake 2" : 23,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding zero and six.",
+		"Written Explanation" : "Add 0 to 6 before multiplying 3 with that sum, and then add 5 to that product.",
+ 	"Written General Feedback" : 0 + 6 = 6; Now we have:5 + 6 X 3; 6 X 3 = 18; Now we have 5 + 18 = 23
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 279,
+	"Question" : "What is 3 + 9 X 2 - 9 X 1?",
+	"Spoken Question" : "What is three plus nine times two minus nine times one?", 
+	"Answer" : 12,
+	"Spoken Answer" : "The correct answer is twelve.",
+	"Mistakes" : {
+		"Common Mistake 1" : 15,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply nine by two and nine by one",
+		"Written Explanation" : "Multiply 9 by 2 and 9 by 1, and subtract the second product from the first. Then, add 3 to that difference",
+ 	"Written General Feedback" : "9 X 2 = 18; 9 X 1 = 9; Now we have 3 + 18 - 9; 3 + 18 = 21; Now we have 21 - 9 = 12"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 280,
+	"Question" : "What is 4 + (2 + 6) X 5?",
+	"Spoken Question" : "What is four plus (two plus six) times five?", 
+	"Answer" : 44,
+	"Spoken Answer" : "The correct answer is forty-four.",
+	"Mistakes" : {
+		"Common Mistake 1" : 60,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by five next.",
+		"Common Mistake 2" : 36,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding two and six.",
+		"Written Explanation" : "Add 2 to 6 before multiplying 5 with that sum, and then add 4 to that product.",
+ 	"Written General Feedback" : 2 + 6 = 8; Now we have:4 + 8 X 5; 8 X 5 = 40; Now we have 4 + 40 = 44
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 281,
+	"Question" : "What is 0 + 9 X 1 - 5 X 0?",
+	"Spoken Question" : "What is zero plus nine times one minus five times zero?", 
+	"Answer" : 9,
+	"Spoken Answer" : "The correct answer is nine.",
+	"Mistakes" : {
+		"Common Mistake 1" : 9,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply nine by one and five by zero",
+		"Written Explanation" : "Multiply 9 by 1 and 5 by 0, and subtract the second product from the first. Then, add 0 to that difference",
+ 	"Written General Feedback" : "9 X 1 = 9; 5 X 0 = 0; Now we have 0 + 9 - 0; 0 + 9 = 9; Now we have 9 - 0 = 9"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 282,
+	"Question" : "What is (3 + 6) X 8 + 2?",
+	"Spoken Question" : "What is (three plus six) times eight plus two?",
+	"Answer" : 74,
+	"Spoken Answer" : "The correct answer is seventy-four.",
+	"Mistakes" : {
+		"Common Mistake 1" : 90,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by eight next.",
+		"Common Mistake 2" : 53,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding three and six.",
+		"Written Explanation" : "Add 3 to 6 before multiplying 8 with that sum, and then add 2 to that product.",
+ 	"Written General Feedback" : 3 + 6 = 9; Now we have: 9 X 8 + 2; 9 X 8 = 72; Now we have 72 + 2 = 74
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 283,
+	"Question" : "What is 2 + 6 X 1 + 7 X 4?",
+	"Spoken Question" : "What is two plus six times one plus seven times four?", 
+	"Answer" : 36,
+	"Spoken Answer" : "The correct answer is thirty-six.",
+	"Mistakes" : {
+		"Common Mistake 1" : 36,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply six by one and seven by four",
+		"Written Explanation" : "Multiply 6 by 1 and 7 by 4, and add the second product to the first. Then, add 2 to that sum",
+ 	"Written General Feedback" : "6 X 1 = 6; 7 X 4 = 28; Now we have 2 + 6 + 28; 2 + 6 = 8; Now we have 8 + 28 = 36"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 284,
+	"Question" : "What is (1 + 8) X 8 + 1?",
+	"Spoken Question" : "What is (one plus eight) times eight plus one?",
+	"Answer" : 73,
+	"Spoken Answer" : "The correct answer is seventy-three.",
+	"Mistakes" : {
+		"Common Mistake 1" : 81,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by eight next.",
+		"Common Mistake 2" : 66,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding one and eight.",
+		"Written Explanation" : "Add 1 to 8 before multiplying 8 with that sum, and then add 1 to that product.",
+ 	"Written General Feedback" : 1 + 8 = 9; Now we have: 9 X 8 + 1; 9 X 8 = 72; Now we have 72 + 1 = 73
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 285,
+	"Question" : "What is 1 + 8 X 2 + 8 X 3?",
+	"Spoken Question" : "What is one plus eight times two plus eight times three?", 
+	"Answer" : 41,
+	"Spoken Answer" : "The correct answer is forty-one.",
+	"Mistakes" : {
+		"Common Mistake 1" : 42,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply eight by two and eight by three",
+		"Written Explanation" : "Multiply 8 by 2 and 8 by 3, and add the second product to the first. Then, add 1 to that sum",
+ 	"Written General Feedback" : "8 X 2 = 16; 8 X 3 = 24; Now we have 1 + 16 + 24; 1 + 16 = 17; Now we have 17 + 24 = 41"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 286,
+	"Question" : "What is (3 + 6) X 2 + 4?",
+	"Spoken Question" : "What is (three plus six) times two plus four?",
+	"Answer" : 22,
+	"Spoken Answer" : "The correct answer is twenty-two.",
+	"Mistakes" : {
+		"Common Mistake 1" : 54,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by two next.",
+		"Common Mistake 2" : 19,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding three and six.",
+		"Written Explanation" : "Add 3 to 6 before multiplying 2 with that sum, and then add 4 to that product.",
+ 	"Written General Feedback" : 3 + 6 = 9; Now we have: 9 X 2 + 4; 9 X 2 = 18; Now we have 18 + 4 = 22
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 287,
+	"Question" : "What is 6 + 7 X 2 + 5 X 3?",
+	"Spoken Question" : "What is six plus seven times two plus five times three?", 
+	"Answer" : 35,
+	"Spoken Answer" : "The correct answer is thirty-five.",
+	"Mistakes" : {
+		"Common Mistake 1" : 41,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply seven by two and five by three",
+		"Written Explanation" : "Multiply 7 by 2 and 5 by 3, and add the second product to the first. Then, add 6 to that sum",
+ 	"Written General Feedback" : "7 X 2 = 14; 5 X 3 = 15; Now we have 6 + 14 + 15; 6 + 14 = 20; Now we have 20 + 15 = 35"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 288,
+	"Question" : "What is 9 + (0 + 7) X 5?",
+	"Spoken Question" : "What is nine plus (zero plus seven) times five?", 
+	"Answer" : 44,
+	"Spoken Answer" : "The correct answer is forty-four.",
+	"Mistakes" : {
+		"Common Mistake 1" : 80,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by five next.",
+		"Common Mistake 2" : 44,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding zero and seven.",
+		"Written Explanation" : "Add 0 to 7 before multiplying 5 with that sum, and then add 9 to that product.",
+ 	"Written General Feedback" : 0 + 7 = 7; Now we have:9 + 7 X 5; 7 X 5 = 35; Now we have 9 + 35 = 44
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 289,
+	"Question" : "What is 4 + 6 X 3 - 7 X 0?",
+	"Spoken Question" : "What is four plus six times three minus seven times zero?", 
+	"Answer" : 22,
+	"Spoken Answer" : "The correct answer is twenty-two.",
+	"Mistakes" : {
+		"Common Mistake 1" : 30,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply six by three and seven by zero",
+		"Written Explanation" : "Multiply 6 by 3 and 7 by 0, and subtract the second product from the first. Then, add 4 to that difference",
+ 	"Written General Feedback" : "6 X 3 = 18; 7 X 0 = 0; Now we have 4 + 18 - 0; 4 + 18 = 22; Now we have 22 - 0 = 22"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 290,
+	"Question" : "What is 2 + (2 + 7) X 7?",
+	"Spoken Question" : "What is two plus (two plus seven) times seven?", 
+	"Answer" : 65,
+	"Spoken Answer" : "The correct answer is sixty-five.",
+	"Mistakes" : {
+		"Common Mistake 1" : 77,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by seven next.",
+		"Common Mistake 2" : 53,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding two and seven.",
+		"Written Explanation" : "Add 2 to 7 before multiplying 7 with that sum, and then add 2 to that product.",
+ 	"Written General Feedback" : 2 + 7 = 9; Now we have:2 + 9 X 7; 9 X 7 = 63; Now we have 2 + 63 = 65
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 291,
+	"Question" : "What is 3 + 6 X 1 + 8 X 3?",
+	"Spoken Question" : "What is three plus six times one plus eight times three?", 
+	"Answer" : 33,
+	"Spoken Answer" : "The correct answer is thirty-three.",
+	"Mistakes" : {
+		"Common Mistake 1" : 33,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply six by one and eight by three",
+		"Written Explanation" : "Multiply 6 by 1 and 8 by 3, and add the second product to the first. Then, add 3 to that sum",
+ 	"Written General Feedback" : "6 X 1 = 6; 8 X 3 = 24; Now we have 3 + 6 + 24; 3 + 6 = 9; Now we have 9 + 24 = 33"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 292,
+	"Question" : "What is (0 + 8) X 6 + 4?",
+	"Spoken Question" : "What is (zero plus eight) times six plus four?",
+	"Answer" : 52,
+	"Spoken Answer" : "The correct answer is fifty-two.",
+	"Mistakes" : {
+		"Common Mistake 1" : 80,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by six next.",
+		"Common Mistake 2" : 52,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding zero and eight.",
+		"Written Explanation" : "Add 0 to 8 before multiplying 6 with that sum, and then add 4 to that product.",
+ 	"Written General Feedback" : 0 + 8 = 8; Now we have: 8 X 6 + 4; 8 X 6 = 48; Now we have 48 + 4 = 52
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 293,
+	"Question" : "What is 2 + 9 X 0 + 6 X 3?",
+	"Spoken Question" : "What is two plus nine times zero plus six times three?", 
+	"Answer" : 20,
+	"Spoken Answer" : "The correct answer is twenty.",
+	"Mistakes" : {
+		"Common Mistake 1" : 18,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply nine by zero and six by three",
+		"Written Explanation" : "Multiply 9 by 0 and 6 by 3, and add the second product to the first. Then, add 2 to that sum",
+ 	"Written General Feedback" : "9 X 0 = 0; 6 X 3 = 18; Now we have 2 + 0 + 18; 2 + 0 = 2; Now we have 2 + 18 = 20"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 294,
+	"Question" : "What is 2 + (1 + 7) X 9?",
+	"Spoken Question" : "What is two plus (one plus seven) times nine?", 
+	"Answer" : 74,
+	"Spoken Answer" : "The correct answer is seventy-four.",
+	"Mistakes" : {
+		"Common Mistake 1" : 90,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by nine next.",
+		"Common Mistake 2" : 66,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding one and seven.",
+		"Written Explanation" : "Add 1 to 7 before multiplying 9 with that sum, and then add 2 to that product.",
+ 	"Written General Feedback" : 1 + 7 = 8; Now we have:2 + 8 X 9; 8 X 9 = 72; Now we have 2 + 72 = 74
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 295,
+	"Question" : "What is 2 + 5 X 1 + 5 X 3?",
+	"Spoken Question" : "What is two plus five times one plus five times three?", 
+	"Answer" : 22,
+	"Spoken Answer" : "The correct answer is twenty-two.",
+	"Mistakes" : {
+		"Common Mistake 1" : 22,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply five by one and five by three",
+		"Written Explanation" : "Multiply 5 by 1 and 5 by 3, and add the second product to the first. Then, add 2 to that sum",
+ 	"Written General Feedback" : "5 X 1 = 5; 5 X 3 = 15; Now we have 2 + 5 + 15; 2 + 5 = 7; Now we have 7 + 15 = 22"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 296,
+	"Question" : "What is (1 + 7) X 2 + 5?",
+	"Spoken Question" : "What is (one plus seven) times two plus five?",
+	"Answer" : 21,
+	"Spoken Answer" : "The correct answer is twenty-one.",
+	"Mistakes" : {
+		"Common Mistake 1" : 56,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by two next.",
+		"Common Mistake 2" : 20,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding one and seven.",
+		"Written Explanation" : "Add 1 to 7 before multiplying 2 with that sum, and then add 5 to that product.",
+ 	"Written General Feedback" : 1 + 7 = 8; Now we have: 8 X 2 + 5; 8 X 2 = 16; Now we have 16 + 5 = 21
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 297,
+	"Question" : "What is 7 + 6 X 1 + 8 X 3?",
+	"Spoken Question" : "What is seven plus six times one plus eight times three?", 
+	"Answer" : 37,
+	"Spoken Answer" : "The correct answer is thirty-seven.",
+	"Mistakes" : {
+		"Common Mistake 1" : 37,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply six by one and eight by three",
+		"Written Explanation" : "Multiply 6 by 1 and 8 by 3, and add the second product to the first. Then, add 7 to that sum",
+ 	"Written General Feedback" : "6 X 1 = 6; 8 X 3 = 24; Now we have 7 + 6 + 24; 7 + 6 = 13; Now we have 13 + 24 = 37"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 298,
+	"Question" : "What is 0 + (1 + 6) X 7?",
+	"Spoken Question" : "What is zero plus (one plus six) times seven?", 
+	"Answer" : 49,
+	"Spoken Answer" : "The correct answer is forty-nine.",
+	"Mistakes" : {
+		"Common Mistake 1" : 49,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by seven next.",
+		"Common Mistake 2" : 43,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding one and six.",
+		"Written Explanation" : "Add 1 to 6 before multiplying 7 with that sum, and then add 0 to that product.",
+ 	"Written General Feedback" : 1 + 6 = 7; Now we have:0 + 7 X 7; 7 X 7 = 49; Now we have 0 + 49 = 49
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 299,
+	"Question" : "What is 6 + 6 X 1 - 5 X 1?",
+	"Spoken Question" : "What is six plus six times one minus five times one?", 
+	"Answer" : 7,
+	"Spoken Answer" : "The correct answer is seven.",
+	"Mistakes" : {
+		"Common Mistake 1" : 7,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply six by one and five by one",
+		"Written Explanation" : "Multiply 6 by 1 and 5 by 1, and subtract the second product from the first. Then, add 6 to that difference",
+ 	"Written General Feedback" : "6 X 1 = 6; 5 X 1 = 5; Now we have 6 + 6 - 5; 6 + 6 = 12; Now we have 12 - 5 = 7"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 300,
+	"Question" : "What is (1 + 7) X 6 + 7?",
+	"Spoken Question" : "What is (one plus seven) times six plus seven?",
+	"Answer" : 55,
+	"Spoken Answer" : "The correct answer is fifty-five.",
+	"Mistakes" : {
+		"Common Mistake 1" : 104,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by six next.",
+		"Common Mistake 2" : 50,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding one and seven.",
+		"Written Explanation" : "Add 1 to 7 before multiplying 6 with that sum, and then add 7 to that product.",
+ 	"Written General Feedback" : 1 + 7 = 8; Now we have: 8 X 6 + 7; 8 X 6 = 48; Now we have 48 + 7 = 55
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 301,
+	"Question" : "What is 3 + 8 X 0 + 9 X 3?",
+	"Spoken Question" : "What is three plus eight times zero plus nine times three?", 
+	"Answer" : 30,
+	"Spoken Answer" : "The correct answer is thirty.",
+	"Mistakes" : {
+		"Common Mistake 1" : 27,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply eight by zero and nine by three",
+		"Written Explanation" : "Multiply 8 by 0 and 9 by 3, and add the second product to the first. Then, add 3 to that sum",
+ 	"Written General Feedback" : "8 X 0 = 0; 9 X 3 = 27; Now we have 3 + 0 + 27; 3 + 0 = 3; Now we have 3 + 27 = 30"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 302,
+	"Question" : "What is 4 + (1 + 6) X 9?",
+	"Spoken Question" : "What is four plus (one plus six) times nine?", 
+	"Answer" : 67,
+	"Spoken Answer" : "The correct answer is sixty-seven.",
+	"Mistakes" : {
+		"Common Mistake 1" : 99,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by nine next.",
+		"Common Mistake 2" : 59,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding one and six.",
+		"Written Explanation" : "Add 1 to 6 before multiplying 9 with that sum, and then add 4 to that product.",
+ 	"Written General Feedback" : 1 + 6 = 7; Now we have:4 + 7 X 9; 7 X 9 = 63; Now we have 4 + 63 = 67
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 303,
+	"Question" : "What is 3 + 9 X 3 - 8 X 0?",
+	"Spoken Question" : "What is three plus nine times three minus eight times zero?", 
+	"Answer" : 30,
+	"Spoken Answer" : "The correct answer is thirty.",
+	"Mistakes" : {
+		"Common Mistake 1" : 36,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply nine by three and eight by zero",
+		"Written Explanation" : "Multiply 9 by 3 and 8 by 0, and subtract the second product from the first. Then, add 3 to that difference",
+ 	"Written General Feedback" : "9 X 3 = 27; 8 X 0 = 0; Now we have 3 + 27 - 0; 3 + 27 = 30; Now we have 30 - 0 = 30"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 304,
+	"Question" : "What is 7 + (3 + 5) X 9?",
+	"Spoken Question" : "What is seven plus (three plus five) times nine?", 
+	"Answer" : 79,
+	"Spoken Answer" : "The correct answer is seventy-nine.",
+	"Mistakes" : {
+		"Common Mistake 1" : 135,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by nine next.",
+		"Common Mistake 2" : 55,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding three and five.",
+		"Written Explanation" : "Add 3 to 5 before multiplying 9 with that sum, and then add 7 to that product.",
+ 	"Written General Feedback" : 3 + 5 = 8; Now we have:7 + 8 X 9; 8 X 9 = 72; Now we have 7 + 72 = 79
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 305,
+	"Question" : "What is 8 + 9 X 1 + 5 X 4?",
+	"Spoken Question" : "What is eight plus nine times one plus five times four?", 
+	"Answer" : 37,
+	"Spoken Answer" : "The correct answer is thirty-seven.",
+	"Mistakes" : {
+		"Common Mistake 1" : 37,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply nine by one and five by four",
+		"Written Explanation" : "Multiply 9 by 1 and 5 by 4, and add the second product to the first. Then, add 8 to that sum",
+ 	"Written General Feedback" : "9 X 1 = 9; 5 X 4 = 20; Now we have 8 + 9 + 20; 8 + 9 = 17; Now we have 17 + 20 = 37"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 306,
+	"Question" : "What is (1 + 7) X 4 + 5?",
+	"Spoken Question" : "What is (one plus seven) times four plus five?",
+	"Answer" : 37,
+	"Spoken Answer" : "The correct answer is thirty-seven.",
+	"Mistakes" : {
+		"Common Mistake 1" : 72,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by four next.",
+		"Common Mistake 2" : 34,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding one and seven.",
+		"Written Explanation" : "Add 1 to 7 before multiplying 4 with that sum, and then add 5 to that product.",
+ 	"Written General Feedback" : 1 + 7 = 8; Now we have: 8 X 4 + 5; 8 X 4 = 32; Now we have 32 + 5 = 37
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 307,
+	"Question" : "What is 5 + 5 X 0 + 5 X 4?",
+	"Spoken Question" : "What is five plus five times zero plus five times four?", 
+	"Answer" : 25,
+	"Spoken Answer" : "The correct answer is twenty-five.",
+	"Mistakes" : {
+		"Common Mistake 1" : 20,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply five by zero and five by four",
+		"Written Explanation" : "Multiply 5 by 0 and 5 by 4, and add the second product to the first. Then, add 5 to that sum",
+ 	"Written General Feedback" : "5 X 0 = 0; 5 X 4 = 20; Now we have 5 + 0 + 20; 5 + 0 = 5; Now we have 5 + 20 = 25"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 308,
+	"Question" : "What is (0 + 9) X 0 + 2?",
+	"Spoken Question" : "What is (zero plus nine) times zero plus two?",
+	"Answer" : 2,
+	"Spoken Answer" : "The correct answer is two.",
+	"Mistakes" : {
+		"Common Mistake 1" : 18,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by zero next.",
+		"Common Mistake 2" : 2,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding zero and nine.",
+		"Written Explanation" : "Add 0 to 9 before multiplying 0 with that sum, and then add 2 to that product.",
+ 	"Written General Feedback" : 0 + 9 = 9; Now we have: 9 X 0 + 2; 9 X 0 = 0; Now we have 0 + 2 = 2
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 309,
+	"Question" : "What is 9 + 7 X 3 + 9 X 4?",
+	"Spoken Question" : "What is nine plus seven times three plus nine times four?", 
+	"Answer" : 66,
+	"Spoken Answer" : "The correct answer is sixty-six.",
+	"Mistakes" : {
+		"Common Mistake 1" : 84,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply seven by three and nine by four",
+		"Written Explanation" : "Multiply 7 by 3 and 9 by 4, and add the second product to the first. Then, add 9 to that sum",
+ 	"Written General Feedback" : "7 X 3 = 21; 9 X 4 = 36; Now we have 9 + 21 + 36; 9 + 21 = 30; Now we have 30 + 36 = 66"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 310,
+	"Question" : "What is 0 + (1 + 7) X 9?",
+	"Spoken Question" : "What is zero plus (one plus seven) times nine?", 
+	"Answer" : 72,
+	"Spoken Answer" : "The correct answer is seventy-two.",
+	"Mistakes" : {
+		"Common Mistake 1" : 72,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by nine next.",
+		"Common Mistake 2" : 64,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding one and seven.",
+		"Written Explanation" : "Add 1 to 7 before multiplying 9 with that sum, and then add 0 to that product.",
+ 	"Written General Feedback" : 1 + 7 = 8; Now we have:0 + 8 X 9; 8 X 9 = 72; Now we have 0 + 72 = 72
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 311,
+	"Question" : "What is 5 + 7 X 3 - 9 X 2?",
+	"Spoken Question" : "What is five plus seven times three minus nine times two?", 
+	"Answer" : 8,
+	"Spoken Answer" : "The correct answer is eight.",
+	"Mistakes" : {
+		"Common Mistake 1" : 18,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply seven by three and nine by two",
+		"Written Explanation" : "Multiply 7 by 3 and 9 by 2, and subtract the second product from the first. Then, add 5 to that difference",
+ 	"Written General Feedback" : "7 X 3 = 21; 9 X 2 = 18; Now we have 5 + 21 - 18; 5 + 21 = 26; Now we have 26 - 18 = 8"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 312,
+	"Question" : "What is 3 + (1 + 6) X 3?",
+	"Spoken Question" : "What is three plus (one plus six) times three?", 
+	"Answer" : 24,
+	"Spoken Answer" : "The correct answer is twenty-four.",
+	"Mistakes" : {
+		"Common Mistake 1" : 30,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by three next.",
+		"Common Mistake 2" : 22,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding one and six.",
+		"Written Explanation" : "Add 1 to 6 before multiplying 3 with that sum, and then add 3 to that product.",
+ 	"Written General Feedback" : 1 + 6 = 7; Now we have:3 + 7 X 3; 7 X 3 = 21; Now we have 3 + 21 = 24
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 313,
+	"Question" : "What is 1 + 9 X 2 + 7 X 3?",
+	"Spoken Question" : "What is one plus nine times two plus seven times three?", 
+	"Answer" : 40,
+	"Spoken Answer" : "The correct answer is forty.",
+	"Mistakes" : {
+		"Common Mistake 1" : 41,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply nine by two and seven by three",
+		"Written Explanation" : "Multiply 9 by 2 and 7 by 3, and add the second product to the first. Then, add 1 to that sum",
+ 	"Written General Feedback" : "9 X 2 = 18; 7 X 3 = 21; Now we have 1 + 18 + 21; 1 + 18 = 19; Now we have 19 + 21 = 40"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 314,
+	"Question" : "What is 7 + (1 + 5) X 3?",
+	"Spoken Question" : "What is seven plus (one plus five) times three?", 
+	"Answer" : 25,
+	"Spoken Answer" : "The correct answer is twenty-five.",
+	"Mistakes" : {
+		"Common Mistake 1" : 39,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by three next.",
+		"Common Mistake 2" : 23,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding one and five.",
+		"Written Explanation" : "Add 1 to 5 before multiplying 3 with that sum, and then add 7 to that product.",
+ 	"Written General Feedback" : 1 + 5 = 6; Now we have:7 + 6 X 3; 6 X 3 = 18; Now we have 7 + 18 = 25
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 315,
+	"Question" : "What is 5 + 6 X 3 - 7 X 2?",
+	"Spoken Question" : "What is five plus six times three minus seven times two?", 
+	"Answer" : 9,
+	"Spoken Answer" : "The correct answer is nine.",
+	"Mistakes" : {
+		"Common Mistake 1" : 19,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply six by three and seven by two",
+		"Written Explanation" : "Multiply 6 by 3 and 7 by 2, and subtract the second product from the first. Then, add 5 to that difference",
+ 	"Written General Feedback" : "6 X 3 = 18; 7 X 2 = 14; Now we have 5 + 18 - 14; 5 + 18 = 23; Now we have 23 - 14 = 9"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 316,
+	"Question" : "What is 3 + (1 + 8) X 3?",
+	"Spoken Question" : "What is three plus (one plus eight) times three?", 
+	"Answer" : 30,
+	"Spoken Answer" : "The correct answer is thirty.",
+	"Mistakes" : {
+		"Common Mistake 1" : 36,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by three next.",
+		"Common Mistake 2" : 28,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding one and eight.",
+		"Written Explanation" : "Add 1 to 8 before multiplying 3 with that sum, and then add 3 to that product.",
+ 	"Written General Feedback" : 1 + 8 = 9; Now we have:3 + 9 X 3; 9 X 3 = 27; Now we have 3 + 27 = 30
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 317,
+	"Question" : "What is 3 + 6 X 1 + 9 X 3?",
+	"Spoken Question" : "What is three plus six times one plus nine times three?", 
+	"Answer" : 36,
+	"Spoken Answer" : "The correct answer is thirty-six.",
+	"Mistakes" : {
+		"Common Mistake 1" : 36,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply six by one and nine by three",
+		"Written Explanation" : "Multiply 6 by 1 and 9 by 3, and add the second product to the first. Then, add 3 to that sum",
+ 	"Written General Feedback" : "6 X 1 = 6; 9 X 3 = 27; Now we have 3 + 6 + 27; 3 + 6 = 9; Now we have 9 + 27 = 36"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 318,
+	"Question" : "What is (1 + 7) X 6 + 9?",
+	"Spoken Question" : "What is (one plus seven) times six plus nine?",
+	"Answer" : 57,
+	"Spoken Answer" : "The correct answer is fifty-seven.",
+	"Mistakes" : {
+		"Common Mistake 1" : 120,
+		"Spoken Explanation 1" : " Remember that once you've done what's inside the parentheses, multiply by six next.",
+		"Common Mistake 2" : 52,
+		"Spoken Explanation 2" : " Remember to do what's inside the parentheses first, by adding one and seven.",
+		"Written Explanation" : "Add 1 to 7 before multiplying 6 with that sum, and then add 9 to that product.",
+ 	"Written General Feedback" : 1 + 7 = 8; Now we have: 8 X 6 + 9; 8 X 6 = 48; Now we have 48 + 9 = 57
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Parentheses", 
+	"Max Time" : 60
+ },
+
+ {
+	"QuestionID" : 319,
+	"Question" : "What is 0 + 8 X 3 - 5 X 1?",
+	"Spoken Question" : "What is zero plus eight times three minus five times one?", 
+	"Answer" : 19,
+	"Spoken Answer" : "The correct answer is nineteen.",
+	"Mistakes" : {
+		"Common Mistake 1" : 19,
+		"Spoken Explanation 1" : " Remember to do multiplication first! So multiply eight by three and five by one",
+		"Written Explanation" : "Multiply 8 by 3 and 5 by 1, and subtract the second product from the first. Then, add 0 to that difference",
+ 	"Written General Feedback" : "8 X 3 = 24; 5 X 1 = 5; Now we have 0 + 24 - 5; 0 + 24 = 24; Now we have 24 - 5 = 19"
+	},
+	"Difficulty Level" : 2,
+	"Problem Type" : "Multiplication", 
+	"Max Time" : 60
+ },
+
+]
