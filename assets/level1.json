@@ -3731,6 +3731,7 @@
 	"Difficulty Level" : 1,
 	"Problem Type" : "Parentheses", 
 	"Max Time" : 60,
+<<<<<<< HEAD
 	"Mistakes" : {
 		"Common Mistake 1" : 30,
 		"Spoken Explanation 1" : "I think you multiplied nine and three before you added three.",
@@ -3738,4 +3739,14 @@
 		"Written General Feedback" : "3 + 3 = 6; Now we have 9 X 6 = 54"
 	}
  }
+=======
+		"Mistakes" : {
+		"Common Mistake" : 10,
+		"Spoken Explanation" : "I think you multiplied six and one before you added four.",
+		"Written Explanation" : "Add 4 + 6 before multiplying 1 with that sum",
+ 	"Written General Feedback" : "4 + 6 = 10; 10 X 1 = 10"
+		}
+ }
+
+>>>>>>> b8266e6caf2cdca54a78174207e6cd05a458283d
 ]

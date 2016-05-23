@@ -120,6 +120,9 @@ public class MathActivity extends Activity implements TCPClientOwner {
     //break variables
     private int fixedBreakInterval = 3;
     private int num_consec_questions = 0;  //number of consecutive questions without break given
+    private TimeWatch fixed_break_timewatch;
+    private int fixed_break_time = 120; //break every x minutes, this value is pulled in from start screen
+    private boolean first_problem = true;
 
     //choosing question variables
     public int BASE_NUM_QS_PER_LEVEL = 3;
@@ -129,7 +132,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private int current_difficulty_level = 1;
     private double percent_difficulty_correct = 0.0;
     private int num_correct_difficulty = 0;
-    private int save_index = 0;
+    private int save_index = 0; //total number of questions to display on top of screen
 
 
     private void startTimer(long delay, long period) {
@@ -256,6 +259,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
             System.out.println("startQuestionNum is: " + startQuestionNum);
             currentQuestionIndex = startQuestionNum - 2;
             fixedBreakInterval = Integer.parseInt(extras.getString("fixedBreakInterval"));
+            fixed_break_time = fixedBreakInterval * 60; //start_screen provides this number in minutes
 
             int max_time = Integer.parseInt(extras.getString("maxTime"));
             if (max_time != -1) {  //means different max_time specified
@@ -355,10 +359,11 @@ public class MathActivity extends Activity implements TCPClientOwner {
             }
         });
         total_elapsed_timewatch = TimeWatch.start();
+        fixed_break_timewatch = TimeWatch.start(); //initialize here but reset when we get to question 1
 
         if (extras.getString("startOrLoad").equals("start")) {
             Intent intent = new Intent(this, LessonActivity.class);
-            NextQuestion();//startActivity(intent); //use NextQuestion() here just for testing breaks!
+            NextQuestion();//startActivity(intent); //use NextQuestion() here to skip lesson just for testing breaks!
         } else {
             NextQuestion();
         }
@@ -564,7 +569,36 @@ public class MathActivity extends Activity implements TCPClientOwner {
                 } else {
 
                     too_many_incorrect_string += " " + TOO_MANY_INCORRECT_POSTFIX;
+
+                    String explanation = "";
+                    if (current_difficulty_level == 1){
+                        if (questionType.equals("Multiplication")) {
+                            explanation = "Make sure to do the multiplication first! ";
+                        }
+                        else if (questionType.equals("Parentheses")){
+                            explanation = "Make sure to do the part inside the parentheses first! ";
+                        }
+                    }
+                    else if (current_difficulty_level == 2){
+                        if (questionType.equals("Multiplication")) {
+                            explanation = "Remember to do all the multiplication parts first. Before any addition or subtraction! ";
+                        }
+                        else if (questionType.equals("Parentheses")){
+                            explanation = "Remember to do what is inside the parentheses first! Then do any multiplication parts next! Last, you can do the addition. ";
+                        }
+                    }
+                    else if (current_difficulty_level == 3){
+                        if (questionType.equals("Multiplication")) {
+                            explanation = "Dont forget to do ALL the multiplication parts first! Then when you only have addition and subtraction left, you can do the problem in order. ";
+                        }
+                        else if (questionType.equals("Parentheses")){
+                            explanation = "Dont forget to do the parentheses before anything else! Then do ALL of the multiplication parts. After that, you can do addition and subtraction. ";
+                        }
+                    }
+                    too_many_incorrect_message += " " + explanation;
                     too_many_incorrect_message += " " + TOO_MANY_INCORRECT_POSTFIX;
+
+                    too_many_incorrect_string += "\n" + question.feedback.replace(";", "\n");
                     //Send message
                     if (TCPClient.singleton != null)
                         TCPClient.singleton.sendMessage("LIA;" + currentQuestionIndex + ";" + questionType + ";" + too_many_incorrect_message + ";" + attempt + ";" + questionTime);
@@ -675,8 +709,13 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
     public void NextQuestion() {
         //preliminary fixed break interval calculation
-        if (expGroup == 1 && num_consec_questions >= fixedBreakInterval) {
+        //if (expGroup == 1 && num_consec_questions >= fixedBreakInterval) {
+        //    takeBreak = true;
+        //    num_consec_questions = 0;
+        //}
+        if (expGroup == 1 && !first_problem && fixed_break_timewatch.time(TimeUnit.SECONDS) > fixed_break_time){
             takeBreak = true;
+            System.out.println("Taking break in fixed condition, completed: " + num_consec_questions + " questions.");
             num_consec_questions = 0;
         }
 
@@ -697,6 +736,9 @@ public class MathActivity extends Activity implements TCPClientOwner {
                 System.out.println("Break 4");
                 startMindfulnessBreak();
             }
+            //if (expGroup ==1){ //took break in fixed condition
+            //    fixed_break_timewatch.reset();
+            //}
             takeBreak = false;
             return;
         }
@@ -753,6 +795,11 @@ public class MathActivity extends Activity implements TCPClientOwner {
             return;
         }
 
+        if (currentQuestionIndex == 0 && current_difficulty_level == 1 && first_problem){
+            System.out.println("starting fixed break time watch when first problem starts");
+            fixed_break_timewatch.reset();
+            first_problem = false;
+        }
         Question question = questions.get(currentQuestionIndex);
         String newQuestion = question.question;
         questionType = question.type;
@@ -825,9 +872,11 @@ public class MathActivity extends Activity implements TCPClientOwner {
             if (TCPClient.singleton != null) {
                 TCPClient.singleton.setSessionOwner(this);
             }
+            fixed_break_timewatch.reset(); //reset when questions resume
             NextQuestion();
         } else {
             firstTimeCallingOnResume = false;
+            //fixed_break_timewatch = TimeWatch.start(); //starts the first time MathActivity is run?
         }
     }
 }
