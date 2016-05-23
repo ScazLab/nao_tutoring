@@ -121,7 +121,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private int fixedBreakInterval = 3;
     private int num_consec_questions = 0;  //number of consecutive questions without break given
     private TimeWatch fixed_break_timewatch;
-    private int fixed_break_time = 120; //break every x minutes, 2 for testing
+    private int fixed_break_time = 120; //break every x minutes, this value is pulled in from start screen
     private boolean first_problem = true;
 
     //choosing question variables
@@ -132,7 +132,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private int current_difficulty_level = 1;
     private double percent_difficulty_correct = 0.0;
     private int num_correct_difficulty = 0;
-    private int save_index = 0;
+    private int save_index = 0; //total number of questions to display on top of screen
 
 
     private void startTimer(long delay, long period) {
@@ -572,27 +572,27 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
                     String explanation = "";
                     if (current_difficulty_level == 1){
-                        if (questionType == "Multiplication") {
-                            explanation = "";
+                        if (questionType.equals("Multiplication")) {
+                            explanation = "Make sure to do the multiplication first! ";
                         }
-                        else if (questionType == "Parentheses"){
-                            explanation = "";
+                        else if (questionType.equals("Parentheses")){
+                            explanation = "Make sure to do the part inside the parentheses first! ";
                         }
                     }
                     else if (current_difficulty_level == 2){
-                        if (questionType == "Multiplication") {
-                            explanation = "";
+                        if (questionType.equals("Multiplication")) {
+                            explanation = "Remember to do all the multiplication parts first. Before any addition or subtraction! ";
                         }
-                        else if (questionType == "Parentheses"){
-                            explanation = "";
+                        else if (questionType.equals("Parentheses")){
+                            explanation = "Remember to do what is inside the parentheses first! Then do any multiplication parts next! Last, you can do the addition. ";
                         }
                     }
                     else if (current_difficulty_level == 3){
-                        if (questionType == "Multiplication") {
-                            explanation = "";
+                        if (questionType.equals("Multiplication")) {
+                            explanation = "Dont forget to do ALL the multiplication parts first! Then when you only have addition and subtraction left, you can do the problem in order. ";
                         }
-                        else if (questionType == "Parentheses"){
-                            explanation = "";
+                        else if (questionType.equals("Parentheses")){
+                            explanation = "Dont forget to do the parentheses before anything else! Then do ALL of the multiplication parts. After that, you can do addition and subtraction. ";
                         }
                     }
                     too_many_incorrect_message += " " + explanation;
