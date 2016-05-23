@@ -120,7 +120,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private final Handler handler = new Handler();
 
     // ends session at max_session_time seconds
-    private int max_session_time = 1800;
+    private int max_session_time = 1800; //this should be 40 minutes
     private TimeWatch total_elapsed_timewatch;
 
     //break variables
@@ -131,9 +131,9 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private boolean first_problem = true;
 
     //choosing question variables
-    public int BASE_NUM_QS_PER_LEVEL = 3;
+    public int BASE_NUM_QS_PER_LEVEL = 3; //should be 10
     public int NUM_DIFFICULTY_LEVELS = 3;
-    public double MASTERY_LEVEL = 0.8;
+    public double MASTERY_LEVEL = 0.7; // should be .7
     private int num_consec_difficulty = 0;
     private int current_difficulty_level = 1;
     private double percent_difficulty_correct = 0.0;
@@ -369,7 +369,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
         if (extras.getString("startOrLoad").equals("start")) {
             Intent intent = new Intent(this, LessonActivity.class);
-            NextQuestion();//startActivity(intent); //use NextQuestion() here to skip lesson just for testing breaks!
+            startActivity(intent); //use NextQuestion() here to skip lesson just for testing breaks!
         } else {
             NextQuestion();
         }
@@ -577,7 +577,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
                     too_many_incorrect_string += " " + TOO_MANY_INCORRECT_POSTFIX;
 
                     String explanation = getRandomMsg(FEEDBACK_INTRO_MSGS);
-                    
+
                     if (current_difficulty_level == 1){
                         if (questionType.equals("Multiplication")) {
                             explanation += " to do the multiplication first! ";

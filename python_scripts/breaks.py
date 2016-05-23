@@ -257,7 +257,6 @@ def calc_accuracy_change(s, min_change=.2):
 
 BREAK_SPEECH = {
     "fixed": [ "Since it has been a few minutes, lets take a break.",
-               "Lets take a break now.",
                "I think it is time for a break." ],
     "base-rules": {
         # Reward breaks

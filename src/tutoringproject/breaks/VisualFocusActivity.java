@@ -31,7 +31,7 @@ public class VisualFocusActivity extends Activity implements TCPClientOwner {
     public int NUM_SYMBOL_PAIRS;
     // The break will end after this time limit (represented in seconds) is passed and the current
     // round is finished.
-    public long TIME_LIMIT = 60; //one minute for now, for testing
+    public long TIME_LIMIT = 60; //should be 120
 
     public String[] CORRECT_TAP_MSGS = {
             "Good job!",
@@ -120,6 +120,12 @@ public class VisualFocusActivity extends Activity implements TCPClientOwner {
         pairs.add("8");
         symbols.add("Z");
         pairs.add("2");
+        symbols.add("1");
+        pairs.add("l");
+        symbols.add("Q");
+        pairs.add("O");
+        symbols.add("g");
+        pairs.add("9");
         NUM_SYMBOL_PAIRS = symbols.size();
 
         // Transfer control of TCP client from MathActivity to this activity.
