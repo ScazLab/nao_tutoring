@@ -26,7 +26,7 @@ for problem in range(100):
 			print '		"Common Mistake 1" : %d,'% commonmistake1
 			print '		"Spoken Explanation 1" : " %s",' % (spokenexplanation1)
 			print '		"Written Explanation" : "Multiply %s by %s and %s by %s, and subtract the second product from the first. Then, add %s to that difference",' % ((a1), (b1), (a2), (b2), (s1))
-			print ' 	"Written General Feedback" : "%d X %d = %d; %d X %d = %d; Now we have %d + %d - %d; %d + %d = %d; Now we have %d - %d = %d"' %(a1,b1, a1*b1, a2, b2, a2*b2, s1, a1*b1, a2*b2, s1, a1*b1, s1 + a1*b1, s1 + a1*b1, a2*b2, answer)
+			print '		"Written General Feedback" : "%d X %d = %d; %d X %d = %d; Now we have %d + %d - %d; %d + %d = %d; Now we have %d - %d = %d"' %(a1,b1, a1*b1, a2, b2, a2*b2, s1, a1*b1, a2*b2, s1, a1*b1, s1 + a1*b1, s1 + a1*b1, a2*b2, answer)
 			print '	},'
 
 		# want addition
@@ -42,7 +42,7 @@ for problem in range(100):
 			print '		"Common Mistake 1" : %d,'% commonmistake1
 			print '		"Spoken Explanation 1" : " %s",' % (spokenexplanation1)
 			print '		"Written Explanation" : "Multiply %s by %s and %s by %s, and add the second product to the first. Then, add %s to that sum",' % ((a1), (b1), (a2), (b2), (s1))
-			print ' 	"Written General Feedback" : "%d X %d = %d; %d X %d = %d; Now we have %d + %d + %d; %d + %d = %d; Now we have %d + %d = %d"' %(a1,b1, a1*b1, a2, b2, a2*b2, s1, a1*b1, a2*b2, s1, a1*b1, s1 + a1*b1, s1 + a1*b1, a2*b2, answer)
+			print '		"Written General Feedback" : "%d X %d = %d; %d X %d = %d; Now we have %d + %d + %d; %d + %d = %d; Now we have %d + %d = %d"' %(a1,b1, a1*b1, a2, b2, a2*b2, s1, a1*b1, a2*b2, s1, a1*b1, s1 + a1*b1, s1 + a1*b1, a2*b2, answer)
 			print '	},'
 		print '	"Difficulty Level" : 2,'
 		print '	"Problem Type" : "Multiplication", '
@@ -86,10 +86,10 @@ for problem in range(100):
 		print '		"Common Mistake 1" : %d,'% commonmistake1
 		print '		"Spoken Explanation 1" : " %s",' % (spokenexplanation1)
 		print '		"Common Mistake 2" : %d,' % commonmistake2
-		print '		"Spoken Explanation 2" : " %s",' % (spokenexplanation2)
+		print '		"Spoken Explanation 2" : "%s",' % (spokenexplanation2)
 
 		print '		"Written Explanation" : "Add %s to %s before multiplying %s with that sum, and then add %s to that product.",' % ((firstadd), (secondadd), (times), (outsideAdd))
-		print ' 	"Written General Feedback" : %s' % generalfeedback
+		print '		"Written General Feedback" : "%s"' % generalfeedback
 		print '	},'
 		print '	"Difficulty Level" : 2,'
 		print '	"Problem Type" : "Parentheses", '
