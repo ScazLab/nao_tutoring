@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 import android.os.Handler;
@@ -46,8 +47,13 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private final String DENIED_HINT_VALUE = "Try making an attempt before requesting more help!";
     private final String QUESTION_INTRO_PREFIX = "This is a question for you about ";
     private final String QUESTION_INTRO_POSTFIX = ". Here it is!";
+    public String[] FEEDBACK_INTRO_MSGS = {
+            "Dont forget",
+            "Remember",
+            "Make sure",
+    };
 
-
+    private Random gen = new Random();
     private TextView fractionLine;
     private NoImeEditText AnswerText1;
     private NoImeEditText AnswerText2;
@@ -570,30 +576,30 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
                     too_many_incorrect_string += " " + TOO_MANY_INCORRECT_POSTFIX;
 
-                    String explanation = "";
+                    String explanation = getRandomMsg(FEEDBACK_INTRO_MSGS);
                     //TODO: make first part of this explanation randomly choose between those phrases
                     if (current_difficulty_level == 1){
                         if (questionType.equals("Multiplication")) {
-                            explanation = "Make sure to do the multiplication first! ";
+                            explanation += " to do the multiplication first! ";
                         }
                         else if (questionType.equals("Parentheses")){
-                            explanation = "Make sure to do the part inside the parentheses first! ";
+                            explanation += " to do the part inside the parentheses first! ";
                         }
                     }
                     else if (current_difficulty_level == 2){
                         if (questionType.equals("Multiplication")) {
-                            explanation = "Remember to do all the multiplication parts first. Before any addition or subtraction! ";
+                            explanation += " to do all the multiplication parts first. Before any addition or subtraction! ";
                         }
                         else if (questionType.equals("Parentheses")){
-                            explanation = "Remember to do what is inside the parentheses first! Then do any multiplication parts next! Last, you can do the addition. ";
+                            explanation += " to do what is inside the parentheses first! Then do any multiplication parts next! Last, you can do the addition. ";
                         }
                     }
                     else if (current_difficulty_level == 3){
                         if (questionType.equals("Multiplication")) {
-                            explanation = "Dont forget to do ALL the multiplication parts first! Then when you only have addition and subtraction left, you can do the problem in order. ";
+                            explanation += " to do ALL the multiplication parts first! Then when you only have addition and subtraction left, you can do the problem in order. ";
                         }
                         else if (questionType.equals("Parentheses")){
-                            explanation = "Dont forget to do the parentheses before anything else! Then do ALL of the multiplication parts. After that, you can do addition and subtraction. ";
+                            explanation += " to do the parentheses before anything else! Then do ALL of the multiplication parts. After that, you can do addition and subtraction. ";
                         }
                     }
                     too_many_incorrect_message += " " + explanation;
@@ -865,6 +871,10 @@ public class MathActivity extends Activity implements TCPClientOwner {
         Intent intent = new Intent(this, MindfulnessBreakActivity.class);
         intent.putExtra("expGroup", "" + expGroup);
         startActivity(intent);
+    }
+
+    public String getRandomMsg(String[] msgList) {
+        return msgList[gen.nextInt(msgList.length)];
     }
 
     public void onResume() {
