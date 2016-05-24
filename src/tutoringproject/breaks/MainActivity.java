@@ -117,17 +117,17 @@ public class MainActivity extends Activity implements View.OnClickListener {
             expGroup = 1;
         }
         else if (v == rewardButton) {
-            sessionNum = 2;
+            sessionNum = 1;
             expGroup = 2;
         }
         else if (v == frustrationButton) {
-            sessionNum = 3;
+            sessionNum = 1;
             expGroup = 3;
         }
         else if (v == loadButton) {
             try {
                 expGroup = Integer.parseInt(conditionNum.getText().toString());
-                sessionNum = Integer.parseInt(conditionNum.getText().toString());
+                sessionNum = 1;
             } catch (NumberFormatException e) {  //if nothing entered into field
                 expGroup = 1;
                 sessionNum = 1;

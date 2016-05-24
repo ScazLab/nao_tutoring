@@ -166,7 +166,7 @@
         <EditText
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="1800"
+            android:text=""
             android:inputType="number"
             android:ems="10"
             android:id="@+id/MaxTime"
@@ -175,7 +175,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Max Session Time (default 1800 seconds)" />
+            android:text="Max Session Time (default 2400 seconds)" />
     </LinearLayout>
 
     <LinearLayout

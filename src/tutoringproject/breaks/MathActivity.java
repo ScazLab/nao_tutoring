@@ -120,7 +120,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private final Handler handler = new Handler();
 
     // ends session at max_session_time seconds
-    private int max_session_time = 600; //this should be 40 minutes (2400 seconds)
+    private int max_session_time = 2400; //15 minutes for testing //this should REALLY be 40 minutes (2400 seconds)
     private TimeWatch total_elapsed_timewatch;
 
     //break variables
@@ -731,14 +731,14 @@ public class MathActivity extends Activity implements TCPClientOwner {
             stopTimerTask();
             if (numberBreaksGiven % 4 == 0) {
                 numberBreaksGiven++;
-                startTicTacToe(); //just for testing
+                startTicTacToe();
             } else if (numberBreaksGiven % 4 == 1) {
                 numberBreaksGiven++;
-                startStretchBreak();//just for testing
+                startStretchBreak();
             } else if (numberBreaksGiven % 4 == 2) {
                 numberBreaksGiven++;
                 System.out.println("Break 3");
-                startVisualFocus();//just for testing
+                startVisualFocus();
             } else if (numberBreaksGiven % 4 == 3) {
                 numberBreaksGiven++;
                 System.out.println("Break 4");
