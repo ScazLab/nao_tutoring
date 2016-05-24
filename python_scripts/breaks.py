@@ -271,17 +271,17 @@ BREAK_SPEECH = {
              "You've been doing really well for quite some time now! Let's take a little break." ],
 
         # Frustration breaks
-        5:  [ "You’re doing well, so let’s take a break to relax and then we can really get back into it!",
+        5:  [ "You're doing well, so let's take a break to relax and then we can really get back into it!",
               "You're doing a good job. How about a break to relax and then we can keep going!" ],
         6:  [ "How about we take a little break to relax and refocus? Then we can come back to the problems and try again!",
               "Why don't we take a break to refocus? Then we can keep going with the problems!" ],
-        8:  [ "These problems aren’t easy! I know you’ve been trying, so let’s take a little break to relax! Then we can try again!",
+        8:  [ "These problems aren't easy! I know you've been trying, so let's take a little break to relax! Then we can try again!",
               "You've been really trying and these are tough! Let's take a break to relax and then get back to it!" ],
-        9:  [ "Don’t give up! I know you can do it. Let’s take a little break and refocus. Then we can try again!",
+        9:  [ "Don't give up! I know you can do it. Let's take a little break and refocus. Then we can try again!",
               "You can do it! How about a little break now? Then we can refocus and get back to the problems!" ],
         10: [ "Hmm, why don't we take a little break to refocus and then come back to our problems!",
               "I know you can do it! Let's take a quick break to refocus and then we can try again with the problems!" ],
-        11: [ "I know you can do these! Let’s do something else for a bit and then we can get back to trying hard on the problems!",
+        11: [ "I know you can do these! Let's do something else for a bit and then we can get back to trying hard on the problems!",
               "How about we take a break to relax and refocus? Then we can keep going with the problems and try again!" ],
     },
     "super-rules": {

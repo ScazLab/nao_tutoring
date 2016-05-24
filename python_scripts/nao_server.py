@@ -512,7 +512,10 @@ class TutoringSession:
         #if msg_sub_type == 'START':
         if self.goNao is None:
             os.system('say ' + robot_speech)
-            return speech_return, robot_speech
+            if otherInfo == 'nothing':
+                return speech_return, robot_speech
+            else:
+                return speech_return, otherInfo
         else:
             self.goNao.look()
             speech_return = self.goNao.genSpeech(robot_speech)

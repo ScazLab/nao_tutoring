@@ -470,6 +470,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
             numConsecHintsRequested = 0; //reset since attempt is made here
             Question question = questions.get(currentQuestionIndex);
             String questionType = question.type;
+            int questionID = question.questionID;
 
             Boolean correct = false;
 
@@ -494,7 +495,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
             if (correct) {
                 stopTimerTask();  // immediately kill timer task if correct
                 if (TCPClient.singleton != null)
-                    TCPClient.singleton.sendMessage("CA;" + currentQuestionIndex + ";" + questionType + ";" + CORRECT_STRING + ";" + attempt  + ";" + questionTime);
+                    TCPClient.singleton.sendMessage("CA;" + questionID + ";" + questionType + ";" + CORRECT_STRING + ";" + attempt  + ";" + questionTime);
                 RightWrongLabel.setText(CORRECT_STRING);
                 SubmitButton.setText(NEXT_QUESTION_STRING);
                 questionState = QState.DISPLAYCORRECT;
@@ -543,7 +544,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
                     }
                     //Send message
                     if (TCPClient.singleton != null)
-                        TCPClient.singleton.sendMessage("IA;" + currentQuestionIndex + ";" + questionType + ";" + incorrect_message + ";" + attempt);
+                        TCPClient.singleton.sendMessage("IA;" + questionID + ";" + questionType + ";" + incorrect_message + ";" + attempt);
                     RightWrongLabel.setText(incorrect_string);
                     questionState = QState.DISPLAYINCORRECT;
                     AnswerText1.setText("");
@@ -608,7 +609,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
                     too_many_incorrect_string += "\n" + question.feedback.replace(";", "\n");
                     //Send message
                     if (TCPClient.singleton != null)
-                        TCPClient.singleton.sendMessage("LIA;" + currentQuestionIndex + ";" + questionType + ";" + too_many_incorrect_message + ";" + attempt + ";" + questionTime);
+                        TCPClient.singleton.sendMessage("LIA;" + questionID + ";" + questionType + ";" + too_many_incorrect_message + ";" + attempt + ";" + questionTime);
                     RightWrongLabel.setText(too_many_incorrect_string);
                     SubmitButton.setText(NEXT_QUESTION_STRING);
                     questionState = QState.DISPLAYCORRECT;
@@ -782,6 +783,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
         hintsRemaining = MAX_HINTS;
         attemptsRemaining = MAX_ATTEMPTS;
         String questionType = "none";
+        int questionID = -1;
 
         if (currentQuestionIndex >= questions.length() || total_elapsed_timewatch.time(TimeUnit.SECONDS) > max_session_time) {
             Intent intent = new Intent(this, Completed.class);
@@ -794,7 +796,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
                 goodbyeMessage += "I had a great time doing math with you! Have a great day! Bye!";
             }
             if (TCPClient.singleton != null) {
-                TCPClient.singleton.sendMessage("END;" + currentQuestionIndex + ";" + questionType + ";" + goodbyeMessage);
+                TCPClient.singleton.sendMessage("END;" + questionID + ";" + questionType + ";" + goodbyeMessage);
                 TCPClient.singleton.stopClient();
             }
             startActivity(intent);
@@ -810,7 +812,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
         Question question = questions.get(currentQuestionIndex);
         String newQuestion = question.question;
         questionType = question.type;
-        int questionID = question.questionID;
+        questionID = question.questionID;
         max_time_per_question = question.maxTime * 1000;
         //for now, reassign max_time_per_question just based on our best guess per difficulty level
         if (current_difficulty_level == 1) {
