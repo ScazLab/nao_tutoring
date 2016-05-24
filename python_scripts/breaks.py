@@ -29,7 +29,7 @@ def map_break_message(b):
     return dic[b]
 
 
-def take_break(s, reward_break=True, acc_min_change=.05, time_min_change=3, t=4, refractory_period=4, max_study_time=15):
+def take_break(s, reward_break=True, acc_min_change=.05, time_min_change=3, t=10, refractory_period=5, max_study_time=15):
     '''
     Method intended for determination of breaks for reward and frustration break scenarios
 
@@ -141,7 +141,7 @@ def super_rule3(s, max_study_time=15):
     return not breaked_recently
 
 
-def super_rule2(s, refractory_period=4):
+def super_rule2(s, refractory_period=4): #refractory period should be 5, same as window size
     '''
     Parameters:
         refractory_period: int representing number of questions needed before another break allowed to be served
