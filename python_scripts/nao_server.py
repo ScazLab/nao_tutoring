@@ -444,7 +444,8 @@ class TutoringSession:
                         #break
 
                     elif msgType.startswith('LESSON'):
-                        id, otherInfo = self.handle_lesson_msg(msgType, robot_speech)
+                        otherInfo = line.split(";",4)[4].strip()
+                        id, otherInfo = self.handle_lesson_msg(msgType, robot_speech, otherInfo)
                         returnMessage = msgType
 
                     elif msgType.startswith('TICTACTOE'):
@@ -505,16 +506,22 @@ class TutoringSession:
         return speech_return
 
 
-    def handle_lesson_msg(self, msg_type, robot_speech):
+    def handle_lesson_msg(self, msg_type, robot_speech, otherInfo):
         speech_return = 0
         msg_sub_type = msg_type[7:]
         #if msg_sub_type == 'START':
         if self.goNao is None:
             os.system('say ' + robot_speech)
+            return speech_return, robot_speech
         else:
             self.goNao.look()
             speech_return = self.goNao.genSpeech(robot_speech)
-        return speech_return, robot_speech
+            if otherInfo == 'nothing':
+                return speech_return, robot_speech
+            else:
+                return speech_return, otherInfo
+
+        
 
 
     def handle_tictactoe_msg(self, msg_type, robot_speech):

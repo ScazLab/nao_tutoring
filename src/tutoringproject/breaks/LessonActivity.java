@@ -108,6 +108,8 @@ public class LessonActivity extends Activity implements TCPClientOwner {
             "Now let's try practicing what we just learned about multiplication and parentheses! " +
             "Press the button on the bottom of the screen to start!";
 
+    public String NOTHING_STRING = "nothing";
+
 
 
     // Tablet text strings
@@ -237,7 +239,7 @@ public class LessonActivity extends Activity implements TCPClientOwner {
         }
 
         if (TCPClient.singleton != null) {
-            TCPClient.singleton.sendMessage("LESSON-START;-1;-1;" + START_MSG);
+            TCPClient.singleton.sendMessage("LESSON-START;-1;-1;" + START_MSG + ";" + NOTHING_STRING);
         }
     }
 
@@ -313,7 +315,7 @@ public class LessonActivity extends Activity implements TCPClientOwner {
         if (!enteredStr1.equals("")) {
             //depending on which button was pressed and where in the lesson we are, send msg to robot
             if (TCPClient.singleton != null) {
-                TCPClient.singleton.sendMessage(msgType + ";-1;-1;" + robotSpeechToSend);
+                TCPClient.singleton.sendMessage(msgType + ";-1;-1;" + robotSpeechToSend + ";" + enteredStr1);
             }
         }
     }
@@ -339,7 +341,7 @@ public class LessonActivity extends Activity implements TCPClientOwner {
         String robotSpeechToSend = PAREN_INTRO_MSG;
         //send message
         if (TCPClient.singleton != null) {
-            TCPClient.singleton.sendMessage(msgType + ";-1;-1;" + robotSpeechToSend);
+            TCPClient.singleton.sendMessage(msgType + ";-1;-1;" + robotSpeechToSend + ";" + NOTHING_STRING);
         }
     }
 
@@ -358,7 +360,7 @@ public class LessonActivity extends Activity implements TCPClientOwner {
             exampleProblem.setVisibility(View.VISIBLE);
             //send message to get nao speech and then move to next part of lesson
             if (TCPClient.singleton != null) {
-                TCPClient.singleton.sendMessage("LESSON-PART1;-1;-1;" + MULT_STEP1_MSG);
+                TCPClient.singleton.sendMessage("LESSON-PART1;-1;-1;" + MULT_STEP1_MSG + ";" + NOTHING_STRING);
             }
         }
         else if (msg.equals("LESSON-PART1")) {
@@ -377,7 +379,7 @@ public class LessonActivity extends Activity implements TCPClientOwner {
             exampleStep2.setVisibility(View.VISIBLE);
             //send message to get nao speech and then move to next part of lesson
             if (TCPClient.singleton != null) {
-                TCPClient.singleton.sendMessage("LESSON-PART3;-1;-1;" + MULT_STEP3_MSG);
+                TCPClient.singleton.sendMessage("LESSON-PART3;-1;-1;" + MULT_STEP3_MSG + ";" + NOTHING_STRING);
             }
         }
         else if (msg.equals("LESSON-PART3")){
@@ -402,7 +404,7 @@ public class LessonActivity extends Activity implements TCPClientOwner {
             exampleProblem.setText(PAREN_EXAMPLE_PROBLEM);
             exampleProblem.setVisibility(View.VISIBLE);
             if (TCPClient.singleton != null) {
-                TCPClient.singleton.sendMessage("LESSON-PART6;-1;-1;" + PAREN_STEP1_MSG);
+                TCPClient.singleton.sendMessage("LESSON-PART6;-1;-1;" + PAREN_STEP1_MSG + ";" + NOTHING_STRING);
             }
         }
         else if (msg.equals("LESSON-PART6")){
@@ -424,7 +426,7 @@ public class LessonActivity extends Activity implements TCPClientOwner {
             exampleStep2.setText(PAREN_STEP2_TEXT);
             exampleStep2.setVisibility(View.VISIBLE);
             if (TCPClient.singleton != null) {
-                TCPClient.singleton.sendMessage("LESSON-PART8;-1;-1;" + PAREN_STEP3_MSG);
+                TCPClient.singleton.sendMessage("LESSON-PART8;-1;-1;" + PAREN_STEP3_MSG + ";" + NOTHING_STRING);
             }
 
         }
@@ -444,7 +446,7 @@ public class LessonActivity extends Activity implements TCPClientOwner {
             AnswerButton2.setEnabled(false);
             exampleStep4.setVisibility(View.VISIBLE);
             if (TCPClient.singleton != null) {
-                TCPClient.singleton.sendMessage("LESSON-PART10;-1;-1;" + PAREN_STEP5_MSG);
+                TCPClient.singleton.sendMessage("LESSON-PART10;-1;-1;" + PAREN_STEP5_MSG + ";" + NOTHING_STRING);
             }
         }
         else if (msg.equals("LESSON-PART10")){
