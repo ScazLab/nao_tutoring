@@ -131,7 +131,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private boolean first_problem = true;
 
     //choosing question variables
-    public int BASE_NUM_QS_PER_LEVEL = 3; //should be 10
+    public int BASE_NUM_QS_PER_LEVEL = 5; //should be 10
     public int NUM_DIFFICULTY_LEVELS = 3;
     public double MASTERY_LEVEL = 0.7; // should be .7
     private int num_consec_difficulty = 0;
@@ -369,7 +369,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
         if (extras.getString("startOrLoad").equals("start")) {
             Intent intent = new Intent(this, LessonActivity.class);
-            startActivity(intent); //use NextQuestion() here to skip lesson just for testing breaks!
+            NextQuestion();//startActivity(intent); //use NextQuestion() here to skip lesson just for testing breaks!
         } else {
             NextQuestion();
         }
@@ -816,13 +816,13 @@ public class MathActivity extends Activity implements TCPClientOwner {
         max_time_per_question = question.maxTime * 1000;
         //for now, reassign max_time_per_question just based on our best guess per difficulty level
         if (current_difficulty_level == 1) {
-            max_time_per_question = 60 * 1000; //one minute
+            max_time_per_question = 70 * 1000; //one minute+10 seconds for intro
         }
         else if (current_difficulty_level == 2) {
             max_time_per_question = 120 * 1000; //two minutes
         }
         else if (current_difficulty_level == 3) {
-            max_time_per_question = 180 * 1000; //two minutes
+            max_time_per_question = 180 * 1000; //three minutes
         }
         //String questionIntro = QUESTION_INTRO_PREFIX + questionType + QUESTION_INTRO_POSTFIX;
         String questionIntro = question.type;//question.spokenType;
