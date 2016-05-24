@@ -29,7 +29,7 @@ def map_break_message(b):
     return dic[b]
 
 
-def take_break(s, reward_break=True, acc_min_change=.05, time_min_change=3, t=10, refractory_period=5, max_study_time=15):
+def take_break(s, reward_break=True, acc_min_change=.1, time_min_change=.2, t=10, refractory_period=5, max_study_time=15):
     '''
     Method intended for determination of breaks for reward and frustration break scenarios
 
@@ -77,7 +77,7 @@ def take_break(s, reward_break=True, acc_min_change=.05, time_min_change=3, t=10
                 break_trigger = True
                 break_val = 5
             else:  # no change
-                (break_trigger, break_val) = check_consistency(s, reward_break=reward_break, acc_high=True, t=4)
+                (break_trigger, break_val) = check_consistency(s, reward_break=reward_break, acc_high=True, t=10)
         else:  # overall accuracy < 80%
             if time_change > 0:  # time slower
                 break_trigger = True
@@ -86,7 +86,7 @@ def take_break(s, reward_break=True, acc_min_change=.05, time_min_change=3, t=10
                 break_trigger = True
                 break_val = 9
             else:  # no change
-                (break_trigger, break_val) = check_consistency(s, reward_break=reward_break, acc_high=False, t=4)
+                (break_trigger, break_val) = check_consistency(s, reward_break=reward_break, acc_high=False, t=10)
 
     # break_trigger depends on whether or not reward_break:
     if reward_break:  # reward
@@ -208,13 +208,13 @@ def check_consistency(s, reward_break, acc_high, t=10): #t should be 10
     return (break_trigger, break_val)
 
 
-def calc_time_change(s, min_change=1):
+def calc_time_change(s, min_change=.1):
     '''
     Calculates whether or not time has increased, decreased, or no change
 
     Parameters:
         s: session object
-        min_change: float representing minimum change needed for accuracy change to count as 'increasing' or 'decreasing'
+        min_change: float representing minimum percent change needed for time change to count as 'increasing' or 'decreasing'
 
     Returns -1 if decreased (faster), 0 if no change, and 1 if increased (slower)
     '''
@@ -225,9 +225,11 @@ def calc_time_change(s, min_change=1):
     print "current_window_avg_time: " + str(current_window_avg_time)
     print "total_window_avg_time: " + str(total_window_avg_time)
 
-    if current_window_avg_time > total_window_avg_time + abs(min_change):
+    if current_window_avg_time > total_window_avg_time * (1.0 + abs(min_change)):
+        print "in calc_time_change, time increased and min_change is: " + str(min_change)
         return 1
-    elif current_window_avg_time < total_window_avg_time - abs(min_change):
+    elif current_window_avg_time < total_window_avg_time * (1.0 - abs(min_change)):
+        print "in calc_time_change, time decreased and min_change is: " + str(min_change)
         return -1
     else:
         return 0
@@ -250,8 +252,10 @@ def calc_accuracy_change(s, min_change=.2):
     print "total_window_accuracy: " + str(total_window_accuracy)
 
     if current_window_accuracy > total_window_accuracy + abs(min_change):  # check increasing condition
+        print "in calc_accuracy_change, accuracy increased and min_change is: " + str(min_change)
         return 1
     elif current_window_accuracy < total_window_accuracy - abs(min_change):  # check decreasing condition
+        print "in calc_accuracy_change, accuracy decreased and min_change is: " + str(min_change)
         return -1
     else:  # no change
         return 0
