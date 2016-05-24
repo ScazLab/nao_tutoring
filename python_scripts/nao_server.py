@@ -454,6 +454,9 @@ class TutoringSession:
 
                     elif msgType.startswith('STRETCHBREAK'):
                         id, otherInfo = self.handle_stretch_break_msg(msgType, robot_speech)
+                        if msgType == 'STRETCHBREAK-START':
+                            msgType = 'STRETCHBREAK-DONE'
+                            otherInfo = ' '
                         returnMessage = 'STRETCHBREAK-DONE'
 
                     elif msgType.startswith('VISUALFOCUS'):
@@ -463,6 +466,9 @@ class TutoringSession:
 
                     elif msgType.startswith('MINDFULNESSBREAK'):
                         id, otherInfo = self.handle_mindfulness_break_msg(msgType, robot_speech)
+                        if msgType == 'MINDFULNESSBREAK-START':
+                            msgType = 'MINDFULNESSBREAK-DONE'
+                            otherInfo = ' '
                         returnMessage = 'MINDFULNESSBREAK-DONE'    
 
                     elif msgType.startswith('TIMEOUT'):
@@ -626,7 +632,7 @@ class TutoringSession:
                     self.current_session.breaks[-1].b_type
                 ) + " " + robot_speech_base
 
-            self.log_transaction('STRETCHBREAK-START', 0, robot_speech)
+            self.log_transaction('STRETCHBREAK-START', -1, robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
@@ -655,7 +661,7 @@ class TutoringSession:
                 ) + " " + robot_speech_base
 
             print 'before log_transaction'
-            self.log_transaction('VISUALFOCUS-START', 0, robot_speech)
+            #self.log_transaction('VISUALFOCUS-START', 0, robot_speech)
             print 'after log_transaction'
             if self.goNao is None:
                 print 'before os call'
@@ -666,7 +672,7 @@ class TutoringSession:
                 speech_return = self.goNao.genSpeech(robot_speech)
         
         elif msg_sub_type == 'ROUNDOVER' or msg_sub_type == 'END':
-            self.log_transaction('VISUALFOCUS-ROUNDOVER', 0, robot_speech)
+            #self.log_transaction('VISUALFOCUS-ROUNDOVER', 0, robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
@@ -674,7 +680,7 @@ class TutoringSession:
                 speech_return = self.goNao.genSpeech(robot_speech)
 
         elif msg_sub_type == 'RESTART':
-            self.log_transaction('VISUALFOCUS-ROUNDOVER', 0, robot_speech)
+            #self.log_transaction('VISUALFOCUS-ROUNDOVER', 0, robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
@@ -697,7 +703,7 @@ class TutoringSession:
                     self.current_session.breaks[-1].b_super,
                     self.current_session.breaks[-1].b_type
                 ) + " " + robot_speech_base
-            self.log_transaction('MINDFULNESSBREAK-START', 0, robot_speech)
+            self.log_transaction('MINDFULNESSBREAK-START', -1, robot_speech)
             if self.goNao is None:
                 os.system('say ' + robot_speech)
             else:
