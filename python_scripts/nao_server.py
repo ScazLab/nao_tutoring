@@ -88,7 +88,7 @@ class TutoringSession:
             otherInfo = ''
 
         transaction = self.pid + "," + self.expGroup + "," + str(self.sessionNum) + ","
-        #transaction += str(datetime.datetime.now() + ","
+        #transaction += str(datetime.datetime.now()) + ","
         transaction += str(int(round(time.time() * 1000))) + ","
         transaction += str(questionNum) + ","
         transaction += self.map_msg_type(msgType) + ","
