@@ -307,7 +307,7 @@ class TutoringSession:
                             rand_choice = random.randint(0,3)
                             point = "no_point"
                             if(rand_choice == 1):
-                                id = self.goNao.genSpeech("Here it is.")
+                                #id = self.goNao.genSpeech("Here it is.")
                                 self.goNao.point_question()
                                 point = "point_to_question"
                                 self.log_transaction("RA",questionNum,point)
@@ -524,7 +524,7 @@ class TutoringSession:
     def handle_lesson_msg(self, msg_type, robot_speech, otherInfo):
         speech_return = 0
         msg_sub_type = msg_type[7:]
-        #if msg_sub_type == 'START':
+        
         if self.goNao is None:
             os.system('say ' + robot_speech)
             if otherInfo == 'nothing':
@@ -533,8 +533,22 @@ class TutoringSession:
                 self.log_transaction("RS",-1,robot_speech)
                 return speech_return, otherInfo
         else:
-            self.goNao.look()
-            speech_return = self.goNao.genSpeech(robot_speech)
+            if msg_sub_type == 'PART1' or msg_sub_type == 'PART6':
+                self.goNao.look()
+                first_half = robot_speech.split("!",1)[0].strip() + "!"
+                second_half = robot_speech.split("!",1)[1].strip()
+                id = self.goNao.genSpeech(first_half)
+                self.goNao.speechDevice.wait(id, 0)
+                self.goNao.sit()
+                speech_return = self.goNao.genSpeech(second_half)
+            elif msg_sub_type == 'PART3' or msg_sub_type == 'PART8':
+                self.goNao.look()
+                speech_return = self.goNao.genSpeech(robot_speech)
+                self.goNao.point_question()   
+            else:    
+                self.goNao.look()
+                speech_return = self.goNao.genSpeech(robot_speech)
+            
             if otherInfo == 'nothing':
                 return speech_return, robot_speech
             else:

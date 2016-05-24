@@ -79,7 +79,7 @@ public class LessonActivity extends Activity implements TCPClientOwner {
             "Now we will learn about parentheses.";
     public String PAREN_STEP1_MSG =
             "The symbols you see on the screen are called parentheses. " +
-            "When we have these in a math problem, we always do what's inside the parentheses first! " +
+            "When we have these in a math problem, we always do what's inside the parentheses first. " +
             "Let me show you what I mean! Let's look at this problem on the screen together. " +
             "We see parentheses in this problem, so we have to do three plus six first since that part is inside the parentheses. " +
             "Enter your answer to this part in the box on the screen.";

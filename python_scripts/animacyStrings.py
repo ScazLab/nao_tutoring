@@ -33,8 +33,8 @@ question_intro = ['This is a question about ',
 'This is a question for you about ']
 
 question_intro_generic = ['Here is another question. ',
-'Here is the next question. ',
-'How about another question. ',
+'Here is the next problem. ',
+'How about another problem. ',
 'Lets do the next question. ',
 'Let me give you the next question. ']
 
