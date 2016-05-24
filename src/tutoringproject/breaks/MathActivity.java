@@ -810,6 +810,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
         Question question = questions.get(currentQuestionIndex);
         String newQuestion = question.question;
         questionType = question.type;
+        int questionID = question.questionID;
         max_time_per_question = question.maxTime * 1000;
         //for now, reassign max_time_per_question just based on our best guess per difficulty level
         if (current_difficulty_level == 1) {
@@ -850,7 +851,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
         //Send message
         if (TCPClient.singleton != null) {
             disableQuestion();
-            TCPClient.singleton.sendMessage("Q;" + currentQuestionIndex + ";" + questionType + ";" + questionIntro + ";" + question.format);
+            TCPClient.singleton.sendMessage("Q;" + questionID + ";" + questionType + ";" + questionIntro + ";" + question.format);
         }
         AnswerText1.requestFocus();
 

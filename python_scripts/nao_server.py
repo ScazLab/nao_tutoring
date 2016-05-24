@@ -246,7 +246,7 @@ class TutoringSession:
                     print "msg line is: ", line
                     #parse message type to know what to do with it
                     msgType = line.split(";",4)[0]
-                    questionNum = int(line.split(";",2)[1])+1
+                    questionNum = int(line.split(";",2)[1]) #remove +1 since we are logging questionID in breaks study
                     questionType = line.split(";",4)[2].strip()
                     robot_speech = line.split(";",4)[3]
                     otherInfo = ''
