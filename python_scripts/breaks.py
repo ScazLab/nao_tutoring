@@ -257,22 +257,32 @@ def calc_accuracy_change(s, min_change=.2):
 
 BREAK_SPEECH = {
     "fixed": [ "Since it has been a few minutes, lets take a break.",
+               "You have been working for some time, so lets take a break now."
                "I think it is time for a break." ],
     "base-rules": {
         # Reward breaks
         0: [ "Wow! Looks like you're really improving! Time for a little activity and then we'll get back to it.",
-             "You've really improved! You deserve a break." ],
-        1: [ "I think you're really trying and improving! How about we do a quick activity and then keep going!" ],
-        2: [ "You're getting the problems even faster, good job! Let's take a quick break and then do some more problems!" ],
-        3: [ "Wow, you've been doing great for a while now! How about a quick activity?" ],
+             "You've really improved! Lets take a break." ],
+        1: [ "I think you're really trying and improving! How about we do a quick activity and then keep going!",
+             "Looks like you're putting in effort and improving! Lets take a break and then keep going! " ],
+        2: [ "You're getting the problems even faster, good job! Let's take a quick break and then do some more problems!",
+             "You're doing the problems faster than before. Nice job! Let's do an activity and then get back to it." ],
+        3: [ "Wow, you've been doing great for a while now! How about a quick activity?",
+             "You've been doing really well for quite some time now! Let's take a little break." ],
 
         # Frustration breaks
-        5:  [ "bored/distracted/disengaged" ],
-        6:  [ "disengaged" ],
-        8:  [ "doing consistently poorly, frustrated" ],
-        9:  [ "guessing, giving up" ],
-        10: [ "Hmm, why don't we take a little break to refocus and then come back to our problems!" ],
-        11: [ "guessing, making mistakes" ],
+        5:  [ "You’re doing well, so let’s take a break to relax and then we can really get back into it!",
+              "You're doing a good job. How about a break to relax and then we can keep going!" ],
+        6:  [ "How about we take a little break to relax and refocus? Then we can come back to the problems and try again!",
+              "Why don't we take a break to refocus? Then we can keep going with the problems!" ],
+        8:  [ "These problems aren’t easy! I know you’ve been trying, so let’s take a little break to relax! Then we can try again!",
+              "You've been really trying and these are tough! Let's take a break to relax and then get back to it!" ],
+        9:  [ "Don’t give up! I know you can do it. Let’s take a little break and refocus. Then we can try again!",
+              "You can do it! How about a little break now? Then we can refocus and get back to the problems!" ],
+        10: [ "Hmm, why don't we take a little break to refocus and then come back to our problems!",
+              "I know you can do it! Let's take a quick break to refocus and then we can try again with the problems!" ],
+        11: [ "I know you can do these! Let’s do something else for a bit and then we can get back to trying hard on the problems!",
+              "How about we take a break to relax and refocus? Then we can keep going with the problems and try again!" ],
     },
     "super-rules": {
         3: [ "long time no breaks" ]
