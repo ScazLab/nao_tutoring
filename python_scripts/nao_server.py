@@ -139,12 +139,14 @@ class TutoringSession:
             self.load_session(session_file_name)
         elif msgType == 'Q':
             #if the questionNum means difficulty level has changed, reset the session object (does this work?)
-            if questionNum == 220: #hard-coded value for first question in difficulty level 2
-                print "in update_session: changed to difficulty_level 2, resetting Session"
-                self.current_session = Session(pid=self.pid, session_num=self.sessionNum)
-            if questionNum == 330: #hard-coded value for first question in difficulty level 3
-                print "in update_session: changed to difficulty_level 3, resetting Session"
-                self.current_session = Session(pid=self.pid, session_num=self.sessionNum)    
+            if questionNum == 220 or questionNum == 330: #hard-coded values for first question in difficulty level 2 and 3
+                print "in update_session: changed to difficulty_level 2 or 3, clearing list of questions in session"
+                j = 0
+                length = len(self.current_session)
+                while j < length:
+                    del self.current_session[0]
+                    j += 1
+                #self.current_session = Session(pid=self.pid, session_num=self.sessionNum)    
             self.__current_question = Question(question_num=questionNum)
         elif msgType == 'CA':
             ms_question_time = int(otherInfo.split(';')[1])  # in milliseconds
