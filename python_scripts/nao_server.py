@@ -515,6 +515,7 @@ class TutoringSession:
             if otherInfo == 'nothing':
                 return speech_return, robot_speech
             else:
+                self.log_transaction("RS",-1,robot_speech)
                 return speech_return, otherInfo
         else:
             self.goNao.look()
@@ -522,6 +523,7 @@ class TutoringSession:
             if otherInfo == 'nothing':
                 return speech_return, robot_speech
             else:
+                self.log_transaction("RS",-1,robot_speech)
                 return speech_return, otherInfo
 
         
