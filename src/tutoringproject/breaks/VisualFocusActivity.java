@@ -31,7 +31,7 @@ public class VisualFocusActivity extends Activity implements TCPClientOwner {
     public int NUM_SYMBOL_PAIRS;
     // The break will end after this time limit (represented in seconds) is passed and the current
     // round is finished.
-    public long TIME_LIMIT = 60; //should be 120
+    public long TIME_LIMIT = 120; //should be 120
 
     public String[] CORRECT_TAP_MSGS = {
             "Good job!",

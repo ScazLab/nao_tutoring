@@ -29,7 +29,7 @@ def map_break_message(b):
     return dic[b]
 
 
-def take_break(s, reward_break=True, acc_min_change=.1, time_min_change=.2, t=10, refractory_period=5, max_study_time=15):
+def take_break(s, reward_break=True, acc_min_change=.2, time_min_change=.2, t=10, refractory_period=5, max_study_time=15):
     '''
     Method intended for determination of breaks for reward and frustration break scenarios
 
@@ -208,7 +208,7 @@ def check_consistency(s, reward_break, acc_high, t=10): #t should be 10
     return (break_trigger, break_val)
 
 
-def calc_time_change(s, min_change=.1):
+def calc_time_change(s, min_change=.2):
     '''
     Calculates whether or not time has increased, decreased, or no change
 

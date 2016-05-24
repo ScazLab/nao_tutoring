@@ -283,7 +283,7 @@ class TutoringSession:
                         #do intro depending on the sessionNum
                         if self.goNao is not None and msgType != 'LOAD':
                             introFlag = True
-                            #id = self.goNao.intro() #new intro for breaks study #ADD BACK IN, COMMENTED OUT FOR TESTING
+                            id = self.goNao.intro() #new intro for breaks study #ADD BACK IN, COMMENTED OUT FOR TESTING
                             # id = self.goNao.session_intro(int(self.sessionNum))  #DANGER 
 
                         #create or load appropriate session object

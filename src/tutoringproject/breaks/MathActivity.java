@@ -120,7 +120,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private final Handler handler = new Handler();
 
     // ends session at max_session_time seconds
-    private int max_session_time = 600; //10 minutes for testing //this should REALLY be 40 minutes (2400 seconds)
+    private int max_session_time = 2400; //10 minutes for testing //this should REALLY be 40 minutes (2400 seconds)
     private TimeWatch total_elapsed_timewatch;
 
     //break variables
@@ -369,7 +369,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
         if (extras.getString("startOrLoad").equals("start")) {
             Intent intent = new Intent(this, LessonActivity.class);
-            NextQuestion();//startActivity(intent); //use NextQuestion() here to skip lesson just for testing breaks!
+            startActivity(intent); //use NextQuestion() here to skip lesson just for testing breaks!
         } else {
             NextQuestion();
         }
