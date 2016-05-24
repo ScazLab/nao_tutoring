@@ -301,7 +301,7 @@ class TutoringSession:
                                 id = self.goNao.genSpeech("Here it is.")
                                 self.goNao.point_question()
                                 point = "point_to_question"
-                            self.log_transaction("RA",questionNum,point)
+                                self.log_transaction("RA",questionNum,point)
                             #self.goNao.assessQuestion(questionType) #dont need for break study
                         self.update_session(msgType, questionNum, otherInfo)
                     elif msgType == 'CA': #correct attempt

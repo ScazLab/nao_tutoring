@@ -120,7 +120,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private final Handler handler = new Handler();
 
     // ends session at max_session_time seconds
-    private int max_session_time = 1800; //this should be 40 minutes
+    private int max_session_time = 600; //this should be 40 minutes (2400 seconds)
     private TimeWatch total_elapsed_timewatch;
 
     //break variables
@@ -369,7 +369,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
         if (extras.getString("startOrLoad").equals("start")) {
             Intent intent = new Intent(this, LessonActivity.class);
-            NextQuestion();//startActivity(intent); //use NextQuestion() here to skip lesson just for testing breaks!
+            startActivity(intent); //use NextQuestion() here to skip lesson just for testing breaks!
         } else {
             NextQuestion();
         }
@@ -789,12 +789,12 @@ public class MathActivity extends Activity implements TCPClientOwner {
             Intent intent = new Intent(this, Completed.class);
             //send END message before displaying completed screen
             String goodbyeMessage = "Congratulations! You have completed the session. ";
-            if (sessionNum < 4) {
-                goodbyeMessage += "See you next time!";
-            }
-            else {
+            //if (sessionNum < 4) {
+            //    goodbyeMessage += "See you next time!";
+            //}
+            //else {
                 goodbyeMessage += "I had a great time doing math with you! Have a great day! Bye!";
-            }
+            //}
             if (TCPClient.singleton != null) {
                 TCPClient.singleton.sendMessage("END;" + questionID + ";" + questionType + ";" + goodbyeMessage);
                 TCPClient.singleton.stopClient();
