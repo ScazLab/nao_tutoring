@@ -138,7 +138,7 @@ class TutoringSession:
             session_file_name = "data/"+"session_data_P"+self.pid+"_E"+self.expGroup+".txt"
             self.load_session(session_file_name)
         elif msgType == 'Q':
-            #if the questionNum means difficulty level has changed, reset the session object (does this work?)
+            #if the questionNum means difficulty level has changed, clear the questions in the current_session
             if questionNum == 220 or questionNum == 330: #hard-coded values for first question in difficulty level 2 and 3
                 print "in update_session: changed to difficulty_level 2 or 3, clearing list of questions in session"
                 j = 0
@@ -285,7 +285,7 @@ class TutoringSession:
                         #do intro depending on the sessionNum
                         if self.goNao is not None and msgType != 'LOAD':
                             introFlag = True
-                            id = self.goNao.intro() #new intro for breaks study #ADD BACK IN, COMMENTED OUT FOR TESTING
+                            #id = self.goNao.intro() #new intro for breaks study #ADD BACK IN, COMMENTED OUT FOR TESTING
                             # id = self.goNao.session_intro(int(self.sessionNum))  #DANGER 
 
                         #create or load appropriate session object

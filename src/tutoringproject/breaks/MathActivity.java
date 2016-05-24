@@ -369,7 +369,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
         if (extras.getString("startOrLoad").equals("start")) {
             Intent intent = new Intent(this, LessonActivity.class);
-            startActivity(intent); //use NextQuestion() here to skip lesson just for testing breaks!
+            NextQuestion();//startActivity(intent); //use NextQuestion() here to skip lesson just for testing breaks!
         } else {
             NextQuestion();
         }
@@ -810,7 +810,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
             first_problem = false;
         }
         Question question = questions.get(currentQuestionIndex);
-        String newQuestion = question.question;
+        String newQuestion = question.question.replace("X", Character.toString((char) 158)); //multiplication sign
         questionType = question.type;
         questionID = question.questionID;
         max_time_per_question = question.maxTime * 1000;

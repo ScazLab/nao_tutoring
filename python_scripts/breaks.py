@@ -114,7 +114,6 @@ def take_break(s, reward_break=True, acc_min_change=.2, time_min_change=.2, t=10
     return (break_trigger, map_break_message(break_val))
 
 
-#for now the function below always returns False because we do not want to use this super rule
 def super_rule3(s, max_study_time=15):
     '''
     Parameters:
@@ -139,8 +138,8 @@ def super_rule3(s, max_study_time=15):
     if first_block_of_time:  # do not take break if still in first block of time
         return False
 
-    #return not breaked_recently
-    return False #currently always returning false to disable this super rule 
+    return not breaked_recently #return False here to disable this super rule 
+    
 
 
 def super_rule2(s, refractory_period=5): #refractory period should be 5, same as window size
