@@ -114,6 +114,7 @@ def take_break(s, reward_break=True, acc_min_change=.05, time_min_change=3, t=10
     return (break_trigger, map_break_message(break_val))
 
 
+#for now the function below always returns False because we do not want to use this super rule
 def super_rule3(s, max_study_time=15):
     '''
     Parameters:
@@ -138,10 +139,11 @@ def super_rule3(s, max_study_time=15):
     if first_block_of_time:  # do not take break if still in first block of time
         return False
 
-    return not breaked_recently
+    #return not breaked_recently
+    return False #currently always returning false to disable this super rule 
 
 
-def super_rule2(s, refractory_period=4): #refractory period should be 5, same as window size
+def super_rule2(s, refractory_period=5): #refractory period should be 5, same as window size
     '''
     Parameters:
         refractory_period: int representing number of questions needed before another break allowed to be served
@@ -158,7 +160,7 @@ def super_rule2(s, refractory_period=4): #refractory period should be 5, same as
     return (num_questions_since_last_break >= refractory_period)
 
 
-def check_consistency(s, reward_break, acc_high, t=4): #t should be 10
+def check_consistency(s, reward_break, acc_high, t=10): #t should be 10
     '''
     Checks consistency condition for session, given the following properties
 
@@ -285,7 +287,7 @@ BREAK_SPEECH = {
               "How about we take a break to relax and refocus? Then we can keep going with the problems and try again!" ],
     },
     "super-rules": {
-        3: [ "long time no breaks" ]
+        3: [ "Lets take a break now." ]
     }
 }
 

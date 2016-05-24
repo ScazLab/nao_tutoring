@@ -131,7 +131,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
     private boolean first_problem = true;
 
     //choosing question variables
-    public int BASE_NUM_QS_PER_LEVEL = 5; //should be 10
+    public int BASE_NUM_QS_PER_LEVEL = 10; //should be 10
     public int NUM_DIFFICULTY_LEVELS = 3;
     public double MASTERY_LEVEL = 0.7; // should be .7
     private int num_consec_difficulty = 0;
@@ -369,7 +369,7 @@ public class MathActivity extends Activity implements TCPClientOwner {
 
         if (extras.getString("startOrLoad").equals("start")) {
             Intent intent = new Intent(this, LessonActivity.class);
-            startActivity(intent); //use NextQuestion() here to skip lesson just for testing breaks!
+            NextQuestion();//startActivity(intent); //use NextQuestion() here to skip lesson just for testing breaks!
         } else {
             NextQuestion();
         }

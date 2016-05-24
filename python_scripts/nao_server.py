@@ -142,6 +142,9 @@ class TutoringSession:
             if questionNum == 220: #hard-coded value for first question in difficulty level 2
                 print "in update_session: changed to difficulty_level 2, resetting Session"
                 self.current_session = Session(pid=self.pid, session_num=self.sessionNum)
+            if questionNum == 330: #hard-coded value for first question in difficulty level 3
+                print "in update_session: changed to difficulty_level 3, resetting Session"
+                self.current_session = Session(pid=self.pid, session_num=self.sessionNum)    
             self.__current_question = Question(question_num=questionNum)
         elif msgType == 'CA':
             ms_question_time = int(otherInfo.split(';')[1])  # in milliseconds
