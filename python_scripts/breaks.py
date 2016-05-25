@@ -221,16 +221,26 @@ def calc_time_change(s, min_change=.2):
 
     current_window_avg_time = s.calc_window_avg_time(offset=0)
     total_window_avg_time = s.calc_total_avg_time()
+    previous_window_avg_time = s.calc_window_avg_time(offset=1)
 
     print "current_window_avg_time: " + str(current_window_avg_time)
+    print "previous_window_avg_time: " + str(previous_window_avg_time)
     print "total_window_avg_time: " + str(total_window_avg_time)
 
     if current_window_avg_time > total_window_avg_time * (1.0 + abs(min_change)):
         print "in calc_time_change, time increased and min_change is: " + str(min_change)
-        return 1
+        if current_window_avg_time > previous_window_avg_time:
+            print "in calc_time_change, current_window_avg_time is strictly greater than previous_window_avg_time"
+            return 1
+        else:
+            return 0 #if not greater than previous window, declare no change    
     elif current_window_avg_time < total_window_avg_time * (1.0 - abs(min_change)):
         print "in calc_time_change, time decreased and min_change is: " + str(min_change)
-        return -1
+        if current_window_avg_time < previous_window_avg_time:
+            print "in calc_time_change, current_window_avg_time is strictly less than previous_window_avg_time"
+            return -1
+        else:
+            return 0 #if not less than previous window, declare no change    
     else:
         return 0
 
