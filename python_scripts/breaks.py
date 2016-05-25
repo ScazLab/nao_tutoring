@@ -138,7 +138,8 @@ def super_rule3(s, max_study_time=15):
     if first_block_of_time:  # do not take break if still in first block of time
         return False
 
-    return not breaked_recently #return False here to disable this super rule 
+    #return not breaked_recently #return False here to disable this super rule
+    return False 
     
 
 
@@ -250,10 +251,10 @@ def calc_accuracy_change(s, min_change=.2):
     print "current_window_accuracy: " + str(current_window_accuracy)
     print "total_window_accuracy: " + str(total_window_accuracy)
 
-    if current_window_accuracy > total_window_accuracy + abs(min_change):  # check increasing condition
+    if current_window_accuracy > total_window_accuracy * (1.0 + abs(min_change)):  # check increasing condition
         print "in calc_accuracy_change, accuracy increased and min_change is: " + str(min_change)
         return 1
-    elif current_window_accuracy < total_window_accuracy - abs(min_change):  # check decreasing condition
+    elif current_window_accuracy < total_window_accuracy * (1.0 - abs(min_change)):  # check decreasing condition
         print "in calc_accuracy_change, accuracy decreased and min_change is: " + str(min_change)
         return -1
     else:  # no change
