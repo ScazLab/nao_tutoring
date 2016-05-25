@@ -69,7 +69,7 @@ def take_break(s, reward_break=True, acc_min_change=.2, time_min_change=.2, t=10
             break_trigger = True
             break_val = 11
     else:  # no accuracy change
-        if total_accuracy >= .8:  # overall accuracy >= 80%
+        if total_accuracy >= .7:  # overall accuracy >= 70%
             if time_change < 0:  # time faster
                 break_trigger = True
                 break_val = 2
@@ -78,7 +78,7 @@ def take_break(s, reward_break=True, acc_min_change=.2, time_min_change=.2, t=10
                 break_val = 5
             else:  # no change
                 (break_trigger, break_val) = check_consistency(s, reward_break=reward_break, acc_high=True, t=10)
-        else:  # overall accuracy < 80%
+        else:  # overall accuracy < 70%
             if time_change > 0:  # time slower
                 break_trigger = True
                 break_val = 6
@@ -247,16 +247,26 @@ def calc_accuracy_change(s, min_change=.2):
     '''
     current_window_accuracy = s.calc_window_accuracy(offset=0)
     total_window_accuracy = s.calc_total_accuracy()
+    previous_window_accuracy = s.calc_window_accuracy(offset=1)
 
     print "current_window_accuracy: " + str(current_window_accuracy)
+    print "previous_window_accuracy: " + str(previous_window_accuracy)
     print "total_window_accuracy: " + str(total_window_accuracy)
 
     if current_window_accuracy > total_window_accuracy * (1.0 + abs(min_change)):  # check increasing condition
         print "in calc_accuracy_change, accuracy increased and min_change is: " + str(min_change)
-        return 1
+        if current_window_accuracy > previous_window_accuracy:
+            print "in calc_accuracy_change, current_window is strictly greater than previous_window"
+            return 1
+        else:
+            return 0 #if not greater than previous window, declare no change    
     elif current_window_accuracy < total_window_accuracy * (1.0 - abs(min_change)):  # check decreasing condition
         print "in calc_accuracy_change, accuracy decreased and min_change is: " + str(min_change)
-        return -1
+        if current_window_accuracy < previous_window_accuracy:
+            print "in calc_accuracy change, current_window is strictly less than previous_window"
+            return -1
+        else:
+            return 0 #if not less than previous window, declare no change    
     else:  # no change
         return 0
 
