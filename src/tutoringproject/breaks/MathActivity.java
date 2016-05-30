@@ -290,7 +290,17 @@ public class MathActivity extends Activity implements TCPClientOwner {
         level1_questions = new Questions(json1);
         level2_questions = new Questions(json2);
         level3_questions = new Questions(json3);
-        questions = level1_questions;
+        questions = level1_questions; //default start at level 1
+        if (startQuestionNum >= 220 && startQuestionNum < 320) {
+            questions = level2_questions;
+            current_difficulty_level = 2;
+            currentQuestionIndex = startQuestionNum - 219 - 2; //index in new file
+        }
+        if (startQuestionNum >= 320) {
+            questions = level3_questions;
+            current_difficulty_level = 3;
+            currentQuestionIndex = startQuestionNum - 319 - 2;
+        }
 
         fractionLine = (TextView) findViewById(R.id.fractionLine);
         AnswerText1 = (NoImeEditText) findViewById(R.id.editText1);
