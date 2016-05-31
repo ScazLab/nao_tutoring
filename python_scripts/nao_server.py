@@ -104,7 +104,7 @@ class TutoringSession:
         Appends session data to file for storage
         '''
 
-        with open("data/"+"session_data_"+"P"+self.pid+"_E"+self.sessionNum+".txt", 'wb') as outfile:
+        with open("data/"+"session_data_"+"P"+self.pid+"_E"+self.expGroup+".txt", 'wb') as outfile:
             pickle.dump(data, outfile)
 
         return
