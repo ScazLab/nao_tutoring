@@ -27,3 +27,5 @@ choose fixed breaks, break interval = 1
 
 username and password when the ip address is entered into a web browser
 nao,nao
+
+Shared username for git pushing:  nao
