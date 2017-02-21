@@ -6,7 +6,7 @@ plug in ethernet and power for nao
 connect tablet to dfs2
 
 Nao's IP address, last three numbers can change
-192.168.42.126, check to make sure it's right in ip.txt
+192.168.42.119, check to make sure it's right in ip.txt
 
 check ip address of computer:
 ```
