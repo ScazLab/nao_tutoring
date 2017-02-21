@@ -1074,7 +1074,6 @@ class Gesture:
         # I intentionally mispelled "lead" to make the speech clearer!
         self.genSpeech("Follow my leed!")
         time.sleep(2.5)
-
         self.genSpeech("First spread your left arm out.")
         self.motion.setAngles("RShoulderPitch", -1.0, 0.1)
         self.motion.setAngles("RShoulderRoll", -1.2, 0.1)
@@ -1130,7 +1129,6 @@ class Gesture:
         self.genSpeech("Pull your right arm back just like your left.")
         self.motion.setAngles("LShoulderRoll", 1.2, 0.1)
         time.sleep(5.0)
-
         self.genSpeech("Straighten your arms out.")
         self.motion.setAngles("LElbowRoll", 0.0, 0.1)
         self.motion.setAngles("RElbowRoll", 0.0, 0.1)
@@ -1141,7 +1139,6 @@ class Gesture:
         self.motion.setAngles("RShoulderPitch", 1.4, 0.1)
         self.motion.setAngles("RShoulderRoll", -0.5, 0.1)
         time.sleep(5.0)
-
         self.genSpeech("Turn your head to the left.")
         self.motion.setAngles("HeadYaw", -0.7, 0.1)
         time.sleep(4.0)
@@ -1157,12 +1154,16 @@ class Gesture:
         for i in xrange(10):
             self.genSpeech(str(i + 1))
             time.sleep(1)
-
+        self.motion.setAngles("RShoulderRoll", 0.0, 0.1)
+        self.motion.setAngles("LShoulderRoll", 0.0, 0.1)
+ 
         id = self.genSpeech(
             "Great job following along! I hope that was relaxing. Let's get back to our math "
             "problems now. Click the button at the bottom of the tablet to return to the tutoring "
             "session."
         )
+ 
+
         self.posture.goToPosture("Sit", 0.2)
         self.speechDevice.wait(id, 0)
 
