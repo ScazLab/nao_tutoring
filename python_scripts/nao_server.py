@@ -10,6 +10,7 @@ sys.path.append("nao_libs2")
 #sys.path.append("/Users/aditi/aldebaran-sdk-1.6.13-macosx-i386/lib")
 #sys.path.append("nao_libs_1.14")
 
+import pdb
 import naoqi
 from naoqi import ALBroker
 from naoqi import ALModule
@@ -903,7 +904,6 @@ def main():
         print "\nPlease choose an action:"
         for key,value in commands.items():
             print("\t%s => %s"%(key,value))
-
 
         #Have the user select the choice
         choice = ""

@@ -99,7 +99,8 @@ class Gesture:
     def goodbye(self):
         self.genSpeech(anim.finish)
         time.sleep(5)
-        self.posture.goToPosture("SitRelax", 1.0)
+        # changed to sit rather than SitRelax, for less jarring motions
+        self.posture.goToPosture("Sit", 1.0)
 
     def session_intro(self,sessionNum):
         #print sessionNum
@@ -184,7 +185,6 @@ class Gesture:
         #self.motion.closeHand("RHand")
         #self.motion.closeHand("LHand")
         #time.sleep(0.5)
-
         self.motion.setAngles("RShoulderPitch",-1.0, 0.15)
         self.motion.setAngles("RShoulderRoll", -1.2, 0.15)
         self.motion.setAngles("RElbowRoll", 1.0, 0.1)
@@ -217,7 +217,12 @@ class Gesture:
         time.sleep(1)
 
         self.motion.closeHand("RHand")
+        self.motion.setAngles("RShoulderPitch", 0.2, 0.1)
+        self.motion.setAngles("RElbowRoll", 1.4, 0.1)
+        self.motion.setAngles("RShoulderRoll", 1.2, 0.1)
+        time.sleep(4)
         self.posture.goToPosture("Sit", 0.5)
+
         #self.motion.setAngles("HeadPitch", 0.3, 0.15)
         
     def juddNelson(self):
