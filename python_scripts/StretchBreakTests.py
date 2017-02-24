@@ -85,13 +85,61 @@
             time.sleep(1)
         self.motion.setAngles("RShoulderRoll", 0.0, 0.1)
         self.motion.setAngles("LShoulderRoll", 0.0, 0.1)
+       
  
         id = self.genSpeech(
             "Great job following along! I hope that was relaxing. Let's get back to our math "
             "problems now. Click the button at the bottom of the tablet to return to the tutoring "
             "session."
         )
- 
+        # Added code to avoid unexpected body readjustments
+        # OPTION 1
+        time.sleep(3)
+        self.posture.goToPosture("Sit", 1.0)
+        
+        # OPTION 2
+        #time.sleep(2.5)
+        #self.posture.goToPosture("Sit", 0.3)
+        
+        # OPTION 3
+        #time.sleep(2.5)
+        #raise hand before sitting so no collision with leg
+        #self.motion.setAngles("RElbowRoll", 1.54, 0.2)
+        #self.motion.setAngles("RElbowYaw", 2.0, 0.2)
+        #self.motion.setAngles("RShoulderPitch", 1.0, 0.2)
 
-        self.posture.goToPosture("Sit", 0.2)
+        #time.sleep(0.15)
+
+        #self.posture.goToPosture("Sit", 0.5)
+        
+        # OPTION 4
+        
+        #time.sleep(4)
+
+        #raise hand before sitting so no collision with leg
+        #self.motion.setAngles("LElbowRoll", -1.54, 0.2)
+        #self.motion.setAngles("LElbowYaw", -2.0, 0.2)
+        #self.motion.setAngles("LShoulderPitch", 1.0, 0.2)
+
+        #time.sleep(0.15)
+
+        #self.posture.goToPosture("Sit", 0.5)
+        
+        # OPTION 5:  TRY FIRST
+        
+        #time.sleep(0.6)
+
+        #bring arms in to avoid scooching sit
+        #self.motion.setAngles("RShoulderRoll", -0.15, 0.2)
+        #self.motion.setAngles("LShoulderRoll", 0.15, 0.2)
+        #self.motion.setAngles("RElbowYaw", 0, 0.2)
+        #self.motion.setAngles("LElbowYaw", 0, 0.2)
+        #self.motion.setAngles("LElbowRoll", -1.5, 0.2)
+        #self.motion.setAngles("RElbowRoll", 1.5, 0.2)
+        #time.sleep(1)
+
+        #self.posture.goToPosture("Sit", 0.5)
+      
+        # ORIGINAL
+        # self.posture.goToPosture("Sit", 0.2)
         self.speechDevice.wait(id, 0)
