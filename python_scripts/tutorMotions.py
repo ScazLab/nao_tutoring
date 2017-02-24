@@ -1052,7 +1052,6 @@ class Gesture:
         self.genSpeech("Let's count to 10 one more time.")
         for i in xrange(1):
             self.genSpeech(str(i + 1))
-        pdb.set_trace()
         id = self.genSpeech(
             "Great job following along! I hope that was relaxing. Let's get back to our math "
             "problems now. Click the button at the bottom of the tablet to return to the tutoring "
@@ -1156,9 +1155,6 @@ class Gesture:
         for i in xrange(10):
             self.genSpeech(str(i + 1))
             time.sleep(1)
-        self.motion.setAngles("RShoulderRoll", 0.0, 0.1)
-        self.motion.setAngles("LShoulderRoll", 0.0, 0.1)
- 
         id = self.genSpeech(
             "Great job following along! I hope that was relaxing. Let's get back to our math "
             "problems now. Click the button at the bottom of the tablet to return to the tutoring "
