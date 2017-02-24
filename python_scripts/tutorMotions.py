@@ -1001,7 +1001,6 @@ class Gesture:
 
     # takes out all the pauses
     def shortstretchBreak(self):
-        pdb.set_trace()
         self.posture.goToPosture("Sit", 0.2)
         # I intentionally mispelled "lead" to make the speech clearer!
         self.genSpeech("Follow my leed!")
@@ -1054,6 +1053,7 @@ class Gesture:
         self.motion.setAngles("LShoulderRoll", 0.5, 0.1)
         self.motion.setAngles("RShoulderPitch", 1.4, 0.1)
         self.motion.setAngles("RShoulderRoll", -0.5, 0.1)
+        pdb.set_trace()
         self.genSpeech("Turn your head to the left.")
         self.motion.setAngles("HeadYaw", -0.7, 0.1)
         self.genSpeech("Now to the right.")
