@@ -2,6 +2,8 @@ import os
 import sys
 import random
 import time
+# for debugging
+import pdb
 
 import naoqi
 from naoqi import ALBroker
@@ -999,6 +1001,7 @@ class Gesture:
 
     # takes out all the pauses
     def shortstretchBreak(self):
+        pdb.set_trace()
         self.posture.goToPosture("Sit", 0.2)
         # I intentionally mispelled "lead" to make the speech clearer!
         self.genSpeech("Follow my leed!")
