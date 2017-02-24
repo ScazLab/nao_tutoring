@@ -1021,31 +1021,22 @@ class Gesture:
         self.genSpeech("Stretch your fingers out too!")
         self.motion.openHand("RHand")
         self.motion.openHand("LHand")
-        self.genSpeech("Count to 10 with me while we keep our arms up.")
-        for i in xrange(10):
+        for i in xrange(1):
             self.genSpeech(str(i + 1))
         self.motion.closeHand("RHand")
         self.motion.closeHand("LHand")
 
         self.genSpeech("Drop your arms down one at a time.")
-        self.genSpeech("Start with your left arm.")
         self.motion.setAngles("RShoulderPitch", 0.2, 0.1)
-        self.genSpeech("Then your right arm.")
         self.motion.setAngles("LShoulderPitch", 0.2, 0.1)
 
-        self.genSpeech("Rotate your arms so that your palms are facing each other.")
         self.motion.setAngles("RElbowYaw", 1.5, 0.1)
         self.motion.setAngles("LElbowYaw", -1.5, 0.1)
 
-        self.genSpeech("Bend your left elbow.")
         self.motion.setAngles("RElbowRoll", 1.4, 0.1)
-        self.genSpeech("Then pull your left arm back.")
         self.motion.setAngles("RShoulderRoll", -1.2, 0.1)
-        self.genSpeech("Now bend your right elbow.")
         self.motion.setAngles("LElbowRoll", -1.4, 0.1)
-        self.genSpeech("Pull your right arm back just like your left.")
         self.motion.setAngles("LShoulderRoll", 1.2, 0.1)
-        self.genSpeech("Straighten your arms out.")
         self.motion.setAngles("LElbowRoll", 0.0, 0.1)
         self.motion.setAngles("RElbowRoll", 0.0, 0.1)
         self.genSpeech("Now drop your arms to your side.")
@@ -1053,33 +1044,33 @@ class Gesture:
         self.motion.setAngles("LShoulderRoll", 0.5, 0.1)
         self.motion.setAngles("RShoulderPitch", 1.4, 0.1)
         self.motion.setAngles("RShoulderRoll", -0.5, 0.1)
-        pdb.set_trace()
-        self.genSpeech("Turn your head to the left.")
         self.motion.setAngles("HeadYaw", -0.7, 0.1)
-        self.genSpeech("Now to the right.")
         self.motion.setAngles("HeadYaw", 0.7, 0.1)
         self.genSpeech("Bring it back to the center and look up.")
         self.motion.setAngles("HeadYaw", 0.0, 0.1)
         self.motion.setAngles("HeadPitch", -0.5, 0.1)
         self.genSpeech("Let's count to 10 one more time.")
-        for i in xrange(10):
+        for i in xrange(1):
             self.genSpeech(str(i + 1))
-
+        pdb.set_trace()
         id = self.genSpeech(
             "Great job following along! I hope that was relaxing. Let's get back to our math "
             "problems now. Click the button at the bottom of the tablet to return to the tutoring "
             "session."
         )
         # get back to sitting position to avoid side jaunt
-        self.motion.setAngles("LElbowRoll", -1.54, 0.2)
-        self.motion.setAngles("LElbowYaw", -2.0, 0.2)
-        self.motion.setAngles("LShoulderPitch", 1.0, 0.2)
-        self.motion.setAngles("RElbowRoll", 1.54, 0.2)
-        self.motion.setAngles("RElbowYaw", 2.0, 0.2)
-        self.motion.setAngles("RShoulderPitch", 1.0, 0.2)
-        
+        self.motion.setAngles("LElbowRoll", -1.54, 0.1)
+        self.motion.setAngles("RElbowRoll", 1.54, 0.1)
+        time.sleep(2.5)
+        self.motion.setAngles("LElbowYaw", -2.0, 0.1)
+        self.motion.setAngles("RElbowYaw", 2.0, 0.1)
+        time.sleep(2.5)
+        self.motion.setAngles("LShoulderPitch", 1.0, 0.1)
+        self.motion.setAngles("RShoulderPitch", 1.0, 0.1)
+        time.sleep(2.5) 
         self.posture.goToPosture("Sit", 0.2)
         self.speechDevice.wait(id, 0)
+
     def stretchBreak(self):
         self.posture.goToPosture("Sit", 0.2)
         # I intentionally mispelled "lead" to make the speech clearer!
@@ -1174,15 +1165,15 @@ class Gesture:
             "session."
         )
         # get back to sitting position to avoid side jaunt
-        self.motion.setAngles("LElbowRoll", -1.54, 0.2)
-        self.motion.setAngles("RElbowRoll", 1.54, 0.2)
-        time.sleep(2.0)
-        self.motion.setAngles("LElbowYaw", -2.0, 0.2)
-        self.motion.setAngles("RElbowYaw", 2.0, 0.2)
-        time.sleep(2.0)
-        self.motion.setAngles("LShoulderPitch", 1.0, 0.2)
-        self.motion.setAngles("RShoulderPitch", 1.0, 0.2)
-        time.sleep(4.0) 
+        self.motion.setAngles("LElbowRoll", -1.54, 0.1)
+        self.motion.setAngles("RElbowRoll", 1.54, 0.1)
+        time.sleep(2.5)
+        self.motion.setAngles("LElbowYaw", -2.0, 0.1)
+        self.motion.setAngles("RElbowYaw", 2.0, 0.1)
+        time.sleep(2.5)
+        self.motion.setAngles("LShoulderPitch", 1.0, 0.1)
+        self.motion.setAngles("RShoulderPitch", 1.0, 0.1)
+        time.sleep(2.5) 
         self.posture.goToPosture("Sit", 0.2)
         self.speechDevice.wait(id, 0)
 
