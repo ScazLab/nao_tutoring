@@ -1173,8 +1173,16 @@ class Gesture:
             "problems now. Click the button at the bottom of the tablet to return to the tutoring "
             "session."
         )
- 
-
+        # get back to sitting position to avoid side jaunt
+        self.motion.setAngles("LElbowRoll", -1.54, 0.2)
+        self.motion.setAngles("RElbowRoll", 1.54, 0.2)
+        time.sleep(2.0)
+        self.motion.setAngles("LElbowYaw", -2.0, 0.2)
+        self.motion.setAngles("RElbowYaw", 2.0, 0.2)
+        time.sleep(2.0)
+        self.motion.setAngles("LShoulderPitch", 1.0, 0.2)
+        self.motion.setAngles("RShoulderPitch", 1.0, 0.2)
+        time.sleep(4.0) 
         self.posture.goToPosture("Sit", 0.2)
         self.speechDevice.wait(id, 0)
 
