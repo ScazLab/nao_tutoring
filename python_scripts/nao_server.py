@@ -892,7 +892,7 @@ def main():
         ("c", "Conversion problems"),
         ("z", "Congratulations!"),
         ("b", "Stretch break"),
-        ("sb", "Short stretch break")
+        ("sb", "Short stretch break"),
         ("mind", "Mindfulness break"),
         ("s", "Start tutoring interaction"),
         ("q", "Quit"),
