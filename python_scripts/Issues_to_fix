@@ -54,4 +54,61 @@ numerator:
   NOT GOOD!
   Same issue with sit.
   
-denominator
+denominator:
+  NO ERRORS FOUND
+  
+numerator_denominator:
+  NO ERRORS FOUND
+  
+etc:
+  NO ERRORS FOUND
+
+point_question:
+  NO ERRORS FOUND
+
+conversion:
+  NO ERRORS FOUND
+
+congratulations:
+  NOT GOOD!
+  Same issue with sit.
+  
+tilt:
+  NO ERRORS FOUND
+  
+hands:
+  NO ERRORS FOUND
+  
+breathe:
+  NO ERRORS FOUND
+  
+assess:
+  NO ERRORS FOUND
+
+assessQuestion:
+  NOT TESTED, AS IT CALLS OTHER FUNCTIONS
+  
+introQuestion AND introQuestionGeneric:
+  NO ERRORS FOUND
+ 
+assessHint2:
+  NO ERRORS FOUND
+
+assessHint3:
+  NO ERRORS FOUND
+  
+ask:
+  NO ERRORS FOUND
+
+releaseNao:
+   NO ERRORS FOUND
+   
+breathe_in_guide:
+  NO ERRORS FOUND
+  
+breathe_out_guide:
+  NO ERRORS FOUND
+  
+mindfulnessBreak:
+  After last breath, the robot moves in a manner that appears jerky. This could be cleaned up.
+
