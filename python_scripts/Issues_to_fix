@@ -1,1 +1,57 @@
+juddNelson:
+  The robot lies down when it should return to Sit.
 
+juddNelson_left:
+  NO ERRORS FOUND
+  
+nod:
+  NO ERRORS FOUND
+  
+shake:
+  NO ERRORS FOUND
+  
+last_shake:
+  NO ERRORS FOUND
+  
+scale_down:
+  Can be improved
+  Motion before returning to Sit is strange.
+  
+scale_down_left:
+  Can be improved
+  Motion before returning to Sit is strange.
+ 
+two_fractions:
+  NO ERRORS FOUND
+
+two_hands:
+  NO ERRORS FOUND
+
+multiples:
+  NO ERRORS FOUND
+
+look:
+  NO ERRORS FOUND
+  
+look_left:
+  NO ERRORS FOUND
+  
+sit:
+  NO ERRORS FOUND
+  Doesn't do what it says.
+  
+sit_left:
+  NO ERRORS FOUND
+  Doesn't do what it says.
+  
+left_relaxed_sit:
+  NO ERRORS FOUND
+  
+right_relaxed_sit:
+  NO ERRORS FOUND
+  
+numerator:
+  NOT GOOD!
+  Same issue with sit.
+  
+denominator
