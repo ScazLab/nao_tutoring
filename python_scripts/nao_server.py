@@ -902,6 +902,7 @@ def main():
 
         #Output all the commands
         print "\nPlease choose an action:"
+        pdb.set_trace() # for debugging, put this line to type in motions from tutorMotions.py
         for key,value in commands.items():
             print("\t%s => %s"%(key,value))
 
