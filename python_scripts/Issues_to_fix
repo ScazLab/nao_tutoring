@@ -15,8 +15,8 @@ last_shake:
   NO ERRORS FOUND
   
 scale_down:
-  Can be improved
-  Motion before returning to Sit is strange but does not require immediate attention. 
+  RESOLVED!
+  The speed at which the robot returns to Sit could be decreased to make the process more natural.
   
 scale_down_left:
   Can be improved
