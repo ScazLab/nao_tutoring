@@ -15,11 +15,11 @@ last_shake:
   
 scale_down:
   Can be improved
-  Motion before returning to Sit is strange.
+  Motion before returning to Sit is strange but does not require immediate attention. 
   
 scale_down_left:
   Can be improved
-  Motion before returning to Sit is strange.
+  Motion before returning to Sit is strange but does not require immediate attention.
  
 two_fractions:
   NO ERRORS FOUND
@@ -51,7 +51,7 @@ right_relaxed_sit:
   NO ERRORS FOUND
   
 numerator:
-  NOT GOOD!
+  RESOLVED!
   Same issue with sit.
   
 denominator:
