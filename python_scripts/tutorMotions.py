@@ -245,6 +245,10 @@ class Gesture:
         #time.sleep(2)
         #self.genSpeech("now i will put my hand back down")
         time.sleep(1)
+        # move arm back to avoid drastic sit
+        self.motion.setAngles("RShoulderPitch", 0.5, 0.4)
+        self.motion.setAngles("RShoulderRoll", 0, 0.4)
+        time.sleep(1.5)
         self.posture.goToPosture("Sit", 1.0)
         #self.motion.setAngles("HeadPitch", 0.3, 0.15)
 
@@ -667,7 +671,6 @@ class Gesture:
         self.motion.openHand("RHand")
 
         time.sleep(2)
-        pdb.set_trace()
         # move arm back so that sit motion isn't so drastic
         self.motion.closeHand("RHand")
         self.motion.setAngles("RElbowRoll", 1, 0.2)
@@ -851,7 +854,12 @@ class Gesture:
         #time.sleep(2)
         #self.genSpeech("now i will put my hand back down")
         """
-        time.sleep(2)
+        # bring arms down to avoid drastic sit
+        self.motion.setAngles("RShoulderPitch", 0.5, 0.2)
+        self.motion.setAngles("LShoulderPitch", 0.5, 0.2)
+        self.motion.setAngles("RShoulderRoll", 0, 0.2)
+        self.motion.setAngles("LShoulderRoll", 0, 0.2)
+        time.sleep(3)
         self.posture.goToPosture("Sit", 1.0)
 
     #def two_hands(self):
