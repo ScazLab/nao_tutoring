@@ -382,22 +382,14 @@ class Gesture:
         self.motion.setAngles("RShoulderPitch", 1.5, 0.1)
 
         time.sleep(2.5)
-        """
+
         #raise hand before sitting so no collision with leg
         self.motion.setAngles("RElbowRoll", 1.54, 0.2)
         self.motion.setAngles("RElbowYaw", 2.0, 0.2)
         self.motion.setAngles("RShoulderPitch", 1.0, 0.2)
-        """
+
         time.sleep(0.15)
 
-        pdb.set_trace()
-        # move arm back to avoid drastic sit
-        self.motion.setAngles("RShoulderPitch", 0, 0.4)
-        self.motion.setAngles("RShoulderRoll", 0, 0.4)
-        time.sleep(1)
-        self.motion.setAngles("RShoulderPitch", 0.5, 0.4)
-        self.motion.setAngles("RElbowRoll", 0, 0.4)
-        time.sleep(2)
         self.posture.goToPosture("Sit", 0.5)
 
     def scale_down_left(self):
