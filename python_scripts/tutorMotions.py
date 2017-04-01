@@ -1270,7 +1270,6 @@ class Gesture:
         id = self.genSpeech(" out.")
         self.breathe_out_guide()
         self.speechDevice.wait(id, 0)
-
         #second breath
         time.sleep(3.0)
         self.breathe_in_guide()
@@ -1310,12 +1309,11 @@ class Gesture:
         id = self.genSpeech(" and. out.")
         self.breathe_out_guide()
         self.speechDevice.wait(id, 0)
-
         #raise up elbow to avoid collision
-        self.motion.setAngles("RShoulderPitch", 0.8, 0.1)
-        self.motion.setAngles("RElbowRoll", 0.8, 0.1)
-        self.motion.setAngles("RWristYaw", 1.3, 0.1)
-        self.posture.goToPosture("Sit", 0.1)
+        self.motion.setAngles("RShoulderPitch", 0.8, 0.6)
+        self.motion.setAngles("RElbowRoll", 0.8, 0.6)
+        self.motion.setAngles("RWristYaw", 1.3, 0.6)
+        self.posture.goToPosture("Sit", 0.6)
         self.look()
         
         self.genSpeech("Now as we stay relaxed, notice the sounds you can hear and how you are feeling.")
