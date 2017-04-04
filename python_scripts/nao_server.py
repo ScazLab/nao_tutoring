@@ -10,7 +10,6 @@ sys.path.append("nao_libs2")
 #sys.path.append("/Users/aditi/aldebaran-sdk-1.6.13-macosx-i386/lib")
 #sys.path.append("nao_libs_1.14")
 
-import pdb
 import naoqi
 from naoqi import ALBroker
 from naoqi import ALModule
@@ -902,7 +901,6 @@ def main():
 
         #Output all the commands
         print "\nPlease choose an action:"
-        #        pdb.set_trace() # for debugging, put this line to type in motions from tutorMotions.py
         for key,value in commands.items():
             print("\t%s => %s"%(key,value))
 

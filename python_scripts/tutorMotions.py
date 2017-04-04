@@ -2,8 +2,6 @@ import os
 import sys
 import random
 import time
-# for debugging
-import pdb
 
 import naoqi
 from naoqi import ALBroker
