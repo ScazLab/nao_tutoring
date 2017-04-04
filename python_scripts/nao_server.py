@@ -6,7 +6,7 @@ import time
 import datetime
 import collections
 import socket
-sys.path.append("nao_libs")
+sys.path.append("nao_libs2")
 #sys.path.append("/Users/aditi/aldebaran-sdk-1.6.13-macosx-i386/lib")
 #sys.path.append("nao_libs_1.14")
 
@@ -892,6 +892,7 @@ def main():
         ("c", "Conversion problems"),
         ("z", "Congratulations!"),
         ("b", "Stretch break"),
+        ("sb", "Short stretch break"),
         ("mind", "Mindfulness break"),
         ("s", "Start tutoring interaction"),
         ("q", "Quit"),
@@ -902,7 +903,6 @@ def main():
         print "\nPlease choose an action:"
         for key,value in commands.items():
             print("\t%s => %s"%(key,value))
-
 
         #Have the user select the choice
         choice = ""
@@ -991,7 +991,8 @@ def main():
 
         elif(choice == "b"):
             goNao.stretchBreak()
-
+        elif(choice == "sb"):
+            goNao.shortstretchBreak()
         elif(choice == "mind"):
             goNao.mindfulnessBreak()    
 
