@@ -750,7 +750,7 @@ class Gesture:
 
     def point_question(self):
         #move left hand to point to tablet
-        #time.sleep(1.5)#3.5
+        time.sleep(3.5)
         self.motion.setAngles("LShoulderRoll", 0.3, 0.25)
         self.motion.setAngles("LShoulderPitch", 0.4, 0.25)
         self.motion.setAngles("LElbowRoll", -0.2, 0.25)
@@ -761,8 +761,14 @@ class Gesture:
 
         #look at the tablet/left hand?
         #self.motion.setAngles("HeadYaw", 0.2, 0.2)
-
-        #time.sleep(1.5)
+        # Bring back to sit
+        self.motion.setAngles("LShoulderRoll", 0.2, 0.25)
+        self.motion.setAngles("LShoulderPitch", 0.9, 0.25)
+        self.motion.setAngles("LElbowRoll", -0.7, 0.25)
+        self.motion.setAngles("LElbowYaw", 0, 0.25)
+        self.motion.setAngles("LWristYaw", 0, 0.25)
+       
+        time.sleep(1.5)
         self.posture.goToPosture("Sit", 0.5)
 
 
