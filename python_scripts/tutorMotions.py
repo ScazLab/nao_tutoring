@@ -1109,7 +1109,7 @@ class Gesture:
             "problems now. Click the button at the bottom of the tablet to return to the tutoring "
             "session."
         )
-        
+
         # get back to sitting position to avoid side jaunt
         time.sleep(2)
         self.prepare_sit_right()
@@ -1236,11 +1236,19 @@ class Gesture:
         self.breathe_out_guide()
         self.speechDevice.wait(id, 0)
 
-        #raise up elbow to avoid collision
-        self.motion.setAngles("RShoulderPitch", 0.8, 0.6)
-        self.motion.setAngles("RElbowRoll", 0.8, 0.6)
-        self.motion.setAngles("RWristYaw", 1.3, 0.6)
-        self.posture.goToPosture("Sit", 0.6)
+        #raise up elbow to avoid collision (will remove after testing)
+        # self.motion.setAngles("RShoulderPitch", 0.8, 0.6)
+        # self.motion.setAngles("RElbowRoll", 0.8, 0.6)
+        # self.motion.setAngles("RWristYaw", 1.3, 0.6)
+        # self.posture.goToPosture("Sit", 0.6)
+
+         # get back to sitting position to avoid side jaunt
+        time.sleep(2)
+        self.prepare_sit_right()
+        self.prepare_sit_left()
+        time.sleep(2)
+
+        
         self.look()
         
         self.genSpeech("Now as we stay relaxed, notice the sounds you can hear and how you are feeling.")
