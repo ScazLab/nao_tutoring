@@ -762,11 +762,9 @@ class Gesture:
         #look at the tablet/left hand?
         #self.motion.setAngles("HeadYaw", 0.2, 0.2)
         # Bring back to sit
-        self.motion.setAngles("LShoulderRoll", 0.2, 0.25)
-        self.motion.setAngles("LShoulderPitch", 0.9, 0.25)
-        self.motion.setAngles("LElbowRoll", -0.7, 0.25)
-        self.motion.setAngles("LElbowYaw", 0, 0.25)
-        self.motion.setAngles("LWristYaw", 0, 0.25)
+        time.sleep(2)
+        self.prepare_sit_left()
+        time.sleep(2)
        
         time.sleep(1.5)
         self.posture.goToPosture("Sit", 0.5)
