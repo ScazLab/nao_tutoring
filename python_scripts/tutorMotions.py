@@ -213,11 +213,8 @@ class Gesture:
         #self.genSpeech("hello there!")
 
         time.sleep(1)
-
         self.motion.closeHand("RHand")
-        self.motion.setAngles("RShoulderPitch", 0.2, 0.1)
-        self.motion.setAngles("RElbowRoll", 1.4, 0.1)
-        self.motion.setAngles("RShoulderRoll", 1.2, 0.1)
+        self.prepare_sit_right()
         time.sleep(4)
         self.posture.goToPosture("Sit", 0.5)
 
