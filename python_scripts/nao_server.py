@@ -6,6 +6,7 @@ import time
 import datetime
 import collections
 import socket
+import pdb
 sys.path.append("nao_libs2")
 #sys.path.append("/Users/aditi/aldebaran-sdk-1.6.13-macosx-i386/lib")
 #sys.path.append("nao_libs_1.14")
@@ -870,6 +871,7 @@ def main():
         #Set all the possible commands
         commands=collections.OrderedDict((("i", "Run the intro"),
         ("r", "Release motors"),
+        ("break", "break for pdb"),
         ("t", "Type something for the nao to say"),
         ("m", "Move nao head - test"),
         ("w", "Wave arm"),
@@ -921,7 +923,8 @@ def main():
 
         elif(choice=="r"):
             goNao.releaseNao()
-
+        elif(choice=="break"):
+            pdb.set_trace()
         elif(choice == "t"):
             phrase = raw_input('Type phrase here: ')
             goNao.genSpeech(phrase)
