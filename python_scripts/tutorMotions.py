@@ -1309,6 +1309,7 @@ class Gesture:
         id = self.genSpeech(" and. out.")
         self.breathe_out_guide()
         self.speechDevice.wait(id, 0)
+
         #raise up elbow to avoid collision
         self.motion.setAngles("RShoulderPitch", 0.8, 0.6)
         self.motion.setAngles("RElbowRoll", 0.8, 0.6)
@@ -1327,7 +1328,9 @@ class Gesture:
         )
         self.speechDevice.wait(id, 0)
         
-        # call before bringing to sit to avoid scooching sit for arm motions
+    # call before bringing to sit to avoid scooching sit, if the only motions away from sit were using arm joints
+    # essentially the same as self.posture.goToPosture("Sit", 0.15), except this won't move the legs
+    # uses the angle settings from ALMotionProxy::getSummary() when the robot is in a sitting position, rounded to 2nd decimal
     def prepare_sit_right(self):
     	self.motion.setAngles("RShoulderRoll", -0.27, 0.15)
         self.motion.setAngles("RShoulderPitch", 0.919, 0.15)
