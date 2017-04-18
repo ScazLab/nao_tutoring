@@ -892,7 +892,6 @@ def main():
         ("c", "Conversion problems"),
         ("z", "Congratulations!"),
         ("b", "Stretch break"),
-        ("sb", "Short stretch break"),
         ("mind", "Mindfulness break"),
         ("s", "Start tutoring interaction"),
         ("q", "Quit"),
@@ -991,8 +990,6 @@ def main():
 
         elif(choice == "b"):
             goNao.stretchBreak()
-        elif(choice == "sb"):
-            goNao.shortstretchBreak()
         elif(choice == "mind"):
             goNao.mindfulnessBreak()    
 
