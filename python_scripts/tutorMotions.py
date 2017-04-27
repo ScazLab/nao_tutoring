@@ -72,7 +72,8 @@ class Gesture:
         except Exception, e:
             print "Error when creating speech device proxy:" + str(e)
             exit(1)
-
+        # bring to sitting position
+        self.posture.goToPosture("Sit", 0.15)
     def genSpeech(self, sentence):
         try:
             # self.look()
@@ -1099,7 +1100,7 @@ class Gesture:
         # get back to sitting position to avoid side jaunt
         time.sleep(2)
         self.prepare_sit_right(0.15)
-        self.prepare_sit_left()
+        self.prepare_sit_left(0.15)
         time.sleep(2)
 
         self.look()
