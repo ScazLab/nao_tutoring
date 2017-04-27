@@ -502,7 +502,14 @@ class Gesture:
         # head looking at student and talking, for left handers
         self.motion.setAngles("HeadYaw", 0.25, 0.1)
         self.motion.setAngles("HeadPitch", 0.15, 0.1)
-
+    # this function doesn't actually sit, but gets called in nao_server if
+    # introFlag is false, so is left in this file
+    def sit(self):
+        #self.posture.goToPosture("Sit", 0.2)
+        #head looks down at tablet, for right handers
+        self.motion.setAngles("HeadYaw", 0.3, 0.1)
+        self.motion.setAngles("HeadPitch", 0.37, 0.1)
+        #self.motion.setAngles("HeadYaw", 0.25, 0.15)
     def sit_left(self):
         # head looks down at tablet, for left handers
         self.motion.setAngles("HeadYaw", 0, 0.1)
