@@ -616,7 +616,7 @@ class Gesture:
         self.motion.setAngles("RElbowRoll", 0.8, 0.2)
         self.motion.setAngles("RWristYaw", 1.3, 0.2)
 
-        self.posture.goToPosture("Sit", 0.5)
+        self.prepare_sit_right(0.15)
 
     def numerator_denominator(self):
         self.bring_to_sit(1.0)
